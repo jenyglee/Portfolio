@@ -2,54 +2,32 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Cally from "./../../images/cally.png";
 import Category from "./Category";
+import Project from "./Project";
+import ProjectBackground from "./ProjectBackground";
 
 const SectionContainer = styled.section`
     width: 50%;
 `;
 
-const ProjectName = styled.ul`
-    font-family: "BLUDHAVEN";
-    opacity: ${({ opacity }) => opacity};
-`;
+const Section = ({ tempData, tempImage }) => {
+    const [projectTitle, setProjectTitle] = useState(tempData);
+    const [projectImage, setProjectImage] = useState(tempImage);
 
-const ProjectItme = styled.li`
-    font-size: 160px;
-    opacity: ${({ opacity, itmeOpacity }) => opacity};
-`;
+    // ✨ 마우스 호버시 투명도 변경
+    const itemEnter = (id) => {
+        const copy = [...projectTitle];
+        const copyImage = [...projectImage];
+        copy[id].isHover = !copy[id].isHover;
+        copyImage[id].isShow = !copyImage[id].isShow;
+        setProjectTitle(copy);
+        setProjectImage(copyImage);
+    };
 
-const Section = () => {
-    const [opacity, setOpacity] = useState("1");
-    const [itmeOpacity, setItemOpacity] = useState("0.5");
     return (
         <SectionContainer>
             <Category img={Cally} />
-            <ProjectName
-                onMouseEnter={() => {
-                    setOpacity("0.5");
-                }}
-                onMouseLeave={() => {
-                    setOpacity("0.5");
-                }}
-            >
-                <ProjectItme
-                    opacity={opacity}
-                    itmeOpacity={itmeOpacity}
-                    onMouseEnter={() => {
-                        setItemOpacity("1");
-                    }}
-                >
-                    <a href="#">Info</a>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </ProjectItme>
-                <ProjectItme>
-                    <a href="#">Ability</a>
-                </ProjectItme>
-                <ProjectItme>
-                    <a href="#">Git & Blog</a>
-                </ProjectItme>
-            </ProjectName>
+            <ProjectBackground projectImage={projectImage} />
+            <Project projectTitle={projectTitle} itemEnter={itemEnter} />
         </SectionContainer>
     );
 };
