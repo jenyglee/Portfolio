@@ -22,6 +22,13 @@ const MainWrap = styled.main`
     background: ${({ background }) => `url(${background}) no-repeat`};
 `;
 
+const StyledImage = styled.img`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+`;
+
 const projectData = [
     [
         { id: 0, title: "Info", isHover: false },
@@ -88,10 +95,14 @@ const Home = () => {
                                     onTitleHover={handleTitleHover}
                                     onTitleLeave={handleTitleLeave}
                                     sectionId={index}
+                                    style={{
+                                        zIndex: 1,
+                                    }}
                                 />
                             );
                         })}
                     </div>
+                    {/* <StyledImage src={sampleImage03} alt="이미지" /> */}
                 </MainWrap>
             </Route>
 
