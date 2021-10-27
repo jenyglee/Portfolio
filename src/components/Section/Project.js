@@ -5,6 +5,7 @@ const ProjectName = styled.ul`
     font-family: "BLUDHAVEN";
     opacity: 1;
     transition: 0.5;
+    z-index: 1;
 `;
 
 const ProjectItem = styled.a`
@@ -14,7 +15,7 @@ const ProjectItem = styled.a`
     display: block;
 `;
 
-const Project = ({ projectTitle, itemEnter, itemLeave }) => {
+const Project = ({ projectTitle, onEnter, onLeave }) => {
     return (
         <ProjectName>
             {projectTitle.map((item) => {
@@ -22,10 +23,10 @@ const Project = ({ projectTitle, itemEnter, itemLeave }) => {
                     <ProjectItem
                         isHover={item.isHover}
                         onMouseEnter={() => {
-                            itemEnter(item.id);
+                            onEnter(item.id);
                         }}
                         onMouseLeave={() => {
-                            itemLeave(item.id);
+                            onLeave(item.id);
                         }}
                         href="#"
                     >

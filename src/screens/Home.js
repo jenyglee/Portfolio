@@ -17,10 +17,12 @@ import sampleImage08 from "./../images/sampleImage09.jpeg";
 
 const MainWrap = styled.main`
     width: 1600px;
+    height: 1000px;
     margin: 0 auto;
+    background: ${({ background }) => `url(${background}) no-repeat`};
 `;
 
-const tempData = [
+const projectData = [
     [
         { id: 0, title: "Info", isHover: false },
         { id: 1, title: "Ability", isHover: false },
@@ -40,7 +42,7 @@ const tempData = [
     ],
 ];
 
-const tempImage = [
+const projectBackgroundImage = [
     [
         { id: 0, source: sampleImage00, isShow: false },
         { id: 1, source: sampleImage01, isShow: false },
@@ -59,24 +61,36 @@ const tempImage = [
 ];
 
 const Home = () => {
+    const [background, setBackground] = useState("");
+
+    // ✨ 마우스오버시 배경노출
+    const handleTitleHover = (sectionId, itemId) => {
+        // console.log(sectionId, itemId); 1 1 , 1 2 , 1 3
+        const copy = projectBackgroundImage[sectionId][itemId];
+        setBackground(copy.source);
+    };
+
+    // ✨ 마우스리브시 배경삭제
+    const handleTitleLeave = () => {
+        setBackground("");
+    };
+
     return (
         <div>
             <Header />
             <Route path="/" exact>
-                <MainWrap>
+                <MainWrap background={background}>
                     <div className="contents">
-                        <Section
-                            tempData={tempData[0]}
-                            tempImage={tempImage[0]}
-                        />
-                        <Section
-                            tempData={tempData[1]}
-                            tempImage={tempImage[1]}
-                        />
-                        <Section
-                            tempData={tempData[2]}
-                            tempImage={tempImage[2]}
-                        />
+                        {projectData.map((item, index) => {
+                            return (
+                                <Section
+                                    projectData={projectData[index]}
+                                    onTitleHover={handleTitleHover}
+                                    onTitleLeave={handleTitleLeave}
+                                    sectionId={index}
+                                />
+                            );
+                        })}
                     </div>
                 </MainWrap>
             </Route>
@@ -85,8 +99,8 @@ const Home = () => {
                 <MainWrap>
                     <div className="contents">
                         <Section
-                            tempData={tempData[2]}
-                            tempImage={tempImage[2]}
+                            projectData={projectData[2]}
+                            projectBackgroundImage={projectBackgroundImage[2]}
                         />
                     </div>
                 </MainWrap>
