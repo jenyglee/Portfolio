@@ -60,48 +60,38 @@ const tempImage = [
 
 const Home = () => {
     return (
-        <MainWrap>
+        <div>
             <Header />
-            <div className="contents">
-                <Section tempData={tempData[0]} tempImage={tempImage[0]} />
-                <Section tempData={tempData[1]} tempImage={tempImage[1]} />
-                <Section tempData={tempData[2]} tempImage={tempImage[2]} />
-                {/* <Section>
-                    <div className="category">
-                        <p>COLLECTION</p>
-                        <img className="cally" src={Cally} art="logo" />
+            <Route path="/" exact>
+                <MainWrap>
+                    <div className="contents">
+                        <Section
+                            tempData={tempData[0]}
+                            tempImage={tempImage[0]}
+                        />
+                        <Section
+                            tempData={tempData[1]}
+                            tempImage={tempImage[1]}
+                        />
+                        <Section
+                            tempData={tempData[2]}
+                            tempImage={tempImage[2]}
+                        />
                     </div>
-                    <ul className="project-name">
-                        <li>
-                            <a href="#">TODO</a>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </li>
-                        <li>
-                            <a href="#">My site</a>
-                        </li>
-                        <li>
-                            <a href="#">React</a>
-                        </li>
-                    </ul>
-                </Section>
-                <Section>
-                    <div className="category">
-                        <p>COLLECTION</p>
-                        <img className="cally" src={Cally} art="logo" />
+                </MainWrap>
+            </Route>
+
+            <Route path="/detail">
+                <MainWrap>
+                    <div className="contents">
+                        <Section
+                            tempData={tempData[2]}
+                            tempImage={tempImage[2]}
+                        />
                     </div>
-                    <ul className="project-name">
-                        <li>
-                            <a href="#">Career</a>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </li>
-                    </ul>
-                </Section> */}
-            </div>
-        </MainWrap>
+                </MainWrap>
+            </Route>
+        </div>
     );
 };
 

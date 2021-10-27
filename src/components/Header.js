@@ -34,6 +34,8 @@ const Header = () => {
     const menu = [
         { id: 0, title: "ABOUT ME" },
         { id: 1, title: "PROJECT" },
+        { id: 2, title: "three" },
+        { id: 3, title: "four" },
     ];
 
     return (

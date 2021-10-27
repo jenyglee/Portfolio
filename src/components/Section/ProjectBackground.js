@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import sampleImage01 from "./../../images/sampleImage01.jpeg";
-import sampleImage02 from "./../../images/sampleImage02.jpeg";
-import sampleImage03 from "./../../images/sampleImage03.jpeg";
 
 const Container = styled.article`
     width: 100%;

@@ -14,7 +14,7 @@ const ProjectItem = styled.a`
     display: block;
 `;
 
-const Project = ({ projectTitle, itemEnter }) => {
+const Project = ({ projectTitle, itemEnter, itemLeave }) => {
     return (
         <ProjectName>
             {projectTitle.map((item) => {
@@ -25,7 +25,7 @@ const Project = ({ projectTitle, itemEnter }) => {
                             itemEnter(item.id);
                         }}
                         onMouseLeave={() => {
-                            itemEnter(item.id);
+                            itemLeave(item.id);
                         }}
                         href="#"
                     >

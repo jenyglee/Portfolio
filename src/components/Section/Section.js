@@ -17,17 +17,36 @@ const Section = ({ tempData, tempImage }) => {
     const itemEnter = (id) => {
         const copy = [...projectTitle];
         const copyImage = [...projectImage];
+
         copy[id].isHover = !copy[id].isHover;
         copyImage[id].isShow = !copyImage[id].isShow;
+
         setProjectTitle(copy);
         setProjectImage(copyImage);
+    };
+
+    const itemLeave = (id) => {
+        const copy = [...projectTitle];
+        const copyImage = [...projectImage];
+
+        copy[id].isHover = !copy[id].isHover;
+        copyImage[id].isShow = !copyImage[id].isShow;
+
+        setProjectTitle(copy);
+        setProjectImage(copyImage);
+
+        console.log(copy[id]);
     };
 
     return (
         <SectionContainer>
             <Category img={Cally} />
             <ProjectBackground projectImage={projectImage} />
-            <Project projectTitle={projectTitle} itemEnter={itemEnter} />
+            <Project
+                projectTitle={projectTitle}
+                itemEnter={itemEnter}
+                itemLeave={itemLeave}
+            />
         </SectionContainer>
     );
 };
