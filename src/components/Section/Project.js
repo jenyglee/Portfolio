@@ -15,18 +15,32 @@ const ProjectItem = styled.a`
     display: block;
 `;
 
-const Project = ({ projectTitle, onEnter, onLeave }) => {
+const Project = ({ projectTitle, onEnter, onLeave, sectionId }) => {
+    // console.log(projectTitle);
     return (
         <ProjectName>
-            {projectTitle.map((item) => {
+            {/* <ProjectItem
+                isHover={item.isHover}
+                onMouseEnter={() => {
+                    onEnter(item.id);
+                }}
+                onMouseLeave={() => {
+                    onLeave(item.id);
+                }}
+                href="#"
+            >
+                {item.title}
+            </ProjectItem> */}
+            {projectTitle.map((item, index) => {
                 return (
                     <ProjectItem
+                        key={index}
                         isHover={item.isHover}
                         onMouseEnter={() => {
-                            onEnter(item.id);
+                            onEnter(item.id, sectionId);
                         }}
                         onMouseLeave={() => {
-                            onLeave(item.id);
+                            onLeave(item.id, sectionId);
                         }}
                         href="#"
                     >

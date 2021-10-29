@@ -5,7 +5,7 @@ import Cally from "./../images/cally.png";
 import { Route, Switch, Link } from "react-router-dom";
 import { useState } from "react";
 import { Header, Section } from "./../components";
-import sampleImage00 from "./../images/sampleImage01.jpeg";
+import sampleImage00 from "./../images/sampleImage01.png";
 import sampleImage01 from "./../images/sampleImage02.jpeg";
 import sampleImage02 from "./../images/sampleImage03.jpeg";
 import sampleImage03 from "./../images/sampleImage04.jpeg";
@@ -19,17 +19,25 @@ const MainWrap = styled.main`
     width: 1600px;
     height: 1000px;
     margin: 0 auto;
-    background: ${({ background }) => `url(${background}) no-repeat`};
+    position: relative;
 `;
 
 const StyledImage = styled.img`
-    position: absolute;
+    /* width: 100%; */
+    height: 100%;
+    position: fixed;
     top: 0;
-    left: 0;
-    z-index: 0;
+    right: 0;
+    transition: 0.5s;
+    opacity: ${({ isShow }) => (isShow ? 1 : 0)};
 `;
 
-const projectData = [
+const TitleContainer = styled.article`
+    position: relative;
+    z-index: 1;
+`;
+
+const tempData = [
     [
         { id: 0, title: "Info", isHover: false },
         { id: 1, title: "Ability", isHover: false },
@@ -49,7 +57,7 @@ const projectData = [
     ],
 ];
 
-const projectBackgroundImage = [
+const tempImage = [
     [
         { id: 0, source: sampleImage00, isShow: false },
         { id: 1, source: sampleImage01, isShow: false },
@@ -68,45 +76,76 @@ const projectBackgroundImage = [
 ];
 
 const Home = () => {
-    const [background, setBackground] = useState("");
+    const [projectTitle, setProjectTitle] = useState(tempData);
+    const [projectImage, setProjectImage] = useState(tempImage);
+    const [imgKey, setImgKey] = useState();
+    // console.log(projectTitle);
 
-    // ✨ 마우스오버시 배경노출
-    const handleTitleHover = (sectionId, itemId) => {
-        // console.log(sectionId, itemId); 1 1 , 1 2 , 1 3
-        const copy = projectBackgroundImage[sectionId][itemId];
-        setBackground(copy.source);
+    // ✨ 커서 들어오면 이미지 노출
+    const itemEnter = (id, sectionId) => {
+        // console.log("asdnj");
+        const copy = [...projectTitle];
+        const copyImage = [...projectImage];
+
+        copy[sectionId][id].isHover = !copy[sectionId][id].isHover;
+        copyImage[sectionId][id].isShow = !copyImage[sectionId][id].isShow;
+
+        setProjectTitle(copy);
+        setProjectImage(copyImage);
+        setImgKey({ id: id, sectionId: sectionId });
     };
 
-    // ✨ 마우스리브시 배경삭제
-    const handleTitleLeave = () => {
-        setBackground("");
+    // ✨ 커서 나가면 이미지 숨김 (노출과 코드가 같음)
+    const itemLeave = (id, sectionId) => {
+        const copy = [...projectTitle];
+        const copyImage = [...projectImage];
+
+        copy[sectionId][id].isHover = !copy[sectionId][id].isHover;
+        copyImage[sectionId][id].isShow = !copyImage[sectionId][id].isShow;
+
+        setProjectTitle(copy);
+        setProjectImage(copyImage);
+        setImgKey({ id: id, sectionId: sectionId });
     };
 
     return (
         <div>
             <Header />
             <Route path="/" exact>
-                <MainWrap background={background}>
+                <MainWrap>
                     <div className="contents">
-                        {projectData.map((item, index) => {
-                            return (
-                                <Section
-                                    projectData={projectData[index]}
-                                    onTitleHover={handleTitleHover}
-                                    onTitleLeave={handleTitleLeave}
-                                    sectionId={index}
-                                    style={{
-                                        zIndex: 1,
-                                    }}
-                                />
-                            );
-                        })}
+                        <TitleContainer>
+                            {projectTitle.map((item, index) => {
+                                return (
+                                    <Section
+                                        itemEnter={itemEnter}
+                                        itemLeave={itemLeave}
+                                        projectData={projectTitle[index]}
+                                        // projectData={projectTitle}
+                                        sectionId={index}
+                                        key={index}
+                                    />
+                                );
+                            })}
+                        </TitleContainer>
+                        {imgKey ? (
+                            <StyledImage
+                                src={
+                                    projectImage[imgKey.sectionId][imgKey.id]
+                                        .source
+                                }
+                                isShow={
+                                    projectImage[imgKey.sectionId][imgKey.id]
+                                        .isShow
+                                }
+                            />
+                        ) : null}
                     </div>
                     {/* <StyledImage src={sampleImage03} alt="이미지" /> */}
                 </MainWrap>
             </Route>
 
-            <Route path="/detail">
+            {/* <Route path="/detail">
                 <MainWrap>
                     <div className="contents">
                         <Section
@@ -115,7 +154,7 @@ const Home = () => {
                         />
                     </div>
                 </MainWrap>
-            </Route>
+            </Route> */}
         </div>
     );
 };
