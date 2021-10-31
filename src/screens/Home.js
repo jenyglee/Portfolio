@@ -16,7 +16,7 @@ import sampleImage07 from "./../images/sampleImage08.jpeg";
 import sampleImage08 from "./../images/sampleImage09.jpeg";
 
 const MainWrap = styled.main`
-    width: 1200px;
+    width: 1600px;
     height: 1000px;
     margin: 0 auto;
     position: relative;

@@ -20,35 +20,18 @@ const OneText = styled.a`
 
 const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
     // textArr : ['i','n','f','o']
-    const [transformX, setTrasnformX] = useState(-100);
-    const [opacity, setOpacity] = useState(0);
-    const [transformXTwo, setTrasnformXTwo] = useState(-100);
-    const [opacityTwo, setOpacityTwo] = useState(0);
-    const [transformXThree, setTrasnformXThree] = useState(-100);
-    const [opacityThree, setOpacityThree] = useState(0);
-
-    // const [letterObj, setLetterObj] = useState([]);
-    // {id: 0, text: 'I', opacity: 0, transformX: -100}
-    // {id: 1, text: 'n', opacity: 0, transformX: -100}
-    // {id: 2, text: 'f', opacity: 0, transformX: -100}
-    // {id: 3, text: 'o', opacity: 0, transformX: -100}
     const [animationTransform, setAnimationTransform] = useState([
-        -100, -100, -100, -100, -100, -100,
+        -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100,
     ]);
     const [animationOpacity, setAnimationOpacity] = useState([
-        0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ]);
     useEffect(() => {
-        // setTrasnformX(0);
-        // setOpacity(0.3);
-        // const copy = [...animationTransform];
-        // copy[0] = 0;
-        // setAnimationTransform(copy);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform[0] = 0;
-            copyOpacity[0] = 0.3;
+            copyOpacity[0] = 1;
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 100);
@@ -56,7 +39,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             [copyTransform[0], copyTransform[1]] = [0, 0];
-            [copyOpacity[0], copyOpacity[1]] = [0.3, 0.3];
+            [copyOpacity[0], copyOpacity[1]] = [1, 1];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 200);
@@ -64,7 +47,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             [copyTransform[0], copyTransform[1], copyTransform[2]] = [0, 0, 0];
-            [copyOpacity[0], copyOpacity[1], copyOpacity[2]] = [0.3, 0.3, 0.3];
+            [copyOpacity[0], copyOpacity[1], copyOpacity[2]] = [1, 1, 1];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 300);
@@ -78,7 +61,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyTransform[3],
             ] = [0, 0, 0, 0];
             [copyOpacity[0], copyOpacity[1], copyOpacity[2], copyOpacity[3]] = [
-                0.3, 0.3, 0.3, 0.3,
+                1, 1, 1, 1,
             ];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
@@ -99,7 +82,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[2],
                 copyOpacity[3],
                 copyOpacity[4],
-            ] = [0.3, 0.3, 0.3, 0.3, 0.3];
+            ] = [1, 1, 1, 1, 1];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 500);
@@ -121,10 +104,150 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[3],
                 copyOpacity[4],
                 copyOpacity[5],
-            ] = [0.3, 0.3, 0.3, 0.3, 0.3, 0.3];
+            ] = [1, 1, 1, 1, 1, 1];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 600);
+        setTimeout(() => {
+            const copyTransform = [...animationTransform];
+            const copyOpacity = [...animationOpacity];
+            [
+                copyTransform[0],
+                copyTransform[1],
+                copyTransform[2],
+                copyTransform[3],
+                copyTransform[4],
+                copyTransform[5],
+                copyTransform[6],
+            ] = [0, 0, 0, 0, 0, 0, 0];
+            [
+                copyOpacity[0],
+                copyOpacity[1],
+                copyOpacity[2],
+                copyOpacity[3],
+                copyOpacity[4],
+                copyOpacity[5],
+                copyOpacity[6],
+            ] = [1, 1, 1, 1, 1, 1, 1];
+            setAnimationTransform(copyTransform);
+            setAnimationOpacity(copyOpacity);
+        }, 700);
+        setTimeout(() => {
+            const copyTransform = [...animationTransform];
+            const copyOpacity = [...animationOpacity];
+            [
+                copyTransform[0],
+                copyTransform[1],
+                copyTransform[2],
+                copyTransform[3],
+                copyTransform[4],
+                copyTransform[5],
+                copyTransform[6],
+                copyTransform[7],
+            ] = [0, 0, 0, 0, 0, 0, 0, 0];
+            [
+                copyOpacity[0],
+                copyOpacity[1],
+                copyOpacity[2],
+                copyOpacity[3],
+                copyOpacity[4],
+                copyOpacity[5],
+                copyOpacity[6],
+                copyOpacity[7],
+            ] = [1, 1, 1, 1, 1, 1, 1, 1];
+            setAnimationTransform(copyTransform);
+            setAnimationOpacity(copyOpacity);
+        }, 800);
+        setTimeout(() => {
+            const copyTransform = [...animationTransform];
+            const copyOpacity = [...animationOpacity];
+            [
+                copyTransform[0],
+                copyTransform[1],
+                copyTransform[2],
+                copyTransform[3],
+                copyTransform[4],
+                copyTransform[5],
+                copyTransform[6],
+                copyTransform[7],
+                copyTransform[8],
+            ] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            [
+                copyOpacity[0],
+                copyOpacity[1],
+                copyOpacity[2],
+                copyOpacity[3],
+                copyOpacity[4],
+                copyOpacity[5],
+                copyOpacity[6],
+                copyOpacity[7],
+                copyOpacity[8],
+            ] = [1, 1, 1, 1, 1, 1, 1, 1, 1];
+            setAnimationTransform(copyTransform);
+            setAnimationOpacity(copyOpacity);
+        }, 900);
+        setTimeout(() => {
+            const copyTransform = [...animationTransform];
+            const copyOpacity = [...animationOpacity];
+            [
+                copyTransform[0],
+                copyTransform[1],
+                copyTransform[2],
+                copyTransform[3],
+                copyTransform[4],
+                copyTransform[5],
+                copyTransform[6],
+                copyTransform[7],
+                copyTransform[8],
+                copyTransform[9],
+            ] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            [
+                copyOpacity[0],
+                copyOpacity[1],
+                copyOpacity[2],
+                copyOpacity[3],
+                copyOpacity[4],
+                copyOpacity[5],
+                copyOpacity[6],
+                copyOpacity[7],
+                copyOpacity[8],
+                copyOpacity[9],
+            ] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            setAnimationTransform(copyTransform);
+            setAnimationOpacity(copyOpacity);
+        }, 1000);
+        setTimeout(() => {
+            const copyTransform = [...animationTransform];
+            const copyOpacity = [...animationOpacity];
+            [
+                copyTransform[0],
+                copyTransform[1],
+                copyTransform[2],
+                copyTransform[3],
+                copyTransform[4],
+                copyTransform[5],
+                copyTransform[6],
+                copyTransform[7],
+                copyTransform[8],
+                copyTransform[9],
+                copyTransform[10],
+            ] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            [
+                copyOpacity[0],
+                copyOpacity[1],
+                copyOpacity[2],
+                copyOpacity[3],
+                copyOpacity[4],
+                copyOpacity[5],
+                copyOpacity[6],
+                copyOpacity[7],
+                copyOpacity[8],
+                copyOpacity[9],
+                copyOpacity[10],
+            ] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            setAnimationTransform(copyTransform);
+            setAnimationOpacity(copyOpacity);
+        }, 1100);
     }, []);
 
     // useEffect(() => {
@@ -166,63 +289,92 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
 
             <OneText
                 style={{
-                    // left: transformX,
-                    // opacity: opacity,
-                    left: animationTransform[5],
-                    opacity: animationOpacity[5],
+                    left: animationTransform[10],
+                    opacity: animationOpacity[10],
                 }}
             >
                 {textArr[0]}
             </OneText>
             <OneText
                 style={{
-                    // left: transformX,
-                    // opacity: opacity,
-                    left: animationTransform[4],
-                    opacity: animationOpacity[4],
+                    left: animationTransform[9],
+                    opacity: animationOpacity[9],
                 }}
             >
                 {textArr[1]}
             </OneText>
             <OneText
                 style={{
-                    // left: transformX,
-                    // opacity: opacity,
-                    left: animationTransform[3],
-                    opacity: animationOpacity[3],
+                    left: animationTransform[8],
+                    opacity: animationOpacity[8],
                 }}
             >
                 {textArr[2]}
             </OneText>
             <OneText
                 style={{
-                    // left: transformX,
-                    // opacity: opacity,
-                    left: animationTransform[2],
-                    opacity: animationOpacity[2],
+                    left: animationTransform[7],
+                    opacity: animationOpacity[7],
                 }}
             >
                 {textArr[3]}
             </OneText>
             <OneText
                 style={{
-                    // left: transformX,
-                    // opacity: opacity,
-                    left: animationTransform[1],
-                    opacity: animationOpacity[1],
+                    left: animationTransform[6],
+                    opacity: animationOpacity[6],
                 }}
             >
                 {textArr[4]}
             </OneText>
             <OneText
                 style={{
-                    // left: transformX,
-                    // opacity: opacity,
+                    left: animationTransform[5],
+                    opacity: animationOpacity[5],
+                }}
+            >
+                {textArr[5]}
+            </OneText>
+            {/* 🍎 */}
+            <OneText
+                style={{
+                    left: animationTransform[4],
+                    opacity: animationOpacity[4],
+                }}
+            >
+                {textArr[6]}
+            </OneText>
+            <OneText
+                style={{
+                    left: animationTransform[3],
+                    opacity: animationOpacity[3],
+                }}
+            >
+                {textArr[7]}
+            </OneText>
+            <OneText
+                style={{
+                    left: animationTransform[2],
+                    opacity: animationOpacity[2],
+                }}
+            >
+                {textArr[8]}
+            </OneText>
+            <OneText
+                style={{
+                    left: animationTransform[1],
+                    opacity: animationOpacity[1],
+                }}
+            >
+                {textArr[9]}
+            </OneText>
+            <OneText
+                style={{
                     left: animationTransform[0],
                     opacity: animationOpacity[0],
                 }}
             >
-                {textArr[5]}
+                {textArr[10]}
             </OneText>
         </ProjectName>
     );
