@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Logo from "./../images/logo.png";
 import Cally from "./../images/cally.png";
@@ -16,7 +16,7 @@ import sampleImage07 from "./../images/sampleImage08.jpeg";
 import sampleImage08 from "./../images/sampleImage09.jpeg";
 
 const MainWrap = styled.main`
-    width: 1600px;
+    width: 1200px;
     height: 1000px;
     margin: 0 auto;
     position: relative;
@@ -80,6 +80,9 @@ const Home = () => {
     const [projectImage, setProjectImage] = useState(tempImage);
     const [imgKey, setImgKey] = useState();
     // console.log(projectTitle);
+    useEffect(() => {
+        console.log("메인랜더링2");
+    });
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
@@ -120,7 +123,7 @@ const Home = () => {
                                     <Section
                                         itemEnter={itemEnter}
                                         itemLeave={itemLeave}
-                                        projectData={projectTitle[index]}
+                                        projectTitle={projectTitle[index]}
                                         // projectData={projectTitle}
                                         sectionId={index}
                                         key={index}
@@ -145,16 +148,11 @@ const Home = () => {
                 </MainWrap>
             </Route>
 
-            {/* <Route path="/detail">
+            <Route path="/detail">
                 <MainWrap>
-                    <div className="contents">
-                        <Section
-                            projectData={projectData[2]}
-                            projectBackgroundImage={projectBackgroundImage[2]}
-                        />
-                    </div>
+                    <div className="contents">ㅁㄴ암너아</div>
                 </MainWrap>
-            </Route> */}
+            </Route>
         </div>
     );
 };

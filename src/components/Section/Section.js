@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Cally from "./../../images/cally.png";
 import Category from "./Category";
@@ -8,19 +8,33 @@ const SectionContainer = styled.section`
     width: 50%;
 `;
 
-const Section = ({ projectData, sectionId, itemEnter, itemLeave }) => {
-    const [projectTitle, setProjectTitle] = useState(projectData);
-    // console.log(projectTitle);
+// projectTitle = projectTitle[각 섹션]
+const Section = ({ projectTitle, sectionId, itemEnter, itemLeave }) => {
+    const titleNameArr = [];
+    projectTitle.map((item) => {
+        // projectTitle[0].title.split(""); 👉 ['i','n','f','o']
+        // projectTitle[1].title.split(""); 👉 ['A','b','i','l','i','t','y']
+        const arr = item.title.split("");
+        titleNameArr.push(arr);
+        // [['i','n','f','o'],['A','b','i','l','i','t','y'],[...]]
+    });
+    // useEffect(() => {
+    // }, []);
 
     return (
         <SectionContainer>
             <Category img={Cally} />
-            <Project
-                projectTitle={projectTitle}
-                onEnter={itemEnter}
-                onLeave={itemLeave}
-                sectionId={sectionId}
-            />
+            {titleNameArr.map((title, index) => {
+                return (
+                    <Project
+                        projectTitle={projectTitle[index]}
+                        textArr={title}
+                        onEnter={itemEnter}
+                        onLeave={itemLeave}
+                        sectionId={sectionId}
+                    />
+                );
+            })}
         </SectionContainer>
     );
 };
