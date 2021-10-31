@@ -4,7 +4,13 @@ import Logo from "./../images/logo.png";
 import Cally from "./../images/cally.png";
 import { Route, Switch, Link } from "react-router-dom";
 import { useState } from "react";
-import { Header, Section } from "./../components";
+import {
+    BgComponent01,
+    BgComponent02,
+    BgComponent03,
+    Header,
+    Section,
+} from "./../components";
 import sampleImage00 from "./../images/sampleImage01.png";
 import sampleImage01 from "./../images/sampleImage02.jpeg";
 import sampleImage02 from "./../images/sampleImage03.jpeg";
@@ -16,21 +22,21 @@ import sampleImage07 from "./../images/sampleImage08.jpeg";
 import sampleImage08 from "./../images/sampleImage09.jpeg";
 
 const MainWrap = styled.main`
-    width: 1600px;
+    width: 1300px;
     height: 1000px;
     margin: 0 auto;
     position: relative;
 `;
 
-const StyledImage = styled.img`
-    /* width: 100%; */
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    transition: 0.5s;
-    opacity: ${({ isShow }) => (isShow ? 1 : 0)};
-`;
+// const StyledImage = styled.img`
+//     /* width: 100%; */
+//     height: 100%;
+//     position: fixed;
+//     bottom: 0;
+//     right: 0;
+//     transition: 0.5s;
+//     opacity: ${({ isShow }) => (isShow ? 1 : 0)};
+// `;
 
 const TitleContainer = styled.article`
     position: relative;
@@ -79,14 +85,9 @@ const Home = () => {
     const [projectTitle, setProjectTitle] = useState(tempData);
     const [projectImage, setProjectImage] = useState(tempImage);
     const [imgKey, setImgKey] = useState();
-    // console.log(projectTitle);
-    useEffect(() => {
-        console.log("메인랜더링2");
-    });
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
-        // console.log("asdnj");
         const copy = [...projectTitle];
         const copyImage = [...projectImage];
 
@@ -132,19 +133,29 @@ const Home = () => {
                             })}
                         </TitleContainer>
                         {imgKey ? (
-                            <StyledImage
-                                src={
-                                    projectImage[imgKey.sectionId][imgKey.id]
-                                        .source
-                                }
-                                isShow={
-                                    projectImage[imgKey.sectionId][imgKey.id]
-                                        .isShow
-                                }
-                            />
+                            // <StyledImage
+                            //     src={
+                            //         projectImage[imgKey.sectionId][imgKey.id]
+                            //             .source
+                            //     }
+                            //     isShow={
+                            //         projectImage[imgKey.sectionId][imgKey.id]
+                            //             .isShow
+                            //     }
+                            // />
+                            <>
+                                <BgComponent01
+                                    isShow={projectImage[0][0].isShow}
+                                />
+                                <BgComponent02
+                                    isShow={projectImage[0][1].isShow}
+                                />
+                                <BgComponent03
+                                    isShow={projectImage[0][2].isShow}
+                                />
+                            </>
                         ) : null}
                     </div>
-                    {/* <StyledImage src={sampleImage03} alt="이미지" /> */}
                 </MainWrap>
             </Route>
 

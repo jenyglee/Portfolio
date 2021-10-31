@@ -3,16 +3,16 @@ import styled from "styled-components";
 
 const ProjectName = styled.a`
     font-family: "BLUDHAVEN";
-    opacity: 1;
-    transition: 0.5;
+    transition: 0.3;
     z-index: 1;
     display: block;
     position: relative;
+    opacity: 1;
 `;
 
 const OneText = styled.a`
     height: 100px;
-    font-size: 160px;
+    font-size: 130px;
     opacity: ${({ isHover }) => (isHover ? "1" : "0.3")};
     transition: 1s;
     position: relative;
@@ -26,12 +26,13 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
     const [animationOpacity, setAnimationOpacity] = useState([
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ]);
+
     useEffect(() => {
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform[0] = 0;
-            copyOpacity[0] = 1;
+            copyOpacity[0] = 0.4;
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 100);
@@ -39,7 +40,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             [copyTransform[0], copyTransform[1]] = [0, 0];
-            [copyOpacity[0], copyOpacity[1]] = [1, 1];
+            [copyOpacity[0], copyOpacity[1]] = [0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 200);
@@ -47,7 +48,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             [copyTransform[0], copyTransform[1], copyTransform[2]] = [0, 0, 0];
-            [copyOpacity[0], copyOpacity[1], copyOpacity[2]] = [1, 1, 1];
+            [copyOpacity[0], copyOpacity[1], copyOpacity[2]] = [0.4, 0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 300);
@@ -61,7 +62,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyTransform[3],
             ] = [0, 0, 0, 0];
             [copyOpacity[0], copyOpacity[1], copyOpacity[2], copyOpacity[3]] = [
-                1, 1, 1, 1,
+                0.4, 0.4, 0.4, 0.4,
             ];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
@@ -82,7 +83,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[2],
                 copyOpacity[3],
                 copyOpacity[4],
-            ] = [1, 1, 1, 1, 1];
+            ] = [0.4, 0.4, 0.4, 0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 500);
@@ -104,7 +105,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[3],
                 copyOpacity[4],
                 copyOpacity[5],
-            ] = [1, 1, 1, 1, 1, 1];
+            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 600);
@@ -128,7 +129,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[4],
                 copyOpacity[5],
                 copyOpacity[6],
-            ] = [1, 1, 1, 1, 1, 1, 1];
+            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 700);
@@ -154,7 +155,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[5],
                 copyOpacity[6],
                 copyOpacity[7],
-            ] = [1, 1, 1, 1, 1, 1, 1, 1];
+            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 800);
@@ -182,7 +183,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[6],
                 copyOpacity[7],
                 copyOpacity[8],
-            ] = [1, 1, 1, 1, 1, 1, 1, 1, 1];
+            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 900);
@@ -212,7 +213,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[7],
                 copyOpacity[8],
                 copyOpacity[9],
-            ] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1000);
@@ -244,21 +245,26 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 copyOpacity[8],
                 copyOpacity[9],
                 copyOpacity[10],
-            ] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1100);
     }, []);
 
-    // useEffect(() => {
-    //     projectTitle[0].isHover ? setOpacity(1) : setOpacity(0.3);
-    //     projectTitle[1].isHover ? setOpacityTwo(1) : setOpacityTwo(0.3);
-    //     projectTitle[2].isHover ? setOpacityThree(1) : setOpacityThree(0.3);
-    // }, [
-    //     projectTitle[0].isHover,
-    //     projectTitle[1].isHover,
-    //     projectTitle[2].isHover,
-    // ]);
+    useEffect(() => {
+        // console.log("useEffect!");
+        projectTitle.isHover
+            ? setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+            : setAnimationOpacity([
+                  0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
+              ]);
+        // projectTitle[1].isHover ? setOpacityTwo(1) : setOpacityTwo(0.3);
+        // projectTitle[2].isHover ? setOpacityThree(1) : setOpacityThree(0.3);
+    }, [
+        projectTitle.isHover,
+        // projectTitle[1].isHover,
+        // projectTitle[2].isHover,
+    ]);
 
     return (
         <ProjectName

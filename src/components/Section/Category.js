@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 // import Cally from "./../../images/cally.png";
 
@@ -6,6 +7,9 @@ const CategoryContainer = styled.div`
     align-items: center;
     margin-top: 150px;
     margin-bottom: 20px;
+    position: relative;
+    bottom: -50px;
+    transition: 1s;
 `;
 
 const CategoryText = styled.p`
@@ -18,8 +22,22 @@ const CategoryImage = styled.img`
 `;
 
 const Category = ({ img }) => {
+    const [opacity, setOpacity] = useState(0);
+    const [tranformY, setTransformY] = useState(-50);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setOpacity(1);
+            setTransformY(0);
+        }, 1000);
+    }, []);
     return (
-        <CategoryContainer>
+        <CategoryContainer
+            style={{
+                opacity: opacity,
+                bottom: tranformY,
+            }}
+        >
             <CategoryText>COLLECTION</CategoryText>
             <CategoryImage src={img} art="logo" />
         </CategoryContainer>
