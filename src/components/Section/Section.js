@@ -5,7 +5,7 @@ import Category from "./Category";
 import Project from "./Project";
 
 const SectionContainer = styled.section`
-    width: 50%;
+    /* width: ; */
 `;
 
 // projectTitle = projectTitle[각 섹션]

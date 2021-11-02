@@ -8,35 +8,17 @@ import {
     BgComponent01,
     BgComponent02,
     BgComponent03,
+    BgComponent04,
     Header,
     Section,
 } from "./../components";
-import sampleImage00 from "./../images/sampleImage01.png";
-import sampleImage01 from "./../images/sampleImage02.jpeg";
-import sampleImage02 from "./../images/sampleImage03.jpeg";
-import sampleImage03 from "./../images/sampleImage04.jpeg";
-import sampleImage04 from "./../images/sampleImage05.jpeg";
-import sampleImage05 from "./../images/sampleImage06.jpeg";
-import sampleImage06 from "./../images/sampleImage07.jpeg";
-import sampleImage07 from "./../images/sampleImage08.jpeg";
-import sampleImage08 from "./../images/sampleImage09.jpeg";
+import Body from "./../components/body";
 
 const MainWrap = styled.main`
-    width: 1300px;
-    height: 1000px;
+    width: 1200px;
     margin: 0 auto;
     position: relative;
 `;
-
-// const StyledImage = styled.img`
-//     /* width: 100%; */
-//     height: 100%;
-//     position: fixed;
-//     bottom: 0;
-//     right: 0;
-//     transition: 0.5s;
-//     opacity: ${({ isShow }) => (isShow ? 1 : 0)};
-// `;
 
 const TitleContainer = styled.article`
     position: relative;
@@ -65,19 +47,19 @@ const tempData = [
 
 const tempImage = [
     [
-        { id: 0, source: sampleImage00, isShow: false },
-        { id: 1, source: sampleImage01, isShow: false },
-        { id: 2, source: sampleImage02, isShow: false },
+        { id: 0, isShow: false },
+        { id: 1, isShow: false },
+        { id: 2, isShow: false },
     ],
     [
-        { id: 0, source: sampleImage03, isShow: false },
-        { id: 1, source: sampleImage04, isShow: false },
-        { id: 2, source: sampleImage05, isShow: false },
+        { id: 0, isShow: false },
+        { id: 1, isShow: false },
+        { id: 2, isShow: false },
     ],
     [
-        { id: 0, source: sampleImage06, isShow: false },
-        { id: 1, source: sampleImage07, isShow: false },
-        { id: 2, source: sampleImage08, isShow: false },
+        { id: 0, isShow: false },
+        { id: 1, isShow: false },
+        { id: 2, isShow: false },
     ],
 ];
 
@@ -153,6 +135,19 @@ const Home = () => {
                                 <BgComponent03
                                     isShow={projectImage[0][2].isShow}
                                 />
+                                <p
+                                    style={{
+                                        position: "fixed",
+                                        right: 300,
+                                        top: 300,
+                                        fontSize: 50,
+                                        opacity: projectImage[1][0].isShow
+                                            ? 1
+                                            : 0,
+                                    }}
+                                >
+                                    asdasdqwrq
+                                </p>
                             </>
                         ) : null}
                     </div>

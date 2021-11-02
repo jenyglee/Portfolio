@@ -14,7 +14,8 @@ const CategoryContainer = styled.div`
 
 const CategoryText = styled.p`
     font-weight: bold;
-    letter-spacing: 8px;
+    font-size: 12px;
+    letter-spacing: 5px;
 `;
 
 const CategoryImage = styled.img`

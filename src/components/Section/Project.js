@@ -5,20 +5,71 @@ const ProjectName = styled.a`
     font-family: "BLUDHAVEN";
     transition: 0.3;
     z-index: 1;
-    display: block;
+    display: flex;
     position: relative;
     opacity: 1;
+    margin-bottom: 30px;
 `;
 
-const OneText = styled.a`
+const OneText = styled.span`
     height: 100px;
-    font-size: 130px;
-    opacity: ${({ isHover }) => (isHover ? "1" : "0.3")};
+    font-size: 160px;
     transition: 1s;
     position: relative;
+    left: ${({ animationTransform }) => animationTransform}px;
+    opacity: ${({ animationOpacity }) => animationOpacity};
+    @media ${({ theme }) => theme.tablet} {
+        font-size: 120px;
+        opacity: 1;
+    }
+`;
+
+const BtnWrap = styled.div`
+    width: ${({ isHover }) => (isHover ? 74 : 30)}px;
+    height: 30px;
+    border-radius: 50px;
+    border: ${({ isHover, theme }) =>
+        `1px solid ${isHover ? theme.btnBackground : theme.btnStroke}`};
+    display: block;
+    transition: 0.5s;
+    background-color: ${({ isHover, theme }) =>
+        isHover ? theme.btnBackground : null};
+    display: flex;
+    align-items: center;
+`;
+const BtnArrow = styled.span`
+    width: 10px;
+    height: 10px;
+    display: block;
+    transition: 0.5s;
+    border-top: 0 solid transparent;
+    border-bottom: ${({ isHover, theme }) =>
+        `12px solid ${isHover ? theme.btnArrowHover : theme.btnBackground}`};
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    margin-bottom: 1px;
+    margin-left: 7px;
+    margin-right: 5px;
+    transform: ${({ isHover }) => `rotate(${isHover ? 90 : 0}deg)`};
+`;
+
+const BtnTextWrap = styled.div`
+    transition: 0.5s;
+    width: ${({ isHover }) => (isHover ? 100 : 0)}px;
+    overflow: hidden;
+`;
+
+const BtnText = styled.p`
+    font-family: sans-serif;
+    font-size: 16px;
+    color: ${({ theme }) => theme.btnText};
+    padding-top: 2px;
 `;
 
 const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
+    const [isPcBreakPoint, setIsPcBreakPoint] = useState(false);
+    console.log(isPcBreakPoint);
+
     // textArr : ['i','n','f','o']
     const [animationTransform, setAnimationTransform] = useState([
         -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100,
@@ -251,6 +302,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
         }, 1100);
     }, []);
 
+    //  ✨ 마우스 호버시 투명도 1로 변경
     useEffect(() => {
         // console.log("useEffect!");
         projectTitle.isHover
@@ -258,13 +310,14 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
             : setAnimationOpacity([
                   0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
               ]);
-        // projectTitle[1].isHover ? setOpacityTwo(1) : setOpacityTwo(0.3);
-        // projectTitle[2].isHover ? setOpacityThree(1) : setOpacityThree(0.3);
-    }, [
-        projectTitle.isHover,
-        // projectTitle[1].isHover,
-        // projectTitle[2].isHover,
-    ]);
+    }, [projectTitle.isHover]);
+    useEffect(() => {
+        if (window.innerWidth < 1200) {
+            setIsPcBreakPoint(true);
+        } else {
+            setIsPcBreakPoint(false);
+        }
+    }, [window.innerWidth]);
 
     return (
         <ProjectName
@@ -277,111 +330,79 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
             }}
             href="#"
         >
-            {/* {textArr.map((item, index) => {
-                // {id: 0, text: 'I', opacity: 0, transformX: -100}
-                return (
-                    <OneText
-                        style={{
-                            // left: transformX,
-                            // opacity: opacity,
-                            left: animationTransform[0],
-                            opacity: 0.3,
-                        }}
-                    >
-                        {item}
-                    </OneText>
-                );
-            })} */}
-
             <OneText
-                style={{
-                    left: animationTransform[10],
-                    opacity: animationOpacity[10],
-                }}
+                animationTransform={animationTransform[10]}
+                animationOpacity={animationOpacity[10]}
             >
                 {textArr[0]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[9],
-                    opacity: animationOpacity[9],
-                }}
+                animationTransform={animationTransform[9]}
+                animationOpacity={animationOpacity[9]}
             >
                 {textArr[1]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[8],
-                    opacity: animationOpacity[8],
-                }}
+                animationTransform={animationTransform[8]}
+                animationOpacity={animationOpacity[8]}
             >
                 {textArr[2]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[7],
-                    opacity: animationOpacity[7],
-                }}
+                animationTransform={animationTransform[7]}
+                animationOpacity={animationOpacity[7]}
             >
                 {textArr[3]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[6],
-                    opacity: animationOpacity[6],
-                }}
+                animationTransform={animationTransform[6]}
+                animationOpacity={animationOpacity[6]}
             >
                 {textArr[4]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[5],
-                    opacity: animationOpacity[5],
-                }}
+                animationTransform={animationTransform[5]}
+                animationOpacity={animationOpacity[5]}
             >
                 {textArr[5]}
             </OneText>
             {/* 🍎 */}
             <OneText
-                style={{
-                    left: animationTransform[4],
-                    opacity: animationOpacity[4],
-                }}
+                animationTransform={animationTransform[4]}
+                animationOpacity={animationOpacity[4]}
             >
                 {textArr[6]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[3],
-                    opacity: animationOpacity[3],
-                }}
+                animationTransform={animationTransform[3]}
+                animationOpacity={animationOpacity[3]}
             >
                 {textArr[7]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[2],
-                    opacity: animationOpacity[2],
-                }}
+                animationTransform={animationTransform[2]}
+                animationOpacity={animationOpacity[2]}
             >
                 {textArr[8]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[1],
-                    opacity: animationOpacity[1],
-                }}
+                animationTransform={animationTransform[1]}
+                animationOpacity={animationOpacity[1]}
             >
                 {textArr[9]}
             </OneText>
             <OneText
-                style={{
-                    left: animationTransform[0],
-                    opacity: animationOpacity[0],
-                }}
+                animationTransform={animationTransform[0]}
+                animationOpacity={animationOpacity[0]}
             >
                 {textArr[10]}
             </OneText>
+            <BtnWrap isHover={projectTitle.isHover}>
+                <BtnArrow isHover={projectTitle.isHover} />
+                <BtnTextWrap isHover={projectTitle.isHover}>
+                    <BtnText>View</BtnText>
+                </BtnTextWrap>
+            </BtnWrap>
         </ProjectName>
     );
 };
