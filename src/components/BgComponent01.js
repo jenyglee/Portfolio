@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { bgImages01 } from "../imges";
+import { bgImages01 } from "../images";
 
 const ComponentWrap = styled.div`
     position: fixed;

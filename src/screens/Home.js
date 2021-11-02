@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Logo from "./../images/logo.png";
-import Cally from "./../images/cally.png";
 import { Route, Switch, Link } from "react-router-dom";
 import { useState } from "react";
 import {
@@ -12,7 +10,6 @@ import {
     Header,
     Section,
 } from "./../components";
-import Body from "./../components/body";
 
 const MainWrap = styled.main`
     width: 1200px;
@@ -33,9 +30,9 @@ const tempData = [
     ],
 
     [
-        { id: 0, title: "two-1", isHover: false },
-        { id: 1, title: "two-2", isHover: false },
-        { id: 2, title: "two-3", isHover: false },
+        { id: 0, title: "Gulp App", isHover: false },
+        // { id: 1, title: "two-2", isHover: false },
+        // { id: 2, title: "two-3", isHover: false },
     ],
 
     [
@@ -67,6 +64,7 @@ const Home = () => {
     const [projectTitle, setProjectTitle] = useState(tempData);
     const [projectImage, setProjectImage] = useState(tempImage);
     const [imgKey, setImgKey] = useState();
+    const [isPcBreakPoint, setIsPcBreakPoint] = useState(false);
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
@@ -94,6 +92,14 @@ const Home = () => {
         setImgKey({ id: id, sectionId: sectionId });
     };
 
+    useEffect(() => {
+        if (window.innerWidth < 1200) {
+            setIsPcBreakPoint(true);
+        } else {
+            setIsPcBreakPoint(false);
+        }
+    }, [window.innerWidth]);
+
     return (
         <div>
             <Header />
@@ -107,25 +113,14 @@ const Home = () => {
                                         itemEnter={itemEnter}
                                         itemLeave={itemLeave}
                                         projectTitle={projectTitle[index]}
-                                        // projectData={projectTitle}
                                         sectionId={index}
                                         key={index}
                                     />
                                 );
                             })}
                         </TitleContainer>
-                        {imgKey ? (
-                            // <StyledImage
-                            //     src={
-                            //         projectImage[imgKey.sectionId][imgKey.id]
-                            //             .source
-                            //     }
-                            //     isShow={
-                            //         projectImage[imgKey.sectionId][imgKey.id]
-                            //             .isShow
-                            //     }
-                            // />
-                            <>
+                        {imgKey && !isPcBreakPoint ? (
+                            <div>
                                 <BgComponent01
                                     isShow={projectImage[0][0].isShow}
                                 />
@@ -135,20 +130,10 @@ const Home = () => {
                                 <BgComponent03
                                     isShow={projectImage[0][2].isShow}
                                 />
-                                <p
-                                    style={{
-                                        position: "fixed",
-                                        right: 300,
-                                        top: 300,
-                                        fontSize: 50,
-                                        opacity: projectImage[1][0].isShow
-                                            ? 1
-                                            : 0,
-                                    }}
-                                >
-                                    asdasdqwrq
-                                </p>
-                            </>
+                                <BgComponent04
+                                    isShow={projectImage[1][0].isShow}
+                                />
+                            </div>
                         ) : null}
                     </div>
                 </MainWrap>

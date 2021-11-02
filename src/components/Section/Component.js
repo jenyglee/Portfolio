@@ -5,8 +5,8 @@ const Text = styled.p`
     font-size: 40px;
 `;
 
-const Body = () => {
+const Component = () => {
     <Text>asdahksd</Text>;
 };
 
-export default Body;
+export default Component;
