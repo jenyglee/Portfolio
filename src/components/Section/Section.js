@@ -4,12 +4,13 @@ import Cally from "./../../images/cally.png";
 import Category from "./Category";
 import Project from "./Project";
 
+
 const SectionContainer = styled.section`
     /* width: ; */
 `;
 
 // projectTitle = projectTitle[각 섹션]
-const Section = ({ projectTitle, sectionId, itemEnter, itemLeave }) => {
+const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img }) => {
     useEffect(() => {});
     const titleNameArr = [];
     projectTitle.map((item, i) => {
@@ -22,7 +23,7 @@ const Section = ({ projectTitle, sectionId, itemEnter, itemLeave }) => {
 
     return (
         <SectionContainer>
-            <Category img={Cally} />
+            <Category img={img[sectionId]} />
             {titleNameArr.map((title, index) => {
                 return (
                     <Project

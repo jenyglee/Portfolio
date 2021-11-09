@@ -1,11 +1,6 @@
-const Size = {
-    mobile: "320px",
-    tablet: "768px",
-    desktop: "1200px",
-};
-
 const Colors = {
     grey_01: "#D2D2D2",
+    grey_02: "#f5f5f5",
     black: "#000000",
     white: "#ffffff",
 };
@@ -16,7 +11,14 @@ export const theme = {
     btnBackground: Colors.black,
     btnArrowHover: Colors.white,
     btnText: Colors.white,
-    mobile: `(max-width:${Size.mobile})`,
-    tablet: `(max-width:${Size.tablet})`,
-    desktop: `(max-width:${Size.desktop})`,
+
+    // ✨라인
+    line: Colors.grey_02,
+
+    size320: `(max-width:320px)`,
+    size568: `(max-width:568px)`,
+    size768: `(max-width:768px)`,
+    size960: `(max-width:960px)`,
+    size1200: `(max-width:1200px)`,
+    size1440: `(max-width:1440px)`,
 };

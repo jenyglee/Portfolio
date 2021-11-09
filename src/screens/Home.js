@@ -10,9 +10,10 @@ import {
     Header,
     Section,
 } from "./../components";
+import {categoryImages} from "./../images"
 
 const MainWrap = styled.main`
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 `;
@@ -36,9 +37,13 @@ const tempData = [
     ],
 
     [
-        { id: 0, title: "three-1", isHover: false },
-        { id: 1, title: "three-2", isHover: false },
-        { id: 2, title: "three-3", isHover: false },
+        { id: 0, title: "Avn", isHover: false },
+        { id: 1, title: "Musinsa", isHover: false },
+        { id: 2, title: "Kt&g", isHover: false },
+        { id: 3, title: "ConsultKit", isHover: false },
+        { id: 4, title: "Noble", isHover: false },
+        { id: 5, title: "Beotherm", isHover: false },
+        { id: 6, title: "Kyobo", isHover: false },
     ],
 ];
 
@@ -50,13 +55,15 @@ const tempImage = [
     ],
     [
         { id: 0, isShow: false },
-        { id: 1, isShow: false },
-        { id: 2, isShow: false },
     ],
     [
         { id: 0, isShow: false },
         { id: 1, isShow: false },
         { id: 2, isShow: false },
+        { id: 3, isShow: false },
+        { id: 4, isShow: false },
+        { id: 5, isShow: false },
+        { id: 6, isShow: false },
     ],
 ];
 
@@ -114,6 +121,7 @@ const Home = () => {
                                         itemLeave={itemLeave}
                                         projectTitle={projectTitle[index]}
                                         sectionId={index}
+                                        img={categoryImages}
                                         key={index}
                                     />
                                 );

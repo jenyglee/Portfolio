@@ -11,6 +11,15 @@ import bg04Component02 from "./images/bgComponent04/04_02.png";
 import bg04Component03 from "./images/bgComponent04/04_03.png";
 import bg04Component04 from "./images/bgComponent04/04_04.png";
 import bg04Component05 from "./images/bgComponent04/04_05.png";
+import categoryIntroduction from "./images/category_introduction.png"
+import categoryDevelop from "./images/category_develop.png"
+import categoryDesign from "./images/category_design.png"
+
+const categoryImages = [
+    {image : categoryIntroduction},
+    {image : categoryDevelop},
+    {image : categoryDesign},
+]
 
 const bgImages01 = {
     Image01: bg01Component01,
@@ -34,4 +43,4 @@ const bgImages04 = {
     Image05: bg04Component05,
 };
 
-export { bgImages01, bgImages02, bgImages03, bgImages04 };
+export { bgImages01, bgImages02, bgImages03, bgImages04, categoryImages };

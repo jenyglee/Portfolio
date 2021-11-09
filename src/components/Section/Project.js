@@ -9,18 +9,41 @@ const ProjectName = styled.a`
     position: relative;
     opacity: 1;
     margin-bottom: 30px;
+
+    @media ${({ theme }) => theme.size1200} {
+        padding-left: 30px;
+    }
+    @media ${({ theme }) => theme.size320} {
+        margin-bottom: 0;
+    }
 `;
 
 const OneText = styled.span`
-    height: 100px;
+    height: 110px;
     font-size: 160px;
     transition: 1s;
     position: relative;
     left: ${({ animationTransform }) => animationTransform}px;
     opacity: ${({ animationOpacity }) => animationOpacity};
-    @media ${({ theme }) => theme.tablet} {
+    @media ${({ theme }) => theme.size1440} {
+        font-size: 140px;
+    }
+    @media ${({ theme }) => theme.size1200} {
         font-size: 120px;
-        opacity: 1;
+        opacity : 1;
+        height: 90px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        font-size: 100px;
+        height: 70px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        font-size: 80px;
+        height: 50px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        font-size: 60px;
+        height: 40px;
     }
 `;
 
@@ -36,6 +59,10 @@ const BtnWrap = styled.div`
         isHover ? theme.btnBackground : null};
     display: flex;
     align-items: center;
+
+    @media ${({ theme }) => theme.size1200} {
+        display: none;
+    }
 `;
 const BtnArrow = styled.span`
     width: 10px;
@@ -67,9 +94,6 @@ const BtnText = styled.p`
 `;
 
 const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
-    const [isPcBreakPoint, setIsPcBreakPoint] = useState(false);
-    console.log(isPcBreakPoint);
-
     // textArr : ['i','n','f','o']
     const [animationTransform, setAnimationTransform] = useState([
         -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100,
@@ -311,13 +335,6 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                   0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
               ]);
     }, [projectTitle.isHover]);
-    useEffect(() => {
-        if (window.innerWidth < 1200) {
-            setIsPcBreakPoint(true);
-        } else {
-            setIsPcBreakPoint(false);
-        }
-    }, [window.innerWidth]);
 
     return (
         <ProjectName
