@@ -109,8 +109,8 @@ const Home = () => {
 
     return (
         <div>
-            <Header />
             <Route path="/" exact>
+                <Header />
                 <MainWrap>
                     <div className="contents">
                         <TitleContainer>

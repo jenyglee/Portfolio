@@ -20,6 +20,7 @@ const CategoryContainer = styled.div`
     }
     @media ${({ theme }) => theme.size768} {
         margin-top: 70px;
+        margin-bottom: 0;
     }
     @media ${({ theme }) => theme.size568} {
         margin-top: 50px;
@@ -33,11 +34,11 @@ const CategoryText = styled.p`
     margin-right: 10px;
     
     @media ${({theme})=> theme.size1200}{
-        font-size: 20px;
+        font-size: 12px;
     }
     @media ${({theme})=> theme.size960}{
         display: none;
-        font-size: 20px;
+        font-size: 12px;
     }
 `;
 
@@ -46,12 +47,12 @@ const CategoryImage = styled.img`
     height: 43px;
 
     @media ${({theme})=> theme.size960}{
-        width: 80px;
-        font-size: 20px;
+        width: 184px;
+        height: 28px;
     }
     @media ${({theme})=> theme.size768}{
-        width: 60px;
-        font-size: 20px;
+        width: 133px;
+        height: 20px;
     }
 `;
 

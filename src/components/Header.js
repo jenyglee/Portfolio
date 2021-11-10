@@ -2,38 +2,53 @@ import { useState } from "react";
 import styled from "styled-components";
 import CallyIntroduce from "./../images/cally_introduce.png"
 
-const HeaderContainer = styled.header`
-    position: fixed;
-    top: 0;
-    left: 0;
+const FixedContainer = styled.div`
     width: 100%;
-    height: 100px;
+    position: fixed;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 20;
+`
+
+const HeaderContainer = styled.header`
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media ${({ theme }) => theme.size1200} {
+        
+    }
 `;
 
 const LogoWrap = styled.div`
     font-size: 25px;
-    position: absolute;
-    top: 20px;
-    left: 30px;
     font-weight: bold;
+
+    @media ${({ theme }) => theme.size1200} {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+    }
 `;
 
 const Gnb = styled.ul`
     font-family: "Open Sans", sans-serif;
-    width: 20%;
+    width: 27%;
     font-weight: bold;
     justify-content: space-between;
-    font-size: 14px;
-    position: absolute;
-    top: 20px;
-    right: 30px;
     display: flex;
 
     @media ${({ theme }) => theme.size1200} {
         display: none;
     }
 `;
+
+const GnbList = styled.li`
+    font-size: 16px;
+`
 
 const MenuButton = styled.a`
     width: 20px;
@@ -116,16 +131,8 @@ const Header = () => {
     const [isMenuEntered, setIsMenuEntered] = useState(false)
 
     return (
+        <FixedContainer>
         <HeaderContainer>
-            <Gnb>
-                {menu.map((item) => {
-                    return (
-                        <li key={item.id}>
-                            <a href="#">{item.title}</a>
-                        </li>
-                    );
-                })}
-            </Gnb>
             <MenuContainer translateY={isMenuEntered ? "translateY(220px)" : "0"}>
                 {
                     menu.map((item)=>{
@@ -147,12 +154,22 @@ const Header = () => {
             <LogoWrap>
                 <h1>#Jenyglee</h1>
             </LogoWrap>
+            <Gnb>
+                {menu.map((item) => {
+                    return (
+                        <GnbList key={item.id}>
+                            <a href="#">{item.title}</a>
+                        </GnbList>
+                    );
+                })}
+            </Gnb>
             <MenuButton onClick={()=>{setIsMenuEntered(!isMenuEntered)}} href='#' >
                 <MenuLineObj top={isMenuEntered ? `50%` : `0`} rotate={isMenuEntered ? `rotate(45deg)` : `rotate(0)`}/>
                 <MenuLineObj top={`50%`} opacity={isMenuEntered ? 0 : 1}/>
                 <MenuLineObj top={isMenuEntered ? `50%` : `100%`} rotate={isMenuEntered ? `rotate(-45deg)` : `rotate(0)`}/>
             </MenuButton>
         </HeaderContainer>
+        </FixedContainer>
     );
 };
 

@@ -89,38 +89,15 @@ const BgComponent03 = ({ isShow }) => {
                 style={{
                     opacity: objOpacity01,
                 }}
-                right={() => {
-                    if (innerWidth >= 1200 && innerWidth < 1400) {
-                        return 200;
-                    } else if (innerWidth >= 1400) {
-                        return 400;
-                    }
-                }}
+                right={400}
                 transform={objTransform01}
                 isShow={isShow}
             >
-                <Image
-                    src={bgImages03.Image01}
-                    width={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1400) {
-                            return 233 / 2;
-                        } else if (innerWidth >= 1400) {
-                            return 233;
-                        }
-                    }}
-                    height={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1400) {
-                            return 193 / 2;
-                        } else if (innerWidth >= 1400) {
-                            return 193;
-                        }
-                    }}
-                />
+                <Image src={bgImages03.Image01} width={233} height={193} />
             </ComponentWrap>
             <ComponentWrap
                 style={{
                     opacity: objOpacity02,
-                    // right: 837,
                 }}
                 right={837}
                 transform={objTransform02}
@@ -131,7 +108,6 @@ const BgComponent03 = ({ isShow }) => {
             <ComponentWrap
                 style={{
                     opacity: objOpacity03,
-                    // right: 699,
                 }}
                 right={699}
                 transform={objTransform03}
@@ -142,7 +118,6 @@ const BgComponent03 = ({ isShow }) => {
             <ComponentWrap
                 style={{
                     opacity: objOpacity04,
-                    // right: 614,
                 }}
                 right={614}
                 transform={objTransform04}
@@ -153,7 +128,6 @@ const BgComponent03 = ({ isShow }) => {
             <ComponentWrap
                 style={{
                     opacity: objOpacity05,
-                    // right: 367,
                 }}
                 right={367}
                 transform={objTransform05}
@@ -164,7 +138,6 @@ const BgComponent03 = ({ isShow }) => {
             <ComponentWrap
                 style={{
                     opacity: objOpacity06,
-                    // right: 222,
                 }}
                 right={222}
                 transform={objTransform06}
