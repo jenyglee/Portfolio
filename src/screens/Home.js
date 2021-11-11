@@ -7,6 +7,12 @@ import {
     BgComponent02,
     BgComponent03,
     BgComponent04,
+    BgComponent05,
+    BgComponent06,
+    BgComponent07,
+    BgComponent08,
+    BgComponent09,
+    BgComponent10,
     Header,
     Section,
 } from "./../components";
@@ -27,7 +33,7 @@ const tempData = [
     [
         { id: 0, title: "Info", isHover: false },
         { id: 1, title: "Ability", isHover: false },
-        { id: 2, title: "Git & Blog", isHover: false },
+        { id: 2, title: "Github", isHover: false },
     ],
 
     [
@@ -41,9 +47,8 @@ const tempData = [
         { id: 1, title: "Musinsa", isHover: false },
         { id: 2, title: "Kt&g", isHover: false },
         { id: 3, title: "ConsultKit", isHover: false },
-        { id: 4, title: "Noble", isHover: false },
+        { id: 4, title: "Kyobo", isHover: false },
         { id: 5, title: "Beotherm", isHover: false },
-        { id: 6, title: "Kyobo", isHover: false },
     ],
 ];
 
@@ -129,18 +134,16 @@ const Home = () => {
                         </TitleContainer>
                         {imgKey && !isPcBreakPoint ? (
                             <div>
-                                <BgComponent01
-                                    isShow={projectImage[0][0].isShow}
-                                />
-                                <BgComponent02
-                                    isShow={projectImage[0][1].isShow}
-                                />
-                                <BgComponent03
-                                    isShow={projectImage[0][2].isShow}
-                                />
-                                <BgComponent04
-                                    isShow={projectImage[1][0].isShow}
-                                />
+                                <BgComponent01 isShow={projectImage[0][0].isShow} />
+                                <BgComponent02 isShow={projectImage[0][1].isShow} />
+                                <BgComponent03 isShow={projectImage[0][2].isShow} />
+                                <BgComponent04 isShow={projectImage[1][0].isShow} />
+                                <BgComponent05 isShow={projectImage[2][0].isShow} />
+                                <BgComponent06 isShow={projectImage[2][1].isShow} />
+                                <BgComponent07 isShow={projectImage[2][2].isShow} />
+                                <BgComponent08 isShow={projectImage[2][3].isShow} />
+                                <BgComponent09 isShow={projectImage[2][4].isShow} />
+                                <BgComponent10 isShow={projectImage[2][5].isShow} />
                             </div>
                         ) : null}
                     </div>

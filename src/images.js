@@ -11,6 +11,14 @@ import bg04Component02 from "./images/bgComponent04/04_02.png";
 import bg04Component03 from "./images/bgComponent04/04_03.png";
 import bg04Component04 from "./images/bgComponent04/04_04.png";
 import bg04Component05 from "./images/bgComponent04/04_05.png";
+import bg05Component01 from "./images/bgComponent05/05_01.png";
+import bg06Component01 from "./images/bgComponent06/06_01.png";
+import bg06Component02 from "./images/bgComponent06/06_02.png";
+import bg07Component01 from "./images/bgComponent07/07_01.png";
+import bg07Component02 from "./images/bgComponent07/07_02.png";
+import bg08Component01 from "./images/bgComponent08/08_01.png";
+import bg09Component01 from "./images/bgComponent09/09_01.png";
+import bg10Component01 from "./images/bgComponent10/10_01.png";
 import categoryIntroduction from "./images/category_introduction.png"
 import categoryDevelop from "./images/category_develop.png"
 import categoryDesign from "./images/category_design.png"
@@ -42,5 +50,25 @@ const bgImages04 = {
     Image04: bg04Component04,
     Image05: bg04Component05,
 };
+const bgImages05 = {
+    Image01: bg05Component01,
+};
+const bgImages06 = {
+    Image01: bg06Component01,
+    Image02: bg06Component02,
+};
+const bgImages07 = {
+    Image01: bg07Component01,
+    Image02: bg07Component02,
+};
+const bgImages08 = {
+    Image01: bg08Component01,
+};
+const bgImages09 = {
+    Image01: bg09Component01,
+};
+const bgImages10 = {
+    Image01: bg10Component01,
+};
 
-export { bgImages01, bgImages02, bgImages03, bgImages04, categoryImages };
+export { bgImages01, bgImages02, bgImages03, bgImages04, bgImages05, bgImages06, bgImages07, bgImages08, bgImages09, bgImages10, categoryImages };
