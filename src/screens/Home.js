@@ -18,6 +18,11 @@ import {
 } from "./../components";
 import {categoryImages} from "./../images"
 
+const Body = styled.main`
+    background-color: ${({theme, isChangedTheme})=> isChangedTheme ? theme.darkThemeBackgroud : theme.whiteThemeBackgroud};
+    transition:0.5s;
+`
+
 const MainWrap = styled.main`
     max-width: 1200px;
     margin: 0 auto;
@@ -77,6 +82,7 @@ const Home = () => {
     const [projectImage, setProjectImage] = useState(tempImage);
     const [imgKey, setImgKey] = useState();
     const [isPcBreakPoint, setIsPcBreakPoint] = useState(false);
+    const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
@@ -89,6 +95,7 @@ const Home = () => {
         setProjectTitle(copy);
         setProjectImage(copyImage);
         setImgKey({ id: id, sectionId: sectionId });
+        changeTheme(copy)
     };
 
     // ✨ 커서 나가면 이미지 숨김 (노출과 코드가 같음)
@@ -102,7 +109,17 @@ const Home = () => {
         setProjectTitle(copy);
         setProjectImage(copyImage);
         setImgKey({ id: id, sectionId: sectionId });
+        changeTheme(copy)
     };
+
+    const changeTheme = (projectTitle) => {
+        if(projectTitle[2][0].isHover){
+            setIsChangedTheme(true);
+        }
+        if(!projectTitle[2][0].isHover){
+            setIsChangedTheme(false);
+        }
+    }
 
     useEffect(() => {
         if (window.innerWidth < 1200) {
@@ -113,9 +130,9 @@ const Home = () => {
     }, [window.innerWidth]);
 
     return (
-        <div>
+        <Body isChangedTheme={isChangedTheme}>
             <Route path="/" exact>
-                <Header />
+                <Header  />
                 <MainWrap>
                     <div className="contents">
                         <TitleContainer>
@@ -128,6 +145,7 @@ const Home = () => {
                                         sectionId={index}
                                         img={categoryImages}
                                         key={index}
+                                        isChangedTheme={isChangedTheme}
                                     />
                                 );
                             })}
@@ -138,7 +156,7 @@ const Home = () => {
                                 <BgComponent02 isShow={projectImage[0][1].isShow} />
                                 <BgComponent03 isShow={projectImage[0][2].isShow} />
                                 <BgComponent04 isShow={projectImage[1][0].isShow} />
-                                <BgComponent05 isShow={projectImage[2][0].isShow} />
+                                <BgComponent05 isShow={projectImage[2][0].isShow} /> {/* AVN 포폴 */}
                                 <BgComponent06 isShow={projectImage[2][1].isShow} />
                                 <BgComponent07 isShow={projectImage[2][2].isShow} />
                                 <BgComponent08 isShow={projectImage[2][3].isShow} />
@@ -155,7 +173,7 @@ const Home = () => {
                     <div className="contents">ㅁㄴ암너아</div>
                 </MainWrap>
             </Route>
-        </div>
+        </Body>
     );
 };
 

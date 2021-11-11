@@ -5,7 +5,7 @@ import styled from "styled-components";
 const CategoryContainer = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 150px;
+    padding-top: 150px;
     margin-bottom: 20px;
     position: relative;
     bottom: -50px;

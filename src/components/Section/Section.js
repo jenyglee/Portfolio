@@ -10,16 +10,17 @@ const SectionContainer = styled.section`
 `;
 
 // projectTitle = projectTitle[각 섹션]
-const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img }) => {
-    useEffect(() => {});
+const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChangedTheme }) => {
+    useEffect(() => {
+    });
+    
     const titleNameArr = [];
-    projectTitle.map((item, i) => {
+    for(let i=0; i<projectTitle.length; i++){
         // projectTitle[0].title.split(""); 👉 ['i','n','f','o']
         // projectTitle[1].title.split(""); 👉 ['A','b','i','l','i','t','y']
-        const arr = item.title.split("");
-        titleNameArr.push(arr);
-        // [['i','n','f','o'],['A','b','i','l','i','t','y'],[...]]
-    });
+        const arr = projectTitle[i].title.split("");
+        titleNameArr.push(arr); // [['i','n','f','o'],['A','b','i','l','i','t','y'],[...]]
+    }
 
     return (
         <SectionContainer>
@@ -32,6 +33,8 @@ const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img }) => {
                         onEnter={itemEnter}
                         onLeave={itemLeave}
                         sectionId={sectionId}
+                        isChangedTheme={isChangedTheme}
+                        key={index}
                     />
                 );
             })}

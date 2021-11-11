@@ -25,6 +25,7 @@ const OneText = styled.span`
     position: relative;
     left: ${({ animationTransform }) => animationTransform}px;
     opacity: ${({ animationOpacity }) => animationOpacity};
+    color: ${({isChangedTheme})=> isChangedTheme ? "#fff" : "#000"};
     @media ${({ theme }) => theme.size1440} {
         font-size: 140px;
     }
@@ -93,7 +94,7 @@ const BtnText = styled.p`
     padding-top: 2px;
 `;
 
-const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
+const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChangedTheme }) => {
     // textArr : ['i','n','f','o']
     const [animationTransform, setAnimationTransform] = useState([
         -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100,
@@ -346,40 +347,47 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
                 onLeave(projectTitle.id, sectionId);
             }}
             href="#"
+            isChangedTheme={isChangedTheme}
         >
             <OneText
                 animationTransform={animationTransform[10]}
                 animationOpacity={animationOpacity[10]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[0]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[9]}
                 animationOpacity={animationOpacity[9]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[1]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[8]}
                 animationOpacity={animationOpacity[8]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[2]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[7]}
                 animationOpacity={animationOpacity[7]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[3]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[6]}
                 animationOpacity={animationOpacity[6]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[4]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[5]}
                 animationOpacity={animationOpacity[5]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[5]}
             </OneText>
@@ -387,30 +395,35 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId }) => {
             <OneText
                 animationTransform={animationTransform[4]}
                 animationOpacity={animationOpacity[4]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[6]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[3]}
                 animationOpacity={animationOpacity[3]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[7]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[2]}
                 animationOpacity={animationOpacity[2]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[8]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[1]}
                 animationOpacity={animationOpacity[1]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[9]}
             </OneText>
             <OneText
                 animationTransform={animationTransform[0]}
                 animationOpacity={animationOpacity[0]}
+                isChangedTheme={isChangedTheme}
             >
                 {textArr[10]}
             </OneText>

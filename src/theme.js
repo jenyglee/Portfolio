@@ -15,6 +15,12 @@ export const theme = {
     // ✨라인
     line: Colors.grey_02,
 
+    // ✨ 다크모드
+    darkThemeBackgroud : Colors.black,
+    darkThemeText : Colors.white,
+    whiteThemeBackgroud : Colors.grey_02,
+    whiteThemeText : Colors.black,
+
     size320: `(max-width:320px)`,
     size568: `(max-width:568px)`,
     size768: `(max-width:768px)`,

@@ -135,12 +135,9 @@ const Header = () => {
         <HeaderContainer>
             <MenuContainer translateY={isMenuEntered ? "translateY(220px)" : "0"}>
                 {
-                    menu.map((item)=>{
-                        if(item.id = 2){
-                            console.log(item.id = 2)
-                        }
+                    menu.map((item, index)=>{
                         return (
-                            <TitleContainer>
+                            <TitleContainer key={index}>
                                 <ButtonArea>
                                     <CallyImg src={CallyIntroduce} />
                                     <MenuTitle>{item.koreanTitle}</MenuTitle>
