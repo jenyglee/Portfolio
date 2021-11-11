@@ -10,10 +10,7 @@ const SectionContainer = styled.section`
 `;
 
 // projectTitle = projectTitle[각 섹션]
-const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChangedTheme }) => {
-    useEffect(() => {
-    });
-    
+const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChangedTheme, isPcBreakPoint }) => {
     const titleNameArr = [];
     for(let i=0; i<projectTitle.length; i++){
         // projectTitle[0].title.split(""); 👉 ['i','n','f','o']
@@ -24,7 +21,11 @@ const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChanged
 
     return (
         <SectionContainer>
-            <Category img={img[sectionId]} />
+            <Category 
+                img={img[sectionId]} //categoryImages[2]
+                isChangedTheme={isChangedTheme}
+                isPcBreakPoint={isPcBreakPoint} 
+            />
             {titleNameArr.map((title, index) => {
                 return (
                     <Project
@@ -34,6 +35,7 @@ const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChanged
                         onLeave={itemLeave}
                         sectionId={sectionId}
                         isChangedTheme={isChangedTheme}
+                        isPcBreakPoint={isPcBreakPoint}
                         key={index}
                     />
                 );

@@ -18,8 +18,14 @@ export const theme = {
     // ✨ 다크모드
     darkThemeBackgroud : Colors.black,
     darkThemeText : Colors.white,
+    darkThemeBtnBackground : Colors.white,
+    darkThemeBtnArrow : Colors.black,
+    darkThemeBtnText : Colors.black,
     whiteThemeBackgroud : Colors.grey_02,
     whiteThemeText : Colors.black,
+    whiteThemeBtnBackground : Colors.black,
+    whiteThemeBtnArrow:Colors.white,
+    whiteThemeBtnText:Colors.white,
 
     size320: `(max-width:320px)`,
     size568: `(max-width:568px)`,

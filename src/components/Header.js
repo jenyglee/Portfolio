@@ -26,6 +26,8 @@ const HeaderContainer = styled.header`
 const LogoWrap = styled.div`
     font-size: 25px;
     font-weight: bold;
+    color: ${({ theme, isChangedTheme, isPcBreakPoint }) => isChangedTheme&&!isPcBreakPoint ? theme.darkThemeText : theme.whiteThemeText};
+    transition: 0.5s;
 
     @media ${({ theme }) => theme.size1200} {
         position: absolute;
@@ -48,6 +50,7 @@ const Gnb = styled.ul`
 
 const GnbList = styled.li`
     font-size: 16px;
+    color: ${({ theme, isChangedTheme, isPcBreakPoint }) => isChangedTheme&&!isPcBreakPoint ? theme.darkThemeText : theme.whiteThemeText};
 `
 
 const MenuButton = styled.a`
@@ -122,50 +125,51 @@ const Line = styled.div`
     display: ${({display}) => display};
 `
 
-const Header = () => {
-    const menu = [
-        { id: 0, title: "INTRODUCE", koreanTitle:"소개" },
-        { id: 1, title: "DEVELOPMENT", koreanTitle:"개발 프로젝트" },
-        { id: 2, title: "DESIGN", koreanTitle:"디자인 프로젝트" },
-    ];
+const menu = [
+    { id: 0, title: "INTRODUCE", koreanTitle:"소개" },
+    { id: 1, title: "DEVELOPMENT", koreanTitle:"개발 프로젝트" },
+    { id: 2, title: "DESIGN", koreanTitle:"디자인 프로젝트" },
+];
+
+const Header = ({ isChangedTheme, isPcBreakPoint }) => {
     const [isMenuEntered, setIsMenuEntered] = useState(false)
 
     return (
         <FixedContainer>
-        <HeaderContainer>
-            <MenuContainer translateY={isMenuEntered ? "translateY(220px)" : "0"}>
-                {
-                    menu.map((item, index)=>{
+            <HeaderContainer>
+                <MenuContainer translateY={isMenuEntered ? "translateY(220px)" : "0"}>
+                    {
+                        menu.map((item, index)=>{
+                            return (
+                                <TitleContainer key={index}>
+                                    <ButtonArea>
+                                        <CallyImg src={CallyIntroduce} />
+                                        <MenuTitle>{item.koreanTitle}</MenuTitle>
+                                    </ButtonArea>
+                                    <Line display={item.id=2 ? "block" : "none"} />
+                                </TitleContainer>
+                            )
+                        })
+                    }
+                </MenuContainer>
+                <LogoWrap isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} >
+                    <h1>#Jenyglee</h1>
+                </LogoWrap>
+                <Gnb>
+                    {menu.map((item) => {
                         return (
-                            <TitleContainer key={index}>
-                                <ButtonArea>
-                                    <CallyImg src={CallyIntroduce} />
-                                    <MenuTitle>{item.koreanTitle}</MenuTitle>
-                                </ButtonArea>
-                                <Line display={item.id=2 ? "block" : "none"} />
-                            </TitleContainer>
-                        )
-                    })
-                }
-            </MenuContainer>
-            <LogoWrap>
-                <h1>#Jenyglee</h1>
-            </LogoWrap>
-            <Gnb>
-                {menu.map((item) => {
-                    return (
-                        <GnbList key={item.id}>
-                            <a href="#">{item.title}</a>
-                        </GnbList>
-                    );
-                })}
-            </Gnb>
-            <MenuButton onClick={()=>{setIsMenuEntered(!isMenuEntered)}} href='#' >
-                <MenuLineObj top={isMenuEntered ? `50%` : `0`} rotate={isMenuEntered ? `rotate(45deg)` : `rotate(0)`}/>
-                <MenuLineObj top={`50%`} opacity={isMenuEntered ? 0 : 1}/>
-                <MenuLineObj top={isMenuEntered ? `50%` : `100%`} rotate={isMenuEntered ? `rotate(-45deg)` : `rotate(0)`}/>
-            </MenuButton>
-        </HeaderContainer>
+                            <GnbList isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} key={item.id}>
+                                <a href="#">{item.title}</a>
+                            </GnbList>
+                        );
+                    })}
+                </Gnb>
+                <MenuButton onClick={()=>{setIsMenuEntered(!isMenuEntered)}} href='#' >
+                    <MenuLineObj top={isMenuEntered ? `50%` : `0`} rotate={isMenuEntered ? `rotate(45deg)` : `rotate(0)`}/>
+                    <MenuLineObj top={`50%`} opacity={isMenuEntered ? 0 : 1}/>
+                    <MenuLineObj top={isMenuEntered ? `50%` : `100%`} rotate={isMenuEntered ? `rotate(-45deg)` : `rotate(0)`}/>
+                </MenuButton>
+            </HeaderContainer>
         </FixedContainer>
     );
 };

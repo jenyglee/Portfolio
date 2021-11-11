@@ -19,7 +19,7 @@ import {
 import {categoryImages} from "./../images"
 
 const Body = styled.main`
-    background-color: ${({theme, isChangedTheme})=> isChangedTheme ? theme.darkThemeBackgroud : theme.whiteThemeBackgroud};
+    background-color: ${({theme, isChangedTheme, isPcBreakPoint})=> isChangedTheme&&!isPcBreakPoint ? theme.darkThemeBackgroud : theme.whiteThemeBackgroud};
     transition:0.5s;
 `
 
@@ -81,7 +81,7 @@ const Home = () => {
     const [projectTitle, setProjectTitle] = useState(tempData);
     const [projectImage, setProjectImage] = useState(tempImage);
     const [imgKey, setImgKey] = useState();
-    const [isPcBreakPoint, setIsPcBreakPoint] = useState(false);
+    const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
 
     // ✨ 커서 들어오면 이미지 노출
@@ -130,9 +130,9 @@ const Home = () => {
     }, [window.innerWidth]);
 
     return (
-        <Body isChangedTheme={isChangedTheme}>
+        <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
             <Route path="/" exact>
-                <Header  />
+                <Header isChangedTheme={isChangedTheme} />
                 <MainWrap>
                     <div className="contents">
                         <TitleContainer>
@@ -146,6 +146,7 @@ const Home = () => {
                                         img={categoryImages}
                                         key={index}
                                         isChangedTheme={isChangedTheme}
+                                        isPcBreakPoint={isPcBreakPoint}
                                     />
                                 );
                             })}

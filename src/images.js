@@ -22,12 +22,17 @@ import bg10Component01 from "./images/bgComponent10/10_01.png";
 import categoryIntroduction from "./images/category_introduction.png"
 import categoryDevelop from "./images/category_develop.png"
 import categoryDesign from "./images/category_design.png"
+import categoryIntroductionW from "./images/category_introduction_w.png"
+import categoryDevelopW from "./images/category_develop_w.png"
+import categoryDesignW from "./images/category_design_w.png"
 
 const categoryImages = [
-    {image : categoryIntroduction},
-    {image : categoryDevelop},
-    {image : categoryDesign},
+    {image : categoryIntroduction, whiteImage : categoryIntroductionW },
+    {image : categoryDevelop, whiteImage : categoryDevelopW},
+    {image : categoryDesign, whiteImage : categoryDesignW},
 ]
+// categoryImages[2].image
+// categoryImages[2].whiteImage
 
 const bgImages01 = {
     Image01: bg01Component01,

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-// import Cally from "./../../images/cally.png";
 
 const CategoryContainer = styled.div`
     display: flex;
@@ -32,6 +31,8 @@ const CategoryText = styled.p`
     font-size: 12px;
     letter-spacing: 5px;
     margin-right: 10px;
+    color: ${({theme, isChangedTheme, isPcBreakPoint}) => isChangedTheme&&!isPcBreakPoint ? theme.darkThemeText : theme.whiteThemeText };
+    transition: 0.5s;
     
     @media ${({theme})=> theme.size1200}{
         font-size: 12px;
@@ -42,9 +43,10 @@ const CategoryText = styled.p`
     }
 `;
 
-const CategoryImage = styled.img`
+const CategoryImageWrap = styled.div`
     width: 285px;
     height: 43px;
+    position: relative;
 
     @media ${({theme})=> theme.size960}{
         width: 184px;
@@ -54,11 +56,22 @@ const CategoryImage = styled.img`
         width: 133px;
         height: 20px;
     }
+`
+
+const CategoryImage = styled.img`
+    width: 100%;
+    opacity: ${({isVisible}) => isVisible ? 1 : 0};
+    transition: 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
 `;
 
-const Category = ({ img }) => {
+const Category = ({ img, isChangedTheme, isPcBreakPoint }) => {
     const [opacity, setOpacity] = useState(0);
     const [tranformY, setTransformY] = useState(-50);
+    const [isVisibleBlackImage, setIsVisibleBlackImage] = useState(true) // 블랙 이미지 노출여부
+    const [isVisibleWhiteImage, setIsVisibleWhiteImage] = useState(true) // 화이트 이미지 노출여부
 
     useEffect(() => {
         setTimeout(() => {
@@ -66,6 +79,17 @@ const Category = ({ img }) => {
             setTransformY(0);
         }, 1000);
     }, []);
+
+    useEffect(()=>{
+        if(isChangedTheme&&!isPcBreakPoint){
+            setIsVisibleWhiteImage(true)
+            setIsVisibleBlackImage(false)
+        }else {
+            setIsVisibleWhiteImage(false)
+            setIsVisibleBlackImage(true)
+        }
+    },[isChangedTheme])
+
     return (
         <CategoryContainer
             style={{
@@ -73,8 +97,11 @@ const Category = ({ img }) => {
                 bottom: tranformY,
             }}
         >
-            <CategoryText>COLLECTION</CategoryText>
-            <CategoryImage src={img.image} art="logo" />
+            <CategoryText isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>COLLECTION</CategoryText>
+            <CategoryImageWrap>
+                <CategoryImage isVisible={isVisibleBlackImage} src={img.image} art="logo" />
+                <CategoryImage isVisible={isVisibleWhiteImage} src={img.whiteImage} art="logo" />
+            </CategoryImageWrap>
         </CategoryContainer>
     );
 };
