@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
+const ProjectNameContainer = styled.div`
+    display: flex;
+    position: relative;
+`
+
 const ProjectName = styled.a`
     font-family: "BLUDHAVEN";
     transition: 0.3;
     z-index: 1;
     display: flex;
+
     position: relative;
     opacity: 1;
     margin-bottom: 30px;
@@ -52,9 +58,7 @@ const BtnWrap = styled.div`
     width: ${({ isHover }) => (isHover ? 74 : 30)}px;
     height: 30px;
     border-radius: 50px;
-    border: ${({ isHover, theme }) =>
-        `1px solid ${isHover ? theme.btnBackground : theme.btnStroke}`};
-    display: block;
+    border: ${({ isHover, theme }) =>`1px solid ${isHover ? theme.btnBackground : theme.btnStroke}`};
     transition: 0.5s;
     background-color: ${({ isHover, theme, isChangedTheme, isPcBreakPoint }) => {
             if(isHover){
@@ -68,6 +72,11 @@ const BtnWrap = styled.div`
     };
     display: flex;
     align-items: center;
+    opacity: ${({btnAnimationOpacity}) => btnAnimationOpacity};
+    transform: ${({btnAnimationTransform}) => `translateY(${btnAnimationTransform}px)`};
+    position: absolute;
+    top:10px;
+    left: 100%;
 
     @media ${({ theme }) => theme.size1200} {
         display: none;
@@ -127,12 +136,10 @@ const BtnText = styled.p`
 
 const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChangedTheme, isPcBreakPoint }) => {
     // textArr : ['i','n','f','o']
-    const [animationTransform, setAnimationTransform] = useState([
-        -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100,
-    ]);
-    const [animationOpacity, setAnimationOpacity] = useState([
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    ]);
+    const [animationTransform, setAnimationTransform] = useState([ -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100 ]);
+    const [animationOpacity, setAnimationOpacity] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    const [btnAnimationTransform, setBtnAnimationTransform] = useState([30])
+    const [btnAnimationOpacity, setBtnAnimationOpacity] = useState([0]);
 
     useEffect(() => {
         setTimeout(() => {
@@ -223,6 +230,10 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1100);
+        setTimeout(() => {
+            setBtnAnimationTransform(0);
+            setBtnAnimationOpacity(1);
+        }, 1400);
     }, []);
 
     //  ✨ 마우스 호버시 투명도 1로 변경
@@ -231,50 +242,56 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
     }, [projectTitle.isHover]);
 
     return (
-        <ProjectName
-            isHover={projectTitle.isHover}
-            onMouseEnter={() => {
-                onEnter(projectTitle.id, sectionId);
-            }}
-            onMouseLeave={() => {
-                onLeave(projectTitle.id, sectionId);
-            }}
-            href="#"
-        >
-            {   
-                // ✨ 한글자 한글자의 움직임이 다른 상태 
-                animationTransform.map((item, index)=>{
-                    return (
-                    <OneText
-                        animationTransform={animationTransform[index]}
-                        animationOpacity={animationOpacity[index]}
+        <ProjectNameContainer>
+            <ProjectName
+                isHover={projectTitle.isHover}
+                onMouseEnter={() => {
+                    onEnter(projectTitle.id, sectionId);
+                }}
+                onMouseLeave={() => {
+                    onLeave(projectTitle.id, sectionId);
+                }}
+                href="#"
+            >
+                {   
+                    // ✨ 한글자 한글자의 움직임이 다른 상태 
+                    animationTransform.map((item, index)=>{
+                        return (
+                        <OneText
+                            animationTransform={animationTransform[index]}
+                            animationOpacity={animationOpacity[index]}
+                            isChangedTheme={isChangedTheme}
+                            isPcBreakPoint={isPcBreakPoint}
+                        >
+                            {textArr[index]}
+                        </OneText>
+                        )
+                    })
+                }
+                
+                {/* ✨ 타이틀 옆에 붙어있는 버튼 */}
+                <BtnWrap 
+                    isHover={projectTitle.isHover}
+                    isChangedTheme={isChangedTheme}
+                    isPcBreakPoint={isPcBreakPoint}
+                    btnAnimationTransform={btnAnimationTransform}
+                    btnAnimationOpacity={btnAnimationOpacity}
+                >
+                    <BtnArrow
+                        isHover={projectTitle.isHover}
+                        isChangedTheme={isChangedTheme}
+                        isPcBreakPoint={isPcBreakPoint}
+                    />
+                    <BtnTextWrap
+                        isHover={projectTitle.isHover}
                         isChangedTheme={isChangedTheme}
                         isPcBreakPoint={isPcBreakPoint}
                     >
-                        {textArr[index]}
-                    </OneText>
-                    )
-                })
-            }
-            <BtnWrap 
-                isHover={projectTitle.isHover}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                <BtnArrow
-                    isHover={projectTitle.isHover}
-                    isChangedTheme={isChangedTheme}
-                    isPcBreakPoint={isPcBreakPoint}
-                />
-                <BtnTextWrap
-                    isHover={projectTitle.isHover}
-                    isChangedTheme={isChangedTheme}
-                    isPcBreakPoint={isPcBreakPoint}
-                >
-                    <BtnText>View</BtnText>
-                </BtnTextWrap>
-            </BtnWrap>
-        </ProjectName>
+                        <BtnText>View</BtnText>
+                    </BtnTextWrap>
+                </BtnWrap>
+            </ProjectName>
+        </ProjectNameContainer>
     );
 };
 

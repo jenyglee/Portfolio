@@ -19,14 +19,17 @@ import {
 import {categoryImages} from "./../images"
 
 const Body = styled.main`
+    height: 100%;
     background-color: ${({theme, isChangedTheme, isPcBreakPoint})=> isChangedTheme&&!isPcBreakPoint ? theme.darkThemeBackgroud : theme.whiteThemeBackgroud};
     transition:0.5s;
+
 `
 
 const MainWrap = styled.main`
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     position: relative;
+    padding-top: 224px;
 `;
 
 const TitleContainer = styled.article`
@@ -43,8 +46,6 @@ const tempData = [
 
     [
         { id: 0, title: "Gulp App", isHover: false },
-        // { id: 1, title: "two-2", isHover: false },
-        // { id: 2, title: "two-3", isHover: false },
     ],
 
     [
@@ -83,13 +84,6 @@ const Home = () => {
     const [imgKey, setImgKey] = useState();
     const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
-    // const [animationTransform, setAnimationTransform] = useState([
-    //     0, 1, 2, 3, 4
-    // ]);
-    // animationTransform.reverse().map((item, index)=>{
-    //     console.log(item, index)
-    // })
-
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
@@ -120,10 +114,10 @@ const Home = () => {
     };
 
     const changeTheme = (projectTitle) => {
-        if(projectTitle[2][0].isHover){
+        if(projectTitle[0][2].isHover || projectTitle[2][0].isHover){
             setIsChangedTheme(true);
-        }
-        if(!projectTitle[2][0].isHover){
+        } 
+        else if(!projectTitle[0][2].isHover || !projectTitle[2][0].isHover){
             setIsChangedTheme(false);
         }
     }
@@ -162,7 +156,7 @@ const Home = () => {
                             <div>
                                 <BgComponent01 isShow={projectImage[0][0].isShow} />
                                 <BgComponent02 isShow={projectImage[0][1].isShow} />
-                                <BgComponent03 isShow={projectImage[0][2].isShow} />
+                                <BgComponent03 isShow={projectImage[0][2].isShow} /> {/* Github 포폴 */}
                                 <BgComponent04 isShow={projectImage[1][0].isShow} />
                                 <BgComponent05 isShow={projectImage[2][0].isShow} /> {/* AVN 포폴 */}
                                 <BgComponent06 isShow={projectImage[2][1].isShow} />

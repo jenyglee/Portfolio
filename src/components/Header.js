@@ -13,7 +13,7 @@ const FixedContainer = styled.div`
 
 const HeaderContainer = styled.header`
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 86px auto 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;

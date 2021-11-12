@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Cally from "./../../images/cally.png";
 import Category from "./Category";
 import Project from "./Project";
 
-
 const SectionContainer = styled.section`
-    /* width: ; */
-`;
+    padding-bottom: 74px;
+`
 
 // projectTitle = projectTitle[각 섹션]
 const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChangedTheme, isPcBreakPoint }) => {
