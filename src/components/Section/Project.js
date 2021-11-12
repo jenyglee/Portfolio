@@ -58,7 +58,7 @@ const BtnWrap = styled.div`
     width: ${({ isHover }) => (isHover ? 74 : 30)}px;
     height: 30px;
     border-radius: 50px;
-    border: ${({ isHover, theme }) =>`1px solid ${isHover ? theme.btnBackground : theme.btnStroke}`};
+    border: ${({ isHover, theme }) =>`1px solid ${isHover ? theme.btnBackground : theme.whiteThemeBtnStroke}`};
     transition: 0.5s;
     background-color: ${({ isHover, theme, isChangedTheme, isPcBreakPoint }) => {
             if(isHover){
@@ -141,6 +141,15 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
     const [btnAnimationTransform, setBtnAnimationTransform] = useState([30])
     const [btnAnimationOpacity, setBtnAnimationOpacity] = useState([0]);
 
+
+    //  ✨ 마우스오버된 것은 투명도 1, 나머지는 0.4
+    useEffect(() => {
+        projectTitle.isHover ? 
+        setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) : 
+        setAnimationOpacity([ 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4 ]);
+    }, [projectTitle.isHover]);
+
+    //  ✨ 한글자씩 나타나는 인터랙션
     useEffect(() => {
         setTimeout(() => {
             const copyTransform = [...animationTransform];
@@ -236,21 +245,12 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
         }, 1400);
     }, []);
 
-    //  ✨ 마우스 호버시 투명도 1로 변경
-    useEffect(() => {
-        projectTitle.isHover ? setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) : setAnimationOpacity([ 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4 ]);
-    }, [projectTitle.isHover]);
-
     return (
         <ProjectNameContainer>
             <ProjectName
                 isHover={projectTitle.isHover}
-                onMouseEnter={() => {
-                    onEnter(projectTitle.id, sectionId);
-                }}
-                onMouseLeave={() => {
-                    onLeave(projectTitle.id, sectionId);
-                }}
+                onMouseEnter={() => {onEnter(projectTitle.id, sectionId);}}
+                onMouseLeave={() => {onLeave(projectTitle.id, sectionId);}}
                 href="#"
             >
                 {   

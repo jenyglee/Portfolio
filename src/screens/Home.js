@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Route, Switch, Link } from "react-router-dom";
+import DetailGulpApp from "./DetailGulpApp";
 import { useState } from "react";
 import {
     BgComponent01,
@@ -132,49 +133,49 @@ const Home = () => {
 
     return (
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
-            <Route path="/" exact>
-                <Header isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} />
-                <MainWrap>
-                    <div className="contents">
-                        <TitleContainer>
-                            {projectTitle.map((item, index) => {
-                                return (
-                                    <Section
-                                        itemEnter={itemEnter}
-                                        itemLeave={itemLeave}
-                                        projectTitle={projectTitle[index]}
-                                        sectionId={index}
-                                        img={categoryImages}
-                                        key={index}
-                                        isChangedTheme={isChangedTheme}
-                                        isPcBreakPoint={isPcBreakPoint}
-                                    />
-                                );
-                            })}
-                        </TitleContainer>
-                        {imgKey && !isPcBreakPoint ? (
-                            <div>
-                                <BgComponent01 isShow={projectImage[0][0].isShow} />
-                                <BgComponent02 isShow={projectImage[0][1].isShow} />
-                                <BgComponent03 isShow={projectImage[0][2].isShow} /> {/* Github 포폴 */}
-                                <BgComponent04 isShow={projectImage[1][0].isShow} />
-                                <BgComponent05 isShow={projectImage[2][0].isShow} /> {/* AVN 포폴 */}
-                                <BgComponent06 isShow={projectImage[2][1].isShow} />
-                                <BgComponent07 isShow={projectImage[2][2].isShow} />
-                                <BgComponent08 isShow={projectImage[2][3].isShow} />
-                                <BgComponent09 isShow={projectImage[2][4].isShow} />
-                                <BgComponent10 isShow={projectImage[2][5].isShow} />
-                            </div>
-                        ) : null}
-                    </div>
-                </MainWrap>
-            </Route>
+            <Header isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} />
+            <Switch>
+                <Route path="/" exact>
+                    <MainWrap>
+                        <div className="contents">
+                            <TitleContainer>
+                                {projectTitle.map((item, index) => {
+                                    return (
+                                        <Section
+                                            itemEnter={itemEnter}
+                                            itemLeave={itemLeave}
+                                            projectTitle={projectTitle[index]}
+                                            sectionId={index}
+                                            img={categoryImages}
+                                            key={index}
+                                            isChangedTheme={isChangedTheme}
+                                            isPcBreakPoint={isPcBreakPoint}
+                                        />
+                                    );
+                                })}
+                            </TitleContainer>
+                            {imgKey && !isPcBreakPoint ? (
+                                <div>
+                                    <BgComponent01 isShow={projectImage[0][0].isShow} />
+                                    <BgComponent02 isShow={projectImage[0][1].isShow} />
+                                    <BgComponent03 isShow={projectImage[0][2].isShow} /> {/* Github 포폴 */}
+                                    <BgComponent04 isShow={projectImage[1][0].isShow} />
+                                    <BgComponent05 isShow={projectImage[2][0].isShow} /> {/* AVN 포폴 */}
+                                    <BgComponent06 isShow={projectImage[2][1].isShow} />
+                                    <BgComponent07 isShow={projectImage[2][2].isShow} />
+                                    <BgComponent08 isShow={projectImage[2][3].isShow} />
+                                    <BgComponent09 isShow={projectImage[2][4].isShow} />
+                                    <BgComponent10 isShow={projectImage[2][5].isShow} />
+                                </div>
+                            ) : null}
+                        </div>
+                    </MainWrap>
+                </Route>
 
-            <Route path="/detail">
-                <MainWrap>
-                    <div className="contents">ㅁㄴ암너아</div>
-                </MainWrap>
-            </Route>
+                <Route path="/detail">
+                    <DetailGulpApp />
+                </Route>
+            </Switch>
         </Body>
     );
 };

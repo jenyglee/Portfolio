@@ -25,6 +25,7 @@ import categoryDesign from "./images/category_design.png"
 import categoryIntroductionW from "./images/category_introduction_w.png"
 import categoryDevelopW from "./images/category_develop_w.png"
 import categoryDesignW from "./images/category_design_w.png"
+import AccordionArrow from "./images/accordionArrow.png"
 
 const categoryImages = [
     {image : categoryIntroduction, whiteImage : categoryIntroductionW },
@@ -76,4 +77,8 @@ const bgImages10 = {
     Image01: bg10Component01,
 };
 
-export { bgImages01, bgImages02, bgImages03, bgImages04, bgImages05, bgImages06, bgImages07, bgImages08, bgImages09, bgImages10, categoryImages };
+const icons = {
+    accordionArrow : AccordionArrow,
+}
+
+export { bgImages01, bgImages02, bgImages03, bgImages04, bgImages05, bgImages06, bgImages07, bgImages08, bgImages09, bgImages10, categoryImages, icons };

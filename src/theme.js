@@ -3,29 +3,35 @@ const Colors = {
     grey_02: "#f5f5f5",
     black: "#000000",
     white: "#ffffff",
+    gulpAppGreen : "#27C47D",
 };
 
 export const theme = {
-    // ✨메인 타이틀 버튼
-    btnStroke: Colors.grey_01,
-    btnBackground: Colors.black,
-    btnArrowHover: Colors.white,
-    btnText: Colors.white,
-
     // ✨라인
     line: Colors.grey_02,
 
-    // ✨ 다크모드
-    darkThemeBackgroud : Colors.black,
-    darkThemeText : Colors.white,
-    darkThemeBtnBackground : Colors.white,
-    darkThemeBtnArrow : Colors.black,
-    darkThemeBtnText : Colors.black,
+    // ✨ 화이트테마
     whiteThemeBackgroud : Colors.grey_02,
     whiteThemeText : Colors.black,
     whiteThemeBtnBackground : Colors.black,
     whiteThemeBtnArrow:Colors.white,
     whiteThemeBtnText:Colors.white,
+    whiteThemeBtnStroke: Colors.grey_01,
+
+    // ✨ 다크테마
+    darkThemeBackgroud : Colors.black,
+    darkThemeText : Colors.white,
+    darkThemeBtnBackground : Colors.white,
+    darkThemeBtnArrow : Colors.black,
+    darkThemeBtnText : Colors.black,
+
+    // ✨ 디테일페이지 공통
+    detailLine : Colors.black,
+    detailWhiteText : Colors.white,
+    detailTagBorder : Colors.grey_01,
+
+    // ✨ GulpApp 포인트컬러
+    gulpAppFrimary : Colors.gulpAppGreen,
 
     size320: `(max-width:320px)`,
     size568: `(max-width:568px)`,
