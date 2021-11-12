@@ -116,7 +116,6 @@ const BtnTextWrap = styled.div`
             }
         }
     }};
-
     overflow: hidden;
 `;
 
@@ -139,221 +138,88 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            copyTransform[0] = 0;
-            copyOpacity[0] = 0.4;
+            copyTransform.splice(10, 1, 0)
+            copyOpacity.splice(10, 1, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 100);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [copyTransform[0], copyTransform[1]] = [0, 0];
-            [copyOpacity[0], copyOpacity[1]] = [0.4, 0.4];
+            copyTransform.splice(9, 2, 0, 0)
+            copyOpacity.splice(9, 2, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 200);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [copyTransform[0], copyTransform[1], copyTransform[2]] = [0, 0, 0];
-            [copyOpacity[0], copyOpacity[1], copyOpacity[2]] = [0.4, 0.4, 0.4];
+            copyTransform.splice(8, 3, 0, 0, 0)
+            copyOpacity.splice(8, 3, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 300);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [
-                copyTransform[0],
-                copyTransform[1],
-                copyTransform[2],
-                copyTransform[3],
-            ] = [0, 0, 0, 0];
-            [copyOpacity[0], copyOpacity[1], copyOpacity[2], copyOpacity[3]] = [
-                0.4, 0.4, 0.4, 0.4,
-            ];
+            copyTransform.splice(7, 4, 0, 0, 0, 0)
+            copyOpacity.splice(7, 4, 0.4, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 400);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [
-                copyTransform[0],
-                copyTransform[1],
-                copyTransform[2],
-                copyTransform[3],
-                copyTransform[4],
-            ] = [0, 0, 0, 0, 0];
-            [
-                copyOpacity[0],
-                copyOpacity[1],
-                copyOpacity[2],
-                copyOpacity[3],
-                copyOpacity[4],
-            ] = [0.4, 0.4, 0.4, 0.4, 0.4];
+            copyTransform.splice(6, 5, 0, 0, 0, 0, 0)
+            copyOpacity.splice(6, 5, 0.4, 0.4, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 500);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [
-                copyTransform[0],
-                copyTransform[1],
-                copyTransform[2],
-                copyTransform[3],
-                copyTransform[4],
-                copyTransform[5],
-            ] = [0, 0, 0, 0, 0, 0];
-            [
-                copyOpacity[0],
-                copyOpacity[1],
-                copyOpacity[2],
-                copyOpacity[3],
-                copyOpacity[4],
-                copyOpacity[5],
-            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
+            copyTransform.splice(5, 6, 0, 0, 0, 0, 0, 0)
+            copyOpacity.splice(5, 6, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 600);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [
-                copyTransform[0],
-                copyTransform[1],
-                copyTransform[2],
-                copyTransform[3],
-                copyTransform[4],
-                copyTransform[5],
-                copyTransform[6],
-            ] = [0, 0, 0, 0, 0, 0, 0];
-            [
-                copyOpacity[0],
-                copyOpacity[1],
-                copyOpacity[2],
-                copyOpacity[3],
-                copyOpacity[4],
-                copyOpacity[5],
-                copyOpacity[6],
-            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
+            copyTransform.splice(4, 7, 0, 0, 0, 0, 0, 0, 0)
+            copyOpacity.splice(4, 7, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 700);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [
-                copyTransform[0],
-                copyTransform[1],
-                copyTransform[2],
-                copyTransform[3],
-                copyTransform[4],
-                copyTransform[5],
-                copyTransform[6],
-                copyTransform[7],
-            ] = [0, 0, 0, 0, 0, 0, 0, 0];
-            [
-                copyOpacity[0],
-                copyOpacity[1],
-                copyOpacity[2],
-                copyOpacity[3],
-                copyOpacity[4],
-                copyOpacity[5],
-                copyOpacity[6],
-                copyOpacity[7],
-            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
+            copyTransform.splice(3, 8, 0, 0, 0, 0, 0, 0, 0, 0)
+            copyOpacity.splice(3, 8, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 800);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [
-                copyTransform[0],
-                copyTransform[1],
-                copyTransform[2],
-                copyTransform[3],
-                copyTransform[4],
-                copyTransform[5],
-                copyTransform[6],
-                copyTransform[7],
-                copyTransform[8],
-            ] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-            [
-                copyOpacity[0],
-                copyOpacity[1],
-                copyOpacity[2],
-                copyOpacity[3],
-                copyOpacity[4],
-                copyOpacity[5],
-                copyOpacity[6],
-                copyOpacity[7],
-                copyOpacity[8],
-            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
+            copyTransform.splice(2, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+            copyOpacity.splice(2, 9, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 900);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [
-                copyTransform[0],
-                copyTransform[1],
-                copyTransform[2],
-                copyTransform[3],
-                copyTransform[4],
-                copyTransform[5],
-                copyTransform[6],
-                copyTransform[7],
-                copyTransform[8],
-                copyTransform[9],
-            ] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-            [
-                copyOpacity[0],
-                copyOpacity[1],
-                copyOpacity[2],
-                copyOpacity[3],
-                copyOpacity[4],
-                copyOpacity[5],
-                copyOpacity[6],
-                copyOpacity[7],
-                copyOpacity[8],
-                copyOpacity[9],
-            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
+            copyTransform.splice(1, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+            copyOpacity.splice(1, 10, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1000);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
-            [
-                copyTransform[0],
-                copyTransform[1],
-                copyTransform[2],
-                copyTransform[3],
-                copyTransform[4],
-                copyTransform[5],
-                copyTransform[6],
-                copyTransform[7],
-                copyTransform[8],
-                copyTransform[9],
-                copyTransform[10],
-            ] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-            [
-                copyOpacity[0],
-                copyOpacity[1],
-                copyOpacity[2],
-                copyOpacity[3],
-                copyOpacity[4],
-                copyOpacity[5],
-                copyOpacity[6],
-                copyOpacity[7],
-                copyOpacity[8],
-                copyOpacity[9],
-                copyOpacity[10],
-            ] = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
+            copyTransform.splice(0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+            copyOpacity.splice(0, 11, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1100);
@@ -361,12 +227,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
 
     //  ✨ 마우스 호버시 투명도 1로 변경
     useEffect(() => {
-        // console.log("useEffect!");
-        projectTitle.isHover
-            ? setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
-            : setAnimationOpacity([
-                  0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
-              ]);
+        projectTitle.isHover ? setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) : setAnimationOpacity([ 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4 ]);
     }, [projectTitle.isHover]);
 
     return (
@@ -380,95 +241,21 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             }}
             href="#"
         >
-            <OneText
-                animationTransform={animationTransform[10]}
-                animationOpacity={animationOpacity[10]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[0]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[9]}
-                animationOpacity={animationOpacity[9]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[1]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[8]}
-                animationOpacity={animationOpacity[8]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[2]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[7]}
-                animationOpacity={animationOpacity[7]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[3]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[6]}
-                animationOpacity={animationOpacity[6]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[4]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[5]}
-                animationOpacity={animationOpacity[5]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[5]}
-            </OneText>
-            {/* 🍎 */}
-            <OneText
-                animationTransform={animationTransform[4]}
-                animationOpacity={animationOpacity[4]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[6]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[3]}
-                animationOpacity={animationOpacity[3]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[7]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[2]}
-                animationOpacity={animationOpacity[2]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[8]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[1]}
-                animationOpacity={animationOpacity[1]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[9]}
-            </OneText>
-            <OneText
-                animationTransform={animationTransform[0]}
-                animationOpacity={animationOpacity[0]}
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
-                {textArr[10]}
-            </OneText>
+            {   
+                // ✨ 한글자 한글자의 움직임이 다른 상태 
+                animationTransform.map((item, index)=>{
+                    return (
+                    <OneText
+                        animationTransform={animationTransform[index]}
+                        animationOpacity={animationOpacity[index]}
+                        isChangedTheme={isChangedTheme}
+                        isPcBreakPoint={isPcBreakPoint}
+                    >
+                        {textArr[index]}
+                    </OneText>
+                    )
+                })
+            }
             <BtnWrap 
                 isHover={projectTitle.isHover}
                 isChangedTheme={isChangedTheme}

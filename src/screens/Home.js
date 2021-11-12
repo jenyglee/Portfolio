@@ -83,6 +83,13 @@ const Home = () => {
     const [imgKey, setImgKey] = useState();
     const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
+    // const [animationTransform, setAnimationTransform] = useState([
+    //     0, 1, 2, 3, 4
+    // ]);
+    // animationTransform.reverse().map((item, index)=>{
+    //     console.log(item, index)
+    // })
+
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
@@ -132,7 +139,7 @@ const Home = () => {
     return (
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
             <Route path="/" exact>
-                <Header isChangedTheme={isChangedTheme} />
+                <Header isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} />
                 <MainWrap>
                     <div className="contents">
                         <TitleContainer>
