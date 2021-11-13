@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { icons } from '../../images'
-import Detail01 from "./../detailProject/glupApp/Detail01"
+import CommonDetail from "./glupApp/CommonDetail"
 
 
 const AccordionWrap = styled.section`
@@ -38,6 +38,7 @@ const ArrowImageWrap = styled.div`
 const ArrowImage = styled.img`
     width: 100%;
     height: 100%;
+    transform: ${({isVisibleDetail})=> isVisibleDetail ? `rotate(180deg)` : `rotate(0deg)`};
 `
 
 const Line = styled.div`
@@ -45,22 +46,22 @@ const Line = styled.div`
     height: 2px;
     background-color: ${({theme})=> theme.detailLine};
 `
-const Accordion = ({}) => {
-    const [isVisibleDetail01, setIsVisibleDetail01] = useState(false)
+const Accordion = ({number, title, detailNumber}) => {
+    const [isVisibleDetail, setIsVisibleDetail] = useState(false)
     return (
     <AccordionWrap>
         <BtnWrap onClick={()=>{
-            setIsVisibleDetail01(!isVisibleDetail01)
+            setIsVisibleDetail(!isVisibleDetail)
         }}>
             <TitleWrap>
-                <Number>/01</Number>
-                <Name>View Flow</Name>
+                <Number>/{number}</Number>
+                <Name>{title}</Name>
             </TitleWrap>
             <ArrowImageWrap>
-                <ArrowImage src={icons.accordionArrow} />
+                <ArrowImage src={icons.accordionArrow} isVisibleDetail={isVisibleDetail} />
             </ArrowImageWrap>
         </BtnWrap>
-        { isVisibleDetail01 ? <Detail01 /> : null }
+        { isVisibleDetail ? <CommonDetail detailNumber={detailNumber} /> : null }
         <Line />
     </AccordionWrap>
     )

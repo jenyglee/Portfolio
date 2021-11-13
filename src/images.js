@@ -26,6 +26,11 @@ import categoryIntroductionW from "./images/category_introduction_w.png"
 import categoryDevelopW from "./images/category_develop_w.png"
 import categoryDesignW from "./images/category_design_w.png"
 import AccordionArrow from "./images/accordionArrow.png"
+import VideoImage from "./images/01_gulpAppSource/videoImage.png"
+import Function01 from "./images/01_gulpAppSource/function01.png"
+import Function02 from "./images/01_gulpAppSource/function02.png"
+import Function03 from "./images/01_gulpAppSource/function03.png"
+import Function04 from "./images/01_gulpAppSource/function04.png"
 
 const categoryImages = [
     {image : categoryIntroduction, whiteImage : categoryIntroductionW },
@@ -81,4 +86,26 @@ const icons = {
     accordionArrow : AccordionArrow,
 }
 
-export { bgImages01, bgImages02, bgImages03, bgImages04, bgImages05, bgImages06, bgImages07, bgImages08, bgImages09, bgImages10, categoryImages, icons };
+const glupAppSources = {
+    video : VideoImage,
+    function01: Function01,
+    function02: Function02,
+    function03: Function03,
+    function04: Function04,
+}
+
+export { 
+    bgImages01, 
+    bgImages02, 
+    bgImages03, 
+    bgImages04, 
+    bgImages05, 
+    bgImages06, 
+    bgImages07, 
+    bgImages08, 
+    bgImages09, 
+    bgImages10, 
+    categoryImages, 
+    icons, 
+    glupAppSources 
+};

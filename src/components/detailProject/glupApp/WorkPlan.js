@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const DetailContainer = styled.section`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
 const ContentWrap = styled.div`
 `
 
@@ -22,7 +16,7 @@ const Title = styled.p`
     font-size: 18px;
 `
 const Description = styled.p`
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 `
 
@@ -47,9 +41,8 @@ const TagName = styled.p`
     padding: 6px 10px;
 `
 
-const Detail01 = ({}) => {
+const ViewFlow = ({}) => {
     return (
-    <DetailContainer>
         <ContentWrap>
             <TextWrap>
                 <TitleWrap>
@@ -99,8 +92,7 @@ const Detail01 = ({}) => {
                 </TagsWrap>
             </TextWrap>
         </ContentWrap>
-    </DetailContainer>
     )
 }
 
-export default Detail01;
+export default ViewFlow;

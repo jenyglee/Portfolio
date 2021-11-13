@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Section from "./Section/Section";
+import Section from "./section/Section";
 import BgComponent01 from "./BgComponent01";
 import BgComponent02 from "./BgComponent02";
 import BgComponent03 from "./BgComponent03";
