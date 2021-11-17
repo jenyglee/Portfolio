@@ -17,12 +17,12 @@ const Image = styled.img`
 
 const BgComponent03 = ({ isShow }) => {
     const innerWidth = window.innerWidth;
-    const [objTransform01, setObjTransform01] = useState(11);
-    const [objTransform02, setObjTransform02] = useState(-48);
-    const [objTransform03, setObjTransform03] = useState(129);
-    const [objTransform04, setObjTransform04] = useState(-147);
-    const [objTransform05, setObjTransform05] = useState(188);
-    const [objTransform06, setObjTransform06] = useState(-88);
+    const [objTransform01, setObjTransform01] = useState(39);
+    const [objTransform02, setObjTransform02] = useState(2);
+    const [objTransform03, setObjTransform03] = useState(179);
+    const [objTransform04, setObjTransform04] = useState(-97);
+    const [objTransform05, setObjTransform05] = useState(217);
+    const [objTransform06, setObjTransform06] = useState(-59);
     const [objOpacity01, setObjOpacity01] = useState(0);
     const [objOpacity02, setObjOpacity02] = useState(0);
     const [objOpacity03, setObjOpacity03] = useState(0);
@@ -32,52 +32,52 @@ const BgComponent03 = ({ isShow }) => {
     useEffect(() => {
         if (isShow) {
             setTimeout(() => {
-                setObjTransform01(objTransform01 - 50);
+                setObjTransform01(-11);
                 setObjOpacity01(1);
             }, 0);
             setTimeout(() => {
-                setObjTransform02(objTransform02 - 50);
+                setObjTransform02(-48);
                 setObjOpacity02(1);
             }, 100);
             setTimeout(() => {
-                setObjTransform03(objTransform03 - 50);
+                setObjTransform03(129);
                 setObjOpacity03(1);
             }, 100);
             setTimeout(() => {
-                setObjTransform04(objTransform04 - 50);
+                setObjTransform04(-147);
                 setObjOpacity04(1);
             }, 200);
             setTimeout(() => {
-                setObjTransform05(objTransform05 - 50);
+                setObjTransform05(167);
                 setObjOpacity05(1);
             }, 200);
             setTimeout(() => {
-                setObjTransform06(objTransform06 - 50);
+                setObjTransform06(-109);
                 setObjOpacity06(1);
             }, 300);
         } else {
             setTimeout(() => {
-                setObjTransform01(objTransform01 + 50);
+                setObjTransform01(39);
                 setObjOpacity01(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform02(objTransform02 + 50);
+                setObjTransform02(2);
                 setObjOpacity02(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform03(objTransform03 + 50);
+                setObjTransform03(179);
                 setObjOpacity03(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform04(objTransform04 + 50);
+                setObjTransform04(-97);
                 setObjOpacity04(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform05(objTransform05 + 50);
+                setObjTransform05(217);
                 setObjOpacity05(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform06(objTransform06 + 50);
+                setObjTransform06(-59);
                 setObjOpacity06(0);
             }, 0);
         }

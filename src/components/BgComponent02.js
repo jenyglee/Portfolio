@@ -12,18 +12,18 @@ const ComponentWrap = styled.div`
 const Image = styled.img``;
 
 const BgComponent02 = ({ isShow }) => {
-    const [objTransform01, setObjTransform01] = useState(-18);
+    const [objTransform01, setObjTransform01] = useState(68);
     const [objOpacity01, setObjOpacity01] = useState(0);
 
     useEffect(() => {
         if (isShow) {
             setTimeout(() => {
-                setObjTransform01(objTransform01 - 50);
+                setObjTransform01(18);
                 setObjOpacity01(1);
             }, 0);
         } else {
             setTimeout(() => {
-                setObjTransform01(objTransform01 + 50);
+                setObjTransform01(68);
                 setObjOpacity01(0);
             }, 0);
         }

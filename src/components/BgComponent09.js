@@ -9,21 +9,24 @@ const ComponentWrap = styled.div`
     transform: translateY(-50%);
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+    width: 652px;
+    height: 1101px;
+`;
 
 const BgComponent09 = ({ isShow }) => {
-    const [objTransform01, setObjTransform01] = useState(250);
+    const [objTransform01, setObjTransform01] = useState(350);
     const [objOpacity01, setObjOpacity01] = useState(0);
 
     useEffect(() => {
         if (isShow) {
             setTimeout(() => {
-                setObjTransform01(objTransform01 - 50);
+                setObjTransform01(300);
                 setObjOpacity01(1);
             }, 0);
         } else {
             setTimeout(() => {
-                setObjTransform01(objTransform01 + 50);
+                setObjTransform01(350);
                 setObjOpacity01(0);
             }, 0);
         }
@@ -38,13 +41,7 @@ const BgComponent09 = ({ isShow }) => {
                 transform={objTransform01}
                 isShow={isShow}
             >
-                <Image
-                    src={bgImages09.Image01}
-                    style={{
-                        width: 652,
-                        height: 1101,
-                    }}
-                />
+                <Image src={bgImages09.Image01} />
             </ComponentWrap>
         </>
     );

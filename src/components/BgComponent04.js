@@ -5,9 +5,12 @@ import { bgImages04 } from "./../images";
 const ComponentWrap = styled.div`
     position: fixed;
     transition: 0.5s;
-    top: ${({ transform }) => `calc(50% + ${transform}px)`};
+    top: ${({ transform }) => `calc(50% + ${transform}px)`}; ;
     right: ${({ right }) => right}px;
     transform: translateY(-50%);
+    /* transform: ${({ transform }) => `calc(50% + ${transform}px)`};  */
+    /* display: flex; */
+    /* align-items: center; */
 `;
 
 const Image = styled.img`
@@ -15,13 +18,18 @@ const Image = styled.img`
     height: ${({ height }) => height}px;
 `;
 
+// const imageTops = [
+//     0,161,-107,-238,93
+// ]
+
+
 const BgComponent04 = ({ isShow }) => {
     const innerWidth = window.innerWidth;
-    const [objTransform01, setObjTransform01] = useState(0);
-    const [objTransform02, setObjTransform02] = useState(161);
-    const [objTransform03, setObjTransform03] = useState(-107);
-    const [objTransform04, setObjTransform04] = useState(-238);
-    const [objTransform05, setObjTransform05] = useState(93);
+    const [objTransform01, setObjTransform01] = useState(50);
+    const [objTransform02, setObjTransform02] = useState(211);
+    const [objTransform03, setObjTransform03] = useState(-57);
+    const [objTransform04, setObjTransform04] = useState(-188);
+    const [objTransform05, setObjTransform05] = useState(146);
     const [objOpacity01, setObjOpacity01] = useState(0);
     const [objOpacity02, setObjOpacity02] = useState(0);
     const [objOpacity03, setObjOpacity03] = useState(0);
@@ -30,44 +38,44 @@ const BgComponent04 = ({ isShow }) => {
     useEffect(() => {
         if (isShow) {
             setTimeout(() => {
-                setObjTransform01(objTransform01 - 50);
+                setObjTransform01(0);
                 setObjOpacity01(1);
             }, 0);
             setTimeout(() => {
-                setObjTransform02(objTransform02 - 50);
+                setObjTransform02(161);
                 setObjOpacity02(1);
             }, 100);
             setTimeout(() => {
-                setObjTransform03(objTransform03 - 50);
+                setObjTransform03(-107);
                 setObjOpacity03(1);
             }, 100);
             setTimeout(() => {
-                setObjTransform04(objTransform04 - 50);
+                setObjTransform04(-238);
                 setObjOpacity04(1);
             }, 200);
             setTimeout(() => {
-                setObjTransform05(objTransform05 - 50);
+                setObjTransform05(96);
                 setObjOpacity05(1);
             }, 200);
         } else {
             setTimeout(() => {
-                setObjTransform01(objTransform01 + 50);
+                setObjTransform01(50);
                 setObjOpacity01(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform02(objTransform02 + 50);
+                setObjTransform02(211);
                 setObjOpacity02(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform03(objTransform03 + 50);
+                setObjTransform03(-57);
                 setObjOpacity03(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform04(objTransform04 + 50);
+                setObjTransform04(-188);
                 setObjOpacity04(0);
             }, 0);
             setTimeout(() => {
-                setObjTransform05(objTransform05 + 50);
+                setObjTransform05(146);
                 setObjOpacity05(0);
             }, 0);
         }
@@ -78,160 +86,56 @@ const BgComponent04 = ({ isShow }) => {
                 style={{
                     opacity: objOpacity01,
                 }}
-                right={() => {
-                    if (innerWidth >= 1200 && innerWidth < 1440) {
-                        return 472;
-                    } else if (innerWidth >= 1440) {
-                        return 531;
-                    }
-                }}
+                right={531}
                 transform={objTransform01}
                 isShow={isShow}
             >
                 <Image
-                    src={bgImages04.Image01}
-                    width={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1440) {
-                            return 270;
-                        } else if (innerWidth >= 1440) {
-                            return 306;
-                        }
-                    }}
-                    height={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1400) {
-                            return 490;
-                        } else if (innerWidth >= 1400) {
-                            return 554;
-                        }
-                    }}
+                    src={bgImages04.Image01} width={306} height={554}
                 />
             </ComponentWrap>
             <ComponentWrap
                 style={{
                     opacity: objOpacity02,
                 }}
-                right={() => {
-                    if (innerWidth >= 1200 && innerWidth < 1440) {
-                        return 320;
-                    } else if (innerWidth >= 1440) {
-                        return 353;
-                    }
-                }}
+                right={353}
                 transform={objTransform02}
                 isShow={isShow}
             >
-                <Image
-                    src={bgImages04.Image02}
-                    width={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1440) {
-                            return 177;
-                        } else if (innerWidth >= 1440) {
-                            return 201;
-                        }
-                    }}
-                    height={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1400) {
-                            return 251;
-                        } else if (innerWidth >= 1400) {
-                            return 285;
-                        }
-                    }}
+                <Image src={bgImages04.Image02} width={201} height={285}
                 />
             </ComponentWrap>
             <ComponentWrap
                 style={{
                     opacity: objOpacity03,
                 }}
-                right={() => {
-                    if (innerWidth >= 1200 && innerWidth < 1440) {
-                        return 54;
-                    } else if (innerWidth >= 1440) {
-                        return 68;
-                    }
-                }}
+                right={68}
                 transform={objTransform03}
                 isShow={isShow}
             >
-                <Image
-                    src={bgImages04.Image03}
-                    width={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1440) {
-                            return 269;
-                        } else if (innerWidth >= 1440) {
-                            return 305;
-                        }
-                    }}
-                    height={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1400) {
-                            return 196;
-                        } else if (innerWidth >= 1400) {
-                            return 222;
-                        }
-                    }}
+                <Image src={bgImages04.Image03} width={305} height={222}
                 />
             </ComponentWrap>
             <ComponentWrap
                 style={{
                     opacity: objOpacity04,
                 }}
-                right={() => {
-                    if (innerWidth >= 1200 && innerWidth < 1440) {
-                        return 359;
-                    } else if (innerWidth >= 1440) {
-                        return 397;
-                    }
-                }}
+                right={397}
                 transform={objTransform04}
                 isShow={isShow}
             >
-                <Image
-                    src={bgImages04.Image04}
-                    width={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1440) {
-                            return 138;
-                        } else if (innerWidth >= 1440) {
-                            return 157;
-                        }
-                    }}
-                    height={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1400) {
-                            return 117;
-                        } else if (innerWidth >= 1400) {
-                            return 133;
-                        }
-                    }}
+                <Image src={bgImages04.Image04} width={157} height={133}
                 />
             </ComponentWrap>
             <ComponentWrap
                 style={{
                     opacity: objOpacity05,
                 }}
-                right={() => {
-                    if (innerWidth >= 1200 && innerWidth < 1440) {
-                        return 176;
-                    } else if (innerWidth >= 1440) {
-                        return 208;
-                    }
-                }}
+                right={208}
                 transform={objTransform05}
                 isShow={isShow}
             >
-                <Image
-                    src={bgImages04.Image05}
-                    width={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1440) {
-                            return 96;
-                        } else if (innerWidth >= 1440) {
-                            return 109;
-                        }
-                    }}
-                    height={() => {
-                        if (innerWidth >= 1200 && innerWidth < 1400) {
-                            return 130;
-                        } else if (innerWidth >= 1400) {
-                            return 148;
-                        }
-                    }}
+                <Image src={bgImages04.Image05} width={109} height={148}
                 />
             </ComponentWrap>
         </>
