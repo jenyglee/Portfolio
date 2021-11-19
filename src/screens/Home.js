@@ -159,7 +159,6 @@ const Home = () => {
     return (
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
             <Header isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} scrollY={scrollY} />
-            <TopButton scrollY={scrollY} onClick={handleTop} />
             <Switch>
                 <Route path="/" exact>
                     <MainWrap>
@@ -202,6 +201,7 @@ const Home = () => {
                     <DetailGulpApp />
                 </Route>
             </Switch>
+            <TopButton scrollY={scrollY} onClick={handleTop} isChangedTheme={isChangedTheme} />
         </Body>
     );
 };

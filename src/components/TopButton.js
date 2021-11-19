@@ -26,7 +26,7 @@ const BtnArrow = styled.div`
     border-top: 0 solid transparent;
     border-bottom-width: 12px;
     border-bottom-style: solid;
-    border-bottom-color: ${({ theme })=> theme.darkThemeBtnArrow};
+    border-bottom-color: ${({ isChangedTheme, theme })=> isChangedTheme ? theme.whiteThemeBtnArrow : theme.darkThemeBtnArrow};
     border-right: 7px solid transparent;
     border-left: 7px solid transparent;
     margin-bottom: 5px;
@@ -34,10 +34,11 @@ const BtnArrow = styled.div`
 
 const BtnText = styled.p`
     font-size: 12px;
-    color: ${({theme}) => `1px solid ${theme.whiteThemeText}`};
+    transition: 0.5s;
+    color: ${({isChangedTheme, theme}) => isChangedTheme ? theme.darkThemeText : theme.whiteThemeText};
 `
 
-const TopButton = ({ scrollY, onClick })=>{
+const TopButton = ({ scrollY, onClick, isChangedTheme })=>{
     const [showTopButton, setShowTopButton] = useState(false);
 
     useEffect(()=>{
@@ -46,8 +47,8 @@ const TopButton = ({ scrollY, onClick })=>{
 
     return (
         <BtnContainer showTopButton={showTopButton} onClick={onClick}>
-            <BtnArrow />
-            <BtnText>TOP</BtnText>
+            <BtnArrow isChangedTheme={isChangedTheme} />
+            <BtnText isChangedTheme={isChangedTheme}>TOP</BtnText>
         </BtnContainer>
     )
 }
