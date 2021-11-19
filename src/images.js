@@ -26,11 +26,18 @@ import categoryIntroductionW from "./images/category_introduction_w.png"
 import categoryDevelopW from "./images/category_develop_w.png"
 import categoryDesignW from "./images/category_design_w.png"
 import AccordionArrow from "./images/accordionArrow.png"
+import MainVisual from "./images/01_gulpAppSource/main-visual.png"
+import Character01 from "./images/01_gulpAppSource/character01.png"
+import Logo from "./images/01_gulpAppSource/logo.png"
 import VideoImage from "./images/01_gulpAppSource/videoImage.png"
 import Function01 from "./images/01_gulpAppSource/function01.png"
 import Function02 from "./images/01_gulpAppSource/function02.png"
 import Function03 from "./images/01_gulpAppSource/function03.png"
 import Function04 from "./images/01_gulpAppSource/function04.png"
+import WorkIssue01 from "./images/01_gulpAppSource/workIssue01.png"
+import WorkIssue02 from "./images/01_gulpAppSource/workIssue02.png"
+import Mission01 from "./images/01_gulpAppSource/mission01.png"
+import Mission02 from "./images/01_gulpAppSource/mission02.png"
 
 const categoryImages = [
     {image : categoryIntroduction, whiteImage : categoryIntroductionW },
@@ -87,11 +94,18 @@ const icons = {
 }
 
 const glupAppSources = {
+    mainVisual : MainVisual,
+    character01 : Character01,
+    logo : Logo,
     video : VideoImage,
     function01: Function01,
     function02: Function02,
     function03: Function03,
     function04: Function04,
+    workIssue01: WorkIssue01,
+    workIssue02: WorkIssue02,
+    mission01: Mission01,
+    mission02: Mission02,
 }
 
 export { 

@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { glupAppSources } from "./../../images"
 
 const MainVisualWrap = styled.section`
     width: 100%;
     height: 497px;
-    background-color: lightslategrey;
+    background: ${({img}) => `url("${img}") no-repeat`};
+    background-size: cover;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -27,24 +29,27 @@ const Text = styled.p`
 const CharacterImageWrap = styled.div`
     width: 50px;
     height: 22px;
-    background-color: mediumblue;
+    position: relative;
 `
-const CharacterImage = styled.img``
+const StyledImage = styled.img`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+`
 const LogoWrap = styled.div`
     width: 82px;
     height: 22px;
-    background-color: mediumpurple;
+    position: relative;
 `
-const LogoImage = styled.img``
 
 const MainVisual = () => {
     return (
-        <MainVisualWrap>
+        <MainVisualWrap img={glupAppSources.mainVisual} >
             <ContentWrap>
                 <TextWrap>
                     <Text>
                         <CharacterImageWrap>
-                            <CharacterImage />  
+                            <StyledImage src={glupAppSources.character01} />  
                         </CharacterImageWrap>
                         HEY HEY!
                     </Text>
@@ -52,7 +57,7 @@ const MainVisual = () => {
                     <Text>YOUR MEDICINE?</Text>
                 </TextWrap>
                 <LogoWrap>
-                    <LogoImage />
+                    <StyledImage src={glupAppSources.logo} />
                 </LogoWrap>
             </ContentWrap>
         </MainVisualWrap>
