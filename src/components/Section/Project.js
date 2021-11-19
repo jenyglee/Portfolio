@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Route, Switch, Link } from "react-router-dom";
 
 const ProjectNameContainer = styled.div`
     display: flex;
@@ -135,6 +136,7 @@ const BtnText = styled.p`
 `;
 
 const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChangedTheme, isPcBreakPoint }) => {
+    // console.log(projectTitle.id)
     // textArr : ['i','n','f','o']
     const [animationTransform, setAnimationTransform] = useState([ -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100 ]);
     const [animationOpacity, setAnimationOpacity] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -247,10 +249,12 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
 
     return (
         <ProjectNameContainer>
+            <Link to={`/${sectionId}/${projectTitle.id}`}>
             <ProjectName
                 isHover={projectTitle.isHover}
                 onMouseEnter={() => {onEnter(projectTitle.id, sectionId);}}
                 onMouseLeave={() => {onLeave(projectTitle.id, sectionId);}}
+                onClick={()=>{onLeave(projectTitle.id, sectionId);}}
                 href="#"
             >
                 {   
@@ -262,6 +266,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
                             animationOpacity={animationOpacity[index]}
                             isChangedTheme={isChangedTheme}
                             isPcBreakPoint={isPcBreakPoint}
+                            key={index}
                         >
                             {textArr[index]}
                         </OneText>
@@ -291,6 +296,7 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
                     </BtnTextWrap>
                 </BtnWrap>
             </ProjectName>
+            </Link>
         </ProjectNameContainer>
     );
 };

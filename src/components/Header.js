@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CallyIntroduce from "./../images/cally_introduce.png"
 
@@ -7,7 +7,9 @@ const FixedContainer = styled.div`
     position: fixed;
     top:0;
     left: 50%;
-    transform: translateX(-50%);
+    transition: 0.5s;
+    opacity: ${({showHeader})=> showHeader ? 1 : 0 };
+    transform: ${({showHeader})=> showHeader ? `translate(-50%, 0)` : `translate(-50%, -120px)`};
     z-index: 20;
 `
 
@@ -131,11 +133,20 @@ const menu = [
     { id: 2, title: "DESIGN", koreanTitle:"디자인 프로젝트" },
 ];
 
-const Header = ({ isChangedTheme, isPcBreakPoint }) => {
+const Header = ({ isChangedTheme, isPcBreakPoint, scrollY }) => {
     const [isMenuEntered, setIsMenuEntered] = useState(false)
+    const [showHeader, setShowHeader] = useState(false);
+
+    useEffect(()=>{
+        if(scrollY > 200){
+            setShowHeader(false)
+        } else {
+            setShowHeader(true)
+        }
+    },[scrollY])
 
     return (
-        <FixedContainer>
+        <FixedContainer showHeader={showHeader}>
             <HeaderContainer>
                 <MenuContainer translateY={isMenuEntered ? "translateY(220px)" : "0"}>
                     {
@@ -156,9 +167,9 @@ const Header = ({ isChangedTheme, isPcBreakPoint }) => {
                     <h1>#Jenyglee</h1>
                 </LogoWrap>
                 <Gnb>
-                    {menu.map((item) => {
+                    {menu.map((item, index) => {
                         return (
-                            <GnbList isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} key={item.id}>
+                            <GnbList isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} key={index}>
                                 <a href="#">{item.title}</a>
                             </GnbList>
                         );

@@ -16,6 +16,7 @@ import {
     BgComponent10,
     Header,
     Section,
+    TopButton,
 } from "./../components";
 import {categoryImages} from "./../images"
 
@@ -23,7 +24,7 @@ const Body = styled.main`
     height: 100%;
     background-color: ${({theme, isChangedTheme, isPcBreakPoint})=> isChangedTheme&&!isPcBreakPoint ? theme.darkThemeBackgroud : theme.whiteThemeBackgroud};
     transition:0.5s;
-
+    position: relative;
 `
 
 const MainWrap = styled.main`
@@ -85,6 +86,28 @@ const Home = () => {
     const [imgKey, setImgKey] = useState();
     const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
+    const [scrollY, setScrollY] = useState(0)
+
+    // ✨ 너비 1200픽셀 이하 브레이크포인트
+    useEffect(() => {
+        if (window.innerWidth < 1200) {
+            setIsPcBreakPoint(true);
+        } else {
+            setIsPcBreakPoint(false);
+        }
+    }, [window.innerWidth]);
+
+    useEffect(()=>{
+        // ✨ 스크롤값 저장(헤더 인터랙션에 적용)
+        window.addEventListener("scroll", onScroll)
+        return ()=>{
+            window.removeEventListener("scroll", onscroll)
+        }
+    }, [])
+
+    const onScroll = ()=>{
+        setScrollY(window.scrollY);
+    }
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
@@ -114,6 +137,7 @@ const Home = () => {
         changeTheme(copy)
     };
 
+    // ✨ 특정 타이틀 마우스오버시 다크테마로 변경
     const changeTheme = (projectTitle) => {
         if(projectTitle[0][2].isHover || projectTitle[2][0].isHover){
             setIsChangedTheme(true);
@@ -123,17 +147,19 @@ const Home = () => {
         }
     }
 
-    useEffect(() => {
-        if (window.innerWidth < 1200) {
-            setIsPcBreakPoint(true);
-        } else {
-            setIsPcBreakPoint(false);
-        }
-    }, [window.innerWidth]);
+    // ✨ Top버튼 클릭시 상단으로
+    const handleTop = ()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+        setScrollY(0)
+    }
 
     return (
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
-            <Header isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} />
+            <Header isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} scrollY={scrollY} />
+            <TopButton scrollY={scrollY} onClick={handleTop} />
             <Switch>
                 <Route path="/" exact>
                     <MainWrap>
@@ -172,7 +198,7 @@ const Home = () => {
                     </MainWrap>
                 </Route>
 
-                <Route path="/detail">
+                <Route path="/1/0">
                     <DetailGulpApp />
                 </Route>
             </Switch>
