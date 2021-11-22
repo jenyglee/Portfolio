@@ -16,16 +16,22 @@ const Functions = ({}) => {
     return (
         <ContentWrap>
             <FunctionImageWrap>
-                <FunctionImage src={glupAppSources.function01} />
+                <FunctionImage src={glupAppSources.pcFunction01} />
             </FunctionImageWrap>
             <FunctionImageWrap>
-                <FunctionImage src={glupAppSources.function02} />
+                <FunctionImage src={glupAppSources.pcFunction02} />
             </FunctionImageWrap>
             <FunctionImageWrap>
-                <FunctionImage src={glupAppSources.function03} />
+                <FunctionImage src={glupAppSources.pcFunction03} />
             </FunctionImageWrap>
             <FunctionImageWrap>
-                <FunctionImage src={glupAppSources.function04} />
+                <FunctionImage src={glupAppSources.pcFunction04} />
+            </FunctionImageWrap>
+            <FunctionImageWrap>
+                <FunctionImage src={glupAppSources.pcFunction05} />
+            </FunctionImageWrap>
+            <FunctionImageWrap>
+                <FunctionImage src={glupAppSources.pcFunction06} />
             </FunctionImageWrap>
         </ContentWrap>
     )

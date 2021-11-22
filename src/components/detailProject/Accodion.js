@@ -18,15 +18,24 @@ const BtnWrap = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media ${({theme})=> theme.size568}{
+        padding: 20px 0;
+    }
 `
 
 const TitleWrap = styled.div`
     font-size: 20px;
     display: flex;
+    @media ${({theme})=> theme.size568}{
+        font-size: 16px;
+    }
 `
 
 const Number = styled.p`
     margin-right: 70px;
+    @media ${({theme})=> theme.size568}{
+        margin-right: 16px;
+    }
 `
 const Name = styled.p``
 
@@ -34,6 +43,10 @@ const ArrowImageWrap = styled.div`
     width:23px;
     height: 27px;
     position: relative;
+    @media ${({theme})=> theme.size568}{
+        width:16px;
+        height: 17px;
+    }
 `
 const ArrowImage = styled.img`
     width: 100%;
@@ -50,6 +63,7 @@ const Accordion = ({number, title, detailNumber}) => {
     const [isVisibleDetail, setIsVisibleDetail] = useState(false)
     return (
     <AccordionWrap>
+        {number === "01" ? <Line /> : null }
         <BtnWrap onClick={()=>{
             setIsVisibleDetail(!isVisibleDetail)
         }}>

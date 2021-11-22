@@ -5,9 +5,12 @@ import MainVisual from '../components/detailProject/MainVisual'
 import Accordion from '../components/detailProject/Accodion'
 
 const MainWrap = styled.main`
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-top: 260px;
+    padding: 260px 20px 0;
+    @media ${({theme})=> theme.size568}{
+        padding: 105px 20px 0;
+    }
 `
 
 const DetailGulpApp = () => {

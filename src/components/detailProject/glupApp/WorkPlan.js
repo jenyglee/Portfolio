@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 const ContentWrap = styled.div`
@@ -7,17 +7,29 @@ const ContentWrap = styled.div`
 const TextWrap = styled.div`
     display: flex;
     margin-bottom: 15px;
+    @media ${({ theme }) => theme.size1200} {
+        flex-direction: column;
+    }
 `
 const TitleWrap = styled.div`
     width: 125px;
     margin-right: 20px;
+    @media ${({ theme }) => theme.size1200} {
+        width: 125px;
+    }
 `
 const Title = styled.p`
     font-size: 18px;
+    @media ${({ theme }) => theme.size1200} {
+        
+    }
 `
 const Description = styled.p`
     font-size: 20px;
     font-weight: bold;
+    @media ${({ theme }) => theme.size1200} {
+        
+    }
 `
 
 const TagsWrap = styled.div`
@@ -42,6 +54,25 @@ const TagName = styled.p`
 `
 
 const ViewFlow = ({}) => {
+    const [isSize320, setIsSize320] = useState(false)
+    var innerWidth = window.innerWidth;
+
+    
+    useEffect(()=>{
+        // ✨ 스크롤값 저장(헤더 인터랙션에 적용)
+        window.addEventListener("resize", onChangeSize(innerWidth))
+        return ()=>{
+            window.removeEventListener("resize", onChangeSize(innerWidth))
+        }
+    }, [])
+
+    // 👀❓ 여기서 받아온 innerWidth는 딱 한번만 찍히기 때문에 DetailGulpApp에서 보내야 할듯?
+    const onChangeSize = (innerWidth)=>{
+        console.log(innerWidth)
+        // if(innerWidth === 320){
+        //     // setIsSize320(true);
+        // }
+    }
     return (
         <ContentWrap>
             <TextWrap>

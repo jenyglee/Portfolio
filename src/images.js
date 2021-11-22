@@ -30,10 +30,12 @@ import MainVisual from "./images/01_gulpAppSource/main-visual.png"
 import Character01 from "./images/01_gulpAppSource/character01.png"
 import Logo from "./images/01_gulpAppSource/logo.png"
 import VideoImage from "./images/01_gulpAppSource/videoImage.png"
-import Function01 from "./images/01_gulpAppSource/function01.png"
-import Function02 from "./images/01_gulpAppSource/function02.png"
-import Function03 from "./images/01_gulpAppSource/function03.png"
-import Function04 from "./images/01_gulpAppSource/function04.png"
+import PcFunction01 from "./images/01_gulpAppSource/pc_function01.png"
+import PcFunction02 from "./images/01_gulpAppSource/pc_function02.png"
+import PcFunction03 from "./images/01_gulpAppSource/pc_function03.png"
+import PcFunction04 from "./images/01_gulpAppSource/pc_function04.png"
+import PcFunction05 from "./images/01_gulpAppSource/pc_function05.png"
+import PcFunction06 from "./images/01_gulpAppSource/pc_function06.png"
 import WorkIssue01 from "./images/01_gulpAppSource/workIssue01.png"
 import WorkIssue02 from "./images/01_gulpAppSource/workIssue02.png"
 import Mission01 from "./images/01_gulpAppSource/mission01.png"
@@ -98,10 +100,12 @@ const glupAppSources = {
     character01 : Character01,
     logo : Logo,
     video : VideoImage,
-    function01: Function01,
-    function02: Function02,
-    function03: Function03,
-    function04: Function04,
+    pcFunction01: PcFunction01,
+    pcFunction02: PcFunction02,
+    pcFunction03: PcFunction03,
+    pcFunction04: PcFunction04,
+    pcFunction05: PcFunction05,
+    pcFunction06: PcFunction06,
     workIssue01: WorkIssue01,
     workIssue02: WorkIssue02,
     mission01: Mission01,

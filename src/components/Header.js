@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CallyIntroduce from "./../images/cally_introduce.png"
+import { Link } from "react-router-dom";
 
 const FixedContainer = styled.div`
     width: 100%;
@@ -30,11 +31,15 @@ const LogoWrap = styled.div`
     font-weight: bold;
     color: ${({ theme, isChangedTheme, isPcBreakPoint }) => isChangedTheme&&!isPcBreakPoint ? theme.darkThemeText : theme.whiteThemeText};
     transition: 0.5s;
-
+    
     @media ${({ theme }) => theme.size1200} {
         position: absolute;
-        top: 20px;
-        left: 30px;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+    }
+    @media ${({theme})=> theme.size568}{
+        font-size: 12px;
     }
 `;
 
@@ -57,12 +62,12 @@ const GnbList = styled.li`
 
 const MenuButton = styled.a`
     width: 20px;
-    height: 20px;
+    height: 18px;
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
     display: none;
-
     @media ${({ theme }) => theme.size1200} {
         display: block;
     }
@@ -163,9 +168,11 @@ const Header = ({ isChangedTheme, isPcBreakPoint, scrollY }) => {
                         })
                     }
                 </MenuContainer>
-                <LogoWrap isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} >
-                    <h1>#Jenyglee</h1>
-                </LogoWrap>
+                <Link to="/">
+                    <LogoWrap isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} >
+                        <h1>#Jenyglee</h1>
+                    </LogoWrap>
+                </Link>
                 <Gnb>
                     {menu.map((item, index) => {
                         return (

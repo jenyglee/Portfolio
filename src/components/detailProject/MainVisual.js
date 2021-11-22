@@ -10,10 +10,20 @@ const MainVisualWrap = styled.section`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 90px;
+    @media ${({theme})=> theme.size568}{
+        height: 373px;
+        margin-bottom: 40px;
+        display: block;
+    }
 `
 
 const ContentWrap = styled.article`
     padding-left: 50px;
+    @media ${({theme})=> theme.size568}{
+        padding-left: 20px;
+        padding-top: 40px;
+    }
 `
 
 const TextWrap = styled.div`
@@ -25,11 +35,19 @@ const Text = styled.p`
     color: ${({theme}) => theme.detailWhiteText};
     display: flex;
     align-items: center;
+    @media ${({theme})=> theme.size568}{
+        font-size: 28px;
+    }
 `
 const CharacterImageWrap = styled.div`
     width: 50px;
     height: 22px;
+    margin-right: 6px;
     position: relative;
+    @media ${({theme})=> theme.size568}{
+        width: 28px;
+        height: 12px;
+    }
 `
 const StyledImage = styled.img`
     width: 100%;
@@ -40,6 +58,10 @@ const LogoWrap = styled.div`
     width: 82px;
     height: 22px;
     position: relative;
+    @media ${({theme})=> theme.size568}{
+        width: 45px;
+        height: 12px;
+    }
 `
 
 const MainVisual = () => {
