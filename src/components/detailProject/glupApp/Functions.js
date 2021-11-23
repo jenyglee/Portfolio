@@ -11,6 +11,15 @@ const ContentWrap = styled.div`
 const FunctionImageWrap = styled.div`
     max-width: ${({isSize768}) => isSize768 ? '216px' : '1058px' };
     margin-bottom: ${({isSize768}) => isSize768 ? '30px' : '0' };
+    @media ${({theme})=> theme.size1200}{
+        max-width : 960px;
+    }
+    @media ${({theme})=> theme.sizesize960}{
+        max-width: 768px;
+    }
+    @media ${({theme})=> theme.size768}{
+        max-width: 216px;
+    }
 `
 
 const FunctionImage = styled.img`
@@ -18,10 +27,21 @@ const FunctionImage = styled.img`
 `
 
 const FunctionContent = styled.div`
-    width: 100%;
     display: flex;
     flex-direction: column;
     margin-bottom: 60px;
+    @media ${({theme})=> theme.size1200}{
+        width: 960px;
+    }
+    @media ${({theme})=> theme.size960}{
+        width: 768px;
+    }
+    @media ${({theme})=> theme.size768}{
+        width: 568px;
+    }
+    @media ${({theme})=> theme.size568}{
+        width: 320px;
+    }
 `
 
 const Icon = styled.div`
@@ -51,6 +71,7 @@ const Description = styled.p`
     font-size: 13px;
     color: #000;
     line-height: 28px;
+    word-break: keep-all;
 `
 
 

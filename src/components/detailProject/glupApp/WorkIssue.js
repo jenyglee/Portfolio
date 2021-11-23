@@ -3,24 +3,62 @@ import styled from 'styled-components'
 import { glupAppSources } from '../../../images'
 
 const ContentWrap = styled.div`
+    padding: 0 20px;
+    display: flex;
+    flex-flow: column wrap;
+    @media ${({theme})=> theme.size1200}{
+        width: 960px;
+    }
+    @media ${({theme})=> theme.size960}{
+        width: 768px;
+    }
+    @media ${({theme})=> theme.size768}{
+        width: 568px;
+    }
+    @media ${({theme})=> theme.size568}{
+        width: 320px;
+    }
 `
 
 const Category = styled.h1`
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 60px;
+    @media ${({theme})=> theme.size960}{
+        font-size: 27px;
+    }
+    @media ${({theme})=> theme.size568}{
+        font-size: 24px;
+    }
 `
+
 const Title = styled.h2`
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 30px;
+    line-height: 24px;
+    @media ${({theme})=> theme.size960}{
+        font-size: 20px;
+    }
+    @media ${({theme})=> theme.size568}{
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
 `
 const Description = styled.p`
-    width: 90%;
+    width: 100%;
     font-size: 18px;
     margin-bottom: 60px;
     line-height: 32px;
-    /* word-break: break-all; */
+    word-break: keep-all;
+    @media ${({theme})=> theme.size960}{
+        font-size: 16px;
+    }
+    @media ${({theme})=> theme.size568}{
+        font-size: 13px;
+        line-height: 26px;
+        margin-bottom: 53px;
+    }
 `
 
 const Point = styled.span`
@@ -28,7 +66,14 @@ const Point = styled.span`
 `
 
 const StyledImage = styled.img`
+    width: 665px;
     margin-bottom: 24px;
+    @media ${({theme})=> theme.size768}{
+        width: 528px;
+    }
+    @media ${({theme})=> theme.size568}{
+        width: 280px;
+    }
 `
 
 const WorkIssue = ({}) => {
@@ -50,13 +95,7 @@ const WorkIssue = ({}) => {
             <Title style={{
                 marginBottom:14
             }}>시간 가져와서 내맘대로 꾸미기</Title>
-            <StyledImage 
-                src={glupAppSources.workIssue01} 
-                style={{
-                    width: 513,
-                    height: 145,
-                }}
-            />
+            <StyledImage src={glupAppSources.workIssue01} />
             <Description>
                 이용자가 선택한 시간이 화면에 그대로 쓰였으면 ‘오전 08:30’으로 쓰였을 것입니다. 이것을 시각(08:30)과 AM/PM(오전/오후)을 각각의 디자인 요소로 
                 분리시켜 놓길 원하였고, date picker 라이브러리에서 시간 값을 가져올 때 (ampm, time) 이라는 props로 (<Point>date.format("a/p"), date.format("hh:mm")</Point>) 
@@ -84,13 +123,7 @@ const WorkIssue = ({}) => {
             </Description>
             <Category>{category[2]}</Category>
             <Title>라이브러리 디자인 갈아엎기</Title>
-            <StyledImage 
-                src={glupAppSources.workIssue02} 
-                style={{
-                    width: 665,
-                    height: 280,
-                }}
-            />
+            <StyledImage src={glupAppSources.workIssue02} />
             <Description>
                 라이브러리의 고유 속성에는 markedDates(마크스타일), hideArrows(화살표 노출), showWeekNumbers(총 몇째 주 노출), hideDayNames(요일 노출) 등 
                 어느정도 스타일을 조정하는 속성이 있었지만 섬세한 작업은 어려움이 있었습니다. 또한 제 작업물과 같이 ‘월’이 표시되는 박스와 ‘일’이 표시되는 박스를 

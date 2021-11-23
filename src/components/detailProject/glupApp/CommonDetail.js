@@ -22,7 +22,7 @@ const CommonDetail = ({detailNumber, isSize768}) => {
         {detailNumber === "3" ? <Functions isSize768={isSize768} /> : null}
         {detailNumber === "4" ? <WorkIssue /> : null}
         {detailNumber === "5" ? <Review /> : null}
-        {detailNumber === "6" ? <Mission /> : null}
+        {detailNumber === "6" ? <Mission isSize768={isSize768} /> : null}
     </DetailContainer>
     )
 }

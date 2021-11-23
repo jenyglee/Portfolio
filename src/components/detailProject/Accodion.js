@@ -62,7 +62,7 @@ const Line = styled.div`
 
 const CommonDetailWrap = styled.div`
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 `
 
 const Accordion = ({number, title, detailNumber}) => {

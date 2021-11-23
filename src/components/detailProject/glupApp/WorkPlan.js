@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const ContentWrap = styled.div`
     width: 80%;
-    padding: 35px 0 50px 0;
+    margin: 35px 0 50px 0;
 `
 
 const TextWrap = styled.div`
@@ -35,6 +35,18 @@ const Tags = styled.div`
     display: flex;
     flex-flow: row wrap;
     margin-bottom: 5px;
+    @media ${({theme})=> theme.size1200}{
+        width: 960px;
+    }
+    @media ${({theme})=> theme.size960}{
+        width: 768px;
+    }
+    @media ${({theme})=> theme.size768}{
+        width: 568px;
+    }
+    @media ${({theme})=> theme.size568}{
+        width: 320px;
+    }
 `
 
 const TagBox = styled.div`
