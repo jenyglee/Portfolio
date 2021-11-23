@@ -19,6 +19,9 @@ import {
     TopButton,
 } from "./../components";
 import {categoryImages} from "./../images"
+import { useSelector, useDispatch } from 'react-redux';
+import { stateInteractions } from './../store/interactions/interactionsSlice';
+import actionsInteractions from './../store/interactions/interactionsActions';
 
 const Body = styled.main`
     height: 100%;
@@ -28,10 +31,17 @@ const Body = styled.main`
 `
 
 const MainWrap = styled.main`
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
     padding-top: 224px;
+    
+    @media ${({theme})=> theme.size1200}{
+        padding-top: 120px;
+    }
+    @media ${({theme})=> theme.size568}{
+        padding-top: 50px;
+    }
 `;
 
 const TitleContainer = styled.article`
@@ -58,7 +68,7 @@ const tempData = [
         { id: 4, title: "Kyobo", isHover: false },
         { id: 5, title: "Beotherm", isHover: false },
     ],
-];
+]
 
 const tempImage = [
     [
@@ -81,6 +91,8 @@ const tempImage = [
 ];
 
 const Home = () => {
+    const dispatch = useDispatch();
+    // const { projectTitle } = useSelector(stateInteractions);
     const [projectTitle, setProjectTitle] = useState(tempData);
     const [projectImage, setProjectImage] = useState(tempImage);
     const [imgKey, setImgKey] = useState();
@@ -117,6 +129,7 @@ const Home = () => {
         copy[sectionId][id].isHover = !copy[sectionId][id].isHover;
         copyImage[sectionId][id].isShow = !copyImage[sectionId][id].isShow;
 
+        // dispatch(actionsInteractions.setProjectTitle(copy));
         setProjectTitle(copy);
         setProjectImage(copyImage);
         setImgKey({ id: id, sectionId: sectionId });
@@ -131,6 +144,7 @@ const Home = () => {
         copy[sectionId][id].isHover = !copy[sectionId][id].isHover;
         copyImage[sectionId][id].isShow = !copyImage[sectionId][id].isShow;
 
+        // dispatch(actionsInteractions.setProjectTitle(copy));
         setProjectTitle(copy);
         setProjectImage(copyImage);
         setImgKey({ id: id, sectionId: sectionId });
@@ -167,7 +181,11 @@ const Home = () => {
                                 {projectTitle.map((item, index) => {
                                     return (
                                         <Section
+                                            // itemEnter={(id, sectionId)=>{
+                                            //     dispatch(actionsInteractions.itemEnter(id, sectionId, projectTitle, projectImage, setProjectImage, setImgKey, changeTheme));
+                                            // }}
                                             itemEnter={itemEnter}
+                                            // itemLeave={()=>{}}
                                             itemLeave={itemLeave}
                                             projectTitle={projectTitle[index]}
                                             sectionId={index}

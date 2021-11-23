@@ -21,8 +21,8 @@ const HeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    @media ${({ theme }) => theme.size1200} {
-        
+    @media ${({ theme }) => theme.size568} {
+        margin: 62px auto 0 auto;
     }
 `;
 

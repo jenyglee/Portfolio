@@ -22,7 +22,7 @@ const Video = styled.img`
     width: 100%;
 `
 
-const ViewFlow = ({}) => {
+const ViewFlow = () => {
     return (
         <ContentWrap>
             <VideoWrap>

@@ -5,6 +5,9 @@ import Project from "./Project";
 
 const SectionContainer = styled.section`
     padding-bottom: 74px;
+    @media ${({theme})=> theme.size568}{
+        padding-bottom: 0px;
+    }
 `
 
 // projectTitle = projectTitle[각 섹션]

@@ -16,6 +16,9 @@ const BtnContainer = styled.a`
     transition: 0.5s;
     transform: ${({showTopButton})=>showTopButton ? `translateY(0)` : `translateY(-100px)`};
     cursor: pointer;
+    @media ${({theme})=> theme.size1200}{
+        right: 20px;
+    }
 `
 
 const BtnArrow = styled.div`

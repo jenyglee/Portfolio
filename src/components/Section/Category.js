@@ -11,7 +11,7 @@ const CategoryContainer = styled.div`
     transition: 1s;
 
     @media ${({ theme }) => theme.size1200} {
-        padding-left: 30px;
+        padding-left: 20px;
         /* padding-top: 110px; */
     }
     @media ${({ theme }) => theme.size960} {

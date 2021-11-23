@@ -36,6 +36,12 @@ import PcFunction03 from "./images/01_gulpAppSource/pc_function03.png"
 import PcFunction04 from "./images/01_gulpAppSource/pc_function04.png"
 import PcFunction05 from "./images/01_gulpAppSource/pc_function05.png"
 import PcFunction06 from "./images/01_gulpAppSource/pc_function06.png"
+import MoFunction01 from "./images/01_gulpAppSource/mo_function01.png"
+import MoFunction02 from "./images/01_gulpAppSource/mo_function02.png"
+import MoFunction03 from "./images/01_gulpAppSource/mo_function03.png"
+import MoFunction04 from "./images/01_gulpAppSource/mo_function04.png"
+import MoFunction05 from "./images/01_gulpAppSource/mo_function05.png"
+import MoFunction06 from "./images/01_gulpAppSource/mo_function06.png"
 import WorkIssue01 from "./images/01_gulpAppSource/workIssue01.png"
 import WorkIssue02 from "./images/01_gulpAppSource/workIssue02.png"
 import Mission01 from "./images/01_gulpAppSource/mission01.png"
@@ -100,17 +106,41 @@ const glupAppSources = {
     character01 : Character01,
     logo : Logo,
     video : VideoImage,
-    pcFunction01: PcFunction01,
-    pcFunction02: PcFunction02,
-    pcFunction03: PcFunction03,
-    pcFunction04: PcFunction04,
-    pcFunction05: PcFunction05,
-    pcFunction06: PcFunction06,
+    // pcFunction01: PcFunction01,
+    // pcFunction02: PcFunction02,
+    // pcFunction03: PcFunction03,
+    // pcFunction04: PcFunction04,
+    // pcFunction05: PcFunction05,
+    // pcFunction06: PcFunction06,
+    // moFunction01: MoFunction01,
+    // moFunction02: MoFunction02,
+    // moFunction03: MoFunction03,
+    // moFunction04: MoFunction04,
+    // moFunction05: MoFunction05,
+    // moFunction06: MoFunction06,
     workIssue01: WorkIssue01,
     workIssue02: WorkIssue02,
     mission01: Mission01,
     mission02: Mission02,
 }
+
+const pcGlupAppFunction = [
+    PcFunction01,
+    PcFunction02,
+    PcFunction03,
+    PcFunction04,
+    PcFunction05,
+    PcFunction06,
+]
+
+const moGlupAppFunction = [
+    MoFunction01,
+    MoFunction02,
+    MoFunction03,
+    MoFunction04,
+    MoFunction05,
+    MoFunction06,
+]
 
 export { 
     bgImages01, 
@@ -125,5 +155,7 @@ export {
     bgImages10, 
     categoryImages, 
     icons, 
-    glupAppSources 
+    glupAppSources ,
+    pcGlupAppFunction,
+    moGlupAppFunction,
 };

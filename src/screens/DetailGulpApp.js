@@ -8,6 +8,9 @@ const MainWrap = styled.main`
     max-width: 1200px;
     margin: 0 auto;
     padding: 260px 20px 0;
+    @media ${({theme})=> theme.size960}{
+        padding: 190px 20px 0;
+    }
     @media ${({theme})=> theme.size568}{
         padding: 105px 20px 0;
     }

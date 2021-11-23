@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { icons } from '../../images'
 import CommonDetail from "./glupApp/CommonDetail"
@@ -18,7 +18,7 @@ const BtnWrap = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media ${({theme})=> theme.size568}{
+    @media ${({theme})=> theme.size768}{
         padding: 20px 0;
     }
 `
@@ -33,7 +33,7 @@ const TitleWrap = styled.div`
 
 const Number = styled.p`
     margin-right: 70px;
-    @media ${({theme})=> theme.size568}{
+    @media ${({theme})=> theme.size768}{
         margin-right: 16px;
     }
 `
@@ -59,8 +59,31 @@ const Line = styled.div`
     height: 2px;
     background-color: ${({theme})=> theme.detailLine};
 `
+
+const CommonDetailWrap = styled.div`
+    width: 100%;
+    overflow: hidden;
+`
+
 const Accordion = ({number, title, detailNumber}) => {
     const [isVisibleDetail, setIsVisibleDetail] = useState(false)
+    const [isSize768, setIsSize768] = useState(false)
+
+    useEffect(()=>{
+        window.addEventListener("resize", onResize);
+        return ()=>{
+            window.removeEventListener("resize", onResize);
+        }
+    }, [])
+
+    const onResize = ()=>{
+        if(window.innerWidth <= 768){
+            setIsSize768(true);
+        }else {
+            setIsSize768(false);
+        }
+    }
+
     return (
     <AccordionWrap>
         {number === "01" ? <Line /> : null }
@@ -75,7 +98,9 @@ const Accordion = ({number, title, detailNumber}) => {
                 <ArrowImage src={icons.accordionArrow} isVisibleDetail={isVisibleDetail} />
             </ArrowImageWrap>
         </BtnWrap>
-        { isVisibleDetail ? <CommonDetail detailNumber={detailNumber} /> : null }
+        <CommonDetailWrap isVisibleDetail={isVisibleDetail}>
+            { isVisibleDetail ? <CommonDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
+        </CommonDetailWrap>
         <Line />
     </AccordionWrap>
     )

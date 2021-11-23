@@ -11,8 +11,18 @@ const MainVisualWrap = styled.section`
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 90px;
+
+    @media ${({theme})=> theme.size960}{
+        height: 381px;
+        margin-bottom: 65px;
+    }
     @media ${({theme})=> theme.size568}{
-        height: 373px;
+        height: 351px;
+        margin-bottom: 40px;
+        display: block;
+    }
+    @media ${({theme})=> theme.size320}{
+        height: 453px;
         margin-bottom: 40px;
         display: block;
     }
@@ -35,6 +45,9 @@ const Text = styled.p`
     color: ${({theme}) => theme.detailWhiteText};
     display: flex;
     align-items: center;
+    @media ${({theme})=> theme.size960}{
+        font-size: 40px;
+    }
     @media ${({theme})=> theme.size568}{
         font-size: 28px;
     }
@@ -44,6 +57,10 @@ const CharacterImageWrap = styled.div`
     height: 22px;
     margin-right: 6px;
     position: relative;
+    @media ${({theme})=> theme.size960}{
+        width: 39px;
+        height: 17px;
+    }
     @media ${({theme})=> theme.size568}{
         width: 28px;
         height: 12px;
@@ -58,6 +75,10 @@ const LogoWrap = styled.div`
     width: 82px;
     height: 22px;
     position: relative;
+    @media ${({theme})=> theme.size960}{
+        width: 64px;
+        height: 17px;
+    }
     @media ${({theme})=> theme.size568}{
         width: 45px;
         height: 12px;

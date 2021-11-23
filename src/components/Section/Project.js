@@ -18,10 +18,10 @@ const ProjectName = styled.a`
     margin-bottom: 30px;
 
     @media ${({ theme }) => theme.size1200} {
-        padding-left: 30px;
+        padding-left: 20px;
     }
-    @media ${({ theme }) => theme.size320} {
-        margin-bottom: 0;
+    @media ${({ theme }) => theme.size568} {
+        margin-bottom: 10px;
     }
 `;
 
@@ -50,7 +50,7 @@ const OneText = styled.span`
         height: 50px;
     }
     @media ${({ theme }) => theme.size568} {
-        font-size: 60px;
+        font-size: 40px;
         height: 40px;
     }
 `;

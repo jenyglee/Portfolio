@@ -14,12 +14,12 @@ const DetailContainer = styled.section`
     align-items: center;
 `
 
-const CommonDetail = ({detailNumber}) => {
+const CommonDetail = ({detailNumber, isSize768}) => {
     return (
     <DetailContainer>
         {detailNumber === "1" ? <ViewFlow /> : null}
         {detailNumber === "2" ? <WorkPlan /> : null}
-        {detailNumber === "3" ? <Functions /> : null}
+        {detailNumber === "3" ? <Functions isSize768={isSize768} /> : null}
         {detailNumber === "4" ? <WorkIssue /> : null}
         {detailNumber === "5" ? <Review /> : null}
         {detailNumber === "6" ? <Mission /> : null}

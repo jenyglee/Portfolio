@@ -10,9 +10,12 @@ const ProjectTitle = styled.article`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 85px;
-    @media ${({theme})=> theme.size568}{
+    @media ${({theme})=> theme.size768}{
         justify-content: flex-end;
-        margin-bottom: 50px;
+        margin-bottom: 70px;  
+    }
+    @media ${({theme})=> theme.size568}{
+        margin-bottom: 50px;  
     }
 `
 const Number = styled.p`
@@ -20,7 +23,7 @@ const Number = styled.p`
     font-size: 100px;
     padding-bottom: 20px;
     line-height: 0;
-    @media ${({theme})=> theme.size568}{
+    @media ${({theme})=> theme.size768}{
         display: none;
     }
 `
@@ -28,6 +31,9 @@ const Name = styled.p`
     font-size: 80px;
     font-weight: bold;
     display: flex;
+    @media ${({theme})=> theme.size768}{
+        font-size: 64px;
+    }
     @media ${({theme})=> theme.size568}{
         font-size: 34px;
     }
@@ -53,7 +59,7 @@ const ProjectDate = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    @media ${({theme})=> theme.size568}{
+    @media ${({theme})=> theme.size768}{
         width: 50%;
     }
 `
