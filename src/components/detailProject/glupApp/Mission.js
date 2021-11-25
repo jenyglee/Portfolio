@@ -45,20 +45,14 @@ const Description = styled.p`
     line-height: 26px;
     word-break: keep-all;
     display: block;
-    @media ${({theme}) => theme.size1200}{
-        width: 920px;
-    }
     @media ${({theme}) => theme.size960}{
         font-size: 18px;
-        width: 728px;
     }
     @media ${({theme}) => theme.size768}{
         font-size: 16px;
-        width: 528px;
     }
     @media ${({theme}) => theme.size568}{
         font-size: 13px;
-        width: 280px;
     }
 `
 
@@ -74,15 +68,6 @@ const ImageWrap = styled.div`
 const StyledImage = styled.img`
     margin-bottom: 60px;
     max-width: 857px;
-    @media ${({theme}) => theme.size1200}{
-        width: 920px;
-    }
-    @media ${({theme}) => theme.size960}{
-        max-width: 768px;
-    }
-    @media ${({theme}) => theme.size768}{
-        max-width: 279px;
-    }
 `
 
 const Mission = ({isSize768}) => {

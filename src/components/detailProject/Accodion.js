@@ -61,8 +61,19 @@ const Line = styled.div`
 `
 
 const CommonDetailWrap = styled.div`
-    width: 100%;
-    /* overflow: hidden; */
+    width: 1200px;
+    @media ${({theme})=> theme.size1200}{
+        width: 960px;
+    }
+    @media ${({theme})=> theme.size960}{
+        width: 768px;
+    }
+    @media ${({theme})=> theme.size768}{
+        width: 568px;
+    }
+    @media ${({theme})=> theme.size568}{
+        width: 320px;
+    }
 `
 
 const Accordion = ({number, title, detailNumber}) => {

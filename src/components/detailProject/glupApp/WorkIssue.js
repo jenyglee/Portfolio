@@ -3,21 +3,10 @@ import styled from 'styled-components'
 import { glupAppSources } from '../../../images'
 
 const ContentWrap = styled.div`
-    padding: 0 20px;
+    /* padding: 0 20px; */
     display: flex;
     flex-flow: column wrap;
-    @media ${({theme})=> theme.size1200}{
-        width: 960px;
-    }
-    @media ${({theme})=> theme.size960}{
-        width: 768px;
-    }
-    @media ${({theme})=> theme.size768}{
-        width: 568px;
-    }
-    @media ${({theme})=> theme.size568}{
-        width: 320px;
-    }
+    width: 100%;
 `
 
 const Category = styled.h1`

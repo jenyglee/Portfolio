@@ -3,18 +3,8 @@ import styled from 'styled-components'
 
 const ContentWrap = styled.div`
     padding: 50px 20px;
-    @media ${({theme})=> theme.size1200}{
-        width: 960px;
-    }
-    @media ${({theme})=> theme.size960}{
-        width: 768px;
-    }
     @media ${({theme})=> theme.size768}{
-        width: 568px;
         padding: 35px 20px 50px;
-    }
-    @media ${({theme})=> theme.size568}{
-        width: 320px;
     }
 `
 const Description = styled.p`

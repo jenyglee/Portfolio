@@ -6,38 +6,52 @@ const MainVisualWrap = styled.section`
     width: 100%;
     height: 497px;
     background: ${({img}) => `url("${img}") no-repeat`};
-    background-size: cover;
+    background-position: 48% 47%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 90px;
 
+    @media ${({theme})=> theme.size1200}{
+        background-size : 150%;
+        background-position: 55% 47%;
+    }
     @media ${({theme})=> theme.size960}{
         height: 381px;
         margin-bottom: 65px;
     }
-    @media ${({theme})=> theme.size568}{
-        height: 351px;
-        margin-bottom: 40px;
+    @media ${({theme})=> theme.size768}{
+        background-size : 190%;
+        background-position: 67% 35%;
         display: block;
     }
-    @media ${({theme})=> theme.size320}{
-        height: 453px;
+    @media ${({theme})=> theme.size568}{
+        background-size : 260%;
+        background-position: 75% 20%;
+        height: 373px;
         margin-bottom: 40px;
-        display: block;
     }
 `
 
 const ContentWrap = styled.article`
     padding-left: 50px;
+    @media ${({theme})=> theme.size768}{
+        padding-left: 40px;
+        padding-top: 40px;
+    }
     @media ${({theme})=> theme.size568}{
         padding-left: 20px;
-        padding-top: 40px;
     }
 `
 
 const TextWrap = styled.div`
     margin-bottom: 43px;
+    @media ${({theme})=> theme.size768}{
+        margin-bottom: 34px;
+    }
+    @media ${({theme})=> theme.size568}{
+        margin-bottom: 24px;
+    }
 `
 const Text = styled.p`
     font-family: "BLUDHAVEN";
@@ -45,6 +59,7 @@ const Text = styled.p`
     color: ${({theme}) => theme.detailWhiteText};
     display: flex;
     align-items: center;
+    letter-spacing: -1px;
     @media ${({theme})=> theme.size960}{
         font-size: 40px;
     }
