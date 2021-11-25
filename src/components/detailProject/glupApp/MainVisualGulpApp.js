@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { glupAppSources } from "./../../images"
+import { glupAppSources } from "../../../images"
 
 const MainVisualWrap = styled.section`
     width: 100%;
@@ -100,7 +100,7 @@ const LogoWrap = styled.div`
     }
 `
 
-const MainVisual = () => {
+const MainVisualGulpApp = () => {
     return (
         <MainVisualWrap img={glupAppSources.mainVisual} >
             <ContentWrap>
@@ -122,4 +122,5 @@ const MainVisual = () => {
     )
 }
 
-export default MainVisual;
+
+export default MainVisualGulpApp;

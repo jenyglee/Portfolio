@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { icons } from '../../images'
-import CommonDetail from "./glupApp/CommonDetail"
+import GulpDetail from "./glupApp/GulpDetail"
+import AvnDetail from "./anv/AvnDetail"
+import MusinsaDetail from "./musinsa/MusinsaDetail"
+import KtngDetail from "./ktNg/KtngDetail"
+import ConsultKitDetail from "./consultKit/ConsultKitDetail"
+import KyoboDetail from "./Kyobo/KyoboDetail"
+import BeothermDetail from "./beotherm/BeothermDetail"
 
 
 const AccordionWrap = styled.section`
@@ -61,22 +67,10 @@ const Line = styled.div`
 `
 
 const CommonDetailWrap = styled.div`
-    width: 1200px;
-    @media ${({theme})=> theme.size1200}{
-        width: 960px;
-    }
-    @media ${({theme})=> theme.size960}{
-        width: 768px;
-    }
-    @media ${({theme})=> theme.size768}{
-        width: 568px;
-    }
-    @media ${({theme})=> theme.size568}{
-        width: 320px;
-    }
+    width: 100%;
 `
 
-const Accordion = ({number, title, detailNumber}) => {
+const Accordion = ({projectNumber, number, title, detailNumber}) => {
     const [isVisibleDetail, setIsVisibleDetail] = useState(false)
     const [isSize768, setIsSize768] = useState(false)
 
@@ -110,7 +104,13 @@ const Accordion = ({number, title, detailNumber}) => {
             </ArrowImageWrap>
         </BtnWrap>
         <CommonDetailWrap isVisibleDetail={isVisibleDetail}>
-            { isVisibleDetail ? <CommonDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
+            { isVisibleDetail&&projectNumber=== "01" ? <GulpDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
+            { isVisibleDetail&&projectNumber=== "02" ? <AvnDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
+            { isVisibleDetail&&projectNumber=== "03" ? <MusinsaDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
+            { isVisibleDetail&&projectNumber=== "04" ? <KtngDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
+            { isVisibleDetail&&projectNumber=== "05" ? <ConsultKitDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
+            { isVisibleDetail&&projectNumber=== "06" ? <KyoboDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
+            { isVisibleDetail&&projectNumber=== "07" ? <BeothermDetail detailNumber={detailNumber} isSize768={isSize768} /> : null }
         </CommonDetailWrap>
         <Line />
     </AccordionWrap>

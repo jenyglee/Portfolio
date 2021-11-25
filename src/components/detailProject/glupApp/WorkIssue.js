@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { glupAppSources } from '../../../images'
 
 const ContentWrap = styled.div`
-    /* padding: 0 20px; */
     display: flex;
     flex-flow: column wrap;
     width: 100%;

@@ -32,21 +32,10 @@ const Description = styled.p`
 `
 
 const Tags = styled.div`
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     margin-bottom: 5px;
-    @media ${({theme})=> theme.size1200}{
-        width: 960px;
-    }
-    @media ${({theme})=> theme.size960}{
-        width: 768px;
-    }
-    @media ${({theme})=> theme.size768}{
-        width: 568px;
-    }
-    @media ${({theme})=> theme.size568}{
-        width: 320px;
-    }
 `
 
 const TagBox = styled.div`

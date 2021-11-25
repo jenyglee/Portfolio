@@ -9,12 +9,16 @@ import Mission from './Mission'
 
 const DetailContainer = styled.section`
     width: 100%;
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media ${({ theme }) => theme.size768} {
+        padding: 0;
+    }
 `
 
-const CommonDetail = ({detailNumber, isSize768}) => {
+const GulpDetail = ({detailNumber, isSize768}) => {
     return (
     <DetailContainer>
         {detailNumber === "1" ? <ViewFlow /> : null}
@@ -27,4 +31,4 @@ const CommonDetail = ({detailNumber, isSize768}) => {
     )
 }
 
-export default CommonDetail;
+export default GulpDetail;

@@ -8,7 +8,6 @@ const ContentWrap = styled.div`
     }
 `
 const Description = styled.p`
-    /* width: 90%; */
     font-size: 24px;
     font-weight: bold;
     line-height: 40px;

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Title from '../components/detailProject/Title'
-import MainVisualGulpApp from '../components/detailProject/glupApp/MainVisualGulpApp'
+import MainVisualAvn from '../components/detailProject/anv/MainVisualAvn'
 import Accordion from '../components/detailProject/Accodion'
 
 const Wrap = styled.div`
@@ -38,7 +38,7 @@ const MainWrap = styled.main`
     }
 `
 
-const DetailGulpApp = () => {
+const DetailAvn = () => {
     useEffect(()=>{
         window.scrollTo({
             top: 0,
@@ -49,17 +49,14 @@ const DetailGulpApp = () => {
     return (
         <Wrap>
             <MainWrap>
-                <Title number="01" title="어플리케이션" titlePoint="꿀꺽" startDate="202108" endDate="202112" />
-                <MainVisualGulpApp />
-                <Accordion projectNumber="01" number="01" title="View Flow" detailNumber="1" />
-                <Accordion projectNumber="01" number="02" title="WorkPlan" detailNumber="2" />
-                <Accordion projectNumber="01" number="03" title="Functions" detailNumber="3" />
-                <Accordion projectNumber="01" number="04" title="WorkIssue" detailNumber="4" />
-                <Accordion projectNumber="01" number="05" title="Review" detailNumber="5" />
-                <Accordion projectNumber="01" number="06" title="Mission" detailNumber="6" />
+                <Title number="02" title="AVN/Cluster" titlePoint="" startDate="202108" endDate="202112" />
+                <MainVisualAvn />
+                <Accordion projectNumber="02" number="01" title="Concept" detailNumber="1" />
+                <Accordion projectNumber="02" number="02" title="GUI Design" detailNumber="2" />
+                <Accordion projectNumber="02" number="03" title="Component" detailNumber="3" />
             </MainWrap>
         </Wrap>
     )
 }
 
-export default DetailGulpApp;
+export default DetailAvn;

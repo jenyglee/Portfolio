@@ -2,6 +2,12 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Route, Switch, Link } from "react-router-dom";
 import DetailGulpApp from "./DetailGulpApp";
+import DetailAvn from "./DetailAvn";
+import DetailMusinsa from "./DetailMusinsa";
+import DetailKTnG from "./DetailKTnG";
+import DetailConsultKit from "./DetailConsultKit";
+import DetailKyobo from "./DetailKyobo";
+import DetailBeotherm from "./DetailBeotherm";
 import { useState } from "react";
 import {
     BgComponent01,
@@ -217,6 +223,24 @@ const Home = () => {
 
                 <Route path="/1/0">
                     <DetailGulpApp />
+                </Route>
+                <Route path="/2/0">
+                    <DetailAvn />
+                </Route>
+                <Route path="/2/1">
+                    <DetailMusinsa />
+                </Route>
+                <Route path="/2/2">
+                    <DetailKTnG />
+                </Route>
+                <Route path="/2/3">
+                    <DetailConsultKit />
+                </Route>
+                <Route path="/2/4">
+                    <DetailKyobo />
+                </Route>
+                <Route path="/2/5">
+                    <DetailBeotherm />
                 </Route>
             </Switch>
             <TopButton scrollY={scrollY} onClick={handleTop} isChangedTheme={isChangedTheme} />

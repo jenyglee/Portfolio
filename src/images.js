@@ -26,7 +26,7 @@ import categoryIntroductionW from "./images/category_introduction_w.png"
 import categoryDevelopW from "./images/category_develop_w.png"
 import categoryDesignW from "./images/category_design_w.png"
 import AccordionArrow from "./images/accordionArrow.png"
-import MainVisual from "./images/01_gulpAppSource/main-visual.png"
+import GulpAppMainVisual from "./images/01_gulpAppSource/main-visual.png"
 import Character01 from "./images/01_gulpAppSource/character01.png"
 import Logo from "./images/01_gulpAppSource/logo.png"
 import VideoImage from "./images/01_gulpAppSource/videoImage.png"
@@ -48,19 +48,35 @@ import PcMission01 from "./images/01_gulpAppSource/pc_mission01.png"
 import PcMission02 from "./images/01_gulpAppSource/pc_mission02.png"
 import MoMission01 from "./images/01_gulpAppSource/mo_mission01.png"
 import MoMission02 from "./images/01_gulpAppSource/mo_mission02.png"
+import AvnMainVisual from "./images/02_avnSource/main_visual.png"
+import Motive from "./images/02_avnSource/motive.png"
+import GuiDesign01 from "./images/02_avnSource/GuiDesign01.png"
+import GuiDesign02 from "./images/02_avnSource/GuiDesign02.png"
+import GuiDesign03 from "./images/02_avnSource/GuiDesign03.png"
+import GuiDesign04 from "./images/02_avnSource/GuiDesign04.png"
+import GuiDesign05 from "./images/02_avnSource/GuiDesign05.png"
+import GuiDesign06 from "./images/02_avnSource/GuiDesign06.png"
 
+import MusinsaMainVisual from "./images/03_musinsaSource/main_visual.png"
+import KtngMainVisual from "./images/04_ktngSource/main_visual.png"
+import ConsultKitMainVisual from "./images/05_consultKitSource/main_visual.png"
+
+// ✨ 메인 카테고리 이미지
 const categoryImages = [
     {image : categoryIntroduction, whiteImage : categoryIntroductionW },
     {image : categoryDevelop, whiteImage : categoryDevelopW},
     {image : categoryDesign, whiteImage : categoryDesignW},
 ]
 
+// ✨ 메인 타이틀 오버 이미지
 const bgImages01 = {
     Image01: bg01Component01,
 };
+
 const bgImages02 = {
     Image01: bg02Component01,
 };
+
 const bgImages03 = {
     Image01: bg03Component01,
     Image02: bg03Component02,
@@ -69,6 +85,7 @@ const bgImages03 = {
     Image05: bg03Component05,
     Image06: bg03Component06,
 };
+
 const bgImages04 = {
     Image01: bg04Component01,
     Image02: bg04Component02,
@@ -76,33 +93,42 @@ const bgImages04 = {
     Image04: bg04Component04,
     Image05: bg04Component05,
 };
+
 const bgImages05 = {
     Image01: bg05Component01,
 };
+
 const bgImages06 = {
     Image01: bg06Component01,
     Image02: bg06Component02,
 };
+
 const bgImages07 = {
     Image01: bg07Component01,
     Image02: bg07Component02,
 };
+
 const bgImages08 = {
     Image01: bg08Component01,
 };
+
 const bgImages09 = {
     Image01: bg09Component01,
 };
+
 const bgImages10 = {
     Image01: bg10Component01,
 };
 
+
+// ✨ 상세페이지 이미지
 const icons = {
     accordionArrow : AccordionArrow,
 }
 
+// ✨ 어플리케이션 꿀꺽 소스
 const glupAppSources = {
-    mainVisual : MainVisual,
+    mainVisual : GulpAppMainVisual,
     character01 : Character01,
     logo : Logo,
     video : VideoImage,
@@ -138,6 +164,33 @@ const moGlupAppMission = [
     MoMission02
 ]
 
+// ✨ AVN/Cluster 소스
+const avnSources = {
+    mainVisual : AvnMainVisual,
+    motive : Motive,
+    GuiDesign01,
+    GuiDesign02,
+    GuiDesign03,
+    GuiDesign04,
+    GuiDesign05,
+    GuiDesign06,
+}
+
+// ✨ 무신사 소스
+const musinsaSources = {
+    mainVisual : MusinsaMainVisual,
+}
+
+// ✨ KT&G 소스
+const ktNgSources = {
+    mainVisual : KtngMainVisual,
+}
+
+// ✨ 컨설킷 소스
+const consultKitSources = {
+    mainVisual : ConsultKitMainVisual,
+}
+
 export { 
     bgImages01, 
     bgImages02, 
@@ -155,5 +208,9 @@ export {
     pcGlupAppFunction,
     moGlupAppFunction,
     pcGlupAppMission,
-    moGlupAppMission
+    moGlupAppMission,
+    avnSources,
+    musinsaSources,
+    ktNgSources,
+    consultKitSources
 };
