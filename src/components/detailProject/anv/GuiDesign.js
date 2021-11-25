@@ -22,6 +22,10 @@ const Container = styled.div`
     align-items: center;
 `
 
+const Section = styled.section`
+
+`
+
 const TextWrap = styled.div`
     width: auto;
     display: flex;
@@ -50,20 +54,16 @@ const Point = styled.span`
 const Description = styled.p`
     font-size: 18px;
     line-height: 30px;
-    margin-bottom: 60px;
     word-break: keep-all;
     @media ${({ theme }) => theme.size960} {
         width: 100%;
-        margin-bottom: 50px;
     }
     @media ${({ theme }) => theme.size768} {
         font-size: 16px;
-        margin-bottom: 40px;
     }
     @media ${({ theme }) => theme.size568} {
         font-size: 13px;
         line-height: 27px;
-        margin-bottom: 30px;
     }
 `
 
@@ -79,16 +79,18 @@ const GuiDesign = () => {
     return (
         <ContentWrap>
             <Container>
-                <ImageWrap>
-                    <StyledImage src={avnSources.GuiDesign01} />
-                </ImageWrap>
-                <TextWrap>
-                    <Title><Point>Cluster MAIN</Point> GUI</Title>
-                    <Description>
-                        네온 라이트의 입체적인 계단식 디자인으로<br />
-                        운전자와의 감성 상호작용을 더욱 깊이있게 해줍니다.
-                    </Description>
-                </TextWrap>
+                <section>
+                    <ImageWrap>
+                        <StyledImage src={avnSources.GuiDesign01} />
+                    </ImageWrap>
+                    <TextWrap>
+                        <Title><Point>Cluster MAIN</Point> GUI</Title>
+                        <Description>
+                            네온 라이트의 입체적인 계단식 디자인으로<br />
+                            운전자와의 감성 상호작용을 더욱 깊이있게 해줍니다.
+                        </Description>
+                    </TextWrap>
+                </section>
             </Container>
         </ContentWrap>
     )
