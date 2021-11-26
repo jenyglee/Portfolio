@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Components from './Components'
 import Concept from './Concept'
 import GuiDesign from './GuiDesign'
 
@@ -15,6 +16,7 @@ const AvnDetail = ({detailNumber, isSize768}) => {
     <DetailContainer>
         {detailNumber === "1" ? <Concept /> : null}
         {detailNumber === "2" ? <GuiDesign /> : null}
+        {detailNumber === "3" ? <Components /> : null}
     </DetailContainer>
     )
 }

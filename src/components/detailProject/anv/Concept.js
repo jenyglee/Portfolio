@@ -9,6 +9,7 @@ const ContentWrap = styled.div`
     padding: 0 20px;
     @media ${({ theme }) => theme.size768} {
         margin-bottom: 70px;
+        padding: 0;
     }
     @media ${({ theme }) => theme.size568} {
         margin-bottom: 50px;

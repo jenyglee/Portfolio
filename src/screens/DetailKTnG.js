@@ -49,10 +49,10 @@ const DetailKTnG = () => {
     return (
         <Wrap>
             <MainWrap>
-                <Title number="03" title="컨셉디자인 KT&G" titlePoint="" startDate="202108" endDate="202112" />
+                <Title number="04" title="컨셉디자인 KT&G" titlePoint="" startDate="202108" endDate="202112" />
                 <MainVisualKtNg />
-                <Accordion projectNumber="01" number="01" title="UX/UI Design" detailNumber="1" />
-                <Accordion projectNumber="02" number="01" title="Component" detailNumber="2" />
+                <Accordion projectNumber="04" number="01" title="UX/UI Design" detailNumber="1" />
+                <Accordion projectNumber="04" number="02" title="Component" detailNumber="2" />
             </MainWrap>
         </Wrap>
     )

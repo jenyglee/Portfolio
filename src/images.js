@@ -50,15 +50,24 @@ import MoMission01 from "./images/01_gulpAppSource/mo_mission01.png"
 import MoMission02 from "./images/01_gulpAppSource/mo_mission02.png"
 import AvnMainVisual from "./images/02_avnSource/main_visual.png"
 import Motive from "./images/02_avnSource/motive.png"
-import GuiDesign01 from "./images/02_avnSource/GuiDesign01.png"
-import GuiDesign02 from "./images/02_avnSource/GuiDesign02.png"
-import GuiDesign03 from "./images/02_avnSource/GuiDesign03.png"
-import GuiDesign04 from "./images/02_avnSource/GuiDesign04.png"
-import GuiDesign05 from "./images/02_avnSource/GuiDesign05.png"
-import GuiDesign06 from "./images/02_avnSource/GuiDesign06.png"
-
+import AvnGuiDesign01 from "./images/02_avnSource/GuiDesign01.png"
+import AvnGuiDesign02 from "./images/02_avnSource/GuiDesign02.png"
+import AvnGuiDesign03 from "./images/02_avnSource/GuiDesign03.png"
+import AvnGuiDesign04 from "./images/02_avnSource/GuiDesign04.png"
+import AvnGuiDesign05 from "./images/02_avnSource/GuiDesign05.png"
+import AvnGuiDesign06 from "./images/02_avnSource/GuiDesign06.png"
+import AvnComponents from "./images/02_avnSource/Components.png"
 import MusinsaMainVisual from "./images/03_musinsaSource/main_visual.png"
+import MusinsaUXUIDesign01 from "./images/03_musinsaSource/UXUIDesign01.png"
+import MusinsaUXUIDesign02 from "./images/03_musinsaSource/UXUIDesign02.png"
+import MusinsaUXUIDesign03 from "./images/03_musinsaSource/UXUIDesign03.png"
+import MusinsaUXUIDesign04 from "./images/03_musinsaSource/UXUIDesign04.png"
+import MusinsaUXUIDesign05 from "./images/03_musinsaSource/UXUIDesign05.png"
+import MusinsaComponents from "./images/03_musinsaSource/Components.png"
 import KtngMainVisual from "./images/04_ktngSource/main_visual.png"
+import KtngUXUIDesign01 from "./images/04_ktngSource/UXUIDesign01.png"
+import KtngUXUIDesign02 from "./images/04_ktngSource/UXUIDesign02.png"
+import KtngUXUIDesign03 from "./images/04_ktngSource/UXUIDesign03.png"
 import ConsultKitMainVisual from "./images/05_consultKitSource/main_visual.png"
 
 // ✨ 메인 카테고리 이미지
@@ -168,22 +177,33 @@ const moGlupAppMission = [
 const avnSources = {
     mainVisual : AvnMainVisual,
     motive : Motive,
-    GuiDesign01,
-    GuiDesign02,
-    GuiDesign03,
-    GuiDesign04,
-    GuiDesign05,
-    GuiDesign06,
+    GuiDesign01 : AvnGuiDesign01,
+    GuiDesign02 : AvnGuiDesign02,
+    GuiDesign03 : AvnGuiDesign03,
+    GuiDesign04 : AvnGuiDesign04,
+    GuiDesign05 : AvnGuiDesign05,
+    GuiDesign06 : AvnGuiDesign06,
+    components : AvnComponents
 }
 
 // ✨ 무신사 소스
 const musinsaSources = {
     mainVisual : MusinsaMainVisual,
+    UXUIDesign01 : MusinsaUXUIDesign01,
+    UXUIDesign02 : MusinsaUXUIDesign02,
+    UXUIDesign03 : MusinsaUXUIDesign03,
+    UXUIDesign04 : MusinsaUXUIDesign04,
+    UXUIDesign05 : MusinsaUXUIDesign05,
+    components : MusinsaComponents
 }
 
 // ✨ KT&G 소스
 const ktNgSources = {
     mainVisual : KtngMainVisual,
+    UXUIDesign01 : KtngUXUIDesign01,
+    UXUIDesign02 : KtngUXUIDesign02,
+    UXUIDesign03 : KtngUXUIDesign03,
+    // components : MusinsaComponents
 }
 
 // ✨ 컨설킷 소스

@@ -51,8 +51,8 @@ const DetailMusinsa = () => {
             <MainWrap>
                 <Title number="03" title="컨셉디자인 무신사" titlePoint="" startDate="202108" endDate="202112" />
                 <MainVisualMusinsa />
-                <Accordion projectNumber="01" number="01" title="UX/UI Design" detailNumber="1" />
-                <Accordion projectNumber="02" number="01" title="Component" detailNumber="2" />
+                <Accordion projectNumber="03" number="01" title="UX/UI Design" detailNumber="1" />
+                <Accordion projectNumber="03" number="02" title="Component" detailNumber="2" />
             </MainWrap>
         </Wrap>
     )
