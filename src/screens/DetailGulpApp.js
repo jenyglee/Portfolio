@@ -38,7 +38,7 @@ const MainWrap = styled.main`
     }
 `
 
-const DetailGulpApp = () => {
+const DetailGulpApp = ({scrollX}) => {
     useEffect(()=>{
         window.scrollTo({
             top: 0,
@@ -51,12 +51,12 @@ const DetailGulpApp = () => {
             <MainWrap>
                 <Title number="01" title="어플리케이션" titlePoint="꿀꺽" startDate="202108" endDate="202112" />
                 <MainVisualGulpApp />
-                <Accordion projectNumber="01" number="01" title="View Flow" detailNumber="1" />
-                <Accordion projectNumber="01" number="02" title="WorkPlan" detailNumber="2" />
-                <Accordion projectNumber="01" number="03" title="Functions" detailNumber="3" />
-                <Accordion projectNumber="01" number="04" title="WorkIssue" detailNumber="4" />
-                <Accordion projectNumber="01" number="05" title="Review" detailNumber="5" />
-                <Accordion projectNumber="01" number="06" title="Mission" detailNumber="6" />
+                <Accordion projectNumber="01" number="01" title="View Flow" detailNumber="1" scrollX={scrollX} />
+                <Accordion projectNumber="01" number="02" title="WorkPlan" detailNumber="2" scrollX={scrollX} />
+                <Accordion projectNumber="01" number="03" title="Functions" detailNumber="3" scrollX={scrollX} />
+                <Accordion projectNumber="01" number="04" title="WorkIssue" detailNumber="4" scrollX={scrollX} />
+                <Accordion projectNumber="01" number="05" title="Review" detailNumber="5" scrollX={scrollX} />
+                <Accordion projectNumber="01" number="06" title="Mission" detailNumber="6" scrollX={scrollX} />
             </MainWrap>
         </Wrap>
     )

@@ -38,7 +38,7 @@ const OneText = styled.span`
     }
     @media ${({ theme }) => theme.size1200} {
         font-size: 120px;
-        opacity : 1;
+        /* opacity : 1; */
         height: 90px;
     }
     @media ${({ theme }) => theme.size960} {
@@ -136,7 +136,6 @@ const BtnText = styled.p`
 `;
 
 const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChangedTheme, isPcBreakPoint }) => {
-    // console.log(projectTitle.id)
     // textArr : ['i','n','f','o']
     const [animationTransform, setAnimationTransform] = useState([ -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100 ]);
     const [animationOpacity, setAnimationOpacity] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -157,7 +156,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(10, 1, 0)
-            copyOpacity.splice(10, 1, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(10, 1, 1)
+            }else {
+                copyOpacity.splice(10, 1, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 100);
@@ -165,7 +168,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(9, 2, 0, 0)
-            copyOpacity.splice(9, 2, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(9, 2, 1, 1)
+            }else {
+                copyOpacity.splice(9, 2, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 200);
@@ -173,7 +180,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(8, 3, 0, 0, 0)
-            copyOpacity.splice(8, 3, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(8, 3, 1, 1, 1)
+            }else {
+                copyOpacity.splice(8, 3, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 300);
@@ -181,7 +192,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(7, 4, 0, 0, 0, 0)
-            copyOpacity.splice(7, 4, 0.4, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(7, 4, 1, 1, 1, 1)
+            }else {
+                copyOpacity.splice(7, 4, 0.4, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 400);
@@ -189,7 +204,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(6, 5, 0, 0, 0, 0, 0)
-            copyOpacity.splice(6, 5, 0.4, 0.4, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(6, 5, 1, 1, 1, 1, 1)
+            }else {
+                copyOpacity.splice(6, 5, 0.4, 0.4, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 500);
@@ -197,7 +216,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(5, 6, 0, 0, 0, 0, 0, 0)
-            copyOpacity.splice(5, 6, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(5, 6, 1, 1, 1, 1, 1, 1)
+            }else {
+                copyOpacity.splice(5, 6, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 600);
@@ -205,7 +228,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(4, 7, 0, 0, 0, 0, 0, 0, 0)
-            copyOpacity.splice(4, 7, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(4, 7, 1, 1, 1, 1, 1, 1, 1)
+            }else {
+                copyOpacity.splice(4, 7, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 700);
@@ -213,7 +240,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(3, 8, 0, 0, 0, 0, 0, 0, 0, 0)
-            copyOpacity.splice(3, 8, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(3, 8, 1, 1, 1, 1, 1, 1, 1, 1)
+            }else {
+                copyOpacity.splice(3, 8, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 800);
@@ -221,7 +252,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(2, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-            copyOpacity.splice(2, 9, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(2, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+            }else {
+                copyOpacity.splice(2, 9, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 900);
@@ -229,7 +264,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(1, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-            copyOpacity.splice(1, 10, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+            }else {
+                copyOpacity.splice(1, 10, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1000);
@@ -237,7 +276,11 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-            copyOpacity.splice(0, 11, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            if(window.innerWidth <= 1200){
+                copyOpacity.splice(0, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+            }else {
+                copyOpacity.splice(0, 11, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4)
+            }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1100);

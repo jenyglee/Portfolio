@@ -104,6 +104,7 @@ const Home = () => {
     const [imgKey, setImgKey] = useState();
     const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
+    const [scrollX, setScrollX] = useState(0)
     const [scrollY, setScrollY] = useState(0)
 
     // ✨ 너비 1200픽셀 이하 브레이크포인트
@@ -116,15 +117,21 @@ const Home = () => {
     }, [window.innerWidth]);
 
     useEffect(()=>{
-        // ✨ 스크롤값 저장(헤더 인터랙션에 적용)
+        // ✨ 스크롤값, 화면너비 저장(인터랙션, 이미지교체에 활용)
         window.addEventListener("scroll", onScroll)
+        window.addEventListener("resize", onResize);
         return ()=>{
             window.removeEventListener("scroll", onscroll)
+            window.removeEventListener("resize", onResize);
         }
     }, [])
 
     const onScroll = ()=>{
         setScrollY(window.scrollY);
+    }
+
+    const onResize = ()=>{
+        setScrollX(window.innerWidth);
     }
 
     // ✨ 커서 들어오면 이미지 노출
@@ -222,25 +229,25 @@ const Home = () => {
                 </Route>
 
                 <Route path="/1/0">
-                    <DetailGulpApp />
+                    <DetailGulpApp scrollX={scrollX}/>
                 </Route>
                 <Route path="/2/0">
-                    <DetailAvn />
+                    <DetailAvn scrollX={scrollX} />
                 </Route>
                 <Route path="/2/1">
-                    <DetailMusinsa />
+                    <DetailMusinsa scrollX={scrollX} />
                 </Route>
                 <Route path="/2/2">
-                    <DetailKTnG />
+                    <DetailKTnG scrollX={scrollX} />
                 </Route>
                 <Route path="/2/3">
-                    <DetailConsultKit />
+                    <DetailConsultKit scrollX={scrollX} />
                 </Route>
                 <Route path="/2/4">
-                    <DetailKyobo />
+                    <DetailKyobo scrollX={scrollX} />
                 </Route>
                 <Route path="/2/5">
-                    <DetailBeotherm />
+                    <DetailBeotherm scrollX={scrollX} />
                 </Route>
             </Switch>
             <TopButton scrollY={scrollY} onClick={handleTop} isChangedTheme={isChangedTheme} />

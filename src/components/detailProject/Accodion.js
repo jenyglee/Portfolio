@@ -70,25 +70,18 @@ const CommonDetailWrap = styled.div`
     width: 100%;
 `
 
-const Accordion = ({projectNumber, number, title, detailNumber}) => {
+const Accordion = ({projectNumber, number, title, detailNumber, scrollX}) => {
     const [isVisibleDetail, setIsVisibleDetail] = useState(false)
     const [isSize768, setIsSize768] = useState(false)
 
     useEffect(()=>{
-        window.addEventListener("resize", onResize);
-        return ()=>{
-            window.removeEventListener("resize", onResize);
-        }
-    }, [])
-
-    const onResize = ()=>{
-        if(window.innerWidth <= 768){
+        if(scrollX <= 768){
             setIsSize768(true);
         }else {
             setIsSize768(false);
         }
-    }
-
+    }, [scrollX])
+    
     return (
     <AccordionWrap>
         {number === "01" ? <Line /> : null }
