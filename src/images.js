@@ -85,6 +85,8 @@ import PcConsultKit02 from "./images/05_consultKitSource/pc_consultKit_02.png";
 import PcConsultKit03 from "./images/05_consultKitSource/pc_consultKit_03.png";
 import PcConsultKit04 from "./images/05_consultKitSource/pc_consultKit_04.png";
 import PcConsultKit05 from "./images/05_consultKitSource/pc_consultKit_05.png";
+import KyoboMainVisual from "./images/06_kyobo/main_visual.png";
+import BeothermMainVisual from "./images/07_beotherm/main_visual.png";
 
 // ✨ 메인 카테고리 이미지
 const categoryImages = [
@@ -248,6 +250,12 @@ const pcConsultKitSources = [
     PcConsultKit05,
 ];
 
+// ✨ 교보문고 소스
+const KyoboSources = [KyoboMainVisual];
+
+// ✨ 비오템옴므 소스
+const BeothermSources = [BeothermMainVisual];
+
 export {
     bgImages01,
     bgImages02,
@@ -275,4 +283,6 @@ export {
     moKtNgSources,
     consultKitSources,
     pcConsultKitSources,
+    KyoboSources,
+    BeothermSources,
 };
