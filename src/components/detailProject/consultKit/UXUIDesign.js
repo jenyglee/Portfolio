@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { pcKtNgSources, moKtNgSources } from "../../../images";
+import UXUIDesignSection from "./UXUIDesignSection";
+import { pcConsultKitSources } from "../../../images";
 
 const ContentWrap = styled.div`
     width: 100%;
@@ -23,26 +24,18 @@ const Container = styled.div`
     align-items: center;
 `;
 
-const ImageWrap = styled.div`
-    max-width: 1132px;
-`;
-
-const StyledImage = styled.img`
-    width: 100%;
-`;
-
-const Components = ({ isSize768 }) => {
+const UXUIDesign = ({ isSize768 }) => {
     return (
         <ContentWrap>
             <Container>
-                <ImageWrap>
-                    <StyledImage
-                        src={isSize768 ? moKtNgSources[3] : pcKtNgSources[3]}
-                    />
-                </ImageWrap>
+                {pcConsultKitSources.map((item, index) => {
+                    return (
+                        <UXUIDesignSection img={pcConsultKitSources[index]} />
+                    );
+                })}
             </Container>
         </ContentWrap>
     );
 };
 
-export default Components;
+export default UXUIDesign;

@@ -71,10 +71,20 @@ import MoMusinsaUXUIDesign04 from "./images/03_musinsaSource/mo_UXUIDesign04.png
 import MoMusinsaUXUIDesign05 from "./images/03_musinsaSource/mo_UXUIDesign05.png";
 import MoMusinsaComponents from "./images/03_musinsaSource/mo_Components.png";
 import KtngMainVisual from "./images/04_ktngSource/main_visual.png";
-import KtngUXUIDesign01 from "./images/04_ktngSource/UXUIDesign01.png";
-import KtngUXUIDesign02 from "./images/04_ktngSource/UXUIDesign02.png";
-import KtngUXUIDesign03 from "./images/04_ktngSource/UXUIDesign03.png";
+import PcKtngUXUIDesign01 from "./images/04_ktngSource/pc_UXUIDesign01.png";
+import PcKtngUXUIDesign02 from "./images/04_ktngSource/pc_UXUIDesign02.png";
+import PcKtngUXUIDesign03 from "./images/04_ktngSource/pc_UXUIDesign03.png";
+import PcKtngComponent from "./images/04_ktngSource/pc_Component.png";
+import MoKtngUXUIDesign01 from "./images/04_ktngSource/mo_UXUIDesign01.png";
+import MoKtngUXUIDesign02 from "./images/04_ktngSource/mo_UXUIDesign02.png";
+import MoKtngUXUIDesign03 from "./images/04_ktngSource/mo_UXUIDesign03.png";
+import MoKtngComponent from "./images/04_ktngSource/mo_Component.png";
 import ConsultKitMainVisual from "./images/05_consultKitSource/main_visual.png";
+import PcConsultKit01 from "./images/05_consultKitSource/pc_consultKit_01.png";
+import PcConsultKit02 from "./images/05_consultKitSource/pc_consultKit_02.png";
+import PcConsultKit03 from "./images/05_consultKitSource/pc_consultKit_03.png";
+import PcConsultKit04 from "./images/05_consultKitSource/pc_consultKit_04.png";
+import PcConsultKit05 from "./images/05_consultKitSource/pc_consultKit_05.png";
 
 // ✨ 메인 카테고리 이미지
 const categoryImages = [
@@ -212,16 +222,31 @@ const moMusinsaSources = [
 // ✨ KT&G 소스
 const ktNgSources = {
     mainVisual: KtngMainVisual,
-    UXUIDesign01: KtngUXUIDesign01,
-    UXUIDesign02: KtngUXUIDesign02,
-    UXUIDesign03: KtngUXUIDesign03,
-    // components : MusinsaComponents
 };
+const pcKtNgSources = [
+    PcKtngUXUIDesign01,
+    PcKtngUXUIDesign02,
+    PcKtngUXUIDesign03,
+    PcKtngComponent,
+];
+const moKtNgSources = [
+    MoKtngUXUIDesign01,
+    MoKtngUXUIDesign02,
+    MoKtngUXUIDesign03,
+    MoKtngComponent,
+];
 
 // ✨ 컨설킷 소스
 const consultKitSources = {
     mainVisual: ConsultKitMainVisual,
 };
+const pcConsultKitSources = [
+    PcConsultKit01,
+    PcConsultKit02,
+    PcConsultKit03,
+    PcConsultKit04,
+    PcConsultKit05,
+];
 
 export {
     bgImages01,
@@ -246,5 +271,8 @@ export {
     pcMusinsaSources,
     moMusinsaSources,
     ktNgSources,
+    pcKtNgSources,
+    moKtNgSources,
     consultKitSources,
+    pcConsultKitSources,
 };

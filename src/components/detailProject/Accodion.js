@@ -80,7 +80,6 @@ const Accordion = ({ projectNumber, number, title, detailNumber, scrollX }) => {
             setIsSize768(false);
         }
     }, [scrollX]);
-    console.log(scrollX, isSize768);
 
     return (
         <AccordionWrap>
@@ -132,7 +131,7 @@ const Accordion = ({ projectNumber, number, title, detailNumber, scrollX }) => {
                         isSize768={isSize768}
                     />
                 ) : null}
-                {isVisibleDetail && projectNumber === "06" ? (
+                {/* {isVisibleDetail && projectNumber === "06" ? (
                     <KyoboDetail
                         detailNumber={detailNumber}
                         isSize768={isSize768}
@@ -143,7 +142,7 @@ const Accordion = ({ projectNumber, number, title, detailNumber, scrollX }) => {
                         detailNumber={detailNumber}
                         isSize768={isSize768}
                     />
-                ) : null}
+                ) : null} */}
             </CommonDetailWrap>
             <Line />
         </AccordionWrap>

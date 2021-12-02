@@ -105,7 +105,6 @@ const Home = () => {
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
     const [scrollX, setScrollX] = useState(0);
     const [scrollY, setScrollY] = useState(0);
-    console.log(scrollX);
 
     // ✨ 너비 1200픽셀 이하 브레이크포인트
     useEffect(() => {
