@@ -24,28 +24,31 @@ import {
     Section,
     TopButton,
 } from "./../components";
-import {categoryImages} from "./../images"
-import { useSelector, useDispatch } from 'react-redux';
-import { stateInteractions } from './../store/interactions/interactionsSlice';
-import actionsInteractions from './../store/interactions/interactionsActions';
+import { categoryImages } from "./../images";
+import { useSelector, useDispatch } from "react-redux";
+import { stateInteractions } from "./../store/interactions/interactionsSlice";
+import actionsInteractions from "./../store/interactions/interactionsActions";
 
 const Body = styled.main`
     height: 100%;
-    background-color: ${({theme, isChangedTheme, isPcBreakPoint})=> isChangedTheme&&!isPcBreakPoint ? theme.darkThemeBackgroud : theme.whiteThemeBackgroud};
-    transition:0.5s;
+    background-color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>
+        isChangedTheme && !isPcBreakPoint
+            ? theme.darkThemeBackgroud
+            : theme.whiteThemeBackgroud};
+    transition: 0.5s;
     position: relative;
-`
+`;
 
 const MainWrap = styled.main`
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
     padding-top: 224px;
-    
-    @media ${({theme})=> theme.size1200}{
+
+    @media ${({ theme }) => theme.size1200} {
         padding-top: 120px;
     }
-    @media ${({theme})=> theme.size568}{
+    @media ${({ theme }) => theme.size568} {
         padding-top: 50px;
     }
 `;
@@ -62,9 +65,7 @@ const tempData = [
         { id: 2, title: "Github", isHover: false },
     ],
 
-    [
-        { id: 0, title: "Gulp App", isHover: false },
-    ],
+    [{ id: 0, title: "Gulp App", isHover: false }],
 
     [
         { id: 0, title: "Avn", isHover: false },
@@ -74,7 +75,7 @@ const tempData = [
         { id: 4, title: "Kyobo", isHover: false },
         { id: 5, title: "Beotherm", isHover: false },
     ],
-]
+];
 
 const tempImage = [
     [
@@ -82,9 +83,7 @@ const tempImage = [
         { id: 1, isShow: false },
         { id: 2, isShow: false },
     ],
-    [
-        { id: 0, isShow: false },
-    ],
+    [{ id: 0, isShow: false }],
     [
         { id: 0, isShow: false },
         { id: 1, isShow: false },
@@ -104,8 +103,9 @@ const Home = () => {
     const [imgKey, setImgKey] = useState();
     const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
-    const [scrollX, setScrollX] = useState(0)
-    const [scrollY, setScrollY] = useState(0)
+    const [scrollX, setScrollX] = useState(0);
+    const [scrollY, setScrollY] = useState(0);
+    console.log(scrollX);
 
     // ✨ 너비 1200픽셀 이하 브레이크포인트
     useEffect(() => {
@@ -116,23 +116,23 @@ const Home = () => {
         }
     }, [window.innerWidth]);
 
-    useEffect(()=>{
+    useEffect(() => {
         // ✨ 스크롤값, 화면너비 저장(인터랙션, 이미지교체에 활용)
-        window.addEventListener("scroll", onScroll)
+        window.addEventListener("scroll", onScroll);
         window.addEventListener("resize", onResize);
-        return ()=>{
-            window.removeEventListener("scroll", onscroll)
+        return () => {
+            window.removeEventListener("scroll", onscroll);
             window.removeEventListener("resize", onResize);
-        }
-    }, [])
+        };
+    }, []);
 
-    const onScroll = ()=>{
+    const onScroll = () => {
         setScrollY(window.scrollY);
-    }
+    };
 
-    const onResize = ()=>{
+    const onResize = () => {
         setScrollX(window.innerWidth);
-    }
+    };
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
@@ -146,7 +146,7 @@ const Home = () => {
         setProjectTitle(copy);
         setProjectImage(copyImage);
         setImgKey({ id: id, sectionId: sectionId });
-        changeTheme(copy)
+        changeTheme(copy);
     };
 
     // ✨ 커서 나가면 이미지 숨김 (노출과 코드가 같음)
@@ -161,31 +161,34 @@ const Home = () => {
         setProjectTitle(copy);
         setProjectImage(copyImage);
         setImgKey({ id: id, sectionId: sectionId });
-        changeTheme(copy)
+        changeTheme(copy);
     };
 
     // ✨ 특정 타이틀 마우스오버시 다크테마로 변경
     const changeTheme = (projectTitle) => {
-        if(projectTitle[0][2].isHover || projectTitle[2][0].isHover){
+        if (projectTitle[0][2].isHover || projectTitle[2][0].isHover) {
             setIsChangedTheme(true);
-        } 
-        else if(!projectTitle[0][2].isHover || !projectTitle[2][0].isHover){
+        } else if (!projectTitle[0][2].isHover || !projectTitle[2][0].isHover) {
             setIsChangedTheme(false);
         }
-    }
+    };
 
     // ✨ Top버튼 클릭시 상단으로
-    const handleTop = ()=>{
+    const handleTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: "smooth",
         });
-        setScrollY(0)
-    }
+        setScrollY(0);
+    };
 
     return (
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
-            <Header isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint} scrollY={scrollY} />
+            <Header
+                isChangedTheme={isChangedTheme}
+                isPcBreakPoint={isPcBreakPoint}
+                scrollY={scrollY}
+            />
             <Switch>
                 <Route path="/" exact>
                     <MainWrap>
@@ -212,16 +215,38 @@ const Home = () => {
                             </TitleContainer>
                             {imgKey && !isPcBreakPoint ? (
                                 <div>
-                                    <BgComponent01 isShow={projectImage[0][0].isShow} />
-                                    <BgComponent02 isShow={projectImage[0][1].isShow} />
-                                    <BgComponent03 isShow={projectImage[0][2].isShow} /> {/* Github 포폴 */}
-                                    <BgComponent04 isShow={projectImage[1][0].isShow} />
-                                    <BgComponent05 isShow={projectImage[2][0].isShow} /> {/* AVN 포폴 */}
-                                    <BgComponent06 isShow={projectImage[2][1].isShow} />
-                                    <BgComponent07 isShow={projectImage[2][2].isShow} />
-                                    <BgComponent08 isShow={projectImage[2][3].isShow} />
-                                    <BgComponent09 isShow={projectImage[2][4].isShow} />
-                                    <BgComponent10 isShow={projectImage[2][5].isShow} />
+                                    <BgComponent01
+                                        isShow={projectImage[0][0].isShow}
+                                    />
+                                    <BgComponent02
+                                        isShow={projectImage[0][1].isShow}
+                                    />
+                                    <BgComponent03
+                                        isShow={projectImage[0][2].isShow}
+                                    />{" "}
+                                    {/* Github 포폴 */}
+                                    <BgComponent04
+                                        isShow={projectImage[1][0].isShow}
+                                    />
+                                    <BgComponent05
+                                        isShow={projectImage[2][0].isShow}
+                                    />{" "}
+                                    {/* AVN 포폴 */}
+                                    <BgComponent06
+                                        isShow={projectImage[2][1].isShow}
+                                    />
+                                    <BgComponent07
+                                        isShow={projectImage[2][2].isShow}
+                                    />
+                                    <BgComponent08
+                                        isShow={projectImage[2][3].isShow}
+                                    />
+                                    <BgComponent09
+                                        isShow={projectImage[2][4].isShow}
+                                    />
+                                    <BgComponent10
+                                        isShow={projectImage[2][5].isShow}
+                                    />
                                 </div>
                             ) : null}
                         </div>
@@ -229,7 +254,7 @@ const Home = () => {
                 </Route>
 
                 <Route path="/1/0">
-                    <DetailGulpApp scrollX={scrollX}/>
+                    <DetailGulpApp scrollX={scrollX} />
                 </Route>
                 <Route path="/2/0">
                     <DetailAvn scrollX={scrollX} />
@@ -250,7 +275,11 @@ const Home = () => {
                     <DetailBeotherm scrollX={scrollX} />
                 </Route>
             </Switch>
-            <TopButton scrollY={scrollY} onClick={handleTop} isChangedTheme={isChangedTheme} />
+            <TopButton
+                scrollY={scrollY}
+                onClick={handleTop}
+                isChangedTheme={isChangedTheme}
+            />
         </Body>
     );
 };

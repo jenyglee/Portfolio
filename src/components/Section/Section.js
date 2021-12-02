@@ -11,7 +11,7 @@ const SectionContainer = styled.section`
 `
 
 // projectTitle = projectTitle[각 섹션]
-const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChangedTheme, isPcBreakPoint, scrollY }) => {
+const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChangedTheme, isPcBreakPoint }) => {
     const titleNameArr = [];
     for(let i=0; i<projectTitle.length; i++){
         // projectTitle[0].title.split(""); 👉 ['i','n','f','o']

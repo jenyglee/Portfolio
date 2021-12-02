@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { musinsaSources } from '../../../images'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { moMusinsaSources, pcMusinsaSources } from "../../../images";
 
 const ContentWrap = styled.div`
     width: 100%;
@@ -14,33 +14,39 @@ const ContentWrap = styled.div`
     @media ${({ theme }) => theme.size568} {
         margin-bottom: 50px;
     }
-`
+`;
 const Container = styled.div`
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
 
 const ImageWrap = styled.div`
     max-width: 1132px;
-`
+`;
 
 const StyledImage = styled.img`
     width: 100%;
-`
+`;
 
-const Components = () => {
+const Components = ({ isSize768 }) => {
     return (
         <ContentWrap>
             <Container>
                 <ImageWrap>
-                    <StyledImage src={musinsaSources.components} />
+                    <StyledImage
+                        src={
+                            isSize768
+                                ? moMusinsaSources[5]
+                                : pcMusinsaSources[5]
+                        }
+                    />
                 </ImageWrap>
             </Container>
         </ContentWrap>
-    )
-}
+    );
+};
 
 export default Components;

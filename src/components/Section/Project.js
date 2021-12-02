@@ -295,6 +295,8 @@ const Project = ({ projectTitle, textArr, onEnter, onLeave, sectionId, isChanged
             <Link to={`/${sectionId}/${projectTitle.id}`}>
             <ProjectName
                 isHover={projectTitle.isHover}
+
+                // 🥸✨ 너비값을 가져온 뒤 
                 onMouseEnter={() => {onEnter(projectTitle.id, sectionId);}}
                 onMouseLeave={() => {onLeave(projectTitle.id, sectionId);}}
                 onClick={()=>{onLeave(projectTitle.id, sectionId);}}
