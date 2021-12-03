@@ -26,6 +26,7 @@ import categoryIntroductionW from "./images/category_introduction_w.png";
 import categoryDevelopW from "./images/category_develop_w.png";
 import categoryDesignW from "./images/category_design_w.png";
 import AccordionArrow from "./images/accordionArrow.png";
+import InfoMainVisual from "./images/08_info/main_visual.png";
 import GulpAppMainVisual from "./images/01_gulpAppSource/main-visual.png";
 import Character01 from "./images/01_gulpAppSource/character01.png";
 import Logo from "./images/01_gulpAppSource/logo.png";
@@ -152,6 +153,11 @@ const icons = {
     accordionArrow: AccordionArrow,
 };
 
+// ✨ Info 소스
+const infoSources = {
+    mainVisual: InfoMainVisual,
+};
+
 // ✨ 어플리케이션 꿀꺽 소스
 const glupAppSources = {
     mainVisual: GulpAppMainVisual,
@@ -269,6 +275,7 @@ export {
     bgImages10,
     categoryImages,
     icons,
+    infoSources,
     glupAppSources,
     pcGlupAppFunction,
     moGlupAppFunction,
