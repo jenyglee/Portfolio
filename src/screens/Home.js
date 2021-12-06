@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Route, Switch, Link } from "react-router-dom";
 import DetailInfo from "./DetailInfo";
+import DetailAbility from "./DetailAbility";
 import DetailGulpApp from "./DetailGulpApp";
 import DetailAvn from "./DetailAvn";
 import DetailMusinsa from "./DetailMusinsa";
@@ -255,6 +256,9 @@ const Home = () => {
 
                 <Route path="/0/0">
                     <DetailInfo scrollX={scrollX} />
+                </Route>
+                <Route path="/0/1">
+                    <DetailAbility scrollX={scrollX} />
                 </Route>
                 <Route path="/1/0">
                     <DetailGulpApp scrollX={scrollX} />

@@ -1,0 +1,156 @@
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import Ability from "../components/detailProject/ability/Ability";
+
+const Wrap = styled.div`
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 200px 0;
+    @media ${({ theme }) => theme.size1200} {
+        max-width: 960px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        max-width: 768px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        max-width: 568px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        max-width: 320px;
+    }
+`;
+
+const Section = styled.section`
+    width: 100%;
+`;
+
+const TitleWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+const Title = styled.h1`
+    font-size: 100px;
+    font-family: "BLUDHAVEN";
+`;
+
+const AbilityWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+const DetailAbility = ({ scrollX }) => {
+    const titleData = [
+        "REACT NATIVE",
+        "ASYNC STORAGE",
+        "USECONTEXT",
+        "LIFE CYCLE",
+        "STACK",
+        "BOTTOM TABS",
+        "NAVIGATION",
+        "AXIOS",
+        "REDUX",
+        "REDUX THUNK",
+        "MOB X",
+        "FIREBASE",
+        "DATA HANDLING",
+    ];
+
+    const abilityData = [
+        [
+            {
+                id: 0,
+                name: "React Native",
+                gauge: "80%",
+            },
+            {
+                id: 1,
+                name: "React",
+                gauge: "70%",
+            },
+            {
+                id: 2,
+                name: "MySQL",
+                gauge: "40%",
+            },
+        ],
+        [
+            {
+                id: 0,
+                name: "Axios/Fetch API",
+                gauge: "50%",
+            },
+            {
+                id: 1,
+                name: "Redux",
+                gauge: "50%",
+            },
+            {
+                id: 2,
+                name: "Firebase",
+                gauge: "60%",
+            },
+        ],
+        [
+            {
+                id: 0,
+                name: "Git",
+                gauge: "40%",
+            },
+            {
+                id: 1,
+                name: "HTML/CSS",
+                gauge: "90%",
+            },
+            {
+                id: 2,
+                name: "Figma",
+                gauge: "80%",
+            },
+        ],
+        [
+            {
+                id: 0,
+                name: "PhotoShop",
+                gauge: "100%",
+            },
+            {
+                id: 1,
+                name: "Illustrator",
+                gauge: "100%",
+            },
+        ],
+    ];
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, []);
+
+    return (
+        <Wrap>
+            <Section
+                style={{
+                    marginBottom: 132,
+                }}
+            >
+                <TitleWrap>
+                    {titleData.map((ability) => {
+                        return <Title>{ability}</Title>;
+                    })}
+                </TitleWrap>
+            </Section>
+            <Section>
+                <AbilityWrap>
+                    {abilityData.map((abilities) => {
+                        return <Ability abilities={abilities} />;
+                    })}
+                </AbilityWrap>
+            </Section>
+        </Wrap>
+    );
+};
+
+export default DetailAbility;

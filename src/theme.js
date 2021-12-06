@@ -3,7 +3,8 @@ const Colors = {
     grey_02: "#f5f5f5",
     black: "#000000",
     white: "#ffffff",
-    gulpAppGreen : "#27C47D",
+    main: "#1E34FF",
+    gulpAppGreen: "#27C47D",
 };
 
 export const theme = {
@@ -11,27 +12,29 @@ export const theme = {
     line: Colors.grey_02,
 
     // ✨ 화이트테마
-    whiteThemeBackgroud : Colors.grey_02,
-    whiteThemeText : Colors.black,
-    whiteThemeBtnBackground : Colors.black,
-    whiteThemeBtnArrow:Colors.white,
-    whiteThemeBtnText:Colors.white,
+    whiteThemeBackgroud: Colors.grey_02,
+    whiteThemeText: Colors.black,
+    whiteThemeBtnBackground: Colors.black,
+    whiteThemeBtnArrow: Colors.white,
+    whiteThemeBtnText: Colors.white,
     whiteThemeBtnStroke: Colors.grey_01,
 
     // ✨ 다크테마
-    darkThemeBackgroud : Colors.black,
-    darkThemeText : Colors.white,
-    darkThemeBtnBackground : Colors.white,
-    darkThemeBtnArrow : Colors.black,
-    darkThemeBtnText : Colors.black,
+    darkThemeBackgroud: Colors.black,
+    darkThemeText: Colors.white,
+    darkThemeBtnBackground: Colors.white,
+    darkThemeBtnArrow: Colors.black,
+    darkThemeBtnText: Colors.black,
 
     // ✨ 디테일페이지 공통
-    detailLine : Colors.black,
-    detailWhiteText : Colors.white,
-    detailTagBorder : Colors.grey_01,
+    detailLine: Colors.black,
+    detailWhiteText: Colors.white,
+    detailTagBorder: Colors.grey_01,
+    detailDisable: Colors.grey_01,
+    detailPoint: Colors.main,
 
     // ✨ GulpApp 포인트컬러
-    gulpAppFrimary : Colors.gulpAppGreen,
+    gulpAppFrimary: Colors.gulpAppGreen,
 
     size320: `(max-width:320px)`,
     size568: `(max-width:568px)`,
