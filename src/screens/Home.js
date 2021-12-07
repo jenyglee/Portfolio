@@ -134,6 +134,13 @@ const Home = () => {
     const onResize = () => {
         setScrollX(window.innerWidth);
     };
+    // ✨ 첫 진입 시 상단으로 이동
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, []);
 
     // ✨ 커서 들어오면 이미지 노출
     const itemEnter = (id, sectionId) => {
