@@ -1,3 +1,4 @@
+import logo from "./images/logo.png";
 import bg01Component01 from "./images/bgComponent01/01_01.png";
 import bg02Component01 from "./images/bgComponent02/02_01.png";
 import bg03Component01 from "./images/bgComponent03/03_01.png";
@@ -271,6 +272,7 @@ const KyoboSources = [KyoboMainVisual];
 const BeothermSources = [BeothermMainVisual];
 
 export {
+    logo,
     bgImages01,
     bgImages02,
     bgImages03,

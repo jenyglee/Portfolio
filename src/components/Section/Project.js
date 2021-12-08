@@ -18,9 +18,9 @@ const ProjectName = styled.a`
     margin-bottom: 30px;
 
     @media ${({ theme }) => theme.size1200} {
-        padding-left: 20px;
     }
     @media ${({ theme }) => theme.size568} {
+        padding-left: 20px;
         margin-bottom: 10px;
     }
 `;

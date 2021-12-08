@@ -4,16 +4,37 @@ import Category from "./Category";
 import Project from "./Project";
 
 const SectionContainer = styled.section`
+    max-width: 1200px;
+    margin: 0 auto;
     padding-bottom: 74px;
-    @media ${({theme})=> theme.size568}{
+    background-color: red;
+    @media ${({ theme }) => theme.size1200} {
+        max-width: 960px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        max-width: 768px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        max-width: 568px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        max-width: 320px;
         padding-bottom: 0px;
     }
-`
+`;
 
 // projectTitle = projectTitle[각 섹션]
-const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChangedTheme, isPcBreakPoint }) => {
+const Section = ({
+    projectTitle,
+    sectionId,
+    itemEnter,
+    itemLeave,
+    img,
+    isChangedTheme,
+    isPcBreakPoint,
+}) => {
     const titleNameArr = [];
-    for(let i=0; i<projectTitle.length; i++){
+    for (let i = 0; i < projectTitle.length; i++) {
         // projectTitle[0].title.split(""); 👉 ['i','n','f','o']
         // projectTitle[1].title.split(""); 👉 ['A','b','i','l','i','t','y']
         const arr = projectTitle[i].title.split("");
@@ -22,10 +43,10 @@ const Section = ({ projectTitle, sectionId, itemEnter, itemLeave, img, isChanged
 
     return (
         <SectionContainer>
-            <Category 
+            <Category
                 img={img[sectionId]} //categoryImages[2]
                 isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint} 
+                isPcBreakPoint={isPcBreakPoint}
             />
             {titleNameArr.map((title, index) => {
                 return (
