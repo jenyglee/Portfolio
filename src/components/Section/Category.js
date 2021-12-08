@@ -4,21 +4,9 @@ import styled from "styled-components";
 const CategoryContainer = styled.div`
     display: flex;
     align-items: center;
-    /* padding-top: 150px; */
-    /* margin-bottom: 20px; */
     position: relative;
     bottom: -50px;
     transition: 1s;
-
-    @media ${({ theme }) => theme.size1200} {
-        /* padding-top: 110px; */
-    }
-    @media ${({ theme }) => theme.size960} {
-        /* padding-top: 90px; */
-    }
-    @media ${({ theme }) => theme.size768} {
-        /* padding-top: 70px; */
-    }
     @media ${({ theme }) => theme.size568} {
         padding-left: 20px;
         padding-top: 50px;

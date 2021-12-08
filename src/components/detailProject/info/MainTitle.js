@@ -1,13 +1,31 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { infoSources } from "../../../images";
+
 const MainWrap = styled.main`
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 66px;
+`;
+
+const IconWrap = styled.div`
+    width: 90px;
+    height: 90px;
+    margin-bottom: 62px;
+`;
+
+const IconImage = styled.img`
+    width: 100%;
+    height: 100%;
+`;
+
+const SubTitle = styled.h2`
+    font-family: "BLUDHAVEN";
+    font-size: 16px;
+    margin-bottom: 56px;
 `;
 
 const TitleWrap = styled.div`
     width: 100%;
-    padding: 85px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,9 +33,8 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 80px;
-    font-weight: 500;
-    margin: 20px 0;
+    font-size: 100px;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,23 +42,12 @@ const Title = styled.div`
 `;
 
 const TitleObj = styled.h1`
-    line-height: 95px;
+    line-height: 120px;
     /* transform: translateX(-200px); */
     transform: ${({ animationTransform }) =>
         `translateX(${animationTransform}px)`};
     opacity: ${({ animationOpacity }) => animationOpacity};
     transition: 1s;
-`;
-
-const SubTitle = styled.h2`
-    font-family: "BLUDHAVEN";
-    font-size: 16px;
-`;
-
-const Line = styled.div`
-    width: 100%;
-    height: 2px;
-    background-color: ${({ theme }) => theme.detailLine};
 `;
 
 const data = [
@@ -134,8 +140,10 @@ const MainTitle = () => {
     }, []);
     return (
         <MainWrap>
-            <Line />
             <TitleWrap>
+                <IconWrap>
+                    <IconImage src={infoSources.illust} />
+                </IconWrap>
                 <SubTitle>A SENTENCE INTRODUCING ME</SubTitle>
                 <Title>
                     <TitleObj
@@ -157,9 +165,7 @@ const MainTitle = () => {
                         {title[2]}
                     </TitleObj>
                 </Title>
-                <SubTitle>10 UNIQUE BEST SELLING FONTS</SubTitle>
             </TitleWrap>
-            <Line />
         </MainWrap>
     );
 };

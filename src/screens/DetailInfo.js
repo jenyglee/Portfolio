@@ -6,7 +6,7 @@ import MyInfo from "../components/detailProject/info/MyInfo";
 
 const Wrap = styled.div`
     max-width: 100%;
-    padding: 200px 0;
+    padding: 140px 0;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
     }
@@ -28,20 +28,22 @@ const Section = styled.section`
 `;
 
 const AmbitionTitle = styled.h5`
-    width: 20%;
+    width: 18%;
     font-family: "BLUDHAVEN";
     font-size: 34px;
     margin-right: 30px;
 `;
 
 const DescriptionWrap = styled.div`
-    width: 80%;
+    width: 82%;
 `;
 
 const Description = styled.p`
     font-size: 18px;
+    font-weight: 600;
     line-height: 22px;
-    margin-bottom: 15px;
+    transform: translateY(-4px);
+    margin-bottom: 24px;
     word-break: keep-all;
 `;
 
@@ -52,6 +54,8 @@ const Space = styled.span`
 
 const DetailInfo = ({ scrollX }) => {
     const descriptionData = [
+        "          I WORKED AS A UX/UI DESIGNER FOR 3 YEARS. DESIGNING AND COLLABORATING WITHIN A TEAM, I OFTEN FOUND IT DIFFICULT TO CONVEY THE THINGS I IMAGINED TO THE DEVELOPER. I ALSO HAD DIFFICULTY IMPLEMENTING IT BECAUSE THERE WERE MUCH MORE CONSIDERATIONS THAN I THOUGHT. AS THIS HAPPENED FREQUENTLY, I FELT THAT IT WAS NOT ENOUGH TO PRODUCE SATISFACTORY RESULTS DUE TO THE LIMITATIONS OF MY KNOWLEDGE, AND I STARTED STUDYING DEVELOPMENT ON MY OWN.",
+        "          IT TOOK ME A LOT OF TIME BECAUSE I STARTED BLINDLY WITHOUT A CLEAR DIRECTION. ONCE I STARTED SOMETHING, I TRIED TO SEE IT TO THE FINISH ON THE VERY DAY. I THINK THE EXPERIENCES OF LEARNING ON MY OWN AND THE COUNTLESS EXPERIENCES OF TRIALS AND ERRORS MADE ME STRONGER. I’M NOT SURE HOW WELL I WOULD BE ABLE TO PERFORM AT THE COMPANY, BUT I CAN ASSURE YOU THAT I’M ALWAYS WILLING TO LEARN AND GROW QUICKLY SO THAT I CAN MAKE A BIG CONTRIBUTION TO THE COMPANY. THANK YOU.",
         "          저는 3년동안 UX/UI 디자이너로 재직활동을 했습니다. 팀 내에서 디자인과 개발 협업을 하다보면 제가 디자인하며 상상했던 것들을 개발자에게 제대로 전달하지 못하거나, 생각보다 많은 고려사항들 때문에 구현이 어려웠던 경우가 종종 있었습니다. 수시로 이런 일이 발생하다 보니 제 지식의 한계로 만족스러운 결과가 나오지 않는 것에 부족함이 느껴졌고 독학으로 개발공부를 시작했습니다.",
         "          뚜렷한 방향 없이 무작정 시작하여 생각보다 많은 시간이 걸렸지만 그만큼 스스로 방법을 터득했던 경험들과, 오랜시간이 걸려도 결국엔 구현에 성공했던 수많은 삽질의 경험들이 저를 더 단단하게 만들어주었다고 생각합니다.아직도 제 수준을 확실히 몰라 회사에서 얼만큼의 퍼포먼스를 내게 될지 장담이 불가능하지만 항상 배움에 메말라있는 자세와, 시작했으면 끝장을 보는 제 성격으로 회사에 큰 기여를 할 수 있도록 빠르게 배우고 성장하겠습니다.",
     ];
@@ -119,7 +123,7 @@ const DetailInfo = ({ scrollX }) => {
             <MyInfo />
             <Section
                 style={{
-                    marginBottom: 120,
+                    marginBottom: 100,
                 }}
             >
                 <AmbitionTitle>My Ambition</AmbitionTitle>
@@ -135,6 +139,7 @@ const DetailInfo = ({ scrollX }) => {
                 </DescriptionWrap>
             </Section>
             <Section>
+                <AmbitionTitle>Work Experience</AmbitionTitle>
                 {careerList.map((career) => {
                     return <Career career={career} key={career.id} />;
                 })}

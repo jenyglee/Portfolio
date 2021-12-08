@@ -29,6 +29,7 @@ import categoryDesignW from "./images/category_design_w.png";
 import AccordionArrow from "./images/accordionArrow.png";
 import InfoMainVisual from "./images/08_info/main_visual.png";
 import InfoIconCheck from "./images/08_info/icon_check.png";
+import InfoIconIllust from "./images/08_info/icon_illust.png";
 import AbilityLogoReact from "./images/09_ability/logo_react.png";
 import GulpAppMainVisual from "./images/01_gulpAppSource/main-visual.png";
 import Character01 from "./images/01_gulpAppSource/character01.png";
@@ -160,6 +161,7 @@ const icons = {
 const infoSources = {
     mainVisual: InfoMainVisual,
     check: InfoIconCheck,
+    illust: InfoIconIllust,
 };
 
 // ✨ Ability 소스

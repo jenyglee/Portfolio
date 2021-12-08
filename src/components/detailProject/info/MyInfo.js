@@ -8,7 +8,7 @@ const ProfileWrap = styled.section`
     background: ${({ img }) => `url("${img}") no-repeat`};
     background-size: 100%;
     background-position: 48% 47%;
-    margin-bottom: 50px;
+    margin-bottom: 98px;
 `;
 
 const InfoWrap = styled.div`

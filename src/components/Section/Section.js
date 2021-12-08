@@ -7,7 +7,6 @@ const SectionContainer = styled.section`
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 74px;
-    background-color: red;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
     }

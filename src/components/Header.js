@@ -10,6 +10,7 @@ const FixedContainer = styled.div`
     top: 0;
     left: 50%;
     transition: 0.5s;
+
     opacity: ${({ showHeader }) => (showHeader ? 1 : 0)};
     transform: ${({ showHeader }) =>
         showHeader ? `translate(-50%, 0)` : `translate(-50%, -120px)`};
@@ -22,9 +23,21 @@ const HeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    @media ${({ theme }) => theme.size1200} {
+        max-width: 960px;
+        margin: 60px auto 0 auto;
+    }
+    @media ${({ theme }) => theme.size960} {
+        max-width: 768px;
+        margin: 40px auto 0 auto;
+    }
+    @media ${({ theme }) => theme.size768} {
+        max-width: 568px;
+    }
     @media ${({ theme }) => theme.size568} {
-        margin: 62px auto 0 auto;
+        max-width: 320px;
+        padding: 0 20px;
+        margin: 20px auto 0 auto;
     }
 `;
 
@@ -40,13 +53,16 @@ const LogoWrap = styled.div`
     transition: 0.5s;
 
     @media ${({ theme }) => theme.size1200} {
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        transform: translateY(-50%);
+        width: 152px;
+        height: 30px;
     }
-    @media ${({ theme }) => theme.size568} {
-        font-size: 12px;
+    @media ${({ theme }) => theme.size960} {
+        width: 129px;
+        height: 25px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        width: 103px;
+        height: 20px;
     }
 `;
 
@@ -78,10 +94,7 @@ const GnbList = styled.li`
 const MenuButton = styled.a`
     width: 20px;
     height: 18px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
+    position: relative;
     display: none;
     @media ${({ theme }) => theme.size1200} {
         display: block;
@@ -168,6 +181,7 @@ const Header = ({ isChangedTheme, isPcBreakPoint, scrollY }) => {
     return (
         <FixedContainer showHeader={showHeader}>
             <HeaderContainer>
+                {/* 숨겨진 메뉴 */}
                 <MenuContainer
                     translateY={isMenuEntered ? "translateY(220px)" : "0"}
                 >
@@ -185,6 +199,7 @@ const Header = ({ isChangedTheme, isPcBreakPoint, scrollY }) => {
                         );
                     })}
                 </MenuContainer>
+                {/* 로고 */}
                 <Link to="/">
                     <LogoWrap
                         isChangedTheme={isChangedTheme}
@@ -193,6 +208,7 @@ const Header = ({ isChangedTheme, isPcBreakPoint, scrollY }) => {
                         <LogoImage src={logo} />
                     </LogoWrap>
                 </Link>
+                {/* intro, develop, design */}
                 <Gnb>
                     {menu.map((item, index) => {
                         return (
@@ -206,6 +222,7 @@ const Header = ({ isChangedTheme, isPcBreakPoint, scrollY }) => {
                         );
                     })}
                 </Gnb>
+                {/* 햄버거 버튼 */}
                 <MenuButton
                     onClick={() => {
                         setIsMenuEntered(!isMenuEntered);
