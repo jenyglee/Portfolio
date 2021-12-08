@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Title from "./Title";
+import AbilityTitle from "./AbilityTitle";
 import Gauge from "./Gauge";
 
 const Wrap = styled.div`
@@ -31,15 +31,15 @@ const BottomLine = styled.div`
     bottom: 0;
 `;
 
-const Ability = ({ abilities }) => {
+const Ability = ({ abilities, scrollY }) => {
     return (
         <Wrap>
             {abilities.map((ability) => {
                 return (
                     <AbilityWrap>
                         <TopLine />
-                        <Title name={ability.name} />
-                        <Gauge percent={ability.gauge} />
+                        <AbilityTitle name={ability.name} />
+                        <Gauge percent={ability.gauge} scrollY={scrollY} />
                         <BottomLine />
                     </AbilityWrap>
                 );

@@ -265,7 +265,7 @@ const Home = () => {
                     <DetailInfo scrollX={scrollX} />
                 </Route>
                 <Route path="/0/1">
-                    <DetailAbility scrollX={scrollX} />
+                    <DetailAbility scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/1/0">
                     <DetailGulpApp scrollX={scrollX} />

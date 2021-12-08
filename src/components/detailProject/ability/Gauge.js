@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -22,11 +22,12 @@ const Disable = styled.div`
     position: absolute;
 `;
 const Able = styled.div`
-    width: ${({ percent }) => percent};
+    width: 0%;
     height: 100%;
     border-radius: 5px;
     background-color: ${({ theme }) => theme.detailPoint};
     position: absolute;
+    transition: 1s;
 `;
 
 const Percent = styled.h1`
@@ -34,13 +35,26 @@ const Percent = styled.h1`
     font-weight: bold;
 `;
 
-const Gauge = ({ percent }) => {
-    // console.log(percent);
+const Gauge = ({ percent, scrollY }) => {
+    const [isStarted, setIsStarted] = useState(false);
+
+    // 높이 1090에서 게이지 실행
+    useEffect(() => {
+        if (scrollY > 1090) {
+            setIsStarted(true);
+        }
+    }, [scrollY]);
+
     return (
         <Wrap>
             <GaugeWrap>
                 <Disable />
-                <Able percent={percent} />
+                <Able
+                    percent={percent}
+                    style={{
+                        width: isStarted ? `${percent}%` : 0,
+                    }}
+                />
             </GaugeWrap>
             <Percent>{percent}</Percent>
         </Wrap>

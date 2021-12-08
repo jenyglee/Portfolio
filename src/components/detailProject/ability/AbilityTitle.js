@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { abilitySources } from "./../../../images";
+import { abilitySources } from "../../../images";
 
 const TitleWrap = styled.div`
     display: flex;
@@ -22,7 +22,7 @@ const Title = styled.h1`
     font-size: 16px;
 `;
 
-const Ability = ({ name }) => {
+const AbilityTitle = ({ name }) => {
     return (
         <TitleWrap>
             <LoogWrap>
@@ -33,4 +33,4 @@ const Ability = ({ name }) => {
     );
 };
 
-export default Ability;
+export default AbilityTitle;
