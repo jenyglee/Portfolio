@@ -5,55 +5,5 @@
 }
 body {
     height: 100%;
-}
-
-/*  ################ Header ################ */
-
-/*  ################ Section ################ */
-/* .category {
-    display: flex;
-    align-items: center;
-    margin-top: 150px;
-    margin-bottom: 20px;
-} */
-/* .category p {
-    font-weight: bold;
-    letter-spacing: 8px;
-}
-.category .cally {
-    width: 100px;
-} */
-
-/* .section {
-    width: 50%;
-} */
-
-/* .project-name {
-    font-family: "BLUDHAVEN";
-} */
-
-.project-name:hover li {
-    opacity: 0.3;
-}
-
-.project-name li:hover {
-    opacity: 1;
-}
-
-/* .project-name li {
-    font-size: 160px;
-} */
-
-.project-name li div {
-    width: 230px;
-    height: 300px;
-    background: green;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    opacity: 0;
-    transition: 0.5s;
-}
-.project-name li:hover div {
-    opacity: 1;
+    background: #f5f5f5;
 }
