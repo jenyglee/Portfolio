@@ -11,17 +11,19 @@ const Line = styled.div`
 const Wrap = styled.div`
     flex: 1;
     flex-direction: column;
-    margin: 0 10px;
+    margin: ${({ location }) =>
+        location === "first" ? `0 10px 0 0` : `0 0 0 10px`};
+    /* background-color: red; */
 `;
 
 const CareerWrap = styled.div`
-    height: 458px;
+    height: 309px;
     padding: 30px;
 `;
 const YearWrap = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 `;
 const YearObj = styled.div`
     font-family: "BLUDHAVEN";
@@ -47,16 +49,17 @@ const YearTo = styled.p`
 const CompanyName = styled.p``;
 
 const Title = styled.h1`
-    height: 48px;
+    width: 80%;
     font-size: 20px;
     font-weight: bold;
     line-height: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+    word-break: keep-all;
 `;
 const DetailList = styled.ul``;
 const DetailObj = styled.li`
     display: flex;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 `;
 const ImageWrap = styled.div`
     width: 15px;
@@ -68,13 +71,12 @@ const CheckImage = styled.img`
     height: 100%;
 `;
 const DetailText = styled.p`
-    margin-top: 2px;
-    font-size: 13px;
+    font-size: 16px;
 `;
 const Career = ({ career }) => {
     // console.log(career.detailCareer);
     return (
-        <Wrap>
+        <Wrap location={career.location}>
             <Line />
             <CareerWrap>
                 <YearWrap>

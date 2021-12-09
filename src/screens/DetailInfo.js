@@ -52,6 +52,18 @@ const Space = styled.span`
     width: 47px;
 `;
 
+const CareerWrap = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+`;
+
+const Container = styled.div`
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+`;
+
 const DetailInfo = ({ scrollX }) => {
     const descriptionData = [
         "          I WORKED AS A UX/UI DESIGNER FOR 3 YEARS. DESIGNING AND COLLABORATING WITHIN A TEAM, I OFTEN FOUND IT DIFFICULT TO CONVEY THE THINGS I IMAGINED TO THE DEVELOPER. I ALSO HAD DIFFICULTY IMPLEMENTING IT BECAUSE THERE WERE MUCH MORE CONSIDERATIONS THAN I THOUGHT. AS THIS HAPPENED FREQUENTLY, I FELT THAT IT WAS NOT ENOUGH TO PRODUCE SATISFACTORY RESULTS DUE TO THE LIMITATIONS OF MY KNOWLEDGE, AND I STARTED STUDYING DEVELOPMENT ON MY OWN.",
@@ -61,53 +73,61 @@ const DetailInfo = ({ scrollX }) => {
     ];
 
     const careerList = [
-        {
-            id: 0,
-            from: 17,
-            to: 18,
-            company: "미디어포스원",
-            title: "EPSON & KT&G 복지재단 &사회공헌 운영디자인",
-            detailCareer: [
-                "제품 카탈로그 web/mobile UI 제작",
-                "EPSON 프로모션 페이지 제작",
-                "Main page UI 개선",
-                "Blog 컨셉 활동 뉴스레터 제작",
-            ],
-        },
-        {
-            id: 1,
-            from: 17,
-            to: 18,
-            company: "게리온",
-            title: "자사 브랜드 홈페이지 UI/UX 디자인",
-            detailCareer: [
-                "노블인베스트먼트 web/mobile UI/UX 제작",
-                "크레타 web/mobile UI/UX 제작",
-                "한국주식연구소 web/mobile UI/UX 제작",
-                "컨설킷 web/mobile UI/UX 제작",
-                "사내 운영 디자인건",
-            ],
-        },
-        {
-            id: 2,
-            from: 17,
-            to: 18,
-            company: "9px",
-            title: "AI 자동차 그래픽 연구원",
-            detailCareer: [
-                "차세대 자동차 클러스터, avn 그래픽 시안 제작",
-                "오픽 솔루션 앱 랜딩페이지 제작",
-                "토익 스피킹 앱 랜딩페이지 제작",
-            ],
-        },
-        {
-            id: 3,
-            from: 17,
-            to: 18,
-            company: "다름 커뮤니케이션즈",
-            title: "SKT Application 영문버전 디자인",
-            detailCareer: ["SKT 글로벌 고객 전용 App UI/UX 시안 제작"],
-        },
+        [
+            {
+                id: 0,
+                from: 17,
+                to: 18,
+                company: "미디어포스원",
+                title: "EPSON & KT&G 복지재단&사회공헌 운영디자인",
+                detailCareer: [
+                    "제품 카탈로그 web/mobile UI 제작",
+                    "EPSON 프로모션 페이지 제작",
+                    "Main page UI 개선",
+                    "Blog 컨셉 활동 뉴스레터 제작",
+                ],
+                location: "first",
+            },
+            {
+                id: 1,
+                from: 17,
+                to: 18,
+                company: "게리온",
+                title: "자사 브랜드 홈페이지 UI/UX 디자인",
+                detailCareer: [
+                    "노블인베스트먼트 web/mobile UI/UX 제작",
+                    "크레타 web/mobile UI/UX 제작",
+                    "한국주식연구소 web/mobile UI/UX 제작",
+                    "컨설킷 web/mobile UI/UX 제작",
+                    "사내 운영 디자인건",
+                ],
+                location: "second",
+            },
+        ],
+        [
+            {
+                id: 2,
+                from: 17,
+                to: 18,
+                company: "9px",
+                title: "AI 자동차 그래픽 연구원",
+                detailCareer: [
+                    "차세대 자동차 클러스터, avn 그래픽 시안 제작",
+                    "오픽 솔루션 앱 랜딩페이지 제작",
+                    "토익 스피킹 앱 랜딩페이지 제작",
+                ],
+                location: "first",
+            },
+            {
+                id: 3,
+                from: 17,
+                to: 18,
+                company: "다름 커뮤니케이션즈",
+                title: "SKT Application 영문버전 디자인",
+                detailCareer: ["SKT 글로벌 고객 전용 App UI/UX 시안 제작"],
+                location: "second",
+            },
+        ],
     ];
 
     useEffect(() => {
@@ -140,9 +160,18 @@ const DetailInfo = ({ scrollX }) => {
             </Section>
             <Section>
                 <AmbitionTitle>Work Experience</AmbitionTitle>
-                {careerList.map((career) => {
-                    return <Career career={career} key={career.id} />;
-                })}
+                <Container>
+                    <CareerWrap>
+                        {careerList[0].map((career) => {
+                            return <Career career={career} key={career.id} />;
+                        })}
+                    </CareerWrap>
+                    <CareerWrap>
+                        {careerList[1].map((career) => {
+                            return <Career career={career} key={career.id} />;
+                        })}
+                    </CareerWrap>
+                </Container>
             </Section>
         </Wrap>
     );
