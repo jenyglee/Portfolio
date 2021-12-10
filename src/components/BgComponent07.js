@@ -29,7 +29,7 @@ const BgComponent07 = ({ isShow }) => {
             setTimeout(() => {
                 setObjTransform02(-2);
                 setObjOpacity02(1);
-            }, 100);
+            }, 0);
         } else {
             setTimeout(() => {
                 setObjTransform01(112);
@@ -38,7 +38,7 @@ const BgComponent07 = ({ isShow }) => {
             setTimeout(() => {
                 setObjTransform02(48);
                 setObjOpacity02(0);
-            }, 100);
+            }, 0);
         }
     }, [isShow]);
     return (

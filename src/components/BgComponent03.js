@@ -38,23 +38,23 @@ const BgComponent03 = ({ isShow }) => {
             setTimeout(() => {
                 setObjTransform02(-48);
                 setObjOpacity02(1);
-            }, 100);
+            }, 0);
             setTimeout(() => {
                 setObjTransform03(129);
                 setObjOpacity03(1);
-            }, 100);
+            }, 0);
             setTimeout(() => {
                 setObjTransform04(-147);
                 setObjOpacity04(1);
-            }, 200);
+            }, 0);
             setTimeout(() => {
                 setObjTransform05(167);
                 setObjOpacity05(1);
-            }, 200);
+            }, 0);
             setTimeout(() => {
                 setObjTransform06(-109);
                 setObjOpacity06(1);
-            }, 300);
+            }, 0);
         } else {
             setTimeout(() => {
                 setObjTransform01(39);

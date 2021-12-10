@@ -5,7 +5,7 @@ import { bgImages04 } from "./../images";
 const ComponentWrap = styled.div`
     position: fixed;
     transition: 0.5s;
-    top: ${({ transform }) => `calc(50% + ${transform}px)`}; ;
+    top: ${({ transform }) => `calc(50% + ${transform}px)`};
     right: ${({ right }) => right}px;
     transform: translateY(-50%);
     /* transform: ${({ transform }) => `calc(50% + ${transform}px)`};  */
@@ -21,7 +21,6 @@ const Image = styled.img`
 // const imageTops = [
 //     0,161,-107,-238,93
 // ]
-
 
 const BgComponent04 = ({ isShow }) => {
     const innerWidth = window.innerWidth;
@@ -44,19 +43,19 @@ const BgComponent04 = ({ isShow }) => {
             setTimeout(() => {
                 setObjTransform02(161);
                 setObjOpacity02(1);
-            }, 100);
+            }, 0);
             setTimeout(() => {
                 setObjTransform03(-107);
                 setObjOpacity03(1);
-            }, 100);
+            }, 0);
             setTimeout(() => {
                 setObjTransform04(-238);
                 setObjOpacity04(1);
-            }, 200);
+            }, 0);
             setTimeout(() => {
                 setObjTransform05(96);
                 setObjOpacity05(1);
-            }, 200);
+            }, 0);
         } else {
             setTimeout(() => {
                 setObjTransform01(50);
@@ -90,9 +89,7 @@ const BgComponent04 = ({ isShow }) => {
                 transform={objTransform01}
                 isShow={isShow}
             >
-                <Image
-                    src={bgImages04.Image01} width={306} height={554}
-                />
+                <Image src={bgImages04.Image01} width={306} height={554} />
             </ComponentWrap>
             <ComponentWrap
                 style={{
@@ -102,8 +99,7 @@ const BgComponent04 = ({ isShow }) => {
                 transform={objTransform02}
                 isShow={isShow}
             >
-                <Image src={bgImages04.Image02} width={201} height={285}
-                />
+                <Image src={bgImages04.Image02} width={201} height={285} />
             </ComponentWrap>
             <ComponentWrap
                 style={{
@@ -113,8 +109,7 @@ const BgComponent04 = ({ isShow }) => {
                 transform={objTransform03}
                 isShow={isShow}
             >
-                <Image src={bgImages04.Image03} width={305} height={222}
-                />
+                <Image src={bgImages04.Image03} width={305} height={222} />
             </ComponentWrap>
             <ComponentWrap
                 style={{
@@ -124,8 +119,7 @@ const BgComponent04 = ({ isShow }) => {
                 transform={objTransform04}
                 isShow={isShow}
             >
-                <Image src={bgImages04.Image04} width={157} height={133}
-                />
+                <Image src={bgImages04.Image04} width={157} height={133} />
             </ComponentWrap>
             <ComponentWrap
                 style={{
@@ -135,8 +129,7 @@ const BgComponent04 = ({ isShow }) => {
                 transform={objTransform05}
                 isShow={isShow}
             >
-                <Image src={bgImages04.Image05} width={109} height={148}
-                />
+                <Image src={bgImages04.Image05} width={109} height={148} />
             </ComponentWrap>
         </>
     );
