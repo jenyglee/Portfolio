@@ -27,6 +27,9 @@ import categoryIntroductionW from "./images/category_introduction_w.png";
 import categoryDevelopW from "./images/category_develop_w.png";
 import categoryDesignW from "./images/category_design_w.png";
 import AccordionArrow from "./images/accordionArrow.png";
+import FooterArrow from "./images/footerThumb/arrow.png";
+import FooterThumbInfo from "./images/footerThumb/info.png";
+import FooterThumbGithub from "./images/footerThumb/github.png";
 import InfoMainVisual from "./images/08_info/main_visual.png";
 import InfoIconCheck from "./images/08_info/icon_check.png";
 import InfoIconIllust from "./images/08_info/icon_illust.png";
@@ -150,6 +153,12 @@ const bgImages09 = {
 
 const bgImages10 = {
     Image01: bg10Component01,
+};
+
+const footer = {
+    arrow: FooterArrow,
+    info: FooterThumbInfo,
+    github: FooterThumbGithub,
 };
 
 // ✨ 상세페이지 이미지
@@ -286,6 +295,7 @@ export {
     bgImages09,
     bgImages10,
     categoryImages,
+    footer,
     icons,
     infoSources,
     abilitySources,

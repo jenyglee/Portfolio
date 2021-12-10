@@ -4,10 +4,21 @@ import { glupAppSources } from "./../../../images";
 import { moGlupAppFunction, pcGlupAppFunction } from "../../../images";
 
 const ContentWrap = styled.div`
-    margin: 30px 0 85px 0;
+    width: 100%;
+    margin-bottom: 85px;
+
     @media ${({ theme }) => theme.size1200} {
-        margin: 20px 0 50px 0;
+        margin-bottom: 50px;
     }
+`;
+
+const BlackBgWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0;
+    margin-bottom: 50px;
+    background-color: black;
 `;
 
 const VideoWrap = styled.div`
@@ -19,6 +30,7 @@ const VideoWrap = styled.div`
         height: 398px;
     }
 `;
+
 const Video = styled.img`
     width: 100%;
 `;
@@ -30,7 +42,7 @@ const FunctionsWrap = styled.div`
     padding-top: 35px;
 `;
 const FunctionImageWrap = styled.div`
-    max-width: ${({ isSize768 }) => (isSize768 ? "56px" : "1058px")};
+    max-width: ${({ isSize768 }) => (isSize768 ? "216px" : "1058px")};
     margin-bottom: ${({ isSize768 }) => (isSize768 ? "30px" : "0")};
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
@@ -159,9 +171,11 @@ const FunctionList = [
 const ViewFlow = ({ isSize768 }) => {
     return (
         <ContentWrap>
-            <VideoWrap>
-                <Video src={glupAppSources.video} />
-            </VideoWrap>
+            <BlackBgWrap>
+                <VideoWrap>
+                    <Video src={glupAppSources.video} />
+                </VideoWrap>
+            </BlackBgWrap>
             <FunctionsWrap>
                 {FunctionList.map((item, index) => {
                     return (
