@@ -60,7 +60,7 @@ const DetailGulpApp = ({ scrollX }) => {
                 <Accordion
                     projectNumber="01"
                     number="01"
-                    title="View Flow"
+                    title="Functions"
                     detailNumber="1"
                     scrollX={scrollX}
                 />
@@ -74,29 +74,15 @@ const DetailGulpApp = ({ scrollX }) => {
                 <Accordion
                     projectNumber="01"
                     number="03"
-                    title="Functions"
+                    title="WorkIssue"
                     detailNumber="3"
                     scrollX={scrollX}
                 />
                 <Accordion
                     projectNumber="01"
                     number="04"
-                    title="WorkIssue"
-                    detailNumber="4"
-                    scrollX={scrollX}
-                />
-                <Accordion
-                    projectNumber="01"
-                    number="05"
                     title="Review"
-                    detailNumber="5"
-                    scrollX={scrollX}
-                />
-                <Accordion
-                    projectNumber="01"
-                    number="06"
-                    title="Mission"
-                    detailNumber="6"
+                    detailNumber="4"
                     scrollX={scrollX}
                 />
             </MainWrap>

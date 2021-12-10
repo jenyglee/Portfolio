@@ -71,10 +71,11 @@ const CommonDetailWrap = styled.div`
 `;
 
 const Accordion = ({ projectNumber, number, title, detailNumber, scrollX }) => {
+    console.log(scrollX);
     const [isVisibleDetail, setIsVisibleDetail] = useState(false);
     const [isSize768, setIsSize768] = useState(false);
     useEffect(() => {
-        if (scrollX <= 768) {
+        if (scrollX <= 768 && scrollX !== 0) {
             setIsSize768(true);
         } else {
             setIsSize768(false);
@@ -100,6 +101,8 @@ const Accordion = ({ projectNumber, number, title, detailNumber, scrollX }) => {
                     />
                 </ArrowImageWrap>
             </BtnWrap>
+
+            {/* 프로젝트 별 아코디언 */}
             <CommonDetailWrap isVisibleDetail={isVisibleDetail}>
                 {isVisibleDetail && projectNumber === "01" ? (
                     <GulpDetail
