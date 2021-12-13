@@ -2,11 +2,16 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import MainTitle from "../components/detailProject/ability/MainTitle";
 import Ability from "../components/detailProject/ability/Ability";
+import FooterButton from "../components/FooterButton";
+import { footer } from "../images";
 
 const Wrap = styled.div`
     max-width: 1200px;
     margin: 0 auto;
     padding: 200px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
     }
@@ -137,6 +142,14 @@ const DetailAbility = ({ scrollX, scrollY }) => {
                     })}
                 </AbilityWrap>
             </Section>
+            <FooterButton
+                prevLink={`/0/0`}
+                prevTitle="Info"
+                prevImg={footer.info}
+                nextLink={`https://platonuniv.entinfo.net/128`}
+                nextTile="Github"
+                nextImg={footer.github}
+            />
         </Wrap>
     );
 };

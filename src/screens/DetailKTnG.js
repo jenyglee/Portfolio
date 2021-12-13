@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Title from "../components/detailProject/Title";
 import MainVisualKtNg from "../components/detailProject/ktNg/MainVisualKtNg";
 import Accordion from "../components/detailProject/Accodion";
+import FooterButton from "../components/FooterButton";
+import { footer } from "../images";
 
 const Wrap = styled.div`
     max-width: 1200px;
@@ -11,6 +13,7 @@ const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 200px;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
     }
@@ -72,6 +75,14 @@ const DetailKTnG = ({ scrollX }) => {
                     scrollX={scrollX}
                 />
             </MainWrap>
+            <FooterButton
+                prevLink={`/2/1`}
+                prevTitle="Musinsa UI/UX"
+                prevImg={footer.info}
+                nextLink={`/2/3`}
+                nextTile="ConcertKit UI/UX"
+                nextImg={footer.github}
+            />
         </Wrap>
     );
 };

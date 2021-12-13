@@ -28,6 +28,7 @@ import categoryDevelopW from "./images/category_develop_w.png";
 import categoryDesignW from "./images/category_design_w.png";
 import AccordionArrow from "./images/accordionArrow.png";
 import FooterArrow from "./images/footerThumb/arrow.png";
+import FooterThumbHome from "./images/footerThumb/home.png";
 import FooterThumbInfo from "./images/footerThumb/info.png";
 import FooterThumbGithub from "./images/footerThumb/github.png";
 import InfoMainVisual from "./images/08_info/main_visual.png";
@@ -157,6 +158,7 @@ const bgImages10 = {
 
 const footer = {
     arrow: FooterArrow,
+    home: FooterThumbHome,
     info: FooterThumbInfo,
     github: FooterThumbGithub,
 };

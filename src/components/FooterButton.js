@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { footer } from "../images";
 
 const Wrap = styled.div`
     width: 100%;
-    height: 104px;
+    height: 100px;
     position: absolute;
     bottom: 0;
     display: flex;
@@ -14,6 +15,7 @@ const Wrap = styled.div`
 const Align = styled.div`
     width: 570px;
     height: 100%;
+    background: red;
 `;
 
 const ButtonWrap = styled.div`
@@ -21,83 +23,104 @@ const ButtonWrap = styled.div`
     height: 100%;
     display: flex;
     justify-content: center;
+    background: green;
 `;
 
-const ButtonTitleWrap = styled.div`
-    width: 50%;
+const Thumb = styled.div`
+    width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const TitleWrap = styled.div`
-    font-family: "BLUDHAVEN";
-    height: 44px;
+    background: ${({ img }) => `url(${img})`};
+    background-size: ${({ scale }) => scale};
+    background-position: center center;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.3s;
 `;
 
-const Title = styled.h4`
+const ButtonTitleWrap = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+const Title = styled.h1`
     font-size: 16px;
-    transform: translateY(2px);
+    font-weight: bold;
+    color: ${({ theme }) => theme.detailWhiteText};
+`;
+const ArrowImage = styled.img`
+    width: 11px;
+    height: 13px;
 `;
 
-const ThumbImageWrap = styled.div`
-    width: 100%;
-    height: 60px;
-    background-color: red;
-`;
-const ArrowImageWrap = styled.div`
-    width: 10px;
-    height: 10px;
-`;
-
-const Image = styled.img`
-    width: 100%;
-`;
-
-const FooterButton = () => {
+const FooterButton = ({
+    prevLink,
+    nextLink,
+    prevTitle,
+    nextTile,
+    prevImg,
+    nextImg,
+}) => {
+    const [prevScale, setPrevScale] = useState("100%");
+    const [nextScale, setNextScale] = useState("100%");
     return (
         <Wrap>
             <Align>
                 <ButtonWrap>
-                    <ButtonTitleWrap>
-                        <TitleWrap>
-                            <ArrowImageWrap
-                                style={{
-                                    marginRight: 13,
-                                }}
-                            >
-                                <Image
+                    <Link
+                        to={prevLink}
+                        style={{
+                            width: "100%",
+                        }}
+                    >
+                        <Thumb
+                            img={prevImg}
+                            scale={prevScale}
+                            onMouseEnter={() => {
+                                setPrevScale("120%");
+                            }}
+                            onMouseLeave={() => {
+                                setPrevScale("100%");
+                            }}
+                        >
+                            <ButtonTitleWrap>
+                                <ArrowImage
                                     src={footer.arrow}
                                     style={{
-                                        transform: `rotate(180deg)`,
+                                        transform: "rotate(180deg)",
+                                        marginRight: 8,
                                     }}
                                 />
-                            </ArrowImageWrap>
-                            <Title>Info</Title>
-                        </TitleWrap>
-                        <ThumbImageWrap>
-                            <Image src={footer.info} />
-                        </ThumbImageWrap>
-                    </ButtonTitleWrap>
-                    <ButtonTitleWrap>
-                        <TitleWrap>
-                            <Title>Github</Title>
-                            <ArrowImageWrap
-                                style={{
-                                    marginLeft: 13,
-                                }}
-                            >
-                                <Image src={footer.arrow} />
-                            </ArrowImageWrap>
-                        </TitleWrap>
-                        <ThumbImageWrap>
-                            <Image src={footer.github} />
-                        </ThumbImageWrap>
-                    </ButtonTitleWrap>
+                                <Title>{prevTitle}</Title>
+                            </ButtonTitleWrap>
+                        </Thumb>
+                    </Link>
+                    <Link
+                        to={nextLink}
+                        style={{
+                            width: "100%",
+                        }}
+                    >
+                        <Thumb
+                            img={nextImg}
+                            scale={nextScale}
+                            onMouseEnter={() => {
+                                setNextScale("120%");
+                            }}
+                            onMouseLeave={() => {
+                                setNextScale("100%");
+                            }}
+                        >
+                            <ButtonTitleWrap>
+                                <Title>{nextTile}</Title>
+                                <ArrowImage
+                                    src={footer.arrow}
+                                    style={{
+                                        marginLeft: 8,
+                                    }}
+                                />
+                            </ButtonTitleWrap>
+                        </Thumb>
+                    </Link>
                 </ButtonWrap>
             </Align>
         </Wrap>

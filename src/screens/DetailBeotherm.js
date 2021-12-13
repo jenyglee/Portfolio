@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "../components/detailProject/Title";
 import { BeothermSources } from "../images";
+import FooterButton from "../components/FooterButton";
+import { footer } from "../images";
 
 const Wrap = styled.div`
     max-width: 1200px;
@@ -10,6 +12,7 @@ const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 200px;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
     }
@@ -76,6 +79,14 @@ const DetailBeotherm = ({ scrollX }) => {
                     <StyledImage src={BeothermSources[0]} />
                 </ImageWrap>
             </MainWrap>
+            <FooterButton
+                prevLink={`/2/4`}
+                prevTitle="Kyobo Promotion"
+                prevImg={footer.info}
+                nextLink={`/`}
+                nextTile="Home"
+                nextImg={footer.github}
+            />
         </Wrap>
     );
 };

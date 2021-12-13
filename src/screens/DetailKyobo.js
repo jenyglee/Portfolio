@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "../components/detailProject/Title";
 import { KyoboSources } from "../images";
+import FooterButton from "../components/FooterButton";
+import { footer } from "../images";
 
 const Wrap = styled.div`
     max-width: 1200px;
@@ -10,6 +12,7 @@ const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 200px;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
     }
@@ -75,6 +78,14 @@ const DetailKyobo = ({ scrollX }) => {
                     <StyledImage src={KyoboSources[0]} />
                 </ImageWrap>
             </MainWrap>
+            <FooterButton
+                prevLink={`/2/3`}
+                prevTitle="ConcertKit UI/UX"
+                prevImg={footer.info}
+                nextLink={`/2/5`}
+                nextTile="Beotherm Promotion"
+                nextImg={footer.github}
+            />
         </Wrap>
     );
 };

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Title from "../components/detailProject/Title";
 import MainVisualConsultKit from "../components/detailProject/consultKit/MainVisualConsultKit";
 import Accordion from "../components/detailProject/Accodion";
+import FooterButton from "../components/FooterButton";
+import { footer } from "../images";
 
 const Wrap = styled.div`
     max-width: 1200px;
@@ -11,6 +13,7 @@ const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 200px;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
     }
@@ -65,6 +68,14 @@ const DetailConsultKit = ({ scrollX }) => {
                     scrollX={scrollX}
                 />
             </MainWrap>
+            <FooterButton
+                prevLink={`/2/2`}
+                prevTitle="KT&G UI/UX"
+                prevImg={footer.info}
+                nextLink={`/2/4`}
+                nextTile="Kyobo Promotion"
+                nextImg={footer.github}
+            />
         </Wrap>
     );
 };

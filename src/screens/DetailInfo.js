@@ -4,6 +4,7 @@ import Career from "../components/detailProject/info/Career";
 import MainTitle from "../components/detailProject/info/MainTitle";
 import MyInfo from "../components/detailProject/info/MyInfo";
 import FooterButton from "../components/FooterButton";
+import { footer } from "../images";
 
 const Wrap = styled.div`
     max-width: 100%;
@@ -174,26 +175,14 @@ const DetailInfo = ({ scrollX }) => {
                     </CareerWrap>
                 </Container>
             </Section>
-            <FooterButton />
-            {/* <FooterWrap>
-                <FotterAlign>
-                    <FotterButtonWrap>
-                        <ButtonTitleWrap>
-                            <ImageWrap>
-                                <ArrowImage />
-                            </ImageWrap>
-                            <Title>Info</Title>
-                        </ButtonTitleWrap>
-                        <ButtonTitleWrap>
-                            <ImageWrap>
-                                <ArrowImage />
-                            </ImageWrap>
-                            <Title>Info</Title>
-                        </ButtonTitleWrap>
-                    </FotterButtonWrap>
-                </FotterAlign>
-
-            </FooterWrap> */}
+            <FooterButton
+                prevLink={`/`}
+                prevTitle="Home"
+                prevImg={footer.home}
+                nextLink={`/0/1`}
+                nextTile="Ability"
+                nextImg={footer.github}
+            />
         </Wrap>
     );
 };
