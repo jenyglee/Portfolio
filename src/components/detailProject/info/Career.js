@@ -18,11 +18,7 @@ const CareerWrap = styled.div`
     @media ${({ theme }) => theme.size1200} {
         height: 390px;
     }
-    /* 960px 부터 슬라이딩 */
-    @media ${({ theme }) => theme.size960} {
-        /* width: 768px; */
-        /* height: 420px; */
-    }
+    /* 768px 부터 슬라이딩 */
     @media ${({ theme }) => theme.size768} {
         width: 568px;
     }

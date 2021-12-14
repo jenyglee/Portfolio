@@ -34,7 +34,7 @@ const Wrap = styled.div`
 
 const Section = styled.section`
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 100px auto;
     @media ${({ theme }) => theme.size768} {
     }
 `;
@@ -85,6 +85,7 @@ const DescriptionWrap = styled.div`
     width: 82%;
     @media ${({ theme }) => theme.size768} {
         width: calc(100% - 40px);
+        margin: 0 auto;
     }
 `;
 
@@ -110,6 +111,12 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    @media ${({ theme }) => theme.size768} {
+        width: 568px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        width: 320px;
+    }
 `;
 
 const CareerWrap = styled.div`
@@ -118,16 +125,6 @@ const CareerWrap = styled.div`
     margin-bottom: 20px;
     transform: ${({ translateX }) => `translateX(${translateX}%)`};
     transition: 0.3s;
-    /* background-color: red; */
-`;
-
-const TestBtnWrap = styled.div`
-    margin: 100px;
-    display: flex;
-    justify-content: center;
-`;
-const Test = styled.h4`
-    margin: 20px;
 `;
 
 const DetailInfo = ({ scrollX }) => {
@@ -188,7 +185,7 @@ const DetailInfo = ({ scrollX }) => {
         },
     ];
 
-    const [isSize768, setIsSize768] = useState(true);
+    const [isSize768, setIsSize768] = useState(false);
     const [translateX, setTranslateX] = useState(0);
 
     // useEffect(() => {
@@ -198,23 +195,19 @@ const DetailInfo = ({ scrollX }) => {
     //     });
     // }, []);
 
-    // useEffect(() => {
-    //     if (scrollX <= 768 && scrollX !== 0) {
-    //         setIsSize768(true);
-    //     } else {
-    //         setIsSize768(false);
-    //     }
-    // }, [scrollX]);
+    useEffect(() => {
+        if (scrollX <= 768 && scrollX !== 0) {
+            setIsSize768(true);
+        } else {
+            setIsSize768(false);
+        }
+    }, [scrollX]);
 
     return (
         <Wrap>
             <MainTitle />
             <MyInfo />
-            <Section
-                style={{
-                    marginBottom: 100,
-                }}
-            >
+            <Section>
                 <RowContainer>
                     <AmbitionTitleWrap>
                         <Title>My Ambition</Title>
@@ -250,10 +243,12 @@ const DetailInfo = ({ scrollX }) => {
                         </CareerWrap>
                     </Container>
                 </ColumnContainer>
-                <PrevNextButton
-                    translateX={translateX}
-                    setTranslateX={setTranslateX}
-                />
+                {isSize768 ? (
+                    <PrevNextButton
+                        translateX={translateX}
+                        setTranslateX={setTranslateX}
+                    />
+                ) : null}
             </Section>
             <FooterButton
                 prevLink={`/`}
