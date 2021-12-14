@@ -11,6 +11,16 @@ const IconWrap = styled.div`
     width: 90px;
     height: 90px;
     margin-bottom: 62px;
+    @media ${({ theme }) => theme.size960} {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 46px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 32px;
+    }
 `;
 
 const IconImage = styled.img`
@@ -22,6 +32,15 @@ const SubTitle = styled.h2`
     font-family: "BLUDHAVEN";
     font-size: 16px;
     margin-bottom: 56px;
+
+    @media ${({ theme }) => theme.size960} {
+        font-size: 14px;
+        margin-bottom: 38px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
 `;
 
 const TitleWrap = styled.div`
@@ -33,8 +52,6 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 100px;
-    font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,12 +59,29 @@ const Title = styled.div`
 `;
 
 const TitleObj = styled.h1`
+    font-size: 100px;
     line-height: 120px;
-    /* transform: translateX(-200px); */
+    font-weight: bold;
     transform: ${({ animationTransform }) =>
         `translateX(${animationTransform}px)`};
     opacity: ${({ animationOpacity }) => animationOpacity};
     transition: 1s;
+    @media ${({ theme }) => theme.size1200} {
+        font-size: 86px;
+        line-height: 98px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        font-size: 74px;
+        line-height: 86px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        font-size: 44px;
+        line-height: 53px;
+    }
 `;
 
 const data = [

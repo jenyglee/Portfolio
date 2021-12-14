@@ -157,6 +157,7 @@ const Project = ({
     sectionId,
     isChangedTheme,
     isPcBreakPoint,
+    scrollX,
 }) => {
     // textArr : ['i','n','f','o']
     const [animationTransform, setAnimationTransform] = useState([
@@ -171,11 +172,13 @@ const Project = ({
     //  ✨ 마우스오버된 것은 투명도 1, 나머지는 0.4
     // 🪲 1200 이하에서도 발동되는게 문제!
     useEffect(() => {
-        projectTitle.isHover
-            ? setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
-            : setAnimationOpacity([
-                  0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
-              ]);
+        if (scrollX >= 1200) {
+            projectTitle.isHover
+                ? setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+                : setAnimationOpacity([
+                      0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
+                  ]);
+        }
     }, [projectTitle.isHover]);
 
     //  ✨ 한글자씩 나타나는 인터랙션

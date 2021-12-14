@@ -95,7 +95,7 @@ const DetailGulpApp = ({ scrollX }) => {
                 prevImg={footer.home}
                 nextLink={`/2/0`}
                 nextTile="AVN / Cluster"
-                nextImg={footer.github}
+                nextImg={footer.avn}
             />
         </Wrap>
     );

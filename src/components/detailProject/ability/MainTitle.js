@@ -13,8 +13,24 @@ const Title = styled.h1`
     transform: ${({ animationTransform }) =>
         `translateY(${animationTransform}px)`};
     opacity: ${({ animationOpacity }) => animationOpacity};
-    /* transform: translateY(50px); */
     transition: 1s;
+    margin-bottom: 24px;
+    @media ${({ theme }) => theme.size1200} {
+        font-size: 80px;
+        margin-bottom: 16px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        font-size: 60px;
+        margin-bottom: 12px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        font-size: 40px;
+        margin-bottom: 8px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        font-size: 26px;
+        margin-bottom: 6px;
+    }
 `;
 
 const MainTitle = ({ titleData }) => {

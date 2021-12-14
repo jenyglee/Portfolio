@@ -82,10 +82,10 @@ const DetailAvn = () => {
             <FooterButton
                 prevLink={`/1/0`}
                 prevTitle="Gulp App"
-                prevImg={footer.info}
+                prevImg={footer.gulpApp}
                 nextLink={`/2/1`}
                 nextTile="Musinsa UI/UX"
-                nextImg={footer.github}
+                nextImg={footer.musinsa}
             />
         </Wrap>
     );

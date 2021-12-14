@@ -8,20 +8,24 @@ import { footer } from "../images";
 const Wrap = styled.div`
     max-width: 1200px;
     margin: 0 auto;
-    padding: 200px 0;
+    padding: 304px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media ${({ theme }) => theme.size1200} {
+        padding: 250px 0;
         max-width: 960px;
     }
     @media ${({ theme }) => theme.size960} {
+        padding: 200px 0;
         max-width: 768px;
     }
     @media ${({ theme }) => theme.size768} {
+        padding: 150px 0;
         max-width: 568px;
     }
     @media ${({ theme }) => theme.size568} {
+        padding: 104px 0;
         max-width: 320px;
     }
 `;
@@ -146,7 +150,7 @@ const DetailAbility = ({ scrollX, scrollY }) => {
                 prevLink={`/0/0`}
                 prevTitle="Info"
                 prevImg={footer.info}
-                nextLink={`https://platonuniv.entinfo.net/128`}
+                nextLink={`/0/2`}
                 nextTile="Github"
                 nextImg={footer.github}
             />

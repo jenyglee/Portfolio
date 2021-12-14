@@ -78,10 +78,10 @@ const DetailMusinsa = ({ scrollX }) => {
             <FooterButton
                 prevLink={`/2/0`}
                 prevTitle="AVN / Cluster"
-                prevImg={footer.info}
+                prevImg={footer.avn}
                 nextLink={`/2/2`}
                 nextTile="KT&G UI/UX"
-                nextImg={footer.github}
+                nextImg={footer.ktng}
             />
         </Wrap>
     );

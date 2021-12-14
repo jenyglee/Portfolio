@@ -71,10 +71,10 @@ const DetailConsultKit = ({ scrollX }) => {
             <FooterButton
                 prevLink={`/2/2`}
                 prevTitle="KT&G UI/UX"
-                prevImg={footer.info}
+                prevImg={footer.ktng}
                 nextLink={`/2/4`}
                 nextTile="Kyobo Promotion"
-                nextImg={footer.github}
+                nextImg={footer.kyobo}
             />
         </Wrap>
     );

@@ -27,10 +27,19 @@ import categoryIntroductionW from "./images/category_introduction_w.png";
 import categoryDevelopW from "./images/category_develop_w.png";
 import categoryDesignW from "./images/category_design_w.png";
 import AccordionArrow from "./images/accordionArrow.png";
+import PrevNextButton from "./images/prevNextButton.png";
 import FooterArrow from "./images/footerThumb/arrow.png";
 import FooterThumbHome from "./images/footerThumb/home.png";
 import FooterThumbInfo from "./images/footerThumb/info.png";
+import FooterThumbAbility from "./images/footerThumb/ability.png";
 import FooterThumbGithub from "./images/footerThumb/github.png";
+import FooterThumbGulpApp from "./images/footerThumb/gulpApp.png";
+import FooterThumbAvn from "./images/footerThumb/avn.png";
+import FooterThumbMusinsa from "./images/footerThumb/musinsa.png";
+import FooterThumbKtng from "./images/footerThumb/ktng.png";
+import FooterThumbConcertKit from "./images/footerThumb/concertKit.png";
+import FooterThumbKyobo from "./images/footerThumb/kyobo.png";
+import FooterThumbBeotherm from "./images/footerThumb/beotherm.png";
 import InfoMainVisual from "./images/08_info/main_visual.png";
 import InfoIconCheck from "./images/08_info/icon_check.png";
 import InfoIconIllust from "./images/08_info/icon_illust.png";
@@ -156,16 +165,26 @@ const bgImages10 = {
     Image01: bg10Component01,
 };
 
+//✨ 푸터 썸네일 이미지
 const footer = {
     arrow: FooterArrow,
     home: FooterThumbHome,
     info: FooterThumbInfo,
+    ability: FooterThumbAbility,
     github: FooterThumbGithub,
+    gulpApp: FooterThumbGulpApp,
+    avn: FooterThumbAvn,
+    musinsa: FooterThumbMusinsa,
+    ktng: FooterThumbKtng,
+    concertKit: FooterThumbConcertKit,
+    kyobo: FooterThumbKyobo,
+    beotherm: FooterThumbBeotherm,
 };
 
 // ✨ 상세페이지 이미지
 const icons = {
     accordionArrow: AccordionArrow,
+    prevNext: PrevNextButton,
 };
 
 // ✨ Info 소스

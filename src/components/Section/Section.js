@@ -31,6 +31,7 @@ const Section = ({
     img,
     isChangedTheme,
     isPcBreakPoint,
+    scrollX,
 }) => {
     const titleNameArr = [];
     for (let i = 0; i < projectTitle.length; i++) {
@@ -58,6 +59,7 @@ const Section = ({
                         isChangedTheme={isChangedTheme}
                         isPcBreakPoint={isPcBreakPoint}
                         key={index}
+                        scrollX={scrollX}
                     />
                 );
             })}

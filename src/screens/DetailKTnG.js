@@ -78,10 +78,10 @@ const DetailKTnG = ({ scrollX }) => {
             <FooterButton
                 prevLink={`/2/1`}
                 prevTitle="Musinsa UI/UX"
-                prevImg={footer.info}
+                prevImg={footer.musinsa}
                 nextLink={`/2/3`}
                 nextTile="ConcertKit UI/UX"
-                nextImg={footer.github}
+                nextImg={footer.concertKit}
             />
         </Wrap>
     );

@@ -81,10 +81,10 @@ const DetailKyobo = ({ scrollX }) => {
             <FooterButton
                 prevLink={`/2/3`}
                 prevTitle="ConcertKit UI/UX"
-                prevImg={footer.info}
+                prevImg={footer.concertKit}
                 nextLink={`/2/5`}
                 nextTile="Beotherm Promotion"
-                nextImg={footer.github}
+                nextImg={footer.beotherm}
             />
         </Wrap>
     );

@@ -209,7 +209,6 @@ const Home = () => {
                                             //     dispatch(actionsInteractions.itemEnter(id, sectionId, projectTitle, projectImage, setProjectImage, setImgKey, changeTheme));
                                             // }}
                                             itemEnter={itemEnter}
-                                            // itemLeave={()=>{}}
                                             itemLeave={itemLeave}
                                             projectTitle={projectTitle[index]}
                                             sectionId={index}
@@ -217,6 +216,7 @@ const Home = () => {
                                             key={index}
                                             isChangedTheme={isChangedTheme}
                                             isPcBreakPoint={isPcBreakPoint}
+                                            scrollX={scrollX}
                                         />
                                     );
                                 })}
@@ -267,6 +267,13 @@ const Home = () => {
                 <Route path="/0/1">
                     <DetailAbility scrollX={scrollX} scrollY={scrollY} />
                 </Route>
+                <Route
+                    path="/0/2"
+                    component={() => {
+                        window.open("https://github.com/jenyglee");
+                        return null;
+                    }}
+                />
                 <Route path="/1/0">
                     <DetailGulpApp scrollX={scrollX} />
                 </Route>

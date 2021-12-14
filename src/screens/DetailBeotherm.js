@@ -82,10 +82,10 @@ const DetailBeotherm = ({ scrollX }) => {
             <FooterButton
                 prevLink={`/2/4`}
                 prevTitle="Kyobo Promotion"
-                prevImg={footer.info}
+                prevImg={footer.kyobo}
                 nextLink={`/`}
                 nextTile="Home"
-                nextImg={footer.github}
+                nextImg={footer.home}
             />
         </Wrap>
     );

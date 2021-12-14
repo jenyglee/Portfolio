@@ -1,43 +1,91 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Career from "../components/detailProject/info/Career";
 import MainTitle from "../components/detailProject/info/MainTitle";
 import MyInfo from "../components/detailProject/info/MyInfo";
 import FooterButton from "../components/FooterButton";
+import PrevNextButton from "../components/PrevNextButton";
 import { footer } from "../images";
 
 const Wrap = styled.div`
-    max-width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 140px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
+        padding: 130px 0;
     }
     @media ${({ theme }) => theme.size960} {
         max-width: 768px;
+        padding: 120px 0;
     }
     @media ${({ theme }) => theme.size768} {
         max-width: 568px;
+        padding: 110px 0;
     }
     @media ${({ theme }) => theme.size568} {
         max-width: 320px;
+        padding: 100px 0;
     }
 `;
 
 const Section = styled.section`
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
+    @media ${({ theme }) => theme.size768} {
+    }
 `;
 
-const AmbitionTitle = styled.h5`
+const RowContainer = styled.div`
+    display: flex;
+    @media ${({ theme }) => theme.size768} {
+        flex-direction: column;
+    }
+`;
+const ColumnContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const AmbitionTitleWrap = styled.div`
     width: 18%;
+    margin-right: 30px;
+    @media ${({ theme }) => theme.size768} {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 48px;
+        display: flex;
+        justify-content: center;
+    }
+`;
+const ExperienceTitleWrap = styled.div`
+    margin-right: 30px;
+    margin-bottom: 48px;
+    @media ${({ theme }) => theme.size768} {
+        /* width: 100%; */
+        /* margin-right: 0; */
+        /* display: flex;
+        justify-content: center; */
+    }
+`;
+
+const Title = styled.h5`
     font-family: "BLUDHAVEN";
     font-size: 34px;
-    margin-right: 30px;
+    @media ${({ theme }) => theme.size768} {
+        font-size: 28px;
+    }
 `;
 
 const DescriptionWrap = styled.div`
     width: 82%;
+    @media ${({ theme }) => theme.size768} {
+        width: calc(100% - 40px);
+    }
 `;
 
 const Description = styled.p`
@@ -47,6 +95,9 @@ const Description = styled.p`
     transform: translateY(-4px);
     margin-bottom: 24px;
     word-break: keep-all;
+    @media ${({ theme }) => theme.size768} {
+        word-break: break-all;
+    }
 `;
 
 const Space = styled.span`
@@ -54,16 +105,29 @@ const Space = styled.span`
     width: 47px;
 `;
 
+const Container = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+`;
+
 const CareerWrap = styled.div`
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
+    transform: ${({ translateX }) => `translateX(${translateX}%)`};
+    transition: 0.3s;
+    /* background-color: red; */
 `;
 
-const Container = styled.div`
-    width: 82%;
+const TestBtnWrap = styled.div`
+    margin: 100px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+`;
+const Test = styled.h4`
+    margin: 20px;
 `;
 
 const DetailInfo = ({ scrollX }) => {
@@ -75,69 +139,72 @@ const DetailInfo = ({ scrollX }) => {
     ];
 
     const careerList = [
-        [
-            {
-                id: 0,
-                from: 17,
-                to: 18,
-                company: "미디어포스원",
-                title: "EPSON & KT&G 복지재단&사회공헌 운영디자인",
-                detailCareer: [
-                    "제품 카탈로그 web/mobile UI 제작",
-                    "EPSON 프로모션 페이지 제작",
-                    "Main page UI 개선",
-                    "Blog 컨셉 활동 뉴스레터 제작",
-                ],
-                location: "first",
-            },
-            {
-                id: 1,
-                from: 17,
-                to: 18,
-                company: "게리온",
-                title: "자사 브랜드 홈페이지 UI/UX 디자인",
-                detailCareer: [
-                    "노블인베스트먼트 web/mobile UI/UX 제작",
-                    "크레타 web/mobile UI/UX 제작",
-                    "한국주식연구소 web/mobile UI/UX 제작",
-                    "컨설킷 web/mobile UI/UX 제작",
-                    "사내 운영 디자인건",
-                ],
-                location: "second",
-            },
-        ],
-        [
-            {
-                id: 2,
-                from: 17,
-                to: 18,
-                company: "9px",
-                title: "AI 자동차 그래픽 연구원",
-                detailCareer: [
-                    "차세대 자동차 클러스터, avn 그래픽 시안 제작",
-                    "오픽 솔루션 앱 랜딩페이지 제작",
-                    "토익 스피킹 앱 랜딩페이지 제작",
-                ],
-                location: "first",
-            },
-            {
-                id: 3,
-                from: 17,
-                to: 18,
-                company: "다름 커뮤니케이션즈",
-                title: "SKT Application 영문버전 디자인",
-                detailCareer: ["SKT 글로벌 고객 전용 App UI/UX 시안 제작"],
-                location: "second",
-            },
-        ],
+        {
+            id: 0,
+            from: 17,
+            to: 18,
+            company: "미디어포스원",
+            title: "EPSON & KT&G 복지재단&사회공헌 운영디자인",
+            detailCareer: [
+                "제품 카탈로그 web/mobile UI 제작",
+                "EPSON 프로모션 페이지 제작",
+                "Main page UI 개선",
+                "Blog 컨셉 활동 뉴스레터 제작",
+            ],
+        },
+        {
+            id: 1,
+            from: 17,
+            to: 18,
+            company: "게리온",
+            title: "자사 브랜드 홈페이지 UI/UX 디자인",
+            detailCareer: [
+                "노블인베스트먼트 web/mobile UI/UX 제작",
+                "크레타 web/mobile UI/UX 제작",
+                "한국주식연구소 web/mobile UI/UX 제작",
+                "컨설킷 web/mobile UI/UX 제작",
+                "사내 운영 디자인건",
+            ],
+        },
+        {
+            id: 2,
+            from: 17,
+            to: 18,
+            company: "9px",
+            title: "AI 자동차 그래픽 연구원",
+            detailCareer: [
+                "차세대 자동차 클러스터, avn 그래픽 시안 제작",
+                "오픽 솔루션 앱 랜딩페이지 제작",
+                "토익 스피킹 앱 랜딩페이지 제작",
+            ],
+        },
+        {
+            id: 3,
+            from: 17,
+            to: 18,
+            company: "다름 커뮤니케이션즈",
+            title: "SKT Application 영문버전 디자인",
+            detailCareer: ["SKT 글로벌 고객 전용 App UI/UX 시안 제작"],
+        },
     ];
 
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }, []);
+    const [isSize768, setIsSize768] = useState(true);
+    const [translateX, setTranslateX] = useState(0);
+
+    // useEffect(() => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth",
+    //     });
+    // }, []);
+
+    // useEffect(() => {
+    //     if (scrollX <= 768 && scrollX !== 0) {
+    //         setIsSize768(true);
+    //     } else {
+    //         setIsSize768(false);
+    //     }
+    // }, [scrollX]);
 
     return (
         <Wrap>
@@ -148,32 +215,45 @@ const DetailInfo = ({ scrollX }) => {
                     marginBottom: 100,
                 }}
             >
-                <AmbitionTitle>My Ambition</AmbitionTitle>
-                <DescriptionWrap>
-                    {descriptionData.map((description) => {
-                        return (
-                            <Description>
-                                <Space />
-                                {description}
-                            </Description>
-                        );
-                    })}
-                </DescriptionWrap>
+                <RowContainer>
+                    <AmbitionTitleWrap>
+                        <Title>My Ambition</Title>
+                    </AmbitionTitleWrap>
+                    <DescriptionWrap>
+                        {descriptionData.map((description) => {
+                            return (
+                                <Description>
+                                    <Space />
+                                    {description}
+                                </Description>
+                            );
+                        })}
+                    </DescriptionWrap>
+                </RowContainer>
             </Section>
             <Section>
-                <AmbitionTitle>Work Experience</AmbitionTitle>
-                <Container>
-                    <CareerWrap>
-                        {careerList[0].map((career) => {
-                            return <Career career={career} key={career.id} />;
-                        })}
-                    </CareerWrap>
-                    <CareerWrap>
-                        {careerList[1].map((career) => {
-                            return <Career career={career} key={career.id} />;
-                        })}
-                    </CareerWrap>
-                </Container>
+                <ColumnContainer>
+                    <ExperienceTitleWrap>
+                        <Title>Work Experience</Title>
+                    </ExperienceTitleWrap>
+                    <Container>
+                        <CareerWrap translateX={translateX}>
+                            {careerList.map((career) => {
+                                return (
+                                    <Career
+                                        career={career}
+                                        key={career.id}
+                                        isSize768={isSize768}
+                                    />
+                                );
+                            })}
+                        </CareerWrap>
+                    </Container>
+                </ColumnContainer>
+                <PrevNextButton
+                    translateX={translateX}
+                    setTranslateX={setTranslateX}
+                />
             </Section>
             <FooterButton
                 prevLink={`/`}
@@ -181,7 +261,7 @@ const DetailInfo = ({ scrollX }) => {
                 prevImg={footer.home}
                 nextLink={`/0/1`}
                 nextTile="Ability"
-                nextImg={footer.github}
+                nextImg={footer.ability}
             />
         </Wrap>
     );

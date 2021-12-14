@@ -2,29 +2,41 @@ import React from "react";
 import styled from "styled-components";
 import { infoSources } from "../../../images";
 
-const Line = styled.div`
-    width: 100%;
-    height: 2px;
-    background-color: ${({ theme }) => theme.detailLine};
-`;
-
 const Wrap = styled.div`
     flex: 1;
     flex-direction: column;
-    margin: ${({ location }) =>
-        location === "first" ? `0 10px 0 0` : `0 0 0 10px`};
-    /* background-color: red; */
+    margin: 0 10px;
+    @media ${({ theme }) => theme.size768} {
+        margin: 0;
+    }
 `;
 
 const CareerWrap = styled.div`
-    height: 309px;
+    width: 100%;
+    height: 340px;
     padding: 30px;
+    @media ${({ theme }) => theme.size1200} {
+        height: 390px;
+    }
+    /* 960px 부터 슬라이딩 */
+    @media ${({ theme }) => theme.size960} {
+        /* width: 768px; */
+        /* height: 420px; */
+    }
+    @media ${({ theme }) => theme.size768} {
+        width: 568px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        width: 320px;
+    }
 `;
+
 const YearWrap = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 30px;
 `;
+
 const YearObj = styled.div`
     font-family: "BLUDHAVEN";
     color: #fff;
@@ -36,47 +48,61 @@ const YearObj = styled.div`
     font-size: 16px;
     margin-right: 10px;
 `;
+
 const YearFrom = styled.p`
     position: absolute;
     top: 6px;
     left: 8px;
 `;
+
 const YearTo = styled.p`
     position: absolute;
     bottom: 7px;
     left: 20px;
 `;
+
 const CompanyName = styled.p``;
 
 const Title = styled.h1`
-    width: 80%;
+    width: 100%;
     font-size: 20px;
     font-weight: bold;
     line-height: 24px;
     margin-bottom: 32px;
     word-break: keep-all;
 `;
+
 const DetailList = styled.ul``;
 const DetailObj = styled.li`
     display: flex;
     margin-bottom: 8px;
 `;
+
 const ImageWrap = styled.div`
     width: 15px;
     height: 15px;
     margin-right: 10px;
 `;
+
 const CheckImage = styled.img`
     width: 100%;
     height: 100%;
 `;
+
 const DetailText = styled.p`
-    font-size: 16px;
+    font-size: 13px;
 `;
-const Career = ({ career }) => {
+
+const Line = styled.div`
+    width: 100%;
+    height: 2px;
+    background-color: ${({ theme }) => theme.detailLine};
+`;
+
+const Career = ({ career, isSize768 }) => {
     // console.log(career.detailCareer);
     return (
-        <Wrap location={career.location}>
+        <Wrap>
             <Line />
             <CareerWrap>
                 <YearWrap>
