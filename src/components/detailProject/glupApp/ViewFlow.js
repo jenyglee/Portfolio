@@ -63,6 +63,7 @@ const FunctionContent = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 60px;
+    padding: 0 20px;
     @media ${({ theme }) => theme.size1200} {
         width: 960px;
     }

@@ -9,7 +9,6 @@ const ProfileWrap = styled.section`
     background-size: 144%;
     background-position: 2% 72%;
     margin-bottom: 98px;
-    background-color: red;
     @media ${({ theme }) => theme.size1200} {
     }
     @media ${({ theme }) => theme.size960} {

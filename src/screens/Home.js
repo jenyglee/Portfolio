@@ -60,26 +60,6 @@ const TitleContainer = styled.article`
     z-index: 1;
 `;
 
-const BtnContainer = styled.a`
-    width: 50px;
-    height: 50px;
-    border: red;
-    border-radius: 25px;
-    position: fixed;
-    bottom: 100px;
-    right: 100px;
-    background-color: lightskyblue;
-`;
-
-const BtnArrow = styled.div`
-    width: 10px;
-    height: 10px;
-`;
-
-const BtnText = styled.p`
-    font-size: 12px;
-`;
-
 const tempData = [
     [
         { id: 0, title: "Info", isHover: false },
@@ -319,32 +299,32 @@ const Home = () => {
                 </Route>
 
                 <Route path="/0/0">
-                    <DetailInfo scrollX={scrollX} />
+                    <DetailInfo scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/0/1">
                     <DetailAbility scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 {/* <a href="https://github.com/jenyglee" target="_blank" /> */}
                 <Route path="/1/0">
-                    <DetailGulpApp scrollX={scrollX} />
+                    <DetailGulpApp scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/0">
-                    <DetailAvn scrollX={scrollX} />
+                    <DetailAvn scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/1">
-                    <DetailMusinsa scrollX={scrollX} />
+                    <DetailMusinsa scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/2">
-                    <DetailKTnG scrollX={scrollX} />
+                    <DetailKTnG scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/3">
-                    <DetailConsultKit scrollX={scrollX} />
+                    <DetailConsultKit scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/4">
-                    <DetailKyobo scrollX={scrollX} />
+                    <DetailKyobo scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/5">
-                    <DetailBeotherm scrollX={scrollX} />
+                    <DetailBeotherm scrollX={scrollX} scrollY={scrollY} />
                 </Route>
             </Switch>
             <TopButton
@@ -352,10 +332,6 @@ const Home = () => {
                 onClick={handleTop}
                 isChangedTheme={isChangedTheme}
             />
-            {/* <BtnContainer onClick={onButtonClick}>
-                <BtnArrow />
-                <BtnText>TOP</BtnText>
-            </BtnContainer> */}
         </Body>
     );
 };

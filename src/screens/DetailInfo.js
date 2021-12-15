@@ -25,49 +25,6 @@ const Wrap = styled.main`
     }
 `;
 
-// const HeaderContainer = styled.header`
-//     width: 100%;
-//     height: 40px;
-//     margin-top: 86px;
-//     @media ${({ theme }) => theme.size1200} {
-//         margin-top: 60px;
-//     }
-//     @media ${({ theme }) => theme.size960} {
-//         margin-top: 40px;
-//     }
-//     @media ${({ theme }) => theme.size568} {
-//         margin-top: 20px;
-//     }
-// `;
-// const LogoWrap = styled.div`
-//     width: 152px;
-//     height: 30px;
-//     font-size: 25px;
-//     font-weight: bold;
-//     color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>
-//         isChangedTheme && !isPcBreakPoint
-//             ? theme.darkThemeText
-//             : theme.whiteThemeText};
-//     transition: 0.5s;
-
-//     @media ${({ theme }) => theme.size1200} {
-//         width: 152px;
-//         height: 30px;
-//     }
-//     @media ${({ theme }) => theme.size960} {
-//         width: 129px;
-//         height: 25px;
-//     }
-//     @media ${({ theme }) => theme.size768} {
-//         width: 103px;
-//         height: 20px;
-//     }
-// `;
-// const LogoImage = styled.img`
-//     width: 100%;
-//     height: 100%;
-// `;
-
 const InfoWrap = styled.div`
     width: 100%;
     padding: 140px 0;
@@ -183,7 +140,7 @@ const CareerWrap = styled.div`
     transition: 0.3s;
 `;
 
-const DetailInfo = ({ scrollX }) => {
+const DetailInfo = ({ scrollX, scrollY }) => {
     const descriptionData = [
         "          I WORKED AS A UX/UI DESIGNER FOR 3 YEARS. DESIGNING AND COLLABORATING WITHIN A TEAM, I OFTEN FOUND IT DIFFICULT TO CONVEY THE THINGS I IMAGINED TO THE DEVELOPER. I ALSO HAD DIFFICULTY IMPLEMENTING IT BECAUSE THERE WERE MUCH MORE CONSIDERATIONS THAN I THOUGHT. AS THIS HAPPENED FREQUENTLY, I FELT THAT IT WAS NOT ENOUGH TO PRODUCE SATISFACTORY RESULTS DUE TO THE LIMITATIONS OF MY KNOWLEDGE, AND I STARTED STUDYING DEVELOPMENT ON MY OWN.",
         "          IT TOOK ME A LOT OF TIME BECAUSE I STARTED BLINDLY WITHOUT A CLEAR DIRECTION. ONCE I STARTED SOMETHING, I TRIED TO SEE IT TO THE FINISH ON THE VERY DAY. I THINK THE EXPERIENCES OF LEARNING ON MY OWN AND THE COUNTLESS EXPERIENCES OF TRIALS AND ERRORS MADE ME STRONGER. I’M NOT SURE HOW WELL I WOULD BE ABLE TO PERFORM AT THE COMPANY, BUT I CAN ASSURE YOU THAT I’M ALWAYS WILLING TO LEARN AND GROW QUICKLY SO THAT I CAN MAKE A BIG CONTRIBUTION TO THE COMPANY. THANK YOU.",
@@ -244,12 +201,12 @@ const DetailInfo = ({ scrollX }) => {
     const [isSize768, setIsSize768] = useState(false);
     const [translateX, setTranslateX] = useState(0);
 
-    // useEffect(() => {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth",
-    //     });
-    // }, []);
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, []);
 
     useEffect(() => {
         if (scrollX <= 768 && scrollX !== 0) {
@@ -261,8 +218,7 @@ const DetailInfo = ({ scrollX }) => {
 
     return (
         <Wrap>
-            <DetailHeader />
-
+            <DetailHeader scrollY={scrollY} />
             <InfoWrap>
                 <MainTitle />
                 <MyInfo />

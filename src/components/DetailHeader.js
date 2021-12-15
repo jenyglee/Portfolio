@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { logo } from "./../images";
 
 const Wrap = styled.header`
-    width: 100%;
-    height: 40px;
-    margin-top: 86px;
+    position: fixed;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 86px;
+    opacity: ${({ showHeader }) => (showHeader ? 1 : 0)};
+    transform: ${({ showHeader }) =>
+        showHeader ? `translateY(0px)` : `translateY(-120px)`};
+    transition: 0.5s;
     @media ${({ theme }) => theme.size1200} {
-        margin-top: 60px;
+        width: 960px;
+        padding-top: 60px;
     }
     @media ${({ theme }) => theme.size960} {
-        margin-top: 40px;
+        width: 768px;
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        width: 568px;
+        padding-top: 20px;
     }
     @media ${({ theme }) => theme.size568} {
-        margin-top: 20px;
+        width: 320px;
+        padding-top: 20px;
     }
+    z-index: 1;
 `;
 
 const LogoWrap = styled.div`
@@ -48,9 +63,18 @@ const LogoImage = styled.img`
     height: 100%;
 `;
 
-const DetailHeader = () => {
+const DetailHeader = ({ scrollY }) => {
+    const [showHeader, setShowHeader] = useState(false);
+    useEffect(() => {
+        if (scrollY > 200) {
+            setShowHeader(false);
+        } else {
+            setShowHeader(true);
+        }
+    }, [scrollY]);
+
     return (
-        <Wrap>
+        <Wrap showHeader={showHeader}>
             <Link to="/">
                 <LogoWrap>
                     <LogoImage src={logo} />

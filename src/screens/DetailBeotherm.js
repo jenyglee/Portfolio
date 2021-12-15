@@ -4,15 +4,11 @@ import Title from "../components/detailProject/Title";
 import { BeothermSources } from "../images";
 import FooterButton from "../components/FooterButton";
 import { footer } from "../images";
+import DetailHeader from "../components/DetailHeader";
 
-const Wrap = styled.div`
+const Wrap = styled.main`
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 200px;
     @media ${({ theme }) => theme.size1200} {
         max-width: 960px;
     }
@@ -25,6 +21,15 @@ const Wrap = styled.div`
     @media ${({ theme }) => theme.size568} {
         max-width: 320px;
     }
+`;
+
+const BeothermWrap = styled.div`
+    width: 100%;
+    padding-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 const MainWrap = styled.main`
@@ -48,7 +53,7 @@ const StyledImage = styled.img`
     width: 100%;
 `;
 
-const DetailBeotherm = ({ scrollX }) => {
+const DetailBeotherm = ({ scrollX, scrollY }) => {
     const [isSize768, setIsSize768] = useState(false);
     useEffect(() => {
         window.scrollTo({
@@ -67,26 +72,29 @@ const DetailBeotherm = ({ scrollX }) => {
 
     return (
         <Wrap>
-            <MainWrap>
-                <Title
-                    number="03"
-                    title="프로모션 비오템옴므"
-                    titlePoint=""
-                    startDate="202108"
-                    endDate="202112"
+            <DetailHeader scrollY={scrollY} />
+            <BeothermWrap>
+                <MainWrap>
+                    <Title
+                        number="03"
+                        title="프로모션 비오템옴므"
+                        titlePoint=""
+                        startDate="202108"
+                        endDate="202112"
+                    />
+                    <ImageWrap isSize768={isSize768}>
+                        <StyledImage src={BeothermSources[0]} />
+                    </ImageWrap>
+                </MainWrap>
+                <FooterButton
+                    prevLink={`/2/4`}
+                    prevTitle="Kyobo Promotion"
+                    prevImg={footer.kyobo}
+                    nextLink={`/`}
+                    nextTile="Home"
+                    nextImg={footer.home}
                 />
-                <ImageWrap isSize768={isSize768}>
-                    <StyledImage src={BeothermSources[0]} />
-                </ImageWrap>
-            </MainWrap>
-            <FooterButton
-                prevLink={`/2/4`}
-                prevTitle="Kyobo Promotion"
-                prevImg={footer.kyobo}
-                nextLink={`/`}
-                nextTile="Home"
-                nextImg={footer.home}
-            />
+            </BeothermWrap>
         </Wrap>
     );
 };

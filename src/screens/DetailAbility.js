@@ -136,16 +136,16 @@ const DetailAbility = ({ scrollX, scrollY }) => {
             gauge: 100,
         },
     ];
-    // useEffect(() => {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth",
-    //     });
-    // }, []);
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, []);
 
     return (
         <Wrap>
-            <DetailHeader />
+            <DetailHeader scrollY={scrollY} />
             <AbilityWrap>
                 <Section
                     style={{
