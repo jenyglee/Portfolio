@@ -83,8 +83,9 @@ const Gnb = styled.ul`
     }
 `;
 
-const GnbList = styled.li`
+const GnbItem = styled.li`
     font-size: 16px;
+    cursor: pointer;
     color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>
         isChangedTheme && !isPcBreakPoint
             ? theme.darkThemeText
@@ -166,7 +167,14 @@ const menu = [
     { id: 2, title: "DESIGN", koreanTitle: "디자인 프로젝트" },
 ];
 
-const Header = ({ isChangedTheme, isPcBreakPoint, scrollY }) => {
+const Header = ({
+    isChangedTheme,
+    isPcBreakPoint,
+    scrollY,
+    onIntroClick,
+    onDevelopClick,
+    onDesignClick,
+}) => {
     const [isMenuEntered, setIsMenuEntered] = useState(false);
     const [showHeader, setShowHeader] = useState(false);
 
@@ -212,13 +220,24 @@ const Header = ({ isChangedTheme, isPcBreakPoint, scrollY }) => {
                 <Gnb>
                     {menu.map((item, index) => {
                         return (
-                            <GnbList
+                            <GnbItem
                                 isChangedTheme={isChangedTheme}
                                 isPcBreakPoint={isPcBreakPoint}
                                 key={index}
+                                onClick={() => {
+                                    if (index === 0) {
+                                        onIntroClick();
+                                    }
+                                    if (index === 1) {
+                                        onDevelopClick();
+                                    }
+                                    if (index === 2) {
+                                        onDesignClick();
+                                    }
+                                }}
                             >
-                                <a href="#">{item.title}</a>
-                            </GnbList>
+                                <a>{item.title}</a>
+                            </GnbItem>
                         );
                     })}
                 </Gnb>

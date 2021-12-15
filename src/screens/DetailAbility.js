@@ -36,7 +36,17 @@ const Section = styled.section`
 
 const AbilityWrap = styled.div`
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: center;
+
+    flex-flow: row wrap;
+    @media ${({ theme }) => theme.size960} {
+        /* justify-content: center; */
+    }
+    @media ${({ theme }) => theme.size768} {
+        flex-flow: row nowrap;
+        /* justify-content: center; */
+    }
 `;
 
 const DetailAbility = ({ scrollX, scrollY }) => {
@@ -57,76 +67,68 @@ const DetailAbility = ({ scrollX, scrollY }) => {
     ];
 
     const abilityData = [
-        [
-            {
-                id: 0,
-                name: "React Native",
-                gauge: 80,
-            },
-            {
-                id: 1,
-                name: "React",
-                gauge: 70,
-            },
-            {
-                id: 2,
-                name: "MySQL",
-                gauge: 40,
-            },
-        ],
-        [
-            {
-                id: 0,
-                name: "Axios/Fetch API",
-                gauge: 50,
-            },
-            {
-                id: 1,
-                name: "Redux",
-                gauge: 50,
-            },
-            {
-                id: 2,
-                name: "Firebase",
-                gauge: 60,
-            },
-        ],
-        [
-            {
-                id: 0,
-                name: "Git",
-                gauge: 40,
-            },
-            {
-                id: 1,
-                name: "HTML/CSS",
-                gauge: 90,
-            },
-            {
-                id: 2,
-                name: "Figma",
-                gauge: 80,
-            },
-        ],
-        [
-            {
-                id: 0,
-                name: "PhotoShop",
-                gauge: 100,
-            },
-            {
-                id: 1,
-                name: "Illustrator",
-                gauge: 100,
-            },
-        ],
+        {
+            id: 0,
+            name: "React Native",
+            gauge: 80,
+        },
+        {
+            id: 1,
+            name: "React",
+            gauge: 70,
+        },
+        {
+            id: 2,
+            name: "MySQL",
+            gauge: 40,
+        },
+        {
+            id: 0,
+            name: "Axios/Fetch API",
+            gauge: 50,
+        },
+        {
+            id: 1,
+            name: "Redux",
+            gauge: 50,
+        },
+        {
+            id: 2,
+            name: "Firebase",
+            gauge: 60,
+        },
+        {
+            id: 0,
+            name: "Git",
+            gauge: 40,
+        },
+        {
+            id: 1,
+            name: "HTML/CSS",
+            gauge: 90,
+        },
+        {
+            id: 2,
+            name: "Figma",
+            gauge: 80,
+        },
+        {
+            id: 0,
+            name: "PhotoShop",
+            gauge: 100,
+        },
+        {
+            id: 1,
+            name: "Illustrator",
+            gauge: 100,
+        },
     ];
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }, []);
+    // useEffect(() => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth",
+    //     });
+    // }, []);
 
     return (
         <Wrap>
@@ -139,10 +141,8 @@ const DetailAbility = ({ scrollX, scrollY }) => {
             </Section>
             <Section>
                 <AbilityWrap>
-                    {abilityData.map((abilities) => {
-                        return (
-                            <Ability abilities={abilities} scrollY={scrollY} />
-                        );
+                    {abilityData.map((ability) => {
+                        return <Ability ability={ability} scrollY={scrollY} />;
                     })}
                 </AbilityWrap>
             </Section>

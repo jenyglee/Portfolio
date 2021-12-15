@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Route, Switch, Link } from "react-router-dom";
 import DetailInfo from "./DetailInfo";
@@ -58,6 +58,26 @@ const MainWrap = styled.main`
 const TitleContainer = styled.article`
     position: relative;
     z-index: 1;
+`;
+
+const BtnContainer = styled.a`
+    width: 50px;
+    height: 50px;
+    border: red;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    background-color: lightskyblue;
+`;
+
+const BtnArrow = styled.div`
+    width: 10px;
+    height: 10px;
+`;
+
+const BtnText = styled.p`
+    font-size: 12px;
 `;
 
 const tempData = [
@@ -190,36 +210,73 @@ const Home = () => {
         setScrollY(0);
     };
 
+    const introRef = useRef(null);
+    const developRef = useRef(null);
+    const designRef = useRef(null);
+    const onIntroClick = () => {
+        introRef.current.scrollIntoView({ behavior: "smooth" });
+    };
+    const onDevelopClick = () => {
+        developRef.current.scrollIntoView({ behavior: "smooth" });
+    };
+    const onDesignClick = () => {
+        designRef.current.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
             <Header
                 isChangedTheme={isChangedTheme}
                 isPcBreakPoint={isPcBreakPoint}
                 scrollY={scrollY}
+                onIntroClick={onIntroClick}
+                onDevelopClick={onDevelopClick}
+                onDesignClick={onDesignClick}
             />
             <Switch>
                 <Route path="/" exact>
                     <MainWrap>
                         <div className="contents">
                             <TitleContainer>
-                                {projectTitle.map((item, index) => {
-                                    return (
-                                        <Section
-                                            // itemEnter={(id, sectionId)=>{
-                                            //     dispatch(actionsInteractions.itemEnter(id, sectionId, projectTitle, projectImage, setProjectImage, setImgKey, changeTheme));
-                                            // }}
-                                            itemEnter={itemEnter}
-                                            itemLeave={itemLeave}
-                                            projectTitle={projectTitle[index]}
-                                            sectionId={index}
-                                            img={categoryImages}
-                                            key={index}
-                                            isChangedTheme={isChangedTheme}
-                                            isPcBreakPoint={isPcBreakPoint}
-                                            scrollX={scrollX}
-                                        />
-                                    );
-                                })}
+                                <div ref={introRef}>
+                                    <Section
+                                        // itemEnter={(id, sectionId)=>{
+                                        //     dispatch(actionsInteractions.itemEnter(id, sectionId, projectTitle, projectImage, setProjectImage, setImgKey, changeTheme));
+                                        // }}
+                                        itemEnter={itemEnter}
+                                        itemLeave={itemLeave}
+                                        projectTitle={projectTitle[0]}
+                                        sectionId={0}
+                                        img={categoryImages}
+                                        isChangedTheme={isChangedTheme}
+                                        isPcBreakPoint={isPcBreakPoint}
+                                        scrollX={scrollX}
+                                    />
+                                </div>
+                                <div ref={developRef}>
+                                    <Section
+                                        itemEnter={itemEnter}
+                                        itemLeave={itemLeave}
+                                        projectTitle={projectTitle[1]}
+                                        sectionId={1}
+                                        img={categoryImages}
+                                        isChangedTheme={isChangedTheme}
+                                        isPcBreakPoint={isPcBreakPoint}
+                                        scrollX={scrollX}
+                                    />
+                                </div>
+                                <div ref={designRef}>
+                                    <Section
+                                        itemEnter={itemEnter}
+                                        itemLeave={itemLeave}
+                                        projectTitle={projectTitle[2]}
+                                        sectionId={2}
+                                        img={categoryImages}
+                                        isChangedTheme={isChangedTheme}
+                                        isPcBreakPoint={isPcBreakPoint}
+                                        scrollX={scrollX}
+                                    />
+                                </div>
                             </TitleContainer>
                             {imgKey && !isPcBreakPoint ? (
                                 <div>
@@ -267,13 +324,7 @@ const Home = () => {
                 <Route path="/0/1">
                     <DetailAbility scrollX={scrollX} scrollY={scrollY} />
                 </Route>
-                <Route
-                    path="/0/2"
-                    component={() => {
-                        window.open("https://github.com/jenyglee");
-                        return null;
-                    }}
-                />
+                {/* <a href="https://github.com/jenyglee" target="_blank" /> */}
                 <Route path="/1/0">
                     <DetailGulpApp scrollX={scrollX} />
                 </Route>
@@ -301,6 +352,10 @@ const Home = () => {
                 onClick={handleTop}
                 isChangedTheme={isChangedTheme}
             />
+            {/* <BtnContainer onClick={onButtonClick}>
+                <BtnArrow />
+                <BtnText>TOP</BtnText>
+            </BtnContainer> */}
         </Body>
     );
 };

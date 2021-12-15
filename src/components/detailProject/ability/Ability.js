@@ -4,7 +4,7 @@ import AbilityTitle from "./AbilityTitle";
 import Gauge from "./Gauge";
 
 const Wrap = styled.div`
-    width: 100%;
+    width: 387px;
     display: flex;
 `;
 
@@ -31,10 +31,16 @@ const BottomLine = styled.div`
     bottom: 0;
 `;
 
-const Ability = ({ abilities, scrollY }) => {
+const Ability = ({ ability, scrollY }) => {
     return (
         <Wrap>
-            {abilities.map((ability) => {
+            <AbilityWrap>
+                <TopLine />
+                <AbilityTitle name={ability.name} />
+                <Gauge percent={ability.gauge} scrollY={scrollY} />
+                <BottomLine />
+            </AbilityWrap>
+            {/* {abilities.map((ability) => {
                 return (
                     <AbilityWrap>
                         <TopLine />
@@ -43,7 +49,7 @@ const Ability = ({ abilities, scrollY }) => {
                         <BottomLine />
                     </AbilityWrap>
                 );
-            })}
+            })} */}
         </Wrap>
     );
 };
