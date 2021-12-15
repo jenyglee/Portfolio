@@ -21,6 +21,8 @@ const CareerWrap = styled.div`
     /* 768px 부터 슬라이딩 */
     @media ${({ theme }) => theme.size768} {
         width: 568px;
+        height: 330px;
+        padding: 30px 48px;
     }
     @media ${({ theme }) => theme.size568} {
         width: 320px;
@@ -64,14 +66,14 @@ const Title = styled.h1`
     font-size: 20px;
     font-weight: bold;
     line-height: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     word-break: keep-all;
 `;
 
 const DetailList = styled.ul``;
 const DetailObj = styled.li`
     display: flex;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 `;
 
 const ImageWrap = styled.div`
@@ -93,6 +95,10 @@ const Line = styled.div`
     width: 100%;
     height: 2px;
     background-color: ${({ theme }) => theme.detailLine};
+    @media ${({ theme }) => theme.size768} {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
 `;
 
 const Career = ({ career, isSize768 }) => {

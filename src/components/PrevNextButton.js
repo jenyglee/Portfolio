@@ -4,9 +4,12 @@ import { icons } from "../images";
 
 const Wrap = styled.main`
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
+    @media ${({ theme }) => theme.size768} {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 const ButtonWrap = styled.div`
     display: flex;
@@ -14,6 +17,7 @@ const ButtonWrap = styled.div`
 const ImageWrap = styled.div`
     width: 30px;
     height: 30px;
+    margin: 0 5px;
     cursor: pointer;
 `;
 const Image = styled.img`
@@ -30,14 +34,18 @@ const PrevNextButton = ({ translateX, setTranslateX }) => {
                         transform: `rotate(180deg)`,
                     }}
                     onClick={() => {
-                        setTranslateX(translateX + 100);
+                        if (translateX !== 0) {
+                            setTranslateX(translateX + 100);
+                        }
                     }}
                 >
                     <Image src={icons.prevNext} />
                 </ImageWrap>
                 <ImageWrap
                     onClick={() => {
-                        setTranslateX(translateX - 100);
+                        if (translateX !== -300) {
+                            setTranslateX(translateX - 100);
+                        }
                     }}
                 >
                     <Image src={icons.prevNext} />

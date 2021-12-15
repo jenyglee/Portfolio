@@ -29,6 +29,17 @@ import categoryDesignW from "./images/category_design_w.png";
 import AccordionArrow from "./images/accordionArrow.png";
 import PrevNextButton from "./images/prevNextButton.png";
 import FooterArrow from "./images/footerThumb/arrow.png";
+import HeaderThumbHome from "./images/headerThumb/home.png";
+import HeaderThumbInfo from "./images/headerThumb/info.png";
+import HeaderThumbAbility from "./images/headerThumb/ability.png";
+import HeaderThumbGithub from "./images/headerThumb/github.png";
+import HeaderThumbGulpApp from "./images/headerThumb/gulpApp.png";
+import HeaderThumbAvn from "./images/headerThumb/avn.png";
+import HeaderThumbMusinsa from "./images/headerThumb/musinsa.png";
+import HeaderThumbKtng from "./images/headerThumb/ktng.png";
+import HeaderThumbConcertKit from "./images/headerThumb/concertKit.png";
+import HeaderThumbKyobo from "./images/headerThumb/kyobo.png";
+import HeaderThumbBeotherm from "./images/headerThumb/beotherm.png";
 import FooterThumbHome from "./images/footerThumb/home.png";
 import FooterThumbInfo from "./images/footerThumb/info.png";
 import FooterThumbAbility from "./images/footerThumb/ability.png";
@@ -172,6 +183,21 @@ const bgImages09 = {
 
 const bgImages10 = {
     Image01: bg10Component01,
+};
+
+//✨ 헤더 썸네일 이미지
+const header = {
+    home: HeaderThumbHome,
+    info: HeaderThumbInfo,
+    ability: HeaderThumbAbility,
+    github: HeaderThumbGithub,
+    gulpApp: HeaderThumbGulpApp,
+    avn: HeaderThumbAvn,
+    musinsa: HeaderThumbMusinsa,
+    ktng: HeaderThumbKtng,
+    concertKit: HeaderThumbConcertKit,
+    kyobo: HeaderThumbKyobo,
+    beotherm: HeaderThumbBeotherm,
 };
 
 //✨ 푸터 썸네일 이미지
@@ -335,6 +361,7 @@ export {
     bgImages09,
     bgImages10,
     categoryImages,
+    header,
     footer,
     icons,
     infoSources,

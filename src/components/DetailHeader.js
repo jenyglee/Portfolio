@@ -8,6 +8,8 @@ const Wrap = styled.header`
     width: 1200px;
     margin: 0 auto;
     padding-top: 86px;
+    display: flex;
+    justify-content: space-between;
     opacity: ${({ showHeader }) => (showHeader ? 1 : 0)};
     transform: ${({ showHeader }) =>
         showHeader ? `translateY(0px)` : `translateY(-120px)`};
@@ -63,7 +65,47 @@ const LogoImage = styled.img`
     height: 100%;
 `;
 
-const DetailHeader = ({ scrollY }) => {
+const MenuWrap = styled.article`
+    display: flex;
+`;
+const ButtonWrap = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: ${({ isPrev }) => (isPrev ? "20px" : "0")};
+    @media ${({ theme }) => theme.size768} {
+        margin-right: ${({ isPrev }) => (isPrev ? "10px" : "0")};
+    }
+`;
+const ThumbWrap = styled.div`
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    @media ${({ theme }) => theme.size768} {
+        width: 20px;
+        height: 20px;
+    }
+`;
+const ThumbImage = styled.img`
+    width: 100%;
+    height: 100%;
+`;
+const Title = styled.h4`
+    font-size: 16px;
+    font-weight: bold;
+    @media ${({ theme }) => theme.size768} {
+        font-size: 13px;
+    }
+`;
+
+const DetailHeader = ({
+    scrollY,
+    prevLink,
+    prevImg,
+    prevTitle,
+    nextLink,
+    nextImg,
+    nextTitle,
+}) => {
     const [showHeader, setShowHeader] = useState(false);
     useEffect(() => {
         if (scrollY > 200) {
@@ -80,6 +122,24 @@ const DetailHeader = ({ scrollY }) => {
                     <LogoImage src={logo} />
                 </LogoWrap>
             </Link>
+            <MenuWrap>
+                <Link to={prevLink}>
+                    <ButtonWrap isPrev>
+                        <ThumbWrap>
+                            <ThumbImage src={prevImg} />
+                        </ThumbWrap>
+                        <Title>{prevTitle}</Title>
+                    </ButtonWrap>
+                </Link>
+                <Link to={nextLink}>
+                    <ButtonWrap>
+                        <ThumbWrap>
+                            <ThumbImage src={nextImg} />
+                        </ThumbWrap>
+                        <Title>{nextTitle}</Title>
+                    </ButtonWrap>
+                </Link>
+            </MenuWrap>
         </Wrap>
     );
 };

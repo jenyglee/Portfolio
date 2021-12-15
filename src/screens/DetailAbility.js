@@ -25,18 +25,18 @@ const Wrap = styled.main`
 
 const AbilityWrap = styled.div`
     width: 100%;
-    padding: 150px 0;
+    padding: 304px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media ${({ theme }) => theme.size1200} {
-        padding: 130px 0;
+        padding: 250px 0;
     }
     @media ${({ theme }) => theme.size960} {
-        padding: 120px 0;
+        padding: 200px 0;
     }
     @media ${({ theme }) => theme.size768} {
-        padding: 110px 0;
+        padding: 150px 0;
     }
     @media ${({ theme }) => theme.size568} {
         padding: 104px 0;
