@@ -263,16 +263,9 @@ const DetailInfo = ({ scrollX, scrollY }) => {
                     <PrevNextButton
                         translateX={translateX}
                         setTranslateX={setTranslateX}
+                        pageName="Info"
                     />
                 </Section>
-                {/* <FooterButton
-                    prevLink={`/`}
-                    prevTitle="Home"
-                    prevImg={footer.home}
-                    nextLink={`/0/1`}
-                    nextTile="Ability"
-                    nextImg={footer.ability}
-                /> */}
             </InfoWrap>
         </Wrap>
     );

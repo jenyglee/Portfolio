@@ -93,14 +93,6 @@ const DetailKyobo = ({ scrollX, scrollY }) => {
                         <StyledImage src={KyoboSources[0]} />
                     </ImageWrap>
                 </MainWrap>
-                {/* <FooterButton
-                    prevLink={`/2/3`}
-                    prevTitle="ConcertKit UI/UX"
-                    prevImg={footer.concertKit}
-                    nextLink={`/2/5`}
-                    nextTile="Beotherm Promotion"
-                    nextImg={footer.beotherm}
-                /> */}
             </KyoboWrap>
         </Wrap>
     );

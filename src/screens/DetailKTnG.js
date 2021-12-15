@@ -90,14 +90,6 @@ const DetailKTnG = ({ scrollX, scrollY }) => {
                         scrollX={scrollX}
                     />
                 </MainWrap>
-                {/* <FooterButton
-                    prevLink={`/2/1`}
-                    prevTitle="Musinsa UI/UX"
-                    prevImg={footer.musinsa}
-                    nextLink={`/2/3`}
-                    nextTile="ConcertKit UI/UX"
-                    nextImg={footer.concertKit}
-                /> */}
             </KtngWrap>
         </Wrap>
     );

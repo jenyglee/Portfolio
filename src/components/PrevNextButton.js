@@ -25,7 +25,7 @@ const Image = styled.img`
     height: 100%;
 `;
 
-const PrevNextButton = ({ translateX, setTranslateX }) => {
+const PrevNextButton = ({ translateX, setTranslateX, pageName }) => {
     return (
         <Wrap>
             <ButtonWrap>
@@ -43,8 +43,14 @@ const PrevNextButton = ({ translateX, setTranslateX }) => {
                 </ImageWrap>
                 <ImageWrap
                     onClick={() => {
-                        if (translateX !== -300) {
-                            setTranslateX(translateX - 100);
+                        if (pageName === "Info") {
+                            if (translateX !== -300) {
+                                setTranslateX(translateX - 100);
+                            }
+                        } else if (pageName === "Ability") {
+                            if (translateX !== -1000) {
+                                setTranslateX(translateX - 100);
+                            }
                         }
                     }}
                 >

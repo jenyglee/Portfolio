@@ -94,14 +94,6 @@ const DetailAvn = ({ scrollY }) => {
                         detailNumber="3"
                     />
                 </MainWrap>
-                {/* <FooterButton
-                    prevLink={`/1/0`}
-                    prevTitle="Gulp App"
-                    prevImg={footer.gulpApp}
-                    nextLink={`/2/1`}
-                    nextTile="Musinsa UI/UX"
-                    nextImg={footer.musinsa}
-                /> */}
             </AvnWrap>
         </Wrap>
     );

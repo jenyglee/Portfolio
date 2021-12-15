@@ -83,14 +83,6 @@ const DetailConsultKit = ({ scrollX, scrollY }) => {
                         scrollX={scrollX}
                     />
                 </MainWrap>
-                {/* <FooterButton
-                    prevLink={`/2/2`}
-                    prevTitle="KT&G UI/UX"
-                    prevImg={footer.ktng}
-                    nextLink={`/2/4`}
-                    nextTile="Kyobo Promotion"
-                    nextImg={footer.kyobo}
-                /> */}
             </ConcertKitWrap>
         </Wrap>
     );

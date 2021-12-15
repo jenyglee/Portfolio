@@ -104,14 +104,6 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
                         scrollX={scrollX}
                     />
                 </MainWrap>
-                {/* <FooterButton
-                    prevLink={`/`}
-                    prevTitle="Home"
-                    prevImg={footer.home}
-                    nextLink={`/2/0`}
-                    nextTile="AVN / Cluster"
-                    nextImg={footer.avn}
-                /> */}
             </GulpAppWrap>
         </Wrap>
     );

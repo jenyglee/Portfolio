@@ -8,6 +8,9 @@ const TitleWrap = styled.div`
     padding-top: 30px;
     padding-left: 30px;
     margin-bottom: 13px;
+    @media ${({ theme }) => theme.size568} {
+        padding-left: 0;
+    }
 `;
 const LoogWrap = styled.div`
     width: 21px;

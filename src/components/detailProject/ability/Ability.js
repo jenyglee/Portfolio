@@ -6,6 +6,14 @@ import Gauge from "./Gauge";
 const Wrap = styled.div`
     width: 387px;
     display: flex;
+    transform: ${({ translateX }) => `translateX(${translateX}%)`};
+    transition: 0.3s;
+    @media ${({ theme }) => theme.size768} {
+        width: 768px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        width: 320px;
+    }
 `;
 
 const AbilityWrap = styled.div`
@@ -13,6 +21,12 @@ const AbilityWrap = styled.div`
     margin: 0 10px;
     margin-bottom: 30px;
     position: relative;
+    @media ${({ theme }) => theme.size768} {
+        width: 768px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        width: 320px;
+    }
 `;
 
 const TopLine = styled.div`
@@ -31,15 +45,16 @@ const BottomLine = styled.div`
     bottom: 0;
 `;
 
-const Ability = ({ ability, scrollY, logo }) => {
+const Ability = ({ translateX, ability, scrollX, scrollY, logo }) => {
     return (
-        <Wrap>
+        <Wrap translateX={translateX}>
             <AbilityWrap>
                 <TopLine />
                 <AbilityTitle name={ability.name} logo={logo} />
                 <Gauge
                     percent={ability.gauge}
                     color={ability.gaugeColor}
+                    scrollX={scrollX}
                     scrollY={scrollY}
                 />
                 <BottomLine />

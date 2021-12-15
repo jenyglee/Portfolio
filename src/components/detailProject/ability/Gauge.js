@@ -6,6 +6,9 @@ const Wrap = styled.div`
     align-items: center;
     padding-bottom: 30px;
     padding-left: 30px;
+    @media ${({ theme }) => theme.size568} {
+        padding-left: 0;
+    }
 `;
 
 const GaugeWrap = styled.div`
@@ -13,6 +16,12 @@ const GaugeWrap = styled.div`
     height: 10px;
     margin-right: 20px;
     position: relative;
+    @media ${({ theme }) => theme.size768} {
+        width: 400px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        width: 205px;
+    }
 `;
 const Disable = styled.div`
     width: 100%;
@@ -35,13 +44,26 @@ const Percent = styled.h1`
     font-weight: bold;
 `;
 
-const Gauge = ({ percent, scrollY, color }) => {
+const Gauge = ({ percent, scrollX, scrollY, color }) => {
     const [isStarted, setIsStarted] = useState(false);
-
-    // 높이 1090에서 게이지 실행
     useEffect(() => {
-        if (scrollY > 1090) {
+        if (scrollX >= 1200 && scrollY > 1630) {
             setIsStarted(true);
+            console.log("scrollX >= 1200 && scrollY > 1630");
+        } else if (scrollX < 1200 && scrollY > 1300) {
+            setIsStarted(true);
+            console.log("scrollX < 1200 && scrollY > 1300");
+        } else if (scrollX < 960 && scrollY > 950) {
+            setIsStarted(true);
+            console.log("scrollX < 960 && scrollY > 950");
+        } else if (scrollX < 768 && scrollY > 320) {
+            setIsStarted(true);
+            console.log("scrollX < 768 && scrollY > 320");
+        } else if (scrollX < 568) {
+            setIsStarted(true);
+            console.log("scrollX < 568");
+        } else {
+            setIsStarted(false);
         }
     }, [scrollY]);
 
@@ -57,7 +79,7 @@ const Gauge = ({ percent, scrollY, color }) => {
                     }}
                 />
             </GaugeWrap>
-            <Percent>{percent}</Percent>
+            <Percent>{percent}%</Percent>
         </Wrap>
     );
 };

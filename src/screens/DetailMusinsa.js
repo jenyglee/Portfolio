@@ -90,14 +90,6 @@ const DetailMusinsa = ({ scrollX, scrollY }) => {
                         scrollX={scrollX}
                     />
                 </MainWrap>
-                {/* <FooterButton
-                    prevLink={`/2/0`}
-                    prevTitle="AVN / Cluster"
-                    prevImg={footer.avn}
-                    nextLink={`/2/2`}
-                    nextTile="KT&G UI/UX"
-                    nextImg={footer.ktng}
-                /> */}
             </MusinsaWrap>
         </Wrap>
     );

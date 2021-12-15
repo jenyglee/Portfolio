@@ -94,14 +94,6 @@ const DetailBeotherm = ({ scrollX, scrollY }) => {
                         <StyledImage src={BeothermSources[0]} />
                     </ImageWrap>
                 </MainWrap>
-                {/* <FooterButton
-                    prevLink={`/2/4`}
-                    prevTitle="Kyobo Promotion"
-                    prevImg={footer.kyobo}
-                    nextLink={`/`}
-                    nextTile="Home"
-                    nextImg={footer.home}
-                /> */}
             </BeothermWrap>
         </Wrap>
     );

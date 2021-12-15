@@ -109,7 +109,6 @@ const Home = () => {
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
     const [scrollX, setScrollX] = useState(0);
     const [scrollY, setScrollY] = useState(0);
-
     // ✨ 너비 1200픽셀 이하 브레이크포인트
     useEffect(() => {
         if (window.innerWidth < 1200) {
@@ -142,6 +141,9 @@ const Home = () => {
             top: 0,
             behavior: "smooth",
         });
+
+        setScrollX(window.innerWidth);
+        setScrollY(window.innerHeight);
     }, []);
 
     // ✨ 커서 들어오면 이미지 노출
