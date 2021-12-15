@@ -59,6 +59,8 @@ const FooterButton = ({
     nextTile,
     prevImg,
     nextImg,
+    goGithub,
+    pageName,
 }) => {
     const [prevScale, setPrevScale] = useState("100%");
     const [nextScale, setNextScale] = useState("100%");
@@ -66,61 +68,124 @@ const FooterButton = ({
         <Wrap>
             <Align>
                 <ButtonWrap>
-                    <Link
-                        to={prevLink}
-                        style={{
-                            width: "100%",
-                        }}
-                    >
-                        <Thumb
-                            img={prevImg}
-                            scale={prevScale}
-                            onMouseEnter={() => {
-                                setPrevScale("120%");
-                            }}
-                            onMouseLeave={() => {
-                                setPrevScale("100%");
-                            }}
-                        >
-                            <ButtonTitleWrap>
-                                <ArrowImage
-                                    src={footer.arrow}
-                                    style={{
-                                        transform: "rotate(180deg)",
-                                        marginRight: 8,
+                    {goGithub && pageName === "Ability" ? (
+                        <>
+                            <Link
+                                to={prevLink}
+                                style={{
+                                    width: "100%",
+                                }}
+                            >
+                                <Thumb
+                                    img={prevImg}
+                                    scale={prevScale}
+                                    onMouseEnter={() => {
+                                        setPrevScale("120%");
                                     }}
-                                />
-                                <Title>{prevTitle}</Title>
-                            </ButtonTitleWrap>
-                        </Thumb>
-                    </Link>
-                    <Link
-                        to={nextLink}
-                        style={{
-                            width: "100%",
-                        }}
-                    >
-                        <Thumb
-                            img={nextImg}
-                            scale={nextScale}
-                            onMouseEnter={() => {
-                                setNextScale("120%");
-                            }}
-                            onMouseLeave={() => {
-                                setNextScale("100%");
-                            }}
-                        >
-                            <ButtonTitleWrap>
-                                <Title>{nextTile}</Title>
-                                <ArrowImage
-                                    src={footer.arrow}
-                                    style={{
-                                        marginLeft: 8,
+                                    onMouseLeave={() => {
+                                        setPrevScale("100%");
                                     }}
-                                />
-                            </ButtonTitleWrap>
-                        </Thumb>
-                    </Link>
+                                >
+                                    <ButtonTitleWrap>
+                                        <ArrowImage
+                                            src={footer.arrow}
+                                            style={{
+                                                transform: "rotate(180deg)",
+                                                marginRight: 8,
+                                            }}
+                                        />
+                                        <Title>{prevTitle}</Title>
+                                    </ButtonTitleWrap>
+                                </Thumb>
+                            </Link>
+                            <a
+                                href="https://github.com/jenyglee"
+                                target="_blank"
+                                style={{
+                                    width: "100%",
+                                }}
+                            >
+                                <Thumb
+                                    img={nextImg}
+                                    scale={nextScale}
+                                    onMouseEnter={() => {
+                                        setNextScale("120%");
+                                    }}
+                                    onMouseLeave={() => {
+                                        setNextScale("100%");
+                                    }}
+                                >
+                                    <ButtonTitleWrap>
+                                        <Title>{nextTile}</Title>
+                                        <ArrowImage
+                                            src={footer.arrow}
+                                            style={{
+                                                marginLeft: 8,
+                                            }}
+                                        />
+                                    </ButtonTitleWrap>
+                                </Thumb>
+                            </a>
+                        </>
+                    ) : (
+                        <>
+                            <Link
+                                to={prevLink}
+                                style={{
+                                    width: "100%",
+                                }}
+                            >
+                                <Thumb
+                                    img={prevImg}
+                                    scale={prevScale}
+                                    onMouseEnter={() => {
+                                        setPrevScale("120%");
+                                    }}
+                                    onMouseLeave={() => {
+                                        setPrevScale("100%");
+                                    }}
+                                >
+                                    <ButtonTitleWrap>
+                                        <ArrowImage
+                                            src={footer.arrow}
+                                            style={{
+                                                transform: "rotate(180deg)",
+                                                marginRight: 8,
+                                            }}
+                                        />
+                                        <Title>{prevTitle}</Title>
+                                    </ButtonTitleWrap>
+                                </Thumb>
+                            </Link>
+                            <Link
+                                to={nextLink}
+                                style={{
+                                    width: "100%",
+                                }}
+                            >
+                                <Thumb
+                                    img={nextImg}
+                                    scale={nextScale}
+                                    onMouseEnter={() => {
+                                        setNextScale("120%");
+                                    }}
+                                    onMouseLeave={() => {
+                                        setNextScale("100%");
+                                    }}
+                                >
+                                    <ButtonTitleWrap>
+                                        <Title>{nextTile}</Title>
+                                        <ArrowImage
+                                            src={footer.arrow}
+                                            style={{
+                                                marginLeft: 8,
+                                            }}
+                                        />
+                                    </ButtonTitleWrap>
+                                </Thumb>
+                            </Link>
+                        </>
+                    )}
                 </ButtonWrap>
             </Align>
         </Wrap>

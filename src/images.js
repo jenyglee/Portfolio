@@ -44,6 +44,15 @@ import InfoMainVisual from "./images/08_info/main_visual.png";
 import InfoIconCheck from "./images/08_info/icon_check.png";
 import InfoIconIllust from "./images/08_info/icon_illust.png";
 import AbilityLogoReact from "./images/09_ability/logo_react.png";
+import AbilityLogoMySQL from "./images/09_ability/logo_mySQL.png";
+import AbilityLogoAxios from "./images/09_ability/logo_axios.png";
+import AbilityLogoRedux from "./images/09_ability/logo_redux.png";
+import AbilityLogoFirebase from "./images/09_ability/logo_firebase.png";
+import AbilityLogoGit from "./images/09_ability/logo_git.png";
+import AbilityLogoHtml from "./images/09_ability/logo_html.png";
+import AbilityLogoFigma from "./images/09_ability/logo_figma.png";
+import AbilityLogoPhotoshop from "./images/09_ability/logo_photoshop.png";
+import AbilityLogoIllustrator from "./images/09_ability/logo_illustrator.png";
 import GulpAppMainVisual from "./images/01_gulpAppSource/main-visual.png";
 import Character01 from "./images/01_gulpAppSource/character01.png";
 import Logo from "./images/01_gulpAppSource/logo.png";
@@ -195,9 +204,19 @@ const infoSources = {
 };
 
 // ✨ Ability 소스
-const abilitySources = {
-    logoReact: AbilityLogoReact,
-};
+const abilitySources = [
+    AbilityLogoReact,
+    AbilityLogoReact,
+    AbilityLogoMySQL,
+    AbilityLogoAxios,
+    AbilityLogoRedux,
+    AbilityLogoFirebase,
+    AbilityLogoGit,
+    AbilityLogoHtml,
+    AbilityLogoFigma,
+    AbilityLogoPhotoshop,
+    AbilityLogoIllustrator,
+];
 
 // ✨ 어플리케이션 꿀꺽 소스
 const glupAppSources = {

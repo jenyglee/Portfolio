@@ -22,11 +22,11 @@ const Title = styled.h1`
     font-size: 16px;
 `;
 
-const AbilityTitle = ({ name }) => {
+const AbilityTitle = ({ name, logo }) => {
     return (
         <TitleWrap>
             <LoogWrap>
-                <Logo src={abilitySources.logoReact} />
+                <Logo src={logo} />
             </LoogWrap>
             <Title>{name}</Title>
         </TitleWrap>

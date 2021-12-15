@@ -31,25 +31,19 @@ const BottomLine = styled.div`
     bottom: 0;
 `;
 
-const Ability = ({ ability, scrollY }) => {
+const Ability = ({ ability, scrollY, logo }) => {
     return (
         <Wrap>
             <AbilityWrap>
                 <TopLine />
-                <AbilityTitle name={ability.name} />
-                <Gauge percent={ability.gauge} scrollY={scrollY} />
+                <AbilityTitle name={ability.name} logo={logo} />
+                <Gauge
+                    percent={ability.gauge}
+                    color={ability.gaugeColor}
+                    scrollY={scrollY}
+                />
                 <BottomLine />
             </AbilityWrap>
-            {/* {abilities.map((ability) => {
-                return (
-                    <AbilityWrap>
-                        <TopLine />
-                        <AbilityTitle name={ability.name} />
-                        <Gauge percent={ability.gauge} scrollY={scrollY} />
-                        <BottomLine />
-                    </AbilityWrap>
-                );
-            })} */}
         </Wrap>
     );
 };

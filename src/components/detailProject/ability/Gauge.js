@@ -25,7 +25,7 @@ const Able = styled.div`
     width: 0%;
     height: 100%;
     border-radius: 5px;
-    background-color: ${({ theme }) => theme.detailPoint};
+    background-color: ${({ color }) => color};
     position: absolute;
     transition: 1s;
 `;
@@ -35,7 +35,7 @@ const Percent = styled.h1`
     font-weight: bold;
 `;
 
-const Gauge = ({ percent, scrollY }) => {
+const Gauge = ({ percent, scrollY, color }) => {
     const [isStarted, setIsStarted] = useState(false);
 
     // 높이 1090에서 게이지 실행
@@ -51,6 +51,7 @@ const Gauge = ({ percent, scrollY }) => {
                 <Disable />
                 <Able
                     percent={percent}
+                    color={color}
                     style={{
                         width: isStarted ? `${percent}%` : 0,
                     }}

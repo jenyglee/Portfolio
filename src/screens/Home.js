@@ -60,6 +60,8 @@ const TitleContainer = styled.article`
     z-index: 1;
 `;
 
+const RefContainer = styled.div``;
+
 const tempData = [
     [
         { id: 0, title: "Info", isHover: false },
@@ -218,7 +220,7 @@ const Home = () => {
                         />
                         <div className="contents">
                             <TitleContainer>
-                                <div ref={introRef}>
+                                <RefContainer ref={introRef}>
                                     <Section
                                         // itemEnter={(id, sectionId)=>{
                                         //     dispatch(actionsInteractions.itemEnter(id, sectionId, projectTitle, projectImage, setProjectImage, setImgKey, changeTheme));
@@ -232,8 +234,8 @@ const Home = () => {
                                         isPcBreakPoint={isPcBreakPoint}
                                         scrollX={scrollX}
                                     />
-                                </div>
-                                <div ref={developRef}>
+                                </RefContainer>
+                                <RefContainer ref={developRef}>
                                     <Section
                                         itemEnter={itemEnter}
                                         itemLeave={itemLeave}
@@ -244,8 +246,8 @@ const Home = () => {
                                         isPcBreakPoint={isPcBreakPoint}
                                         scrollX={scrollX}
                                     />
-                                </div>
-                                <div ref={designRef}>
+                                </RefContainer>
+                                <RefContainer ref={designRef}>
                                     <Section
                                         itemEnter={itemEnter}
                                         itemLeave={itemLeave}
@@ -256,7 +258,7 @@ const Home = () => {
                                         isPcBreakPoint={isPcBreakPoint}
                                         scrollX={scrollX}
                                     />
-                                </div>
+                                </RefContainer>
                             </TitleContainer>
                             {imgKey && !isPcBreakPoint ? (
                                 <div>
@@ -304,7 +306,6 @@ const Home = () => {
                 <Route path="/0/1">
                     <DetailAbility scrollX={scrollX} scrollY={scrollY} />
                 </Route>
-                {/* <a href="https://github.com/jenyglee" target="_blank" /> */}
                 <Route path="/1/0">
                     <DetailGulpApp scrollX={scrollX} scrollY={scrollY} />
                 </Route>
