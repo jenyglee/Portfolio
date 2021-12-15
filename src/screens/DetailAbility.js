@@ -3,30 +3,43 @@ import styled from "styled-components";
 import MainTitle from "../components/detailProject/ability/MainTitle";
 import Ability from "../components/detailProject/ability/Ability";
 import FooterButton from "../components/FooterButton";
+import DetailHeader from "../components/DetailHeader";
 import { footer } from "../images";
 
-const Wrap = styled.div`
+const Wrap = styled.main`
     max-width: 1200px;
     margin: 0 auto;
-    padding: 304px 0;
+    @media ${({ theme }) => theme.size1200} {
+        max-width: 960px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        max-width: 768px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        max-width: 568px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        max-width: 320px;
+    }
+`;
+
+const AbilityWrap = styled.div`
+    width: 100%;
+    padding: 150px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media ${({ theme }) => theme.size1200} {
-        padding: 250px 0;
-        max-width: 960px;
+        padding: 130px 0;
     }
     @media ${({ theme }) => theme.size960} {
-        padding: 200px 0;
-        max-width: 768px;
+        padding: 120px 0;
     }
     @media ${({ theme }) => theme.size768} {
-        padding: 150px 0;
-        max-width: 568px;
+        padding: 110px 0;
     }
     @media ${({ theme }) => theme.size568} {
         padding: 104px 0;
-        max-width: 320px;
     }
 `;
 
@@ -34,7 +47,7 @@ const Section = styled.section`
     width: 100%;
 `;
 
-const AbilityWrap = styled.div`
+const Abilities = styled.div`
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
@@ -132,28 +145,33 @@ const DetailAbility = ({ scrollX, scrollY }) => {
 
     return (
         <Wrap>
-            <Section
-                style={{
-                    marginBottom: 132,
-                }}
-            >
-                <MainTitle titleData={titleData} />
-            </Section>
-            <Section>
-                <AbilityWrap>
-                    {abilityData.map((ability) => {
-                        return <Ability ability={ability} scrollY={scrollY} />;
-                    })}
-                </AbilityWrap>
-            </Section>
-            <FooterButton
-                prevLink={`/0/0`}
-                prevTitle="Info"
-                prevImg={footer.info}
-                nextLink={`/0/2`}
-                nextTile="Github"
-                nextImg={footer.github}
-            />
+            <DetailHeader />
+            <AbilityWrap>
+                <Section
+                    style={{
+                        marginBottom: 132,
+                    }}
+                >
+                    <MainTitle titleData={titleData} />
+                </Section>
+                <Section>
+                    <Abilities>
+                        {abilityData.map((ability) => {
+                            return (
+                                <Ability ability={ability} scrollY={scrollY} />
+                            );
+                        })}
+                    </Abilities>
+                </Section>
+                <FooterButton
+                    prevLink={`/0/0`}
+                    prevTitle="Info"
+                    prevImg={footer.info}
+                    nextLink={`/0/2`}
+                    nextTile="Github"
+                    nextImg={footer.github}
+                />
+            </AbilityWrap>
         </Wrap>
     );
 };

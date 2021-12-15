@@ -5,29 +5,85 @@ import MainTitle from "../components/detailProject/info/MainTitle";
 import MyInfo from "../components/detailProject/info/MyInfo";
 import FooterButton from "../components/FooterButton";
 import PrevNextButton from "../components/PrevNextButton";
-import { footer } from "../images";
+import { logo, footer } from "../images";
+import DetailHeader from "../components/DetailHeader";
 
-const Wrap = styled.div`
+const Wrap = styled.main`
     max-width: 1200px;
     margin: 0 auto;
+    @media ${({ theme }) => theme.size1200} {
+        max-width: 960px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        max-width: 768px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        max-width: 568px;
+    }
+    @media ${({ theme }) => theme.size568} {
+        max-width: 320px;
+    }
+`;
+
+// const HeaderContainer = styled.header`
+//     width: 100%;
+//     height: 40px;
+//     margin-top: 86px;
+//     @media ${({ theme }) => theme.size1200} {
+//         margin-top: 60px;
+//     }
+//     @media ${({ theme }) => theme.size960} {
+//         margin-top: 40px;
+//     }
+//     @media ${({ theme }) => theme.size568} {
+//         margin-top: 20px;
+//     }
+// `;
+// const LogoWrap = styled.div`
+//     width: 152px;
+//     height: 30px;
+//     font-size: 25px;
+//     font-weight: bold;
+//     color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>
+//         isChangedTheme && !isPcBreakPoint
+//             ? theme.darkThemeText
+//             : theme.whiteThemeText};
+//     transition: 0.5s;
+
+//     @media ${({ theme }) => theme.size1200} {
+//         width: 152px;
+//         height: 30px;
+//     }
+//     @media ${({ theme }) => theme.size960} {
+//         width: 129px;
+//         height: 25px;
+//     }
+//     @media ${({ theme }) => theme.size768} {
+//         width: 103px;
+//         height: 20px;
+//     }
+// `;
+// const LogoImage = styled.img`
+//     width: 100%;
+//     height: 100%;
+// `;
+
+const InfoWrap = styled.div`
+    width: 100%;
     padding: 140px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media ${({ theme }) => theme.size1200} {
-        max-width: 960px;
         padding: 130px 0;
     }
     @media ${({ theme }) => theme.size960} {
-        max-width: 768px;
         padding: 120px 0;
     }
     @media ${({ theme }) => theme.size768} {
-        max-width: 568px;
         padding: 110px 0;
     }
     @media ${({ theme }) => theme.size568} {
-        max-width: 320px;
         padding: 100px 0;
     }
 `;
@@ -205,59 +261,63 @@ const DetailInfo = ({ scrollX }) => {
 
     return (
         <Wrap>
-            <MainTitle />
-            <MyInfo />
-            <Section>
-                <RowContainer>
-                    <AmbitionTitleWrap>
-                        <Title>My Ambition</Title>
-                    </AmbitionTitleWrap>
-                    <DescriptionWrap>
-                        {descriptionData.map((description) => {
-                            return (
-                                <Description>
-                                    <Space />
-                                    {description}
-                                </Description>
-                            );
-                        })}
-                    </DescriptionWrap>
-                </RowContainer>
-            </Section>
-            <Section>
-                <ColumnContainer>
-                    <ExperienceTitleWrap>
-                        <Title>Work Experience</Title>
-                    </ExperienceTitleWrap>
-                    <Container>
-                        <CareerWrap translateX={translateX}>
-                            {careerList.map((career) => {
+            <DetailHeader />
+
+            <InfoWrap>
+                <MainTitle />
+                <MyInfo />
+                <Section>
+                    <RowContainer>
+                        <AmbitionTitleWrap>
+                            <Title>My Ambition</Title>
+                        </AmbitionTitleWrap>
+                        <DescriptionWrap>
+                            {descriptionData.map((description) => {
                                 return (
-                                    <Career
-                                        career={career}
-                                        key={career.id}
-                                        isSize768={isSize768}
-                                    />
+                                    <Description>
+                                        <Space />
+                                        {description}
+                                    </Description>
                                 );
                             })}
-                        </CareerWrap>
-                    </Container>
-                </ColumnContainer>
-                {isSize768 ? (
-                    <PrevNextButton
-                        translateX={translateX}
-                        setTranslateX={setTranslateX}
-                    />
-                ) : null}
-            </Section>
-            <FooterButton
-                prevLink={`/`}
-                prevTitle="Home"
-                prevImg={footer.home}
-                nextLink={`/0/1`}
-                nextTile="Ability"
-                nextImg={footer.ability}
-            />
+                        </DescriptionWrap>
+                    </RowContainer>
+                </Section>
+                <Section>
+                    <ColumnContainer>
+                        <ExperienceTitleWrap>
+                            <Title>Work Experience</Title>
+                        </ExperienceTitleWrap>
+                        <Container>
+                            <CareerWrap translateX={translateX}>
+                                {careerList.map((career) => {
+                                    return (
+                                        <Career
+                                            career={career}
+                                            key={career.id}
+                                            isSize768={isSize768}
+                                        />
+                                    );
+                                })}
+                            </CareerWrap>
+                        </Container>
+                    </ColumnContainer>
+                    {isSize768 ? (
+                        <PrevNextButton
+                            translateX={translateX}
+                            setTranslateX={setTranslateX}
+                        />
+                    ) : null}
+                </Section>
+                <FooterButton
+                    prevLink={`/`}
+                    prevTitle="Home"
+                    prevImg={footer.home}
+                    nextLink={`/0/1`}
+                    nextTile="Ability"
+                    nextImg={footer.ability}
+                />
+            </InfoWrap>
         </Wrap>
     );
 };

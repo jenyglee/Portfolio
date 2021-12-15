@@ -1,4 +1,4 @@
-import Header from "./Header";
+import MainHeader from "./MainHeader";
 import Section from "./section/Section";
 import TopButton from "./TopButton";
 import BgComponent01 from "./BgComponent01";
@@ -13,7 +13,7 @@ import BgComponent09 from "./BgComponent09";
 import BgComponent10 from "./BgComponent10";
 
 export {
-    Header,
+    MainHeader,
     Section,
     TopButton,
     BgComponent01,

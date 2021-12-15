@@ -167,7 +167,7 @@ const menu = [
     { id: 2, title: "DESIGN", koreanTitle: "디자인 프로젝트" },
 ];
 
-const Header = ({
+const MainHeader = ({
     isChangedTheme,
     isPcBreakPoint,
     scrollY,
@@ -263,4 +263,4 @@ const Header = ({
     );
 };
 
-export default Header;
+export default MainHeader;

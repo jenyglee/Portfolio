@@ -22,7 +22,7 @@ import {
     BgComponent08,
     BgComponent09,
     BgComponent10,
-    Header,
+    MainHeader,
     Section,
     TopButton,
 } from "./../components";
@@ -225,17 +225,17 @@ const Home = () => {
 
     return (
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
-            <Header
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-                scrollY={scrollY}
-                onIntroClick={onIntroClick}
-                onDevelopClick={onDevelopClick}
-                onDesignClick={onDesignClick}
-            />
             <Switch>
                 <Route path="/" exact>
                     <MainWrap>
+                        <MainHeader
+                            isChangedTheme={isChangedTheme}
+                            isPcBreakPoint={isPcBreakPoint}
+                            scrollY={scrollY}
+                            onIntroClick={onIntroClick}
+                            onDevelopClick={onDevelopClick}
+                            onDesignClick={onDesignClick}
+                        />
                         <div className="contents">
                             <TitleContainer>
                                 <div ref={introRef}>
