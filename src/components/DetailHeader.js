@@ -105,6 +105,7 @@ const DetailHeader = ({
     nextLink,
     nextImg,
     nextTitle,
+    pageName,
 }) => {
     const [showHeader, setShowHeader] = useState(false);
     useEffect(() => {
@@ -131,14 +132,26 @@ const DetailHeader = ({
                         <Title>{prevTitle}</Title>
                     </ButtonWrap>
                 </Link>
-                <Link to={nextLink}>
-                    <ButtonWrap>
-                        <ThumbWrap>
-                            <ThumbImage src={nextImg} />
-                        </ThumbWrap>
-                        <Title>{nextTitle}</Title>
-                    </ButtonWrap>
-                </Link>
+                {/* (예외용) Github 외부링크 */}
+                {pageName === "Ability" ? (
+                    <a href="https://github.com/jenyglee" target="_blank">
+                        <ButtonWrap>
+                            <ThumbWrap>
+                                <ThumbImage src={nextImg} />
+                            </ThumbWrap>
+                            <Title>{nextTitle}</Title>
+                        </ButtonWrap>
+                    </a>
+                ) : (
+                    <Link to={nextLink}>
+                        <ButtonWrap>
+                            <ThumbWrap>
+                                <ThumbImage src={nextImg} />
+                            </ThumbWrap>
+                            <Title>{nextTitle}</Title>
+                        </ButtonWrap>
+                    </Link>
+                )}
             </MenuWrap>
         </Wrap>
     );

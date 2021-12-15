@@ -59,10 +59,10 @@ const DetailAvn = ({ scrollY }) => {
             <DetailHeader
                 scrollY={scrollY}
                 prevLink={`/1/0`}
-                prevTitle="Gulp App"
+                prevTitle="Gulp"
                 prevImg={header.gulpApp}
                 nextLink={`/2/1`}
-                nextTitle="Musinsa UI/UX"
+                nextTitle="Musinsa"
                 nextImg={header.musinsa}
             />
             <AvnWrap>

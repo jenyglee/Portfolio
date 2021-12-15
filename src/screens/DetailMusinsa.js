@@ -59,7 +59,7 @@ const DetailMusinsa = ({ scrollX, scrollY }) => {
             <DetailHeader
                 scrollY={scrollY}
                 prevLink={`/2/0`}
-                prevTitle="AVN / Cluster"
+                prevTitle="AVN"
                 prevImg={header.avn}
                 nextLink={`/2/2`}
                 nextTitle="KT&G"

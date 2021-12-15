@@ -161,6 +161,7 @@ const DetailAbility = ({ scrollX, scrollY }) => {
                 nextLink={`/0/2`}
                 nextTitle="Github"
                 nextImg={header.github}
+                pageName="Ability"
             />
             <AbilityWrap>
                 <Section
