@@ -4,7 +4,7 @@ import MainTitle from "../components/detailProject/ability/MainTitle";
 import Ability from "../components/detailProject/ability/Ability";
 import FooterButton from "../components/FooterButton";
 import DetailHeader from "../components/DetailHeader";
-import { footer, abilitySources } from "../images";
+import { footer, header, abilitySources } from "../images";
 
 const Wrap = styled.main`
     max-width: 1200px;
@@ -25,21 +25,21 @@ const Wrap = styled.main`
 
 const AbilityWrap = styled.div`
     width: 100%;
-    padding: 304px 0;
+    padding-top: 304px;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media ${({ theme }) => theme.size1200} {
-        padding: 250px 0;
+        padding-top: 250px;
     }
     @media ${({ theme }) => theme.size960} {
-        padding: 200px 0;
+        padding-top: 200px;
     }
     @media ${({ theme }) => theme.size768} {
-        padding: 150px 0;
+        padding-top: 150px;
     }
     @media ${({ theme }) => theme.size568} {
-        padding: 104px 0;
+        padding-top: 104px;
     }
 `;
 
@@ -49,16 +49,13 @@ const Section = styled.section`
 
 const Abilities = styled.div`
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
 
     flex-flow: row wrap;
     @media ${({ theme }) => theme.size960} {
-        /* justify-content: center; */
     }
     @media ${({ theme }) => theme.size768} {
         flex-flow: row nowrap;
-        /* justify-content: center; */
     }
 `;
 
@@ -156,7 +153,15 @@ const DetailAbility = ({ scrollX, scrollY }) => {
 
     return (
         <Wrap>
-            <DetailHeader scrollY={scrollY} />
+            <DetailHeader
+                scrollY={scrollY}
+                prevLink={`/0/0`}
+                prevTitle="Info"
+                prevImg={header.info}
+                nextLink={`/0/2`}
+                nextTitle="Github"
+                nextImg={header.github}
+            />
             <AbilityWrap>
                 <Section
                     style={{
@@ -178,7 +183,7 @@ const DetailAbility = ({ scrollX, scrollY }) => {
                         })}
                     </Abilities>
                 </Section>
-                <FooterButton
+                {/* <FooterButton
                     prevLink={`/0/0`}
                     prevTitle="Info"
                     prevImg={footer.info}
@@ -187,7 +192,7 @@ const DetailAbility = ({ scrollX, scrollY }) => {
                     nextImg={footer.github}
                     goGithub
                     pageName="Ability"
-                />
+                /> */}
             </AbilityWrap>
         </Wrap>
     );

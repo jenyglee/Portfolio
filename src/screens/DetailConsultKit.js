@@ -4,7 +4,7 @@ import Title from "../components/detailProject/Title";
 import MainVisualConsultKit from "../components/detailProject/consultKit/MainVisualConsultKit";
 import Accordion from "../components/detailProject/Accodion";
 import FooterButton from "../components/FooterButton";
-import { footer } from "../images";
+import { footer, header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`
@@ -26,7 +26,7 @@ const Wrap = styled.main`
 
 const ConcertKitWrap = styled.div`
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +56,15 @@ const DetailConsultKit = ({ scrollX, scrollY }) => {
 
     return (
         <Wrap>
-            <DetailHeader scrollY={scrollY} />
+            <DetailHeader
+                scrollY={scrollY}
+                prevLink={`/2/2`}
+                prevTitle="KT&G"
+                prevImg={header.ktng}
+                nextLink={`/2/4`}
+                nextTitle="Kyobo"
+                nextImg={header.kyobo}
+            />
             <ConcertKitWrap>
                 <MainWrap>
                     <Title
@@ -75,14 +83,14 @@ const DetailConsultKit = ({ scrollX, scrollY }) => {
                         scrollX={scrollX}
                     />
                 </MainWrap>
-                <FooterButton
+                {/* <FooterButton
                     prevLink={`/2/2`}
                     prevTitle="KT&G UI/UX"
                     prevImg={footer.ktng}
                     nextLink={`/2/4`}
                     nextTile="Kyobo Promotion"
                     nextImg={footer.kyobo}
-                />
+                /> */}
             </ConcertKitWrap>
         </Wrap>
     );

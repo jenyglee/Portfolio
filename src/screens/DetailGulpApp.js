@@ -4,7 +4,7 @@ import Title from "../components/detailProject/Title";
 import MainVisualGulpApp from "../components/detailProject/glupApp/MainVisualGulpApp";
 import Accordion from "../components/detailProject/Accodion";
 import FooterButton from "../components/FooterButton";
-import { footer } from "../images";
+import { footer, header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`
@@ -26,7 +26,7 @@ const Wrap = styled.main`
 
 const GulpAppWrap = styled.div`
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +56,15 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
 
     return (
         <Wrap>
-            <DetailHeader scrollY={scrollY} />
+            <DetailHeader
+                scrollY={scrollY}
+                prevLink={`/`}
+                prevTitle="Home"
+                prevImg={header.home}
+                nextLink={`/2/0`}
+                nextTitle="AVN"
+                nextImg={header.avn}
+            />
             <GulpAppWrap>
                 <MainWrap>
                     <Title
@@ -96,14 +104,14 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
                         scrollX={scrollX}
                     />
                 </MainWrap>
-                <FooterButton
+                {/* <FooterButton
                     prevLink={`/`}
                     prevTitle="Home"
                     prevImg={footer.home}
                     nextLink={`/2/0`}
                     nextTile="AVN / Cluster"
                     nextImg={footer.avn}
-                />
+                /> */}
             </GulpAppWrap>
         </Wrap>
     );

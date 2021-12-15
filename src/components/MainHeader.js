@@ -179,7 +179,7 @@ const MainHeader = ({
     const [showHeader, setShowHeader] = useState(false);
 
     useEffect(() => {
-        if (scrollY > 200) {
+        if (scrollY > 100) {
             setShowHeader(false);
         } else {
             setShowHeader(true);

@@ -4,7 +4,7 @@ import Title from "../components/detailProject/Title";
 import MainVisualAvn from "../components/detailProject/anv/MainVisualAvn";
 import Accordion from "../components/detailProject/Accodion";
 import FooterButton from "../components/FooterButton";
-import { footer } from "../images";
+import { footer, header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`
@@ -26,7 +26,7 @@ const Wrap = styled.main`
 
 const AvnWrap = styled.div`
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +56,15 @@ const DetailAvn = ({ scrollY }) => {
 
     return (
         <Wrap>
-            <DetailHeader scrollY={scrollY} />
+            <DetailHeader
+                scrollY={scrollY}
+                prevLink={`/1/0`}
+                prevTitle="Gulp App"
+                prevImg={header.gulpApp}
+                nextLink={`/2/1`}
+                nextTitle="Musinsa UI/UX"
+                nextImg={header.musinsa}
+            />
             <AvnWrap>
                 <MainWrap>
                     <Title
@@ -86,14 +94,14 @@ const DetailAvn = ({ scrollY }) => {
                         detailNumber="3"
                     />
                 </MainWrap>
-                <FooterButton
+                {/* <FooterButton
                     prevLink={`/1/0`}
                     prevTitle="Gulp App"
                     prevImg={footer.gulpApp}
                     nextLink={`/2/1`}
                     nextTile="Musinsa UI/UX"
                     nextImg={footer.musinsa}
-                />
+                /> */}
             </AvnWrap>
         </Wrap>
     );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Title from "../components/detailProject/Title";
 import { KyoboSources } from "../images";
 import FooterButton from "../components/FooterButton";
-import { footer } from "../images";
+import { footer, header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`
@@ -25,7 +25,7 @@ const Wrap = styled.main`
 
 const KyoboWrap = styled.div`
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,7 +71,15 @@ const DetailKyobo = ({ scrollX, scrollY }) => {
 
     return (
         <Wrap>
-            <DetailHeader scrollY={scrollY} />
+            <DetailHeader
+                scrollY={scrollY}
+                prevLink={`/2/3`}
+                prevTitle="ConcertKit"
+                prevImg={header.concertKit}
+                nextLink={`/2/5`}
+                nextTitle="Beotherm"
+                nextImg={header.beotherm}
+            />
             <KyoboWrap>
                 <MainWrap>
                     <Title
@@ -85,14 +93,14 @@ const DetailKyobo = ({ scrollX, scrollY }) => {
                         <StyledImage src={KyoboSources[0]} />
                     </ImageWrap>
                 </MainWrap>
-                <FooterButton
+                {/* <FooterButton
                     prevLink={`/2/3`}
                     prevTitle="ConcertKit UI/UX"
                     prevImg={footer.concertKit}
                     nextLink={`/2/5`}
                     nextTile="Beotherm Promotion"
                     nextImg={footer.beotherm}
-                />
+                /> */}
             </KyoboWrap>
         </Wrap>
     );

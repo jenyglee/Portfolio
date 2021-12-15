@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Title from "../components/detailProject/Title";
 import { BeothermSources } from "../images";
 import FooterButton from "../components/FooterButton";
-import { footer } from "../images";
+import { footer, header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`
@@ -25,7 +25,7 @@ const Wrap = styled.main`
 
 const BeothermWrap = styled.div`
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,10 +35,10 @@ const BeothermWrap = styled.div`
 const MainWrap = styled.main`
     width: 100%;
     padding-top: 260px;
-    padding-left: 20px;
-    padding-right: 20px;
     @media ${({ theme }) => theme.size960} {
         padding-top: 190px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     @media ${({ theme }) => theme.size568} {
         padding-top: 105px;
@@ -72,7 +72,15 @@ const DetailBeotherm = ({ scrollX, scrollY }) => {
 
     return (
         <Wrap>
-            <DetailHeader scrollY={scrollY} />
+            <DetailHeader
+                scrollY={scrollY}
+                prevLink={`/2/4`}
+                prevTitle="Kyobo"
+                prevImg={header.kyobo}
+                nextLink={`/`}
+                nextTitle="Home"
+                nextImg={header.home}
+            />
             <BeothermWrap>
                 <MainWrap>
                     <Title
@@ -86,14 +94,14 @@ const DetailBeotherm = ({ scrollX, scrollY }) => {
                         <StyledImage src={BeothermSources[0]} />
                     </ImageWrap>
                 </MainWrap>
-                <FooterButton
+                {/* <FooterButton
                     prevLink={`/2/4`}
                     prevTitle="Kyobo Promotion"
                     prevImg={footer.kyobo}
                     nextLink={`/`}
                     nextTile="Home"
                     nextImg={footer.home}
-                />
+                /> */}
             </BeothermWrap>
         </Wrap>
     );

@@ -4,7 +4,7 @@ import Title from "../components/detailProject/Title";
 import MainVisualMusinsa from "../components/detailProject/musinsa/MainVisualMusinsa";
 import Accordion from "../components/detailProject/Accodion";
 import FooterButton from "../components/FooterButton";
-import { footer } from "../images";
+import { footer, header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`
@@ -26,7 +26,7 @@ const Wrap = styled.main`
 
 const MusinsaWrap = styled.div`
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +56,15 @@ const DetailMusinsa = ({ scrollX, scrollY }) => {
 
     return (
         <Wrap>
-            <DetailHeader scrollY={scrollY} />
+            <DetailHeader
+                scrollY={scrollY}
+                prevLink={`/2/0`}
+                prevTitle="AVN / Cluster"
+                prevImg={header.avn}
+                nextLink={`/2/2`}
+                nextTitle="KT&G"
+                nextImg={header.ktng}
+            />
             <MusinsaWrap>
                 <MainWrap>
                     <Title
@@ -82,14 +90,14 @@ const DetailMusinsa = ({ scrollX, scrollY }) => {
                         scrollX={scrollX}
                     />
                 </MainWrap>
-                <FooterButton
+                {/* <FooterButton
                     prevLink={`/2/0`}
                     prevTitle="AVN / Cluster"
                     prevImg={footer.avn}
                     nextLink={`/2/2`}
                     nextTile="KT&G UI/UX"
                     nextImg={footer.ktng}
-                />
+                /> */}
             </MusinsaWrap>
         </Wrap>
     );

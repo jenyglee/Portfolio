@@ -4,7 +4,7 @@ import Title from "../components/detailProject/Title";
 import MainVisualKtNg from "../components/detailProject/ktNg/MainVisualKtNg";
 import Accordion from "../components/detailProject/Accodion";
 import FooterButton from "../components/FooterButton";
-import { footer } from "../images";
+import { footer, header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`
@@ -26,7 +26,7 @@ const Wrap = styled.main`
 
 const KtngWrap = styled.div`
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +56,15 @@ const DetailKTnG = ({ scrollX, scrollY }) => {
 
     return (
         <Wrap>
-            <DetailHeader scrollY={scrollY} />
+            <DetailHeader
+                scrollY={scrollY}
+                prevLink={`/2/1`}
+                prevTitle="Musinsa"
+                prevImg={header.musinsa}
+                nextLink={`/2/3`}
+                nextTitle="ConcertKit"
+                nextImg={header.concertKit}
+            />
             <KtngWrap>
                 <MainWrap>
                     <Title
@@ -82,14 +90,14 @@ const DetailKTnG = ({ scrollX, scrollY }) => {
                         scrollX={scrollX}
                     />
                 </MainWrap>
-                <FooterButton
+                {/* <FooterButton
                     prevLink={`/2/1`}
                     prevTitle="Musinsa UI/UX"
                     prevImg={footer.musinsa}
                     nextLink={`/2/3`}
                     nextTile="ConcertKit UI/UX"
                     nextImg={footer.concertKit}
-                />
+                /> */}
             </KtngWrap>
         </Wrap>
     );
