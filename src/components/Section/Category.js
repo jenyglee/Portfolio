@@ -34,22 +34,19 @@ const CategoryText = styled.p`
 `;
 
 const CategoryImageWrap = styled.div`
-    width: 285px;
     height: 43px;
     position: relative;
 
     @media ${({ theme }) => theme.size960} {
-        width: 184px;
         height: 28px;
     }
     @media ${({ theme }) => theme.size768} {
-        width: 133px;
         height: 20px;
     }
 `;
 
 const CategoryImage = styled.img`
-    width: 100%;
+    height: 100%;
     opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
     transition: 0.5s;
     position: absolute;

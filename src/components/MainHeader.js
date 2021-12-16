@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CallyIntroduce from "./../images/cally_introduce.png";
 import { Link } from "react-router-dom";
-import { logo } from "../images";
+import { categoryImages, logo } from "../images";
 
 const FixedContainer = styled.div`
     width: 100%;
@@ -97,6 +97,7 @@ const MenuButton = styled.a`
     height: 18px;
     position: relative;
     display: none;
+    cursor: pointer;
     @media ${({ theme }) => theme.size1200} {
         display: block;
     }
@@ -119,6 +120,7 @@ const MenuContainer = styled.div`
     background-color: #fff;
     position: absolute;
     top: -220px;
+    left: 0;
     transition: 0.5s;
     padding-top: 63px;
     transform: ${({ translateY }) => translateY};
@@ -139,11 +141,16 @@ const ButtonArea = styled.div`
     justify-self: center;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+`;
+
+const ImageWrap = styled.div`
+    height: 20px;
+    overflow: hidden;
 `;
 
 const CallyImg = styled.img`
-    width: 84px;
-    height: 28px;
+    height: 100%;
     margin-right: 12px;
 `;
 
@@ -162,9 +169,24 @@ const Line = styled.div`
 `;
 
 const menu = [
-    { id: 0, title: "INTRODUCE", koreanTitle: "소개" },
-    { id: 1, title: "DEVELOPMENT", koreanTitle: "개발 프로젝트" },
-    { id: 2, title: "DESIGN", koreanTitle: "디자인 프로젝트" },
+    {
+        id: 0,
+        title: "INTRODUCE",
+        koreanTitle: "소개",
+        img: categoryImages[0].image,
+    },
+    {
+        id: 1,
+        title: "DEVELOPMENT",
+        koreanTitle: "개발 프로젝트",
+        img: categoryImages[1].image,
+    },
+    {
+        id: 2,
+        title: "DESIGN",
+        koreanTitle: "디자인 프로젝트",
+        img: categoryImages[2].image,
+    },
 ];
 
 const MainHeader = ({
@@ -196,8 +218,23 @@ const MainHeader = ({
                     {menu.map((item, index) => {
                         return (
                             <TitleContainer key={index}>
-                                <ButtonArea>
-                                    <CallyImg src={CallyIntroduce} />
+                                <ButtonArea
+                                    onClick={() => {
+                                        if (index === 0) {
+                                            onIntroClick();
+                                        }
+                                        if (index === 1) {
+                                            onDevelopClick();
+                                        }
+                                        if (index === 2) {
+                                            onDesignClick();
+                                        }
+                                        setIsMenuEntered(!isMenuEntered);
+                                    }}
+                                >
+                                    <ImageWrap>
+                                        <CallyImg src={item.img} />
+                                    </ImageWrap>
                                     <MenuTitle>{item.koreanTitle}</MenuTitle>
                                 </ButtonArea>
                                 <Line
@@ -246,7 +283,6 @@ const MainHeader = ({
                     onClick={() => {
                         setIsMenuEntered(!isMenuEntered);
                     }}
-                    href="#"
                 >
                     <MenuLineObj
                         top={isMenuEntered ? `50%` : `0`}
