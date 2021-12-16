@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { handleTop } from "./../helper/helper";
 import Career from "../components/detailProject/info/Career";
 import MainTitle from "../components/detailProject/info/MainTitle";
 import MyInfo from "../components/detailProject/info/MyInfo";
@@ -195,10 +196,7 @@ const DetailInfo = ({ scrollX, scrollY }) => {
     const [translateX, setTranslateX] = useState(0);
 
     useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+        handleTop();
     }, []);
 
     useEffect(() => {

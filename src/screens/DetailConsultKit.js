@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { handleTop } from "./../helper/helper";
 import Title from "../components/detailProject/Title";
 import MainVisualConsultKit from "../components/detailProject/consultKit/MainVisualConsultKit";
 import Accordion from "../components/detailProject/Accodion";
@@ -47,10 +48,7 @@ const MainWrap = styled.main`
 
 const DetailConsultKit = ({ scrollX, scrollY }) => {
     useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+        handleTop();
     }, []);
 
     return (

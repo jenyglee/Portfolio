@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { handleTop } from "./../helper/helper";
 import Title from "../components/detailProject/Title";
 import { KyoboSources } from "../images";
 import { header } from "../images";
@@ -54,10 +55,7 @@ const StyledImage = styled.img`
 const DetailKyobo = ({ scrollX, scrollY }) => {
     const [isSize768, setIsSize768] = useState(false);
     useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+        handleTop();
     }, []);
 
     useEffect(() => {

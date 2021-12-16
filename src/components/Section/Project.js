@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Route, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Sticker from "./../Sticker";
 import ProjectViewButton from "./ProjectViewButton";
 import ProjectOneText from "./ProjectOneText";
@@ -42,7 +42,6 @@ const OneText = styled.span`
     }
     @media ${({ theme }) => theme.size1200} {
         font-size: 120px;
-        /* opacity : 1; */
         height: 90px;
     }
     @media ${({ theme }) => theme.size960} {
@@ -78,11 +77,12 @@ const Project = ({
     ]);
     const [btnAnimationTransform, setBtnAnimationTransform] = useState([30]);
     const [btnAnimationOpacity, setBtnAnimationOpacity] = useState([0]);
-    const [section, setSection] = useState("");
-    const [project, setProject] = useState("");
+    const [projectIds, setProjectIds] = useState({
+        section: "",
+        project: "",
+    });
 
     //  ✨ 마우스오버된 것은 투명도 1, 나머지는 0.4
-    // 🪲 1200 이하에서도 발동되는게 문제!
     useEffect(() => {
         if (scrollX >= 1200) {
             projectTitle.isHover
@@ -100,11 +100,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(10, 1, 0);
             copyOpacity.splice(10, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(10, 1, 1);
-            // } else {
-            //     copyOpacity.splice(10, 1, 0.4);
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 100);
@@ -113,11 +108,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(9, 2, 0, 0);
             copyOpacity.splice(9, 2, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(9, 2, 1, 1);
-            // } else {
-            //     copyOpacity.splice(9, 2, 0.4, 0.4);
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 200);
@@ -126,11 +116,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(8, 3, 0, 0, 0);
             copyOpacity.splice(8, 3, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(8, 3, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(8, 3, 0.4, 0.4, 0.4);
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 300);
@@ -139,11 +124,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(7, 4, 0, 0, 0, 0);
             copyOpacity.splice(7, 4, 1, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(7, 4, 1, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(7, 4, 0.4, 0.4, 0.4, 0.4);
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 400);
@@ -152,11 +132,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(6, 5, 0, 0, 0, 0, 0);
             copyOpacity.splice(6, 5, 1, 1, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(6, 5, 1, 1, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(6, 5, 0.4, 0.4, 0.4, 0.4, 0.4);
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 500);
@@ -165,11 +140,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(5, 6, 0, 0, 0, 0, 0, 0);
             copyOpacity.splice(5, 6, 1, 1, 1, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(5, 6, 1, 1, 1, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(5, 6, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4);
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 600);
@@ -178,11 +148,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(4, 7, 0, 0, 0, 0, 0, 0, 0);
             copyOpacity.splice(4, 7, 1, 1, 1, 1, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(4, 7, 1, 1, 1, 1, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(4, 7, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4);
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 700);
@@ -191,22 +156,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(3, 8, 0, 0, 0, 0, 0, 0, 0, 0);
             copyOpacity.splice(3, 8, 1, 1, 1, 1, 1, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(3, 8, 1, 1, 1, 1, 1, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(
-            //         3,
-            //         8,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4
-            //     );
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 800);
@@ -215,23 +164,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(2, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             copyOpacity.splice(2, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(2, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(
-            //         2,
-            //         9,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4
-            //     );
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 900);
@@ -240,24 +172,6 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(1, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             copyOpacity.splice(1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(
-            //         1,
-            //         10,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4
-            //     );
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1000);
@@ -266,82 +180,36 @@ const Project = ({
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             copyOpacity.splice(0, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            // if (window.innerWidth <= 1200) {
-            //     copyOpacity.splice(0, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            // } else {
-            //     copyOpacity.splice(
-            //         0,
-            //         11,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4,
-            //         0.4
-            //     );
-            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1100);
 
         setTimeout(() => {
-            const copyOpacity = [...animationOpacity];
-            copyOpacity.splice(
-                0,
-                11,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4
-            );
-            setAnimationOpacity(copyOpacity);
-        }, 1400);
-
-        // 'View 버튼' 애니메이션
-        setTimeout(() => {
+            // 모든 글자가 나타난 뒤 opacity를 1 -> 0.4로 변경
+            setAnimationOpacity([
+                0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
+            ]);
+            // 'View 버튼' 애니메이션
             setBtnAnimationTransform(0);
             setBtnAnimationOpacity(1);
         }, 1400);
 
-        setSection(sectionId);
-        setProject(projectTitle.id);
+        // Sticker 컴포넌트 노출을 위한 조건값
+        setProjectIds({
+            section: sectionId,
+            project: projectTitle.id,
+        });
     }, []);
 
     // 너비 1200 이하에서 글자 opacity 1로 변경
     useEffect(() => {
-        const copyOpacity = [...animationOpacity];
         if (window.innerWidth <= 1200) {
-            copyOpacity.splice(0, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
         } else {
-            copyOpacity.splice(
-                0,
-                11,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4,
-                0.4
-            );
+            setAnimationOpacity([
+                0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
+            ]);
         }
-        setAnimationOpacity(copyOpacity);
     }, [window.innerWidth]);
 
     return (
@@ -392,7 +260,11 @@ const Project = ({
                         }}
                         href="#"
                     >
-                        {section === 1 && project === 0 ? <Sticker /> : null}
+                        {/* ✨Gulp 앱만 스티커 노출 */}
+                        {projectIds.section === 1 &&
+                        projectIds.project === 0 ? (
+                            <Sticker />
+                        ) : null}
 
                         <ProjectOneText
                             animationTransform={animationTransform}
@@ -402,7 +274,7 @@ const Project = ({
                             isPcBreakPoint={isPcBreakPoint}
                             textArr={textArr}
                         />
-                        {/* ✨ 타이틀 옆에 붙어있는 버튼 */}
+                        {/* ✨ 타이틀 옆에 붙어있는 View 버튼 */}
                         <ProjectViewButton
                             projectTitle={projectTitle}
                             isChangedTheme={isChangedTheme}

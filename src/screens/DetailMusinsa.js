@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { handleTop } from "./../helper/helper";
 import Title from "../components/detailProject/Title";
 import MainVisualMusinsa from "../components/detailProject/musinsa/MainVisualMusinsa";
 import Accordion from "../components/detailProject/Accodion";
@@ -47,10 +48,7 @@ const MainWrap = styled.main`
 
 const DetailMusinsa = ({ scrollX, scrollY }) => {
     useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+        handleTop();
     }, []);
 
     return (

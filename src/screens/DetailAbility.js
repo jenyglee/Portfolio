@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { handleTop } from "./../helper/helper";
 import MainTitle from "../components/detailProject/ability/MainTitle";
 import Ability from "../components/detailProject/ability/Ability";
 import DetailHeader from "../components/DetailHeader";
@@ -164,10 +165,7 @@ const abilityData = [
 const DetailAbility = ({ scrollX, scrollY }) => {
     const [translateX, setTranslateX] = useState(0);
     useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+        handleTop();
     }, []);
 
     return (
