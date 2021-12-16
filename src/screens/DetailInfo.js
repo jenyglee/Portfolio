@@ -3,9 +3,8 @@ import styled from "styled-components";
 import Career from "../components/detailProject/info/Career";
 import MainTitle from "../components/detailProject/info/MainTitle";
 import MyInfo from "../components/detailProject/info/MyInfo";
-import FooterButton from "../components/FooterButton";
 import PrevNextButton from "../components/PrevNextButton";
-import { header, footer } from "../images";
+import { header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`

@@ -135,56 +135,30 @@ const categoryImages = [
 ];
 
 // ✨ 메인 타이틀 오버 이미지
-const bgImages01 = {
-    Image01: bg01Component01,
-};
+const bgImages01 = [bg01Component01];
+const bgImages02 = [bg02Component01];
+const bgImages03 = [
+    bg03Component01,
+    bg03Component02,
+    bg03Component03,
+    bg03Component04,
+    bg03Component05,
+    bg03Component06,
+];
 
-const bgImages02 = {
-    Image01: bg02Component01,
-};
-
-const bgImages03 = {
-    Image01: bg03Component01,
-    Image02: bg03Component02,
-    Image03: bg03Component03,
-    Image04: bg03Component04,
-    Image05: bg03Component05,
-    Image06: bg03Component06,
-};
-
-const bgImages04 = {
-    Image01: bg04Component01,
-    Image02: bg04Component02,
-    Image03: bg04Component03,
-    Image04: bg04Component04,
-    Image05: bg04Component05,
-};
-
-const bgImages05 = {
-    Image01: bg05Component01,
-};
-
-const bgImages06 = {
-    Image01: bg06Component01,
-    Image02: bg06Component02,
-};
-
-const bgImages07 = {
-    Image01: bg07Component01,
-    Image02: bg07Component02,
-};
-
-const bgImages08 = {
-    Image01: bg08Component01,
-};
-
-const bgImages09 = {
-    Image01: bg09Component01,
-};
-
-const bgImages10 = {
-    Image01: bg10Component01,
-};
+const bgImages04 = [
+    bg04Component01,
+    bg04Component02,
+    bg04Component03,
+    bg04Component04,
+    bg04Component05,
+];
+const bgImages05 = [bg05Component01];
+const bgImages06 = [bg06Component01, bg06Component02];
+const bgImages07 = [bg07Component01, bg07Component02];
+const bgImages08 = [bg08Component01];
+const bgImages09 = [bg09Component01];
+const bgImages10 = [bg10Component01];
 
 //✨ 메인 스티커 이미지
 const sticker = Sticker;

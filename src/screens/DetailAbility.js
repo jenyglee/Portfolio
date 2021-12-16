@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import MainTitle from "../components/detailProject/ability/MainTitle";
 import Ability from "../components/detailProject/ability/Ability";
-import FooterButton from "../components/FooterButton";
 import DetailHeader from "../components/DetailHeader";
 import PrevNextButton from "../components/PrevNextButton";
-import { footer, header, abilitySources } from "../images";
+import { header, abilitySources } from "../images";
 
 const Wrap = styled.main`
     max-width: 1200px;
@@ -164,12 +163,12 @@ const abilityData = [
 
 const DetailAbility = ({ scrollX, scrollY }) => {
     const [translateX, setTranslateX] = useState(0);
-    // useEffect(() => {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth",
-    //     });
-    // }, []);
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, []);
 
     return (
         <Wrap>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import DetailInfo from "./DetailInfo";
 import DetailAbility from "./DetailAbility";
 import DetailGulpApp from "./DetailGulpApp";
@@ -10,6 +10,7 @@ import DetailKTnG from "./DetailKTnG";
 import DetailConsultKit from "./DetailConsultKit";
 import DetailKyobo from "./DetailKyobo";
 import DetailBeotherm from "./DetailBeotherm";
+import { itemEnter, itemLeave, handleTop } from "../helper/helper";
 import { useState } from "react";
 import {
     BgComponent01,
@@ -27,9 +28,6 @@ import {
     TopButton,
 } from "./../components";
 import { categoryImages } from "./../images";
-import { useSelector, useDispatch } from "react-redux";
-import { stateInteractions } from "./../store/interactions/interactionsSlice";
-import actionsInteractions from "./../store/interactions/interactionsActions";
 
 const Body = styled.main`
     height: 100%;
@@ -100,8 +98,6 @@ const tempImage = [
 ];
 
 const Home = () => {
-    const dispatch = useDispatch();
-    // const { projectTitle } = useSelector(stateInteractions);
     const [projectTitle, setProjectTitle] = useState(tempData);
     const [projectImage, setProjectImage] = useState(tempImage);
     const [imgKey, setImgKey] = useState();
@@ -109,16 +105,12 @@ const Home = () => {
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
     const [scrollX, setScrollX] = useState(0);
     const [scrollY, setScrollY] = useState(0);
-    // ✨ 너비 1200픽셀 이하 브레이크포인트
-    useEffect(() => {
-        if (window.innerWidth < 1200) {
-            setIsPcBreakPoint(true);
-        } else {
-            setIsPcBreakPoint(false);
-        }
-    }, [window.innerWidth]);
 
+    // ✨ 첫 진입 시 상단으로 이동
     useEffect(() => {
+        handleTop();
+        setScrollX(window.innerWidth);
+        setScrollY(window.innerHeight);
         // ✨ 스크롤값, 화면너비 저장(인터랙션, 이미지교체에 활용)
         window.addEventListener("scroll", onScroll);
         window.addEventListener("resize", onResize);
@@ -128,6 +120,15 @@ const Home = () => {
         };
     }, []);
 
+    // ✨ 너비 1200픽셀 이하 브레이크포인트
+    useEffect(() => {
+        if (window.innerWidth < 1200) {
+            setIsPcBreakPoint(true);
+        } else {
+            setIsPcBreakPoint(false);
+        }
+    }, [window.innerWidth]);
+
     const onScroll = () => {
         setScrollY(window.scrollY);
     };
@@ -135,65 +136,8 @@ const Home = () => {
     const onResize = () => {
         setScrollX(window.innerWidth);
     };
-    // ✨ 첫 진입 시 상단으로 이동
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
 
-        setScrollX(window.innerWidth);
-        setScrollY(window.innerHeight);
-    }, []);
-
-    // ✨ 커서 들어오면 이미지 노출
-    const itemEnter = (id, sectionId) => {
-        const copy = [...projectTitle];
-        const copyImage = [...projectImage];
-
-        copy[sectionId][id].isHover = !copy[sectionId][id].isHover;
-        copyImage[sectionId][id].isShow = !copyImage[sectionId][id].isShow;
-
-        // dispatch(actionsInteractions.setProjectTitle(copy));
-        setProjectTitle(copy);
-        setProjectImage(copyImage);
-        setImgKey({ id: id, sectionId: sectionId });
-        changeTheme(copy);
-    };
-
-    // ✨ 커서 나가면 이미지 숨김 (노출과 코드가 같음)
-    const itemLeave = (id, sectionId) => {
-        const copy = [...projectTitle];
-        const copyImage = [...projectImage];
-
-        copy[sectionId][id].isHover = !copy[sectionId][id].isHover;
-        copyImage[sectionId][id].isShow = !copyImage[sectionId][id].isShow;
-
-        // dispatch(actionsInteractions.setProjectTitle(copy));
-        setProjectTitle(copy);
-        setProjectImage(copyImage);
-        setImgKey({ id: id, sectionId: sectionId });
-        changeTheme(copy);
-    };
-
-    // ✨ 특정 타이틀 마우스오버시 다크테마로 변경
-    const changeTheme = (projectTitle) => {
-        if (projectTitle[0][2].isHover || projectTitle[2][0].isHover) {
-            setIsChangedTheme(true);
-        } else if (!projectTitle[0][2].isHover || !projectTitle[2][0].isHover) {
-            setIsChangedTheme(false);
-        }
-    };
-
-    // ✨ Top버튼 클릭시 상단으로
-    const handleTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-        setScrollY(0);
-    };
-
+    // ✨메뉴 클릭 시 스크롤링을 위한 위치 설정
     const introRef = useRef(null);
     const developRef = useRef(null);
     const designRef = useRef(null);
@@ -224,11 +168,30 @@ const Home = () => {
                             <TitleContainer>
                                 <RefContainer ref={introRef}>
                                     <Section
-                                        // itemEnter={(id, sectionId)=>{
-                                        //     dispatch(actionsInteractions.itemEnter(id, sectionId, projectTitle, projectImage, setProjectImage, setImgKey, changeTheme));
-                                        // }}
-                                        itemEnter={itemEnter}
-                                        itemLeave={itemLeave}
+                                        itemEnter={(id, sectionId) => {
+                                            itemEnter({
+                                                id,
+                                                sectionId,
+                                                projectTitle,
+                                                projectImage,
+                                                setProjectTitle,
+                                                setProjectImage,
+                                                setImgKey,
+                                                setIsChangedTheme,
+                                            });
+                                        }}
+                                        itemLeave={(id, sectionId) => {
+                                            itemLeave({
+                                                id,
+                                                sectionId,
+                                                projectTitle,
+                                                projectImage,
+                                                setProjectTitle,
+                                                setProjectImage,
+                                                setImgKey,
+                                                setIsChangedTheme,
+                                            });
+                                        }}
                                         projectTitle={projectTitle[0]}
                                         sectionId={0}
                                         img={categoryImages}
@@ -239,8 +202,30 @@ const Home = () => {
                                 </RefContainer>
                                 <RefContainer ref={developRef}>
                                     <Section
-                                        itemEnter={itemEnter}
-                                        itemLeave={itemLeave}
+                                        itemEnter={(id, sectionId) => {
+                                            itemEnter({
+                                                id,
+                                                sectionId,
+                                                projectTitle,
+                                                projectImage,
+                                                setProjectTitle,
+                                                setProjectImage,
+                                                setImgKey,
+                                                setIsChangedTheme,
+                                            });
+                                        }}
+                                        itemLeave={(id, sectionId) => {
+                                            itemLeave({
+                                                id,
+                                                sectionId,
+                                                projectTitle,
+                                                projectImage,
+                                                setProjectTitle,
+                                                setProjectImage,
+                                                setImgKey,
+                                                setIsChangedTheme,
+                                            });
+                                        }}
                                         projectTitle={projectTitle[1]}
                                         sectionId={1}
                                         img={categoryImages}
@@ -251,8 +236,30 @@ const Home = () => {
                                 </RefContainer>
                                 <RefContainer ref={designRef}>
                                     <Section
-                                        itemEnter={itemEnter}
-                                        itemLeave={itemLeave}
+                                        itemEnter={(id, sectionId) => {
+                                            itemEnter({
+                                                id,
+                                                sectionId,
+                                                projectTitle,
+                                                projectImage,
+                                                setProjectTitle,
+                                                setProjectImage,
+                                                setImgKey,
+                                                setIsChangedTheme,
+                                            });
+                                        }}
+                                        itemLeave={(id, sectionId) => {
+                                            itemLeave({
+                                                id,
+                                                sectionId,
+                                                projectTitle,
+                                                projectImage,
+                                                setProjectTitle,
+                                                setProjectImage,
+                                                setImgKey,
+                                                setIsChangedTheme,
+                                            });
+                                        }}
                                         projectTitle={projectTitle[2]}
                                         sectionId={2}
                                         img={categoryImages}
@@ -332,7 +339,9 @@ const Home = () => {
             </Switch>
             <TopButton
                 scrollY={scrollY}
-                onClick={handleTop}
+                onClick={() => {
+                    handleTop({ setScrollY });
+                }}
                 isChangedTheme={isChangedTheme}
             />
         </Body>

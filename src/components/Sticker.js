@@ -37,7 +37,7 @@ const StickerImage = styled.img`
     height: 100%;
 `;
 
-const Sticker = ({ itemEnter, itemLeave }) => {
+const Sticker = () => {
     const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
@@ -46,11 +46,7 @@ const Sticker = ({ itemEnter, itemLeave }) => {
         }, 1700);
     }, []);
     return (
-        <ImageWrap
-            opacity={opacity}
-            onMouseEnter={itemEnter}
-            onMouseLeave={itemLeave}
-        >
+        <ImageWrap opacity={opacity}>
             <StickerImage src={sticker} />
         </ImageWrap>
     );

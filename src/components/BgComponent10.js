@@ -6,43 +6,67 @@ const ComponentWrap = styled.div`
     position: fixed;
     transition: 0.5s;
     top: ${({ transform }) => `calc(50% + ${transform}px)`};
+    right: ${({ right }) => right}px;
     transform: translateY(-50%);
 `;
 
 const Image = styled.img`
-    width: 652px;
-    height: 1230px;
+    width: ${({ width }) => width}px;
+    height: ${({ height }) => height}px;
 `;
 
 const BgComponent10 = ({ isShow }) => {
-    const [objTransform01, setObjTransform01] = useState(450);
-    const [objOpacity01, setObjOpacity01] = useState(0);
+    const [objs, setObjs] = useState([
+        { translateY: 360, width: 652, height: 1230, right: 130, opacity: 0 },
+    ]);
 
     useEffect(() => {
         if (isShow) {
             setTimeout(() => {
-                setObjTransform01(400);
-                setObjOpacity01(1);
+                setObjs([
+                    {
+                        translateY: 310,
+                        width: 652,
+                        height: 1230,
+                        right: 130,
+                        opacity: 1,
+                    },
+                ]);
             }, 0);
         } else {
             setTimeout(() => {
-                setObjTransform01(450);
-                setObjOpacity01(0);
+                setObjs([
+                    {
+                        translateY: 360,
+                        width: 652,
+                        height: 1230,
+                        right: 130,
+                        opacity: 0,
+                    },
+                ]);
             }, 0);
         }
     }, [isShow]);
     return (
         <>
-            <ComponentWrap
-                style={{
-                    opacity: objOpacity01,
-                    right: 180,
-                }}
-                transform={objTransform01}
-                isShow={isShow}
-            >
-                <Image src={bgImages10.Image01} />
-            </ComponentWrap>
+            {objs.map((obj, index) => {
+                return (
+                    <ComponentWrap
+                        style={{
+                            opacity: obj.opacity,
+                        }}
+                        right={obj.right}
+                        transform={obj.translateY}
+                        isShow={isShow}
+                    >
+                        <Image
+                            src={bgImages10[index]}
+                            width={obj.width}
+                            height={obj.height}
+                        />
+                    </ComponentWrap>
+                );
+            })}
         </>
     );
 };

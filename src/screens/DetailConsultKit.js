@@ -3,8 +3,7 @@ import styled from "styled-components";
 import Title from "../components/detailProject/Title";
 import MainVisualConsultKit from "../components/detailProject/consultKit/MainVisualConsultKit";
 import Accordion from "../components/detailProject/Accodion";
-import FooterButton from "../components/FooterButton";
-import { footer, header } from "../images";
+import { header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`

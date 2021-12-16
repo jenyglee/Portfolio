@@ -95,20 +95,16 @@ const Project = ({
 
     //  ✨ 한글자씩 나타나는 인터랙션
     useEffect(() => {
-        // 다른 페이지에서 돌아왔을 때 기존 글자 위치와
-        // setAnimationTransform([
-        //     -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100,
-        // ]);
-        // setAnimationOpacity([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
         setTimeout(() => {
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(10, 1, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(10, 1, 1);
-            } else {
-                copyOpacity.splice(10, 1, 0.4);
-            }
+            copyOpacity.splice(10, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(10, 1, 1);
+            // } else {
+            //     copyOpacity.splice(10, 1, 0.4);
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 100);
@@ -116,11 +112,12 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(9, 2, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(9, 2, 1, 1);
-            } else {
-                copyOpacity.splice(9, 2, 0.4, 0.4);
-            }
+            copyOpacity.splice(9, 2, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(9, 2, 1, 1);
+            // } else {
+            //     copyOpacity.splice(9, 2, 0.4, 0.4);
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 200);
@@ -128,11 +125,12 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(8, 3, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(8, 3, 1, 1, 1);
-            } else {
-                copyOpacity.splice(8, 3, 0.4, 0.4, 0.4);
-            }
+            copyOpacity.splice(8, 3, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(8, 3, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(8, 3, 0.4, 0.4, 0.4);
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 300);
@@ -140,11 +138,12 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(7, 4, 0, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(7, 4, 1, 1, 1, 1);
-            } else {
-                copyOpacity.splice(7, 4, 0.4, 0.4, 0.4, 0.4);
-            }
+            copyOpacity.splice(7, 4, 1, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(7, 4, 1, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(7, 4, 0.4, 0.4, 0.4, 0.4);
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 400);
@@ -152,11 +151,12 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(6, 5, 0, 0, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(6, 5, 1, 1, 1, 1, 1);
-            } else {
-                copyOpacity.splice(6, 5, 0.4, 0.4, 0.4, 0.4, 0.4);
-            }
+            copyOpacity.splice(6, 5, 1, 1, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(6, 5, 1, 1, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(6, 5, 0.4, 0.4, 0.4, 0.4, 0.4);
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 500);
@@ -164,11 +164,12 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(5, 6, 0, 0, 0, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(5, 6, 1, 1, 1, 1, 1, 1);
-            } else {
-                copyOpacity.splice(5, 6, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4);
-            }
+            copyOpacity.splice(5, 6, 1, 1, 1, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(5, 6, 1, 1, 1, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(5, 6, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4);
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 600);
@@ -176,11 +177,12 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(4, 7, 0, 0, 0, 0, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(4, 7, 1, 1, 1, 1, 1, 1, 1);
-            } else {
-                copyOpacity.splice(4, 7, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4);
-            }
+            copyOpacity.splice(4, 7, 1, 1, 1, 1, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(4, 7, 1, 1, 1, 1, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(4, 7, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4);
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 700);
@@ -188,22 +190,23 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(3, 8, 0, 0, 0, 0, 0, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(3, 8, 1, 1, 1, 1, 1, 1, 1, 1);
-            } else {
-                copyOpacity.splice(
-                    3,
-                    8,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4
-                );
-            }
+            copyOpacity.splice(3, 8, 1, 1, 1, 1, 1, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(3, 8, 1, 1, 1, 1, 1, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(
+            //         3,
+            //         8,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4
+            //     );
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 800);
@@ -211,23 +214,24 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(2, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(2, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            } else {
-                copyOpacity.splice(
-                    2,
-                    9,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4
-                );
-            }
+            copyOpacity.splice(2, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(2, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(
+            //         2,
+            //         9,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4
+            //     );
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 900);
@@ -235,24 +239,25 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(1, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            } else {
-                copyOpacity.splice(
-                    1,
-                    10,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4
-                );
-            }
+            copyOpacity.splice(1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(
+            //         1,
+            //         10,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4
+            //     );
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1000);
@@ -260,28 +265,49 @@ const Project = ({
             const copyTransform = [...animationTransform];
             const copyOpacity = [...animationOpacity];
             copyTransform.splice(0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-            if (window.innerWidth <= 1200) {
-                copyOpacity.splice(0, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            } else {
-                copyOpacity.splice(
-                    0,
-                    11,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4,
-                    0.4
-                );
-            }
+            copyOpacity.splice(0, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+            // if (window.innerWidth <= 1200) {
+            //     copyOpacity.splice(0, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+            // } else {
+            //     copyOpacity.splice(
+            //         0,
+            //         11,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4,
+            //         0.4
+            //     );
+            // }
             setAnimationTransform(copyTransform);
             setAnimationOpacity(copyOpacity);
         }, 1100);
+
+        setTimeout(() => {
+            const copyOpacity = [...animationOpacity];
+            copyOpacity.splice(
+                0,
+                11,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+            );
+            setAnimationOpacity(copyOpacity);
+        }, 1400);
 
         // 'View 버튼' 애니메이션
         setTimeout(() => {
