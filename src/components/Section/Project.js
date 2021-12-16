@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Route, Switch, Link } from "react-router-dom";
+import Sticker from "./../Sticker";
 import ProjectViewButton from "./ProjectViewButton";
 import ProjectOneText from "./ProjectOneText";
 
@@ -77,6 +78,8 @@ const Project = ({
     ]);
     const [btnAnimationTransform, setBtnAnimationTransform] = useState([30]);
     const [btnAnimationOpacity, setBtnAnimationOpacity] = useState([0]);
+    const [section, setSection] = useState("");
+    const [project, setProject] = useState("");
 
     //  ✨ 마우스오버된 것은 투명도 1, 나머지는 0.4
     // 🪲 1200 이하에서도 발동되는게 문제!
@@ -285,6 +288,9 @@ const Project = ({
             setBtnAnimationTransform(0);
             setBtnAnimationOpacity(1);
         }, 1400);
+
+        setSection(sectionId);
+        setProject(projectTitle.id);
     }, []);
 
     // 너비 1200 이하에서 글자 opacity 1로 변경
@@ -360,6 +366,8 @@ const Project = ({
                         }}
                         href="#"
                     >
+                        {section === 1 && project === 0 ? <Sticker /> : null}
+
                         <ProjectOneText
                             animationTransform={animationTransform}
                             animationTransform={animationTransform}

@@ -20,6 +20,7 @@ import bg07Component02 from "./images/bgComponent07/07_02.png";
 import bg08Component01 from "./images/bgComponent08/08_01.png";
 import bg09Component01 from "./images/bgComponent09/09_01.png";
 import bg10Component01 from "./images/bgComponent10/10_01.png";
+import Sticker from "./images/sticker.png";
 import categoryIntroduction from "./images/category_introduction.png";
 import categoryDevelop from "./images/category_develop.png";
 import categoryDesign from "./images/category_design.png";
@@ -184,6 +185,9 @@ const bgImages09 = {
 const bgImages10 = {
     Image01: bg10Component01,
 };
+
+//✨ 메인 스티커 이미지
+const sticker = Sticker;
 
 //✨ 헤더 썸네일 이미지
 const header = {
@@ -360,6 +364,7 @@ export {
     bgImages08,
     bgImages09,
     bgImages10,
+    sticker,
     categoryImages,
     header,
     footer,
