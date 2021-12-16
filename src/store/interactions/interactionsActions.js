@@ -1,4 +1,4 @@
-import { actionsInteractions } from './interactionsSlice.js';
+import { actionsInteractions } from "./interactionsSlice.js";
 
 const actions = {
     // interactionsUpdate: () => (dispatch) => {
@@ -7,7 +7,6 @@ const actions = {
     //     age: 40
     //     }]));
     // }
-
     // ✨ 커서 들어오면 이미지 노출
     // itemEnter : (id, sectionId, projectTitle, projectImage, setProjectImage, setImgKey, changeTheme) => (dispatch) => {
     //     // console.log(projectTitle, projectImage)

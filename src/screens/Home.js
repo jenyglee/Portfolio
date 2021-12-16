@@ -29,6 +29,8 @@ import {
 } from "./../components";
 import { categoryImages } from "./../images";
 
+const context = React.createContext();
+
 const Body = styled.main`
     height: 100%;
     background-color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>

@@ -1,19 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const interactionsSlice = createSlice({
-    name: 'interactions',
+    name: "interactions",
     initialState: {
-        projectTitle : [
+        projectTitle: [
             [
                 { id: 0, title: "Info", isHover: false },
                 { id: 1, title: "Ability", isHover: false },
                 { id: 2, title: "Github", isHover: false },
             ],
-        
-            [
-                { id: 0, title: "Gulp App", isHover: false },
-            ],
-        
+
+            [{ id: 0, title: "Gulp App", isHover: false }],
+
             [
                 { id: 0, title: "Avn", isHover: false },
                 { id: 1, title: "Musinsa", isHover: false },
@@ -23,15 +21,13 @@ export const interactionsSlice = createSlice({
                 { id: 5, title: "Beotherm", isHover: false },
             ],
         ],
-        tempImage : [
+        tempImage: [
             [
                 { id: 0, isShow: false },
                 { id: 1, isShow: false },
                 { id: 2, isShow: false },
             ],
-            [
-                { id: 0, isShow: false },
-            ],
+            [{ id: 0, isShow: false }],
             [
                 { id: 0, isShow: false },
                 { id: 1, isShow: false },
@@ -53,14 +49,14 @@ export const interactionsSlice = createSlice({
     reducers: {
         setProjectTitle: (state, action) => {
             state.projectTitle = action.payload;
-        }
+        },
         // interactionsUpdate: (state, action) => {
         //     state.interactions = action.payload;
         // }
     },
 });
 
-export const stateInteractions = state => state.interactions;
+export const stateInteractions = (state) => state.interactions;
 export const actionsInteractions = interactionsSlice.actions;
 
 export default interactionsSlice.reducer;
