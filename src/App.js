@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import Home from "./screens/Home";
-import { ContentsStore } from "./store/contents";
+import { ContentsStore } from "./storeContext/contents";
 
 function App() {
     return (

@@ -6,7 +6,7 @@ import Ability from "../components/detailProject/ability/Ability";
 import DetailHeader from "../components/DetailHeader";
 import PrevNextButton from "../components/PrevNextButton";
 import { header, abilitySources } from "../images";
-import { ContentsContext } from "../store/contents";
+import { ContentsContext } from "../storeContext/contents";
 
 const Wrap = styled.main`
     max-width: 1200px;

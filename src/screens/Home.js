@@ -28,7 +28,7 @@ import {
     TopButton,
 } from "./../components";
 import { categoryImages } from "./../images";
-import { ContentsContext } from "../store/contents";
+import { ContentsContext } from "../storeContext/contents";
 
 const Body = styled.main`
     height: 100%;

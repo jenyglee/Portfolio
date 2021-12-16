@@ -7,7 +7,7 @@ import MyInfo from "../components/detailProject/info/MyInfo";
 import PrevNextButton from "../components/PrevNextButton";
 import { header } from "../images";
 import DetailHeader from "../components/DetailHeader";
-import { ContentsContext } from "../store/contents";
+import { ContentsContext } from "../storeContext/contents";
 
 const Wrap = styled.main`
     max-width: 1200px;
