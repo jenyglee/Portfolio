@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { ContentsContext } from "../../../store/contents";
 import styled from "styled-components";
 
 const TitleWrap = styled.div`
@@ -33,7 +34,8 @@ const Title = styled.h1`
     }
 `;
 
-const MainTitle = ({ titleData }) => {
+const MainTitle = () => {
+    const contents = useContext(ContentsContext);
     const [animationTransform, setAnimationTransform] = useState([
         50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
     ]);
@@ -110,7 +112,7 @@ const MainTitle = ({ titleData }) => {
     }, []);
     return (
         <TitleWrap>
-            {titleData.map((ability, index) => {
+            {contents.titleData.map((ability, index) => {
                 return (
                     <Title
                         animationTransform={animationTransform[index]}

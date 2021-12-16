@@ -4,14 +4,17 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import Home from "./screens/Home";
+import { ContentsStore } from "./store/contents";
 
 function App() {
     return (
-        <ThemeProvider theme={theme}>
-            <BrowserRouter>
-                <Home />
-            </BrowserRouter>
-        </ThemeProvider>
+        <ContentsStore>
+            <ThemeProvider theme={theme}>
+                <BrowserRouter>
+                    <Home />
+                </BrowserRouter>
+            </ThemeProvider>
+        </ContentsStore>
     );
 }
 

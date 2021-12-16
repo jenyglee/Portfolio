@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Route, Switch } from "react-router-dom";
 import DetailInfo from "./DetailInfo";
@@ -28,8 +28,7 @@ import {
     TopButton,
 } from "./../components";
 import { categoryImages } from "./../images";
-
-const context = React.createContext();
+import { ContentsContext } from "../store/contents";
 
 const Body = styled.main`
     height: 100%;
@@ -62,46 +61,10 @@ const TitleContainer = styled.article`
 
 const RefContainer = styled.div``;
 
-const tempData = [
-    [
-        { id: 0, title: "Info", isHover: false },
-        { id: 1, title: "Ability", isHover: false },
-        { id: 2, title: "Github", isHover: false },
-    ],
-
-    [{ id: 0, title: "Gulp App", isHover: false }],
-
-    [
-        { id: 0, title: "Avn", isHover: false },
-        { id: 1, title: "Musinsa", isHover: false },
-        { id: 2, title: "Kt&g", isHover: false },
-        { id: 3, title: "ConsultKit", isHover: false },
-        { id: 4, title: "Kyobo", isHover: false },
-        { id: 5, title: "Beotherm", isHover: false },
-    ],
-];
-
-const tempImage = [
-    [
-        { id: 0, isShow: false },
-        { id: 1, isShow: false },
-        { id: 2, isShow: false },
-    ],
-    [{ id: 0, isShow: false }],
-    [
-        { id: 0, isShow: false },
-        { id: 1, isShow: false },
-        { id: 2, isShow: false },
-        { id: 3, isShow: false },
-        { id: 4, isShow: false },
-        { id: 5, isShow: false },
-        { id: 6, isShow: false },
-    ],
-];
-
 const Home = () => {
-    const [projectTitle, setProjectTitle] = useState(tempData);
-    const [projectImage, setProjectImage] = useState(tempImage);
+    const contents = useContext(ContentsContext);
+    const [projectTitle, setProjectTitle] = useState(contents.projects);
+    const [projectImage, setProjectImage] = useState(contents.projectBgImages);
     const [imgKey, setImgKey] = useState();
     const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
@@ -112,7 +75,7 @@ const Home = () => {
     useEffect(() => {
         handleTop();
         setScrollX(window.innerWidth);
-        setScrollY(window.innerHeight);
+        setScrollY(window.scrollY);
         // ✨ 스크롤값, 화면너비 저장(인터랙션, 이미지교체에 활용)
         window.addEventListener("scroll", onScroll);
         window.addEventListener("resize", onResize);
