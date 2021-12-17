@@ -8,8 +8,7 @@ const CategoryContainer = styled.div`
     bottom: -50px;
     transition: 1s;
     @media ${({ theme }) => theme.size568} {
-        padding-left: 20px;
-        padding-top: 50px;
+        padding-top: 30px;
     }
 `;
 

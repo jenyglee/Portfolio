@@ -7,14 +7,7 @@ import { categoryImages, logo } from "../images";
 const FixedContainer = styled.div`
     width: 100%;
     position: fixed;
-    top: 0;
-    left: 50%;
-    transition: 0.5s;
-
-    opacity: ${({ showHeader }) => (showHeader ? 1 : 0)};
-    transform: ${({ showHeader }) =>
-        showHeader ? `translate(-50%, 0)` : `translate(-50%, -120px)`};
-    z-index: 20;
+    z-index: 2;
 `;
 
 const HeaderContainer = styled.header`
@@ -23,20 +16,19 @@ const HeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* background-color: red; */
+    transition: 0.5s;
+    opacity: ${({ showHeader }) => (showHeader ? 1 : 0)};
+    transform: ${({ showHeader }) =>
+        showHeader ? `translateY(0)` : `translateY(-120px)`};
     @media ${({ theme }) => theme.size1200} {
-        max-width: 960px;
+        padding: 0 20px;
         margin: 60px auto 0 auto;
     }
     @media ${({ theme }) => theme.size960} {
-        max-width: 768px;
         margin: 40px auto 0 auto;
     }
-    @media ${({ theme }) => theme.size768} {
-        max-width: 568px;
-    }
     @media ${({ theme }) => theme.size568} {
-        max-width: 320px;
-        padding: 0 20px;
         margin: 20px auto 0 auto;
     }
 `;
@@ -119,11 +111,15 @@ const MenuContainer = styled.div`
     height: 220px;
     background-color: #fff;
     position: absolute;
-    top: -220px;
+    top: -280px;
     left: 0;
     transition: 0.5s;
     padding-top: 63px;
     transform: ${({ translateY }) => translateY};
+    display: none;
+    @media ${({ theme }) => theme.size1200} {
+        display: block;
+    }
 `;
 
 const TitleContainer = styled.div`
@@ -209,8 +205,8 @@ const MainHeader = ({
     }, [scrollY]);
 
     return (
-        <FixedContainer showHeader={showHeader}>
-            <HeaderContainer>
+        <FixedContainer>
+            <HeaderContainer showHeader={showHeader}>
                 {/* 숨겨진 메뉴 */}
                 <MenuContainer
                     translateY={isMenuEntered ? "translateY(220px)" : "0"}

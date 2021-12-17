@@ -4,20 +4,11 @@ import Category from "./Category";
 import Project from "./Project";
 
 const SectionContainer = styled.section`
-    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
     margin: 0 auto;
     padding-bottom: 74px;
-    @media ${({ theme }) => theme.size1200} {
-        max-width: 960px;
-    }
-    @media ${({ theme }) => theme.size960} {
-        max-width: 768px;
-    }
-    @media ${({ theme }) => theme.size768} {
-        max-width: 568px;
-    }
     @media ${({ theme }) => theme.size568} {
-        max-width: 320px;
         padding-bottom: 0px;
     }
 `;

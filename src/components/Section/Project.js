@@ -23,7 +23,6 @@ const ProjectName = styled.a`
     @media ${({ theme }) => theme.size1200} {
     }
     @media ${({ theme }) => theme.size568} {
-        padding-left: 20px;
         margin-bottom: 10px;
     }
 `;

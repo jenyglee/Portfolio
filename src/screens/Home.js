@@ -41,20 +41,31 @@ const Body = styled.main`
 `;
 
 const MainWrap = styled.main`
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    position: relative;
     padding-top: 224px;
 
     @media ${({ theme }) => theme.size1200} {
-        padding-top: 120px;
+        padding-top: 200px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        padding-top: 150px;
+    }
+    @media ${({ theme }) => theme.size768} {
+        padding-top: 130px;
     }
     @media ${({ theme }) => theme.size568} {
-        padding-top: 50px;
+        padding-top: 60px;
     }
 `;
 
+const TitleAlignWrap = styled.div`
+    max-width: 1200px;
+    margin: 0 auto;
+`;
+
 const TitleContainer = styled.article`
+    width: 100%;
     position: relative;
     z-index: 1;
 `;
@@ -120,16 +131,16 @@ const Home = () => {
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
             <Switch>
                 <Route path="/" exact>
+                    <MainHeader
+                        isChangedTheme={isChangedTheme}
+                        isPcBreakPoint={isPcBreakPoint}
+                        scrollY={scrollY}
+                        onIntroClick={onIntroClick}
+                        onDevelopClick={onDevelopClick}
+                        onDesignClick={onDesignClick}
+                    />
                     <MainWrap>
-                        <MainHeader
-                            isChangedTheme={isChangedTheme}
-                            isPcBreakPoint={isPcBreakPoint}
-                            scrollY={scrollY}
-                            onIntroClick={onIntroClick}
-                            onDevelopClick={onDevelopClick}
-                            onDesignClick={onDesignClick}
-                        />
-                        <div className="contents">
+                        <TitleAlignWrap>
                             <TitleContainer>
                                 <RefContainer ref={introRef}>
                                     <Section
@@ -270,7 +281,7 @@ const Home = () => {
                                     />
                                 </div>
                             ) : null}
-                        </div>
+                        </TitleAlignWrap>
                     </MainWrap>
                 </Route>
 
