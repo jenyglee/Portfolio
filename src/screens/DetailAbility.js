@@ -9,25 +9,17 @@ import { header, abilitySources } from "../images";
 import { ContentsContext } from "../storeContext/contents";
 
 const Wrap = styled.main`
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     padding-bottom: 100px;
-    @media ${({ theme }) => theme.size1200} {
-        max-width: 960px;
-    }
-    @media ${({ theme }) => theme.size960} {
-        max-width: 768px;
-    }
-    @media ${({ theme }) => theme.size768} {
-        max-width: 568px;
-    }
-    @media ${({ theme }) => theme.size568} {
-        max-width: 320px;
-    }
 `;
 
 const AbilityWrap = styled.div`
-    width: 100%;
+    max-width: 1200px;
     padding-top: 304px;
     display: flex;
     flex-direction: column;
@@ -66,8 +58,8 @@ const Section = styled.section`
 const Abilities = styled.div`
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     @media ${({ theme }) => theme.size1200} {
-        justify-content: center;
     }
     /* 768px 부터 슬라이딩*/
     @media ${({ theme }) => theme.size768} {

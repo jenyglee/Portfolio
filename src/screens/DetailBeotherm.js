@@ -7,25 +7,13 @@ import { header } from "../images";
 import DetailHeader from "../components/DetailHeader";
 
 const Wrap = styled.main`
-    max-width: 1200px;
-    margin: 0 auto;
-    @media ${({ theme }) => theme.size1200} {
-        max-width: 960px;
-    }
-    @media ${({ theme }) => theme.size960} {
-        max-width: 768px;
-    }
-    @media ${({ theme }) => theme.size768} {
-        max-width: 568px;
-    }
-    @media ${({ theme }) => theme.size568} {
-        max-width: 320px;
-    }
+    width: 100%;
 `;
 
 const BeothermWrap = styled.div`
-    width: 100%;
+    max-width: 1200px;
     padding-bottom: 100px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,10 +23,12 @@ const BeothermWrap = styled.div`
 const MainWrap = styled.main`
     width: 100%;
     padding-top: 260px;
-    @media ${({ theme }) => theme.size960} {
-        padding-top: 190px;
+    @media ${({ theme }) => theme.size1200} {
         padding-left: 20px;
         padding-right: 20px;
+    }
+    @media ${({ theme }) => theme.size960} {
+        padding-top: 190px;
     }
     @media ${({ theme }) => theme.size568} {
         padding-top: 105px;

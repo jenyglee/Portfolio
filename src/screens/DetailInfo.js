@@ -10,28 +10,20 @@ import DetailHeader from "../components/DetailHeader";
 import { ContentsContext } from "../storeContext/contents";
 
 const Wrap = styled.main`
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    @media ${({ theme }) => theme.size1200} {
-        max-width: 960px;
-    }
-    @media ${({ theme }) => theme.size960} {
-        max-width: 768px;
-    }
-    @media ${({ theme }) => theme.size768} {
-        max-width: 568px;
-    }
-    @media ${({ theme }) => theme.size568} {
-        max-width: 320px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 const InfoWrap = styled.div`
-    width: 100%;
+    max-width: 1200px;
     padding-top: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: lightseagreen;
     @media ${({ theme }) => theme.size1200} {
         padding-top: 130px;
     }

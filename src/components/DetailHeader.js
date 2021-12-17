@@ -3,9 +3,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { logo } from "./../images";
 
-const Wrap = styled.header`
+const AlignWarp = styled.div`
+    width: 100%;
     position: fixed;
-    width: 1200px;
+`;
+
+const Wrap = styled.header`
+    max-width: 1200px;
     margin: 0 auto;
     padding-top: 86px;
     display: flex;
@@ -15,21 +19,17 @@ const Wrap = styled.header`
         showHeader ? `translateY(0px)` : `translateY(-120px)`};
     transition: 0.5s;
     @media ${({ theme }) => theme.size1200} {
-        width: 960px;
         padding-top: 60px;
-    }
-    @media ${({ theme }) => theme.size960} {
-        width: 768px;
-        padding-top: 40px;
         padding-left: 20px;
         padding-right: 20px;
     }
+    @media ${({ theme }) => theme.size960} {
+        padding-top: 40px;
+    }
     @media ${({ theme }) => theme.size768} {
-        width: 568px;
         padding-top: 20px;
     }
     @media ${({ theme }) => theme.size568} {
-        width: 320px;
         padding-top: 20px;
     }
     z-index: 1;
@@ -117,43 +117,45 @@ const DetailHeader = ({
     }, [scrollY]);
 
     return (
-        <Wrap showHeader={showHeader}>
-            <Link to="/">
-                <LogoWrap>
-                    <LogoImage src={logo} />
-                </LogoWrap>
-            </Link>
-            <MenuWrap>
-                <Link to={prevLink}>
-                    <ButtonWrap isPrev>
-                        <ThumbWrap>
-                            <ThumbImage src={prevImg} />
-                        </ThumbWrap>
-                        <Title>{prevTitle}</Title>
-                    </ButtonWrap>
+        <AlignWarp>
+            <Wrap showHeader={showHeader}>
+                <Link to="/">
+                    <LogoWrap>
+                        <LogoImage src={logo} />
+                    </LogoWrap>
                 </Link>
-                {/* (예외용) Github 외부링크 */}
-                {pageName === "Ability" ? (
-                    <a href="https://github.com/jenyglee" target="_blank">
-                        <ButtonWrap>
+                <MenuWrap>
+                    <Link to={prevLink}>
+                        <ButtonWrap isPrev>
                             <ThumbWrap>
-                                <ThumbImage src={nextImg} />
+                                <ThumbImage src={prevImg} />
                             </ThumbWrap>
-                            <Title>{nextTitle}</Title>
-                        </ButtonWrap>
-                    </a>
-                ) : (
-                    <Link to={nextLink}>
-                        <ButtonWrap>
-                            <ThumbWrap>
-                                <ThumbImage src={nextImg} />
-                            </ThumbWrap>
-                            <Title>{nextTitle}</Title>
+                            <Title>{prevTitle}</Title>
                         </ButtonWrap>
                     </Link>
-                )}
-            </MenuWrap>
-        </Wrap>
+                    {/* (예외용) Github 외부링크 */}
+                    {pageName === "Ability" ? (
+                        <a href="https://github.com/jenyglee" target="_blank">
+                            <ButtonWrap>
+                                <ThumbWrap>
+                                    <ThumbImage src={nextImg} />
+                                </ThumbWrap>
+                                <Title>{nextTitle}</Title>
+                            </ButtonWrap>
+                        </a>
+                    ) : (
+                        <Link to={nextLink}>
+                            <ButtonWrap>
+                                <ThumbWrap>
+                                    <ThumbImage src={nextImg} />
+                                </ThumbWrap>
+                                <Title>{nextTitle}</Title>
+                            </ButtonWrap>
+                        </Link>
+                    )}
+                </MenuWrap>
+            </Wrap>
+        </AlignWarp>
     );
 };
 
