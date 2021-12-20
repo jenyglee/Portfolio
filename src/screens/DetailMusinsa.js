@@ -55,11 +55,12 @@ const DetailMusinsa = ({ scrollX, scrollY }) => {
             <MusinsaWrap>
                 <MainWrap>
                     <Title
-                        number="03"
-                        title="컨셉디자인 무신사"
-                        titlePoint=""
-                        startDate="202108"
-                        endDate="202112"
+                        number="02"
+                        title="컨셉디자인"
+                        titlePoint="무신사"
+                        pointColor="#0080E2"
+                        startDate="201910"
+                        endDate="201911"
                     />
                     <MainVisualMusinsa />
                     <Accordion

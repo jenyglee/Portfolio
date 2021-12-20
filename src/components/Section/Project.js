@@ -15,45 +15,12 @@ const ProjectName = styled.a`
     transition: 0.3;
     z-index: 1;
     display: flex;
-
     position: relative;
     opacity: 1;
     margin-bottom: 30px;
 
-    @media ${({ theme }) => theme.size1200} {
-    }
     @media ${({ theme }) => theme.size568} {
         margin-bottom: 10px;
-    }
-`;
-
-const OneText = styled.span`
-    height: 110px;
-    font-size: 160px;
-    transition: 1s;
-    position: relative;
-    left: ${({ animationTransform }) => animationTransform}px;
-    opacity: ${({ animationOpacity }) => animationOpacity};
-    color: ${({ isChangedTheme, isPcBreakPoint }) =>
-        isChangedTheme && !isPcBreakPoint ? "#fff" : "#000"};
-    @media ${({ theme }) => theme.size1440} {
-        font-size: 140px;
-    }
-    @media ${({ theme }) => theme.size1200} {
-        font-size: 120px;
-        height: 90px;
-    }
-    @media ${({ theme }) => theme.size960} {
-        font-size: 100px;
-        height: 70px;
-    }
-    @media ${({ theme }) => theme.size768} {
-        font-size: 80px;
-        height: 50px;
-    }
-    @media ${({ theme }) => theme.size568} {
-        font-size: 40px;
-        height: 40px;
     }
 `;
 
@@ -185,9 +152,13 @@ const Project = ({
 
         setTimeout(() => {
             // 모든 글자가 나타난 뒤 opacity를 1 -> 0.4로 변경
-            setAnimationOpacity([
-                0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
-            ]);
+            if (scrollX > 1200) {
+                setAnimationOpacity([
+                    0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
+                ]);
+            } else {
+                setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+            }
             // 'View 버튼' 애니메이션
             setBtnAnimationTransform(0);
             setBtnAnimationOpacity(1);
@@ -202,14 +173,14 @@ const Project = ({
 
     // 너비 1200 이하에서 글자 opacity 1로 변경
     useEffect(() => {
-        if (window.innerWidth <= 1200) {
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
-        } else {
+        if (scrollX > 1200) {
             setAnimationOpacity([
                 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
             ]);
+        } else {
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
         }
-    }, [window.innerWidth]);
+    }, [scrollX]);
 
     return (
         <ProjectNameContainer>

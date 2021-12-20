@@ -13,7 +13,7 @@ const CategoryContainer = styled.div`
 `;
 
 const CategoryText = styled.p`
-    font-weight: bold;
+    font-family: "AppleSDGothicNeoM";
     font-size: 12px;
     letter-spacing: 5px;
     margin-right: 10px;

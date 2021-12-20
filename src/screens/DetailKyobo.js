@@ -70,11 +70,12 @@ const DetailKyobo = ({ scrollX, scrollY }) => {
             <KyoboWrap>
                 <MainWrap>
                     <Title
-                        number="03"
-                        title="프로모션 교보문고"
-                        titlePoint=""
-                        startDate="202108"
-                        endDate="202112"
+                        number="06"
+                        title="프로모션"
+                        titlePoint="교보문고"
+                        pointColor="#104C66"
+                        startDate="201705"
+                        endDate="201705"
                     />
                     <ImageWrap isSize768={isSize768}>
                         <StyledImage src={KyoboSources[0]} />

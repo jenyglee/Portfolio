@@ -6,10 +6,10 @@ const TitleWrap = styled.div`
     display: flex;
     align-items: center;
     padding-top: 30px;
-    padding-left: 30px;
+    padding-left: 20px;
     margin-bottom: 13px;
-    @media ${({ theme }) => theme.size568} {
-        padding-left: 0;
+    @media ${({ theme }) => theme.size768} {
+        padding-top: 20px;
     }
 `;
 const LoogWrap = styled.div`
@@ -22,7 +22,9 @@ const Logo = styled.img`
     height: 100%;
 `;
 const Title = styled.h1`
+    font-family: "AppleSDGothicNeoM";
     font-size: 16px;
+    transform: translateY(-2px);
 `;
 
 const AbilityTitle = ({ name, logo }) => {

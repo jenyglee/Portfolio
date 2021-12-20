@@ -52,6 +52,7 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
+    font-family: "AppleSDGothicNeoB";
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +62,6 @@ const Title = styled.div`
 const TitleObj = styled.h1`
     font-size: 100px;
     line-height: 120px;
-    font-weight: bold;
     transform: ${({ animationTransform }) =>
         `translateX(${animationTransform}px)`};
     opacity: ${({ animationOpacity }) => animationOpacity};

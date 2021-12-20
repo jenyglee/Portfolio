@@ -55,11 +55,12 @@ const DetailConsultKit = ({ scrollX, scrollY }) => {
             <ConcertKitWrap>
                 <MainWrap>
                     <Title
-                        number="03"
-                        title="브랜드 구축 컨설킷"
-                        titlePoint=""
-                        startDate="202108"
-                        endDate="202112"
+                        number="05"
+                        title="브랜드 구축"
+                        titlePoint="컨설킷"
+                        pointColor="#07AC9B"
+                        startDate="201809"
+                        endDate="201811"
                     />
                     <MainVisualConsultKit />
                     <Accordion

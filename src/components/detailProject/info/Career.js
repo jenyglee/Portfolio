@@ -6,9 +6,8 @@ const Wrap = styled.div`
     flex: 1;
     flex-direction: column;
     margin: 0 10px;
-    @media ${({ theme }) => theme.size768} {
-        margin: 0;
-    }
+    margin-bottom: 20px;
+    background-color: ${({ theme }) => theme.detailBoxBackground};
 `;
 
 const CareerWrap = styled.div`
@@ -16,16 +15,12 @@ const CareerWrap = styled.div`
     height: 340px;
     padding: 30px;
     @media ${({ theme }) => theme.size1200} {
-        height: 390px;
+        height: 300px;
     }
-    /* 768px 부터 슬라이딩 */
     @media ${({ theme }) => theme.size768} {
-        width: 568px;
-        height: 330px;
-        padding: 30px 48px;
+        height: 278px;
     }
     @media ${({ theme }) => theme.size568} {
-        width: 320px;
     }
 `;
 
@@ -59,18 +54,22 @@ const YearTo = styled.p`
     left: 20px;
 `;
 
-const CompanyName = styled.p``;
+const CompanyName = styled.p`
+    font-family: "AppleSDGothicNeoM";
+`;
 
 const Title = styled.h1`
+    font-family: "AppleSDGothicNeoB";
     width: 100%;
     font-size: 20px;
-    font-weight: bold;
     line-height: 24px;
     margin-bottom: 30px;
     word-break: keep-all;
 `;
 
-const DetailList = styled.ul``;
+const DetailList = styled.ul`
+    font-family: "AppleSDGothicNeoL";
+`;
 const DetailObj = styled.li`
     display: flex;
     margin-bottom: 6px;
@@ -88,24 +87,19 @@ const CheckImage = styled.img`
 `;
 
 const DetailText = styled.p`
+    font-family: "AppleSDGothicNeoL";
     font-size: 13px;
 `;
 
-const Line = styled.div`
-    width: 100%;
-    height: 2px;
-    background-color: ${({ theme }) => theme.detailLine};
-    @media ${({ theme }) => theme.size768} {
-        width: calc(100% - 40px);
-        margin: 0 auto;
-    }
-`;
+// const Line = styled.div`
+//     width: 100%;
+//     height: 1px;
+//     background-color: #ddd;
+// `;
 
-const Career = ({ career, isSize768 }) => {
-    // console.log(career.detailCareer);
+const Career = ({ career }) => {
     return (
         <Wrap>
-            <Line />
             <CareerWrap>
                 <YearWrap>
                     <YearObj>
@@ -128,7 +122,6 @@ const Career = ({ career, isSize768 }) => {
                     })}
                 </DetailList>
             </CareerWrap>
-            <Line />
         </Wrap>
     );
 };

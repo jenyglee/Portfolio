@@ -64,8 +64,8 @@ const ContentsStore = (props) => {
             },
             {
                 id: 1,
-                from: 17,
-                to: 18,
+                from: 18,
+                to: 20,
                 company: "게리온",
                 title: "자사 브랜드 홈페이지 UI/UX 디자인",
                 detailCareer: [
@@ -78,8 +78,8 @@ const ContentsStore = (props) => {
             },
             {
                 id: 2,
-                from: 17,
-                to: 18,
+                from: 20,
+                to: 20,
                 company: "9px",
                 title: "AI 자동차 그래픽 연구원",
                 detailCareer: [
@@ -90,8 +90,8 @@ const ContentsStore = (props) => {
             },
             {
                 id: 3,
-                from: 17,
-                to: 18,
+                from: 20,
+                to: 20,
                 company: "다름 커뮤니케이션즈",
                 title: "SKT Application 영문버전 디자인",
                 detailCareer: ["SKT 글로벌 고객 전용 App UI/UX 시안 제작"],

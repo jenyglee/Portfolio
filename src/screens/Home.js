@@ -79,14 +79,12 @@ const Home = () => {
     const [imgKey, setImgKey] = useState();
     const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
     const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
-    const [scrollX, setScrollX] = useState(0);
-    const [scrollY, setScrollY] = useState(0);
+    const [scrollX, setScrollX] = useState(window.innerWidth);
+    const [scrollY, setScrollY] = useState(window.scrollY);
 
     // ✨ 첫 진입 시 상단으로 이동
     useEffect(() => {
         handleTop();
-        setScrollX(window.innerWidth);
-        setScrollY(window.scrollY);
         // ✨ 스크롤값, 화면너비 저장(인터랙션, 이미지교체에 활용)
         window.addEventListener("scroll", onScroll);
         window.addEventListener("resize", onResize);

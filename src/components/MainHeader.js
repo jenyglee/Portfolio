@@ -37,7 +37,6 @@ const LogoWrap = styled.div`
     width: 152px;
     height: 30px;
     font-size: 25px;
-    font-weight: bold;
     color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>
         isChangedTheme && !isPcBreakPoint
             ? theme.darkThemeText
@@ -64,9 +63,8 @@ const LogoImage = styled.img`
 `;
 
 const Gnb = styled.ul`
-    font-family: "Open Sans", sans-serif;
+    font-family: "AppleSDGothicNeoB";
     width: 27%;
-    font-weight: bold;
     justify-content: space-between;
     display: flex;
 
@@ -151,6 +149,7 @@ const CallyImg = styled.img`
 `;
 
 const MenuTitle = styled.p`
+    font-family: "AppleSDGothicNeoM";
     font-size: 12px;
     display: inline-block;
 `;

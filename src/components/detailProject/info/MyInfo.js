@@ -61,6 +61,7 @@ const InfoTitle = styled.h3`
     }
 `;
 const InfoDescription = styled.p`
+    font-family: "AppleSDGothicNeoM";
     font-size: 24px;
     margin-bottom: 14px;
     @media ${({ theme }) => theme.size568} {

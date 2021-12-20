@@ -55,11 +55,12 @@ const DetailKTnG = ({ scrollX, scrollY }) => {
             <KtngWrap>
                 <MainWrap>
                     <Title
-                        number="04"
-                        title="컨셉디자인 KT&G"
-                        titlePoint=""
-                        startDate="202108"
-                        endDate="202112"
+                        number="03"
+                        title="컨셉디자인"
+                        titlePoint="KT&G"
+                        pointColor="#E30968"
+                        startDate="201903"
+                        endDate="201904"
                     />
                     <MainVisualKtNg />
                     <Accordion

@@ -8,8 +8,12 @@ const Wrap = styled.div`
     display: flex;
     transform: ${({ translateX }) => `translateX(${translateX}%)`};
     transition: 0.3s;
+    margin: 0 10px;
+    margin-bottom: 30px;
+
+    background-color: ${({ theme }) => theme.detailBoxBackground};
     @media ${({ theme }) => theme.size768} {
-        width: 768px;
+        margin-bottom: 20px;
     }
     @media ${({ theme }) => theme.size568} {
         width: 320px;
@@ -19,37 +23,19 @@ const Wrap = styled.div`
 const AbilityWrap = styled.div`
     flex: 1;
     margin: 0 10px;
-    margin-bottom: 30px;
+
     position: relative;
     @media ${({ theme }) => theme.size768} {
-        width: 768px;
+        /* width: 768px; */
     }
     @media ${({ theme }) => theme.size568} {
         width: 320px;
     }
 `;
-
-const TopLine = styled.div`
-    width: 100%;
-    height: 2px;
-    background-color: ${({ theme }) => theme.detailLine};
-    position: absolute;
-    top: 0;
-    margin-bottom: 30px;
-`;
-const BottomLine = styled.div`
-    width: 100%;
-    height: 2px;
-    background-color: ${({ theme }) => theme.detailLine};
-    position: absolute;
-    bottom: 0;
-`;
-
 const Ability = ({ translateX, ability, scrollX, scrollY, logo }) => {
     return (
         <Wrap translateX={translateX}>
             <AbilityWrap>
-                <TopLine />
                 <AbilityTitle name={ability.name} logo={logo} />
                 <Gauge
                     percent={ability.gauge}
@@ -57,7 +43,6 @@ const Ability = ({ translateX, ability, scrollX, scrollY, logo }) => {
                     scrollX={scrollX}
                     scrollY={scrollY}
                 />
-                <BottomLine />
             </AbilityWrap>
         </Wrap>
     );

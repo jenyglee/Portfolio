@@ -23,7 +23,6 @@ const InfoWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: lightseagreen;
     @media ${({ theme }) => theme.size1200} {
         padding-top: 130px;
     }
@@ -41,6 +40,7 @@ const InfoWrap = styled.div`
 const Section = styled.section`
     max-width: 1200px;
     margin: 0 auto 100px;
+    padding: 0 20px;
     @media ${({ theme }) => theme.size768} {
         margin: 0 auto 80px;
     }
@@ -90,14 +90,14 @@ const DescriptionWrap = styled.div`
 `;
 
 const Description = styled.p`
+    font-family: "AppleSDGothicNeoM";
     font-size: 18px;
-    font-weight: 600;
     line-height: 22px;
     transform: translateY(-4px);
     margin-bottom: 24px;
     word-break: keep-all;
     @media ${({ theme }) => theme.size768} {
-        word-break: break-all;
+        /* word-break: break-all; */
     }
 `;
 
@@ -111,38 +111,47 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    @media ${({ theme }) => theme.size768} {
-        width: 568px;
-    }
-    @media ${({ theme }) => theme.size568} {
-        width: 320px;
-    }
 `;
 
 const CareerWrap = styled.div`
+    /* width: 100%; */
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
-    transform: ${({ translateX }) => `translateX(${translateX}%)`};
-    transition: 0.3s;
+    /* background-color: red; */
+
+    @media ${({ theme }) => theme.size768} {
+        flex-direction: column;
+    }
+`;
+
+const CareerSizeFull = styled.div`
+    display: block;
+    @media ${({ theme }) => theme.size1200} {
+        display: none;
+    }
+`;
+const CareerSize1200 = styled.div`
+    display: none;
+    @media ${({ theme }) => theme.size1200} {
+        display: block;
+    }
+    @media ${({ theme }) => theme.size768} {
+        display: none;
+    }
+`;
+const CareerSize768 = styled.div`
+    display: none;
+    @media ${({ theme }) => theme.size768} {
+        display: block;
+    }
 `;
 
 const DetailInfo = ({ scrollX, scrollY }) => {
     const contents = useContext(ContentsContext);
-    const [isSize768, setIsSize768] = useState(true);
-    const [translateX, setTranslateX] = useState(0);
 
     useEffect(() => {
         handleTop();
     }, []);
-
-    useEffect(() => {
-        if (scrollX <= 768 && scrollX !== 0) {
-            setIsSize768(true);
-        } else {
-            setIsSize768(false);
-        }
-    }, [scrollX]);
 
     return (
         <Wrap>
@@ -181,24 +190,69 @@ const DetailInfo = ({ scrollX, scrollY }) => {
                             <Title>Work Experience</Title>
                         </ExperienceTitleWrap>
                         <Container>
-                            <CareerWrap translateX={translateX}>
-                                {contents.careerList.map((career) => {
-                                    return (
-                                        <Career
-                                            career={career}
-                                            key={career.id}
-                                            isSize768={isSize768}
-                                        />
-                                    );
-                                })}
-                            </CareerWrap>
+                            {/* 1200 이상에서 4컬럼 분할 */}
+                            <CareerSizeFull>
+                                <CareerWrap>
+                                    {contents.careerList.map((career) => {
+                                        return (
+                                            <Career
+                                                career={career}
+                                                key={career.id}
+                                            />
+                                        );
+                                    })}
+                                </CareerWrap>
+                            </CareerSizeFull>
+                            {/* 1200에서 2컬럼 분할 */}
+                            <CareerSize1200>
+                                <CareerWrap>
+                                    {contents.careerList
+                                        .slice(0, 2)
+                                        .map((career) => {
+                                            return (
+                                                <Career
+                                                    career={career}
+                                                    key={career.id}
+                                                />
+                                            );
+                                        })}
+                                </CareerWrap>
+                                <CareerWrap>
+                                    {contents.careerList
+                                        .slice(2, 4)
+                                        .map((career) => {
+                                            return (
+                                                <Career
+                                                    career={career}
+                                                    key={career.id}
+                                                />
+                                            );
+                                        })}
+                                </CareerWrap>
+                            </CareerSize1200>
+
+                            {/* 768에서 1컬럼 분할 */}
+                            <CareerSize768>
+                                {
+                                    <CareerWrap>
+                                        {contents.careerList.map((career) => {
+                                            return (
+                                                <Career
+                                                    career={career}
+                                                    key={career.id}
+                                                />
+                                            );
+                                        })}
+                                    </CareerWrap>
+                                }
+                            </CareerSize768>
                         </Container>
                     </ColumnContainer>
-                    <PrevNextButton
+                    {/* <PrevNextButton
                         translateX={translateX}
                         setTranslateX={setTranslateX}
                         pageName="Info"
-                    />
+                    /> */}
                 </Section>
             </InfoWrap>
         </Wrap>

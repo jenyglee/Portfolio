@@ -55,11 +55,11 @@ const DetailAvn = ({ scrollY }) => {
             <AvnWrap>
                 <MainWrap>
                     <Title
-                        number="02"
+                        number="01"
                         title="AVN/Cluster"
                         titlePoint=""
-                        startDate="202108"
-                        endDate="202112"
+                        startDate="202001"
+                        endDate="202002"
                     />
                     <MainVisualAvn />
                     <Accordion

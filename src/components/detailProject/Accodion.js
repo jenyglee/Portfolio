@@ -134,18 +134,6 @@ const Accordion = ({ projectNumber, number, title, detailNumber, scrollX }) => {
                         isSize768={isSize768}
                     />
                 ) : null}
-                {/* {isVisibleDetail && projectNumber === "06" ? (
-                    <KyoboDetail
-                        detailNumber={detailNumber}
-                        isSize768={isSize768}
-                    />
-                ) : null}
-                {isVisibleDetail && projectNumber === "07" ? (
-                    <BeothermDetail
-                        detailNumber={detailNumber}
-                        isSize768={isSize768}
-                    />
-                ) : null} */}
             </CommonDetailWrap>
             <Line />
         </AccordionWrap>

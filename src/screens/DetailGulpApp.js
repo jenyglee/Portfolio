@@ -58,6 +58,7 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
                         number="01"
                         title="어플리케이션"
                         titlePoint="꿀꺽"
+                        pointColor="#27C47D"
                         startDate="202108"
                         endDate="202112"
                     />

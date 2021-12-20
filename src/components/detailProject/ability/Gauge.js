@@ -5,9 +5,9 @@ const Wrap = styled.div`
     display: flex;
     align-items: center;
     padding-bottom: 30px;
-    padding-left: 30px;
-    @media ${({ theme }) => theme.size568} {
-        padding-left: 0;
+    padding-left: 20px;
+    @media ${({ theme }) => theme.size768} {
+        padding-bottom: 20px;
     }
 `;
 
@@ -16,9 +16,6 @@ const GaugeWrap = styled.div`
     height: 10px;
     margin-right: 20px;
     position: relative;
-    @media ${({ theme }) => theme.size768} {
-        width: 400px;
-    }
     @media ${({ theme }) => theme.size568} {
         width: 205px;
     }
@@ -40,6 +37,7 @@ const Able = styled.div`
 `;
 
 const Percent = styled.h1`
+    font-family: "AppleSDGothicNeoM";
     font-size: 24px;
     font-weight: bold;
 `;

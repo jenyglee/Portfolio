@@ -1,6 +1,7 @@
 const Colors = {
     grey_01: "#D2D2D2",
     grey_02: "#f5f5f5",
+    grey_03: "#eeeeee",
     black: "#000000",
     white: "#ffffff",
     main: "#1E34FF",
@@ -32,6 +33,7 @@ export const theme = {
     detailTagBorder: Colors.grey_01,
     detailDisable: Colors.grey_01,
     detailPoint: Colors.main,
+    detailBoxBackground: Colors.grey_03,
 
     // ✨ GulpApp 포인트컬러
     gulpAppFrimary: Colors.gulpAppGreen,

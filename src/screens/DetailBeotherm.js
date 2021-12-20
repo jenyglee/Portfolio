@@ -71,11 +71,12 @@ const DetailBeotherm = ({ scrollX, scrollY }) => {
             <BeothermWrap>
                 <MainWrap>
                     <Title
-                        number="03"
-                        title="프로모션 비오템옴므"
-                        titlePoint=""
-                        startDate="202108"
-                        endDate="202112"
+                        number="07"
+                        title="프로모션"
+                        titlePoint="비오템옴므"
+                        pointColor="#C20702"
+                        startDate="201704"
+                        endDate="201704"
                     />
                     <ImageWrap isSize768={isSize768}>
                         <StyledImage src={BeothermSources[0]} />

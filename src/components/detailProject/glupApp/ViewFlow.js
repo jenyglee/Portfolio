@@ -102,9 +102,10 @@ const DescriptionWrap = styled.div`
     margin-bottom: 4px;
 `;
 const Description = styled.p`
+    font-family: "AppleSDGothicNeoM";
     font-size: 13px;
-    color: #000;
     line-height: 28px;
+    transform: translateY(-2px);
     word-break: keep-all;
 `;
 const FunctionList = [

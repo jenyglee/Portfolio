@@ -1,7 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @font-face {
     font-family: "Bludhaven";
-    src: url("./BLUDHAVEN.ttf") format("truetype");
+    src: url("./fonts/BLUDHAVEN.ttf") format("truetype");
+}
+@font-face {
+    font-family: "AppleSDGothicNeoL";
+    src: url("./fonts/AppleSDGothicNeoL.ttf") format("truetype");
+}
+@font-face {
+    font-family: "AppleSDGothicNeoM";
+    src: url("./fonts/AppleSDGothicNeoM.ttf") format("truetype");
+}
+@font-face {
+    font-family: "AppleSDGothicNeoB";
+    src: url("./fonts/AppleSDGothicNeoB.ttf") format("truetype");
 }
 body {
     height: 100%;

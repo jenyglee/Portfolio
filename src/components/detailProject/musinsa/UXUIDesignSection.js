@@ -33,6 +33,7 @@ const TextWrap = styled.div`
 `;
 
 const Title = styled.h2`
+    font-family: "AppleSDGothicNeoM";
     display: inline-block;
     font-size: 24px;
     margin-bottom: 10px;
@@ -45,10 +46,11 @@ const Title = styled.h2`
 `;
 
 const Point = styled.span`
-    font-weight: bold;
+    font-family: "AppleSDGothicNeoB";
 `;
 
 const Description = styled.p`
+    font-family: "AppleSDGothicNeoL";
     display: inline-block;
     font-size: 16px;
     line-height: 22px;
