@@ -18,7 +18,7 @@ const CareerWrap = styled.div`
         height: 300px;
     }
     @media ${({ theme }) => theme.size768} {
-        height: 278px;
+        height: 240px;
     }
     @media ${({ theme }) => theme.size568} {
     }
@@ -56,6 +56,10 @@ const YearTo = styled.p`
 
 const CompanyName = styled.p`
     font-family: "AppleSDGothicNeoM";
+    font-size: 16px;
+    @media ${({ theme }) => theme.size768} {
+        font-size: 13px;
+    }
 `;
 
 const Title = styled.h1`
@@ -65,6 +69,12 @@ const Title = styled.h1`
     line-height: 24px;
     margin-bottom: 30px;
     word-break: keep-all;
+    @media ${({ theme }) => theme.size768} {
+        margin-bottom: 0;
+        margin-top: 5px;
+        font-size: 16px;
+        line-height: 20px;
+    }
 `;
 
 const DetailList = styled.ul`
@@ -91,24 +101,49 @@ const DetailText = styled.p`
     font-size: 13px;
 `;
 
-// const Line = styled.div`
-//     width: 100%;
-//     height: 1px;
-//     background-color: #ddd;
-// `;
+const TitleWrapSizeFull = styled.div`
+    @media ${({ theme }) => theme.size768} {
+        display: none;
+    }
+`;
+const TitleWrapSize768 = styled.div`
+    display: none;
+    @media ${({ theme }) => theme.size768} {
+        display: block;
+    }
+`;
+const TitleWrap = styled.div`
+    width: 80%;
+`;
 
 const Career = ({ career }) => {
     return (
         <Wrap>
             <CareerWrap>
-                <YearWrap>
-                    <YearObj>
-                        <YearFrom>{career.from}</YearFrom>
-                        <YearTo>{career.to}</YearTo>
-                    </YearObj>
-                    <CompanyName>{career.company}</CompanyName>
-                </YearWrap>
-                <Title>{career.title}</Title>
+                <TitleWrapSizeFull>
+                    <YearWrap>
+                        <YearObj>
+                            <YearFrom>{career.from}</YearFrom>
+                            <YearTo>{career.to}</YearTo>
+                        </YearObj>
+                        <CompanyName>{career.company}</CompanyName>
+                    </YearWrap>
+                    <Title>{career.title}</Title>
+                </TitleWrapSizeFull>
+
+                <TitleWrapSize768>
+                    <YearWrap>
+                        <YearObj>
+                            <YearFrom>{career.from}</YearFrom>
+                            <YearTo>{career.to}</YearTo>
+                        </YearObj>
+                        <TitleWrap>
+                            <CompanyName>{career.company}</CompanyName>
+                            <Title>{career.title}</Title>
+                        </TitleWrap>
+                    </YearWrap>
+                </TitleWrapSize768>
+
                 <DetailList>
                     {career.detailCareer.map((text, index) => {
                         return (

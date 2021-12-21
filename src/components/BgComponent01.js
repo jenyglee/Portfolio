@@ -17,7 +17,7 @@ const Image = styled.img`
 
 const BgComponent01 = ({ isShow }) => {
     const [objs, setObjs] = useState([
-        { translateY: 50, width: 813, height: 512, right: 146, opacity: 0 },
+        { translateY: 50, width: 398, height: 535, right: 350, opacity: 0 },
     ]);
 
     useEffect(() => {
@@ -26,9 +26,9 @@ const BgComponent01 = ({ isShow }) => {
                 setObjs([
                     {
                         translateY: 0,
-                        width: 813,
-                        height: 512,
-                        right: 146,
+                        width: 398,
+                        height: 535,
+                        right: 350,
                         opacity: 1,
                     },
                 ]);
@@ -38,9 +38,9 @@ const BgComponent01 = ({ isShow }) => {
                 setObjs([
                     {
                         translateY: 50,
-                        width: 813,
-                        height: 512,
-                        right: 146,
+                        width: 398,
+                        height: 535,
+                        right: 350,
                         opacity: 0,
                     },
                 ]);

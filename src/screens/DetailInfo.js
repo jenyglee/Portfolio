@@ -248,11 +248,6 @@ const DetailInfo = ({ scrollX, scrollY }) => {
                             </CareerSize768>
                         </Container>
                     </ColumnContainer>
-                    {/* <PrevNextButton
-                        translateX={translateX}
-                        setTranslateX={setTranslateX}
-                        pageName="Info"
-                    /> */}
                 </Section>
             </InfoWrap>
         </Wrap>

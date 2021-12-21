@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import CallyIntroduce from "./../images/cally_introduce.png";
 import { Link } from "react-router-dom";
 import { categoryImages, logo } from "../images";
 
@@ -63,7 +62,6 @@ const LogoImage = styled.img`
 `;
 
 const Gnb = styled.ul`
-    font-family: "AppleSDGothicNeoB";
     width: 27%;
     justify-content: space-between;
     display: flex;
@@ -74,6 +72,7 @@ const Gnb = styled.ul`
 `;
 
 const GnbItem = styled.li`
+    font-family: "AppleSDGothicNeoB";
     font-size: 16px;
     cursor: pointer;
     color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>
@@ -268,7 +267,7 @@ const MainHeader = ({
                                     }
                                 }}
                             >
-                                <a>{item.title}</a>
+                                {item.title}
                             </GnbItem>
                         );
                     })}

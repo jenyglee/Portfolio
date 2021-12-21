@@ -6,8 +6,8 @@ const ImageWrap = styled.div`
     width: 97px;
     height: 97px;
     position: absolute;
-    top: -20%;
-    right: 9%;
+    top: 50%;
+    right: -10%;
     opacity: ${({ opacity }) => opacity};
     z-index: 1;
     transition: 0.5s;

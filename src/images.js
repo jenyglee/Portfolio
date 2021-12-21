@@ -52,7 +52,7 @@ import FooterThumbKtng from "./images/footerThumb/ktng.png";
 import FooterThumbConcertKit from "./images/footerThumb/concertKit.png";
 import FooterThumbKyobo from "./images/footerThumb/kyobo.png";
 import FooterThumbBeotherm from "./images/footerThumb/beotherm.png";
-import InfoMainVisual from "./images/08_info/main_visual.png";
+import InfoMainVisual from "./images/08_info/main_visual.jpeg";
 import InfoIconCheck from "./images/08_info/icon_check.png";
 import InfoIconIllust from "./images/08_info/icon_illust.png";
 import AbilityLogoReact from "./images/09_ability/logo_react.png";
