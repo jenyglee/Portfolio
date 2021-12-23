@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Route, Switch } from "react-router-dom";
-import DetailInfo from "./DetailInfo";
-import DetailAbility from "./DetailAbility";
-import DetailGulpApp from "./DetailGulpApp";
-import DetailAvn from "./DetailAvn";
-import DetailMusinsa from "./DetailMusinsa";
-import DetailKTnG from "./DetailKTnG";
-import DetailConsultKit from "./DetailConsultKit";
-import DetailKyobo from "./DetailKyobo";
-import DetailBeotherm from "./DetailBeotherm";
-import { itemEnter, itemLeave, handleTop } from "../helper/helper";
+import DetailInfo from "screens/DetailInfo";
+import DetailAbility from "screens/DetailAbility";
+import DetailGulpApp from "screens/DetailGulpApp";
+import DetailAvn from "screens/DetailAvn";
+import DetailMusinsa from "screens/DetailMusinsa";
+import DetailKTnG from "screens/DetailKTnG";
+import DetailConsultKit from "screens/DetailConsultKit";
+import DetailKyobo from "screens/DetailKyobo";
+import DetailBeotherm from "screens/DetailBeotherm";
+import { itemEnter, itemLeave, handleTop } from "helper/helper";
 import { useState } from "react";
 import {
     BgComponent01,
@@ -26,9 +26,9 @@ import {
     MainHeader,
     Section,
     TopButton,
-} from "./../components";
-import { categoryImages } from "./../images";
-import { ContentsContext } from "../storeContext/contents";
+} from "components";
+import { categoryImages } from "images";
+import { ContentsContext } from "storeContext/contents";
 
 const Body = styled.main`
     height: 100%;

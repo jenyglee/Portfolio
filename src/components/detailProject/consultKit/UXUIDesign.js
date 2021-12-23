@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import UXUIDesignSection from "./UXUIDesignSection";
-import { pcConsultKitSources } from "../../../images";
+import UXUIDesignSection from "components/detailProject/consultKit/UXUIDesignSection";
+import { pcConsultKitSources } from "images";
 
 const ContentWrap = styled.div`
     width: 100%;

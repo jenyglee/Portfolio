@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Components from "./Components";
-import UXUIDesign from "./UXUIDesign";
+import Components from "components/detailProject/ktNg/Components";
+import UXUIDesign from "components/detailProject/ktNg/UXUIDesign";
 
 const DetailContainer = styled.section`
     width: 100%;

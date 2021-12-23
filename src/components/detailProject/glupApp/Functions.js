@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { moGlupAppFunction, pcGlupAppFunction } from "../../../images";
+import { moGlupAppFunction, pcGlupAppFunction } from "images";
 
 const FunctionsWrap = styled.div`
     display: flex;

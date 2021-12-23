@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Category from "./Category";
-import Project from "./Project";
+import Category from "components/section/Category";
+import Project from "components/section/Project";
 
 const SectionContainer = styled.section`
     width: 100%;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Sticker from "./../Sticker";
-import ProjectViewButton from "./ProjectViewButton";
-import ProjectOneText from "./ProjectOneText";
+import Sticker from "components/Sticker";
+import ProjectViewButton from "components/section/ProjectViewButton";
+import ProjectOneText from "components/section/ProjectOneText";
 
 const ProjectNameContainer = styled.div`
     display: flex;

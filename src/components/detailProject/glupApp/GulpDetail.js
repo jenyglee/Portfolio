@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import ViewFlow from "./ViewFlow";
-import WorkPlan from "./WorkPlan";
-import Functions from "./Functions";
-import WorkIssue from "./WorkIssue";
-import Review from "./Review";
-import Mission from "./Mission";
+import ViewFlow from "components/detailProject/glupApp/ViewFlow";
+import WorkPlan from "components/detailProject/glupApp/WorkPlan";
+import WorkIssue from "components/detailProject/glupApp/WorkIssue";
+import Review from "components/detailProject/glupApp/Review";
 
 const DetailContainer = styled.section`
     width: 100%;

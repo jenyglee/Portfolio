@@ -1,16 +1,16 @@
-import MainHeader from "./MainHeader";
-import Section from "./section/Section";
-import TopButton from "./TopButton";
-import BgComponent01 from "./BgComponent01";
-import BgComponent02 from "./BgComponent02";
-import BgComponent03 from "./BgComponent03";
-import BgComponent04 from "./BgComponent04";
-import BgComponent05 from "./BgComponent05";
-import BgComponent06 from "./BgComponent06";
-import BgComponent07 from "./BgComponent07";
-import BgComponent08 from "./BgComponent08";
-import BgComponent09 from "./BgComponent09";
-import BgComponent10 from "./BgComponent10";
+import MainHeader from "components/MainHeader";
+import Section from "components/section/Section";
+import TopButton from "components/TopButton";
+import BgComponent01 from "components/BgComponent01";
+import BgComponent02 from "components/BgComponent02";
+import BgComponent03 from "components/BgComponent03";
+import BgComponent04 from "components/BgComponent04";
+import BgComponent05 from "components/BgComponent05";
+import BgComponent06 from "components/BgComponent06";
+import BgComponent07 from "components/BgComponent07";
+import BgComponent08 from "components/BgComponent08";
+import BgComponent09 from "components/BgComponent09";
+import BgComponent10 from "components/BgComponent10";
 
 export {
     MainHeader,

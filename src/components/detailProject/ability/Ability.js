@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import AbilityTitle from "./AbilityTitle";
-import Gauge from "./Gauge";
+import AbilityTitle from "components/detailProject/ability/AbilityTitle";
+import Gauge from "components/detailProject/ability/Gauge";
 
 const Wrap = styled.div`
     width: 387px;

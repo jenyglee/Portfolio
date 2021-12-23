@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { sticker } from "../images";
+import { sticker } from "images";
 
 const ImageWrap = styled.div`
     width: 97px;

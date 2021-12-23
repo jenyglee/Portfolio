@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import UXUIDesignSection from "./UXUIDesignSection";
-import { moKtNgSources, pcKtNgSources } from "../../../images";
+import UXUIDesignSection from "components/detailProject/ktNg/UXUIDesignSection";
+import { moKtNgSources, pcKtNgSources } from "images";
 
 const ContentWrap = styled.div`
     width: 100%;

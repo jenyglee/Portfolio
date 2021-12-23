@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { abilitySources } from "../../../images";
 
 const TitleWrap = styled.div`
     display: flex;

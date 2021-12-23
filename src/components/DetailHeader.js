@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { logo } from "./../images";
+import { logo } from "images";
 
 const AlignWarp = styled.div`
     width: 100%;

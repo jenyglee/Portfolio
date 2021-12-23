@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { infoSources } from "../../../images";
+import { infoSources } from "images";
 
 const MainWrap = styled.main`
     width: 100%;

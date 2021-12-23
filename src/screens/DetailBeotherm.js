@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { handleTop } from "./../helper/helper";
-import Title from "../components/detailProject/Title";
-import { BeothermSources } from "../images";
-import { header } from "../images";
-import DetailHeader from "../components/DetailHeader";
+import { handleTop } from "helper/helper";
+import Title from "components/detailProject/Title";
+import { BeothermSources } from "images";
+import { header } from "images";
+import DetailHeader from "components/DetailHeader";
 
 const Wrap = styled.main`
     width: 100%;

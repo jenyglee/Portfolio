@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { glupAppSources } from "./../../../images";
-import { moGlupAppFunction, pcGlupAppFunction } from "../../../images";
+import { glupAppSources, moGlupAppFunction, pcGlupAppFunction } from "images";
 
 const ContentWrap = styled.div`
     width: 100%;

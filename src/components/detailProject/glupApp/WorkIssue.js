@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { glupAppSources } from "../../../images";
+import { glupAppSources } from "images";
 
 const ContentWrap = styled.div`
     display: flex;

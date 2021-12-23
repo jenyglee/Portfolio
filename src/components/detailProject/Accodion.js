@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { icons } from "../../images";
-import GulpDetail from "./glupApp/GulpDetail";
-import AvnDetail from "./anv/AvnDetail";
-import MusinsaDetail from "./musinsa/MusinsaDetail";
-import KtngDetail from "./ktNg/KtngDetail";
-import ConsultKitDetail from "./consultKit/ConsultKitDetail";
-import KyoboDetail from "./Kyobo/KyoboDetail";
-import BeothermDetail from "./beotherm/BeothermDetail";
+import { icons } from "images";
+import GulpDetail from "components/detailProject/glupApp/GulpDetail";
+import AvnDetail from "components/detailProject/anv/AvnDetail";
+import MusinsaDetail from "components/detailProject/musinsa/MusinsaDetail";
+import KtngDetail from "components/detailProject/ktNg/KtngDetail";
+import ConsultKitDetail from "components/detailProject/consultKit/ConsultKitDetail";
 
 const AccordionWrap = styled.section`
     width: 100%;

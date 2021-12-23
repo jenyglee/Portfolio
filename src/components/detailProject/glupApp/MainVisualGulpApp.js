@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { glupAppSources } from "../../../images";
+import { glupAppSources } from "images";
 
 const MainVisualWrap = styled.section`
     width: 100%;

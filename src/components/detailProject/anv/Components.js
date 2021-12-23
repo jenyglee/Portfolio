@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { avnSources } from '../../../images'
+import React from "react";
+import styled from "styled-components";
+import { avnSources } from "images";
 
 const ContentWrap = styled.div`
     width: 100%;
@@ -14,22 +14,22 @@ const ContentWrap = styled.div`
     @media ${({ theme }) => theme.size568} {
         margin-bottom: 50px;
     }
-`
+`;
 const Container = styled.div`
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
 
 const ImageWrap = styled.div`
     max-width: 660px;
-`
+`;
 
 const StyledImage = styled.img`
     width: 100%;
-`
+`;
 
 const Components = () => {
     return (
@@ -40,7 +40,7 @@ const Components = () => {
                 </ImageWrap>
             </Container>
         </ContentWrap>
-    )
-}
+    );
+};
 
 export default Components;

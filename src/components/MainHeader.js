@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { categoryImages, logo } from "../images";
+import { categoryImages, logo } from "images";
 
 const FixedContainer = styled.div`
     width: 100%;

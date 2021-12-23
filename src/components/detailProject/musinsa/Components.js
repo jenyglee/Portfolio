@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { moMusinsaSources, pcMusinsaSources } from "../../../images";
+import { moMusinsaSources, pcMusinsaSources } from "images";
 
 const ContentWrap = styled.div`
     width: 100%;

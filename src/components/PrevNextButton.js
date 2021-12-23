@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { icons } from "../images";
+import { icons } from "images";
 
 const Wrap = styled.main`
     width: 100%;

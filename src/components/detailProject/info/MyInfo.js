@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { infoSources } from "../../../images";
+import { infoSources } from "images";
 
 const PaddingWrap = styled.div`
     width: 100%;

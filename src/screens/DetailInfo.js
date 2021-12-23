@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
-import { handleTop } from "./../helper/helper";
-import Career from "../components/detailProject/info/Career";
-import MainTitle from "../components/detailProject/info/MainTitle";
-import MyInfo from "../components/detailProject/info/MyInfo";
-import PrevNextButton from "../components/PrevNextButton";
-import { header } from "../images";
-import DetailHeader from "../components/DetailHeader";
-import { ContentsContext } from "../storeContext/contents";
+import { handleTop } from "helper/helper";
+import Career from "components/detailProject/info/Career";
+import MainTitle from "components/detailProject/info/MainTitle";
+import MyInfo from "components/detailProject/info/MyInfo";
+import { header } from "images";
+import DetailHeader from "components/DetailHeader";
+import { ContentsContext } from "storeContext/contents";
 
 const Wrap = styled.main`
     width: 100%;

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { handleTop } from "./../helper/helper";
-import Title from "../components/detailProject/Title";
-import MainVisualMusinsa from "../components/detailProject/musinsa/MainVisualMusinsa";
-import Accordion from "../components/detailProject/Accodion";
-import { header } from "../images";
-import DetailHeader from "../components/DetailHeader";
+import { handleTop } from "helper/helper";
+import Title from "components/detailProject/Title";
+import MainVisualMusinsa from "components/detailProject/musinsa/MainVisualMusinsa";
+import Accordion from "components/detailProject/Accodion";
+import { header } from "images";
+import DetailHeader from "components/DetailHeader";
 
 const Wrap = styled.main`
     width: 100%;

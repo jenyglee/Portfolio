@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { ContentsContext } from "../../../storeContext/contents";
+import { ContentsContext } from "storeContext/contents";
 import styled from "styled-components";
 
 const TitleWrap = styled.div`

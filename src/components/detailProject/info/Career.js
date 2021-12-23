@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { infoSources } from "../../../images";
+import { infoSources } from "images";
 
 const Wrap = styled.div`
     flex: 1;
@@ -19,8 +19,6 @@ const CareerWrap = styled.div`
     }
     @media ${({ theme }) => theme.size768} {
         height: 240px;
-    }
-    @media ${({ theme }) => theme.size568} {
     }
 `;
 
