@@ -3,6 +3,7 @@ const Colors = {
     grey_02: "#f5f5f5",
     grey_03: "#eeeeee",
     black: "#000000",
+    black_02: "#111111",
     white: "#ffffff",
     main: "#1E34FF",
     gulpAppGreen: "#27C47D",
@@ -30,6 +31,8 @@ export const theme = {
     // ✨ 디테일페이지 공통
     detailLine: Colors.black,
     detailWhiteText: Colors.white,
+    detailWhiteBox: Colors.white,
+    detailText: Colors.black_02,
     detailTagBorder: Colors.grey_01,
     detailDisable: Colors.grey_01,
     detailPoint: Colors.main,

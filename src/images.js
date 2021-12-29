@@ -83,6 +83,8 @@ import MoFunction05 from "images/01_gulpAppSource/mo_function05.png";
 import MoFunction06 from "images/01_gulpAppSource/mo_function06.png";
 import WorkIssue01 from "images/01_gulpAppSource/workIssue01.png";
 import WorkIssue02 from "images/01_gulpAppSource/workIssue02.png";
+import WorkIssue03 from "images/01_gulpAppSource/workIssue03.png";
+import WorkIssue04 from "images/01_gulpAppSource/workIssue04.png";
 import PcMission01 from "images/01_gulpAppSource/pc_mission01.png";
 import PcMission02 from "images/01_gulpAppSource/pc_mission02.png";
 import MoMission01 from "images/01_gulpAppSource/mo_mission01.png";
@@ -230,6 +232,8 @@ const glupAppSources = {
     video: VideoImage,
     workIssue01: WorkIssue01,
     workIssue02: WorkIssue02,
+    workIssue03: WorkIssue03,
+    workIssue04: WorkIssue04,
 };
 
 const pcGlupAppFunction = [
