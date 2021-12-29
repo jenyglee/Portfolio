@@ -68,7 +68,6 @@ import AbilityLogoIllustrator from "images/09_ability/logo_illustrator.png";
 import GulpAppMainVisual from "images/01_gulpAppSource/main-visual.png";
 import Character01 from "images/01_gulpAppSource/character01.png";
 import Logo from "images/01_gulpAppSource/logo.png";
-import VideoImage from "images/01_gulpAppSource/videoImage.png";
 import PcFunction01 from "images/01_gulpAppSource/pc_function01.png";
 import PcFunction02 from "images/01_gulpAppSource/pc_function02.png";
 import PcFunction03 from "images/01_gulpAppSource/pc_function03.png";
@@ -89,6 +88,8 @@ import PcMission01 from "images/01_gulpAppSource/pc_mission01.png";
 import PcMission02 from "images/01_gulpAppSource/pc_mission02.png";
 import MoMission01 from "images/01_gulpAppSource/mo_mission01.png";
 import MoMission02 from "images/01_gulpAppSource/mo_mission02.png";
+import GithubButton from "images/01_gulpAppSource/github_button.png";
+import UserFlow from "images/01_gulpAppSource/user_flow.png";
 import AvnMainVisual from "images/02_avnSource/main_visual.png";
 import Motive from "images/02_avnSource/motive.png";
 import AvnGuiDesign01 from "images/02_avnSource/GuiDesign01.png";
@@ -200,6 +201,7 @@ const footer = {
 const icons = {
     accordionArrow: AccordionArrow,
     prevNext: PrevNextButton,
+    GithubButton: GithubButton,
 };
 
 // ✨ Info 소스
@@ -229,7 +231,7 @@ const glupAppSources = {
     mainVisual: GulpAppMainVisual,
     character01: Character01,
     logo: Logo,
-    video: VideoImage,
+    userFlow: UserFlow,
     workIssue01: WorkIssue01,
     workIssue02: WorkIssue02,
     workIssue03: WorkIssue03,

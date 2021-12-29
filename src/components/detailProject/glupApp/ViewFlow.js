@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { glupAppSources, moGlupAppFunction, pcGlupAppFunction } from "images";
+import { icons, moGlupAppFunction, pcGlupAppFunction } from "images";
+import Simulation01 from "images/01_gulpAppSource/simulation01.mp4";
+import Simulation02 from "images/01_gulpAppSource/simulation02.mp4";
+import Simulation03 from "images/01_gulpAppSource/simulation03.mp4";
+import Simulation04 from "images/01_gulpAppSource/simulation04.mp4";
+import Simulation05 from "images/01_gulpAppSource/simulation05.mp4";
+import Simulation06 from "images/01_gulpAppSource/simulation06.mp4";
 
 const ContentWrap = styled.div`
     width: 100%;
@@ -15,14 +21,34 @@ const BlackBgWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 0;
+    padding: 50px 0 100px;
     margin-bottom: 50px;
-    background-color: black;
+    background-color: ${({ theme }) => theme.detailBlackBackground};
+`;
+
+const ButtonWrap = styled.a`
+    width: 154px;
+    height: 50px;
+    margin-bottom: 50px;
+    cursor: pointer;
+`;
+
+const ButtonImage = styled.img`
+    width: 100%;
+    height: 100%;
+`;
+
+const VideoSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
 `;
 
 const VideoWrap = styled.div`
     width: 272px;
     height: 572px;
+
     @media ${({ theme }) => theme.size1200} {
         display: block;
         width: 189px;
@@ -30,7 +56,14 @@ const VideoWrap = styled.div`
     }
 `;
 
-const Video = styled.img`
+const VideoTitle = styled.h4`
+    font-family: "AppleSDGothicNeoM";
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: ${({ theme }) => theme.detailWhiteText};
+`;
+
+const Video = styled.video`
     width: 100%;
 `;
 
@@ -169,13 +202,35 @@ const FunctionList = [
     ],
 ];
 
+const videoTitleList = [
+    { id: 1, title: "회원가입&로그인", video: Simulation01 },
+    { id: 2, title: "알람 생성하기", video: Simulation02 },
+    { id: 3, title: "알람 필터&토글", video: Simulation03 },
+    { id: 4, title: "레벨링 디자인", video: Simulation04 },
+    { id: 5, title: "캘린더&랭크", video: Simulation05 },
+    { id: 6, title: "마이페이지", video: Simulation06 },
+];
+
 const ViewFlow = ({ isSize768 }) => {
     return (
         <ContentWrap>
             <BlackBgWrap>
-                <VideoWrap>
-                    <Video src={glupAppSources.video} />
-                </VideoWrap>
+                <ButtonWrap
+                    href="https://github.com/jenyglee/Gulp"
+                    target="_blank"
+                >
+                    <ButtonImage src={icons.GithubButton} />
+                </ButtonWrap>
+                {videoTitleList.map((item) => {
+                    return (
+                        <VideoSection>
+                            <VideoTitle>{item.title}</VideoTitle>
+                            <VideoWrap>
+                                <Video src={item.video} muted autoPlay loop />
+                            </VideoWrap>
+                        </VideoSection>
+                    );
+                })}
             </BlackBgWrap>
             <FunctionsWrap>
                 {FunctionList.map((item, index) => {

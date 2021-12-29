@@ -80,15 +80,22 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
                     <Accordion
                         projectNumber="01"
                         number="03"
-                        title="WorkIssue"
+                        title="UserFlow"
                         detailNumber="3"
                         scrollX={scrollX}
                     />
                     <Accordion
                         projectNumber="01"
                         number="04"
-                        title="Review"
+                        title="WorkIssue"
                         detailNumber="4"
+                        scrollX={scrollX}
+                    />
+                    <Accordion
+                        projectNumber="01"
+                        number="05"
+                        title="Review"
+                        detailNumber="5"
                         scrollX={scrollX}
                     />
                 </MainWrap>

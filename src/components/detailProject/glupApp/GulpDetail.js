@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ViewFlow from "components/detailProject/glupApp/ViewFlow";
 import WorkPlan from "components/detailProject/glupApp/WorkPlan";
+import UserFlow from "components/detailProject/glupApp/UserFlow";
 import WorkIssue from "components/detailProject/glupApp/WorkIssue";
 import Review from "components/detailProject/glupApp/Review";
 
@@ -21,8 +22,9 @@ const GulpDetail = ({ detailNumber, isSize768 }) => {
         <DetailContainer>
             {detailNumber === "1" ? <ViewFlow isSize768={isSize768} /> : null}
             {detailNumber === "2" ? <WorkPlan /> : null}
-            {detailNumber === "3" ? <WorkIssue /> : null}
-            {detailNumber === "4" ? <Review /> : null}
+            {detailNumber === "3" ? <UserFlow /> : null}
+            {detailNumber === "4" ? <WorkIssue /> : null}
+            {detailNumber === "5" ? <Review /> : null}
         </DetailContainer>
     );
 };

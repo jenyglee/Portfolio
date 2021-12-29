@@ -30,6 +30,7 @@ export const theme = {
 
     // ✨ 디테일페이지 공통
     detailLine: Colors.black,
+    detailBlackBackground: Colors.black,
     detailWhiteText: Colors.white,
     detailWhiteBox: Colors.white,
     detailText: Colors.black_02,
