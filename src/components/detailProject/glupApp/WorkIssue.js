@@ -40,7 +40,7 @@ const Title = styled.h2`
     }
     @media ${({ theme }) => theme.size568} {
         font-size: 16px;
-        margin-bottom: 12px;
+        margin-bottom: 20px;
     }
 `;
 const Description = styled.p`
@@ -55,8 +55,7 @@ const Description = styled.p`
     }
     @media ${({ theme }) => theme.size568} {
         font-size: 13px;
-        line-height: 26px;
-        margin-bottom: 53px;
+        line-height: 20px;
     }
 `;
 
@@ -66,31 +65,31 @@ const Point = styled.span`
 
 const StyledImage = styled.img`
     width: ${({ width }) => width}px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     @media ${({ theme }) => theme.size960} {
         width: ${({ widthSize960 }) => widthSize960}px;
     }
     @media ${({ theme }) => theme.size768} {
         width: ${({ widthSize768 }) => widthSize768}px;
-        margin-bottom: 50px;
     }
     @media ${({ theme }) => theme.size568} {
         width: ${({ widthSize568 }) => widthSize568}px;
+        margin-bottom: 20px;
     }
 `;
 
-const WorkIssue = ({}) => {
-    const category = [
-        "<AlarmList />",
-        "<AddAlarm />",
-        "<SearchMedicine />",
-        "<AddMedicine />",
-        "<Calendar />",
-        "<Rank />",
-        "<MyPage />",
-        "<Navigator />",
-    ];
+const category = [
+    "<AlarmList />",
+    "<AddAlarm />",
+    "<SearchMedicine />",
+    "<AddMedicine />",
+    "<Calendar />",
+    "<Rank />",
+    "<MyPage />",
+    "<Navigator />",
+];
 
+const WorkIssue = () => {
     return (
         <ContentWrap>
             <Category
@@ -388,8 +387,10 @@ const WorkIssue = ({}) => {
                     했습니다. react native의 이론을 공부할 당시에는 Stack
                     Navigator와 Tab Navigator를 개별적으로 사용하는 방법을
                     배웠으나, 현재 프로젝트의 경우에는 두 Navigator를 합쳐서
-                    구조를 짜야했기 때문에 어떤 것을 ‘어미 컴포넌트’로 둘 것인지
-                    선택해야 했습니다.{" "}
+                    구조를 짜야했기 때문에{" "}
+                    <Point>
+                        어떤 것을 ‘어미 컴포넌트’로 둘 것인지 선택해야 했습니다.{" "}
+                    </Point>
                 </Description>
                 <Description>
                     저는 Stack Navigator를 어미 컴포넌트로 두어 그 안에 모든
