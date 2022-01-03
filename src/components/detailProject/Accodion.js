@@ -69,7 +69,6 @@ const CommonDetailWrap = styled.div`
 `;
 
 const Accordion = ({ projectNumber, number, title, detailNumber, scrollX }) => {
-    console.log(scrollX);
     const [isVisibleDetail, setIsVisibleDetail] = useState(false);
     const [isSize768, setIsSize768] = useState(false);
     useEffect(() => {

@@ -38,7 +38,9 @@ const Section = ({
                 img={img[sectionId]} //categoryImages[2]
                 isChangedTheme={isChangedTheme}
                 isPcBreakPoint={isPcBreakPoint}
+                sectionId={sectionId}
             />
+
             {titleNameArr.map((title, index) => {
                 return (
                     <Project

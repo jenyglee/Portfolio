@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Sticker from "components/Sticker";
 import ProjectViewButton from "components/section/ProjectViewButton";
 import ProjectOneText from "components/section/ProjectOneText";
 
@@ -43,10 +42,6 @@ const Project = ({
     ]);
     const [btnAnimationTransform, setBtnAnimationTransform] = useState([30]);
     const [btnAnimationOpacity, setBtnAnimationOpacity] = useState([0]);
-    const [projectIds, setProjectIds] = useState({
-        section: "",
-        project: "",
-    });
 
     //  ✨ 마우스오버된 것은 투명도 1, 나머지는 0.4
     useEffect(() => {
@@ -163,12 +158,6 @@ const Project = ({
             setBtnAnimationTransform(0);
             setBtnAnimationOpacity(1);
         }, 1400);
-
-        // Sticker 컴포넌트 노출을 위한 조건값
-        setProjectIds({
-            section: sectionId,
-            project: projectTitle.id,
-        });
     }, []);
 
     // 너비 1200 이하에서 글자 opacity 1로 변경
@@ -218,7 +207,6 @@ const Project = ({
                 <Link to={`/${sectionId}/${projectTitle.id}`}>
                     <ProjectName
                         isHover={projectTitle.isHover}
-                        // 🥸✨ 너비값을 가져온 뒤
                         onMouseEnter={() => {
                             onEnter(projectTitle.id, sectionId);
                         }}
@@ -230,12 +218,6 @@ const Project = ({
                         }}
                         href="#"
                     >
-                        {/* ✨Gulp 앱만 스티커 노출 */}
-                        {projectIds.section === 1 &&
-                        projectIds.project === 0 ? (
-                            <Sticker />
-                        ) : null}
-
                         <ProjectOneText
                             animationTransform={animationTransform}
                             animationTransform={animationTransform}

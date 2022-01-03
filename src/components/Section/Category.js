@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import Sticker from "components/Sticker";
 
 const CategoryContainer = styled.div`
     display: flex;
@@ -53,7 +54,7 @@ const CategoryImage = styled.img`
     left: 0;
 `;
 
-const Category = ({ img, isChangedTheme, isPcBreakPoint }) => {
+const Category = ({ img, isChangedTheme, isPcBreakPoint, sectionId }) => {
     const [opacity, setOpacity] = useState(0);
     const [tranformY, setTransformY] = useState(-50);
     const [isVisibleBlackImage, setIsVisibleBlackImage] = useState(true); // 블랙 이미지 노출여부
@@ -96,6 +97,7 @@ const Category = ({ img, isChangedTheme, isPcBreakPoint }) => {
                     art="logo"
                 />
             </CategoryImageWrap>
+            {sectionId === 1 ? <Sticker /> : null}
         </CategoryContainer>
     );
 };
