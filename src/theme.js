@@ -7,7 +7,7 @@ const Colors = {
     white: "#ffffff",
     main: "#1E34FF",
     gulpAppGreen: "#27C47D",
-};
+}
 
 export const theme = {
     // ✨라인
@@ -48,4 +48,4 @@ export const theme = {
     size960: `(max-width:960px)`,
     size1200: `(max-width:1200px)`,
     size1440: `(max-width:1440px)`,
-};
+}

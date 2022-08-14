@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Category from "components/section/Category";
-import Project from "components/section/Project";
+import React from "react"
+import styled from "styled-components"
+import Category from "components/Section/Category"
+import Project from "components/Section/Project"
 
 const SectionContainer = styled.section`
     width: 100%;
@@ -11,7 +11,7 @@ const SectionContainer = styled.section`
     @media ${({ theme }) => theme.size568} {
         padding-bottom: 0px;
     }
-`;
+`
 
 // projectTitle = projectTitle[각 섹션]
 const Section = ({
@@ -24,12 +24,12 @@ const Section = ({
     isPcBreakPoint,
     scrollX,
 }) => {
-    const titleNameArr = [];
+    const titleNameArr = []
     for (let i = 0; i < projectTitle.length; i++) {
         // projectTitle[0].title.split(""); 👉 ['i','n','f','o']
         // projectTitle[1].title.split(""); 👉 ['A','b','i','l','i','t','y']
-        const arr = projectTitle[i].title.split("");
-        titleNameArr.push(arr); // [['i','n','f','o'],['A','b','i','l','i','t','y'],[...]]
+        const arr = projectTitle[i].title.split("")
+        titleNameArr.push(arr) // [['i','n','f','o'],['A','b','i','l','i','t','y'],[...]]
     }
 
     return (
@@ -54,10 +54,10 @@ const Section = ({
                         key={index}
                         scrollX={scrollX}
                     />
-                );
+                )
             })}
         </SectionContainer>
-    );
-};
+    )
+}
 
-export default Section;
+export default Section
