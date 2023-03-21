@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { glupAppSources } from "images";
+import React from "react"
+import styled from "styled-components"
+import { glupAppSources } from "images"
 
 const MainVisualWrap = styled.section`
     width: 100%;
@@ -32,7 +32,7 @@ const MainVisualWrap = styled.section`
         height: 351px;
         margin-bottom: 40px;
     }
-`;
+`
 
 const ContentWrap = styled.article`
     padding-left: 50px;
@@ -43,7 +43,7 @@ const ContentWrap = styled.article`
     @media ${({ theme }) => theme.size568} {
         padding-left: 20px;
     }
-`;
+`
 
 const TextWrap = styled.div`
     margin-bottom: 43px;
@@ -53,7 +53,7 @@ const TextWrap = styled.div`
     @media ${({ theme }) => theme.size568} {
         margin-bottom: 24px;
     }
-`;
+`
 const Text = styled.p`
     font-family: "BLUDHAVEN";
     font-size: 52px;
@@ -67,7 +67,7 @@ const Text = styled.p`
     @media ${({ theme }) => theme.size568} {
         font-size: 28px;
     }
-`;
+`
 const CharacterImageWrap = styled.div`
     width: 50px;
     height: 22px;
@@ -81,12 +81,12 @@ const CharacterImageWrap = styled.div`
         width: 28px;
         height: 12px;
     }
-`;
+`
 const StyledImage = styled.img`
     width: 100%;
     height: 100%;
     position: absolute;
-`;
+`
 const LogoWrap = styled.div`
     width: 82px;
     height: 22px;
@@ -99,7 +99,7 @@ const LogoWrap = styled.div`
         width: 45px;
         height: 12px;
     }
-`;
+`
 
 const MainVisualGulpApp = () => {
     return (
@@ -120,7 +120,7 @@ const MainVisualGulpApp = () => {
                 </LogoWrap>
             </ContentWrap>
         </MainVisualWrap>
-    );
-};
+    )
+}
 
-export default MainVisualGulpApp;
+export default MainVisualGulpApp

@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-const ContentsContext = React.createContext();
+const ContentsContext = React.createContext()
 
 const ContentsStore = (props) => {
     const Contents = {
@@ -12,7 +12,11 @@ const ContentsStore = (props) => {
                 { id: 2, title: "Github", isHover: false },
             ],
 
-            [{ id: 0, title: "Gulp App", isHover: false }],
+            [
+                { id: 0, title: "Ola", isHover: false },
+                { id: 1, title: "Visual OMS", isHover: false },
+                { id: 2, title: "Gulp App", isHover: false },
+            ],
 
             [
                 { id: 0, title: "Avn", isHover: false },
@@ -29,7 +33,11 @@ const ContentsStore = (props) => {
                 { id: 1, isShow: false },
                 { id: 2, isShow: false },
             ],
-            [{ id: 0, isShow: false }],
+            [
+                { id: 0, isShow: false },
+                { id: 1, isShow: false },
+                { id: 2, isShow: false },
+            ],
             [
                 { id: 0, isShow: false },
                 { id: 1, isShow: false },
@@ -183,14 +191,10 @@ const ContentsStore = (props) => {
                 gaugeColor: "#FF9A00",
             },
         ],
-    };
+    }
 
-    return (
-        <ContentsContext.Provider value={Contents}>
-            {props.children}
-        </ContentsContext.Provider>
-    );
-};
-export { ContentsContext, ContentsStore };
+    return <ContentsContext.Provider value={Contents}>{props.children}</ContentsContext.Provider>
+}
+export { ContentsContext, ContentsStore }
 
 // 그외 스크롤값도 여기에

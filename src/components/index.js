@@ -11,6 +11,8 @@ import BgComponent07 from "components/BgComponent07"
 import BgComponent08 from "components/BgComponent08"
 import BgComponent09 from "components/BgComponent09"
 import BgComponent10 from "components/BgComponent10"
+import BgComponent11 from "components/BgComponent11"
+import BgComponent12 from "components/BgComponent12"
 
 export {
     MainHeader,
@@ -26,4 +28,6 @@ export {
     BgComponent08,
     BgComponent09,
     BgComponent10,
+    BgComponent11,
+    BgComponent12,
 }

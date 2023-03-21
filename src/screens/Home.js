@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useRef } from "react";
-import styled from "styled-components";
-import { Route, Switch } from "react-router-dom";
-import DetailInfo from "screens/DetailInfo";
-import DetailAbility from "screens/DetailAbility";
-import DetailGulpApp from "screens/DetailGulpApp";
-import DetailAvn from "screens/DetailAvn";
-import DetailMusinsa from "screens/DetailMusinsa";
-import DetailKTnG from "screens/DetailKTnG";
-import DetailConsultKit from "screens/DetailConsultKit";
-import DetailKyobo from "screens/DetailKyobo";
-import DetailBeotherm from "screens/DetailBeotherm";
-import { itemEnter, itemLeave, handleTop } from "helper/helper";
-import { useState } from "react";
+import React, { useContext, useEffect, useRef } from "react"
+import styled from "styled-components"
+import { Route, Switch } from "react-router-dom"
+import DetailInfo from "screens/DetailInfo"
+import DetailAbility from "screens/DetailAbility"
+import DetailGulpApp from "screens/DetailGulpApp"
+import DetailAvn from "screens/DetailAvn"
+import DetailMusinsa from "screens/DetailMusinsa"
+import DetailKTnG from "screens/DetailKTnG"
+import DetailConsultKit from "screens/DetailConsultKit"
+import DetailKyobo from "screens/DetailKyobo"
+import DetailBeotherm from "screens/DetailBeotherm"
+import { itemEnter, itemLeave, handleTop } from "helper/helper"
+import { useState } from "react"
 import {
     BgComponent01,
     BgComponent02,
@@ -23,22 +23,24 @@ import {
     BgComponent08,
     BgComponent09,
     BgComponent10,
+    BgComponent11,
+    BgComponent12,
     MainHeader,
     Section,
     TopButton,
-} from "components";
-import { categoryImages } from "images";
-import { ContentsContext } from "storeContext/contents";
+} from "components"
+import { categoryImages } from "images"
+import { ContentsContext } from "storeContext/contents"
+import DetailOla from "./DetailOla"
+import DetailVisualOms from "./DetailVisualOMS"
 
 const Body = styled.main`
     height: 100%;
     background-color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>
-        isChangedTheme && !isPcBreakPoint
-            ? theme.darkThemeBackgroud
-            : theme.whiteThemeBackgroud};
+        isChangedTheme && !isPcBreakPoint ? theme.darkThemeBackgroud : theme.whiteThemeBackgroud};
     transition: 0.5s;
     position: relative;
-`;
+`
 
 const MainWrap = styled.main`
     width: 100%;
@@ -57,73 +59,73 @@ const MainWrap = styled.main`
     @media ${({ theme }) => theme.size568} {
         padding-top: 60px;
     }
-`;
+`
 
 const TitleAlignWrap = styled.div`
     max-width: 1200px;
     margin: 0 auto;
-`;
+`
 
 const TitleContainer = styled.article`
     width: 100%;
     position: relative;
     z-index: 1;
-`;
+`
 
-const RefContainer = styled.div``;
+const RefContainer = styled.div``
 
 const Home = () => {
-    const contents = useContext(ContentsContext);
-    const [projectTitle, setProjectTitle] = useState(contents.projects);
-    const [projectImage, setProjectImage] = useState(contents.projectBgImages);
-    const [imgKey, setImgKey] = useState();
-    const [isPcBreakPoint, setIsPcBreakPoint] = useState(false); // 너비 1200이하에서 true
-    const [isChangedTheme, setIsChangedTheme] = useState(false); // 다크모드 on/off
-    const [scrollX, setScrollX] = useState(window.innerWidth);
-    const [scrollY, setScrollY] = useState(window.scrollY);
+    const contents = useContext(ContentsContext)
+    const [projectTitle, setProjectTitle] = useState(contents.projects)
+    const [projectImage, setProjectImage] = useState(contents.projectBgImages)
+    const [imgKey, setImgKey] = useState()
+    const [isPcBreakPoint, setIsPcBreakPoint] = useState(false) // 너비 1200이하에서 true
+    const [isChangedTheme, setIsChangedTheme] = useState(false) // 다크모드 on/off
+    const [scrollX, setScrollX] = useState(window.innerWidth)
+    const [scrollY, setScrollY] = useState(window.scrollY)
 
     // ✨ 첫 진입 시 상단으로 이동
     useEffect(() => {
-        handleTop();
+        handleTop()
         // ✨ 스크롤값, 화면너비 저장(인터랙션, 이미지교체에 활용)
-        window.addEventListener("scroll", onScroll);
-        window.addEventListener("resize", onResize);
+        window.addEventListener("scroll", onScroll)
+        window.addEventListener("resize", onResize)
         return () => {
-            window.removeEventListener("scroll", onscroll);
-            window.removeEventListener("resize", onResize);
-        };
-    }, []);
+            window.removeEventListener("scroll", onscroll)
+            window.removeEventListener("resize", onResize)
+        }
+    }, [])
 
     // ✨ 너비 1200픽셀 이하 브레이크포인트
     useEffect(() => {
         if (window.innerWidth < 1200) {
-            setIsPcBreakPoint(true);
+            setIsPcBreakPoint(true)
         } else {
-            setIsPcBreakPoint(false);
+            setIsPcBreakPoint(false)
         }
-    }, [window.innerWidth]);
+    }, [window.innerWidth])
 
     const onScroll = () => {
-        setScrollY(window.scrollY);
-    };
+        setScrollY(window.scrollY)
+    }
 
     const onResize = () => {
-        setScrollX(window.innerWidth);
-    };
+        setScrollX(window.innerWidth)
+    }
 
     // ✨메뉴 클릭 시 스크롤링을 위한 위치 설정
-    const introRef = useRef(null);
-    const developRef = useRef(null);
-    const designRef = useRef(null);
+    const introRef = useRef(null)
+    const developRef = useRef(null)
+    const designRef = useRef(null)
     const onIntroClick = () => {
-        introRef.current.scrollIntoView({ behavior: "smooth" });
-    };
+        introRef.current.scrollIntoView({ behavior: "smooth" })
+    }
     const onDevelopClick = () => {
-        developRef.current.scrollIntoView({ behavior: "smooth" });
-    };
+        developRef.current.scrollIntoView({ behavior: "smooth" })
+    }
     const onDesignClick = () => {
-        designRef.current.scrollIntoView({ behavior: "smooth" });
-    };
+        designRef.current.scrollIntoView({ behavior: "smooth" })
+    }
 
     return (
         <Body isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
@@ -152,7 +154,7 @@ const Home = () => {
                                                 setProjectImage,
                                                 setImgKey,
                                                 setIsChangedTheme,
-                                            });
+                                            })
                                         }}
                                         itemLeave={(id, sectionId) => {
                                             itemLeave({
@@ -164,7 +166,7 @@ const Home = () => {
                                                 setProjectImage,
                                                 setImgKey,
                                                 setIsChangedTheme,
-                                            });
+                                            })
                                         }}
                                         projectTitle={projectTitle[0]}
                                         sectionId={0}
@@ -186,7 +188,7 @@ const Home = () => {
                                                 setProjectImage,
                                                 setImgKey,
                                                 setIsChangedTheme,
-                                            });
+                                            })
                                         }}
                                         itemLeave={(id, sectionId) => {
                                             itemLeave({
@@ -198,7 +200,7 @@ const Home = () => {
                                                 setProjectImage,
                                                 setImgKey,
                                                 setIsChangedTheme,
-                                            });
+                                            })
                                         }}
                                         projectTitle={projectTitle[1]}
                                         sectionId={1}
@@ -220,7 +222,7 @@ const Home = () => {
                                                 setProjectImage,
                                                 setImgKey,
                                                 setIsChangedTheme,
-                                            });
+                                            })
                                         }}
                                         itemLeave={(id, sectionId) => {
                                             itemLeave({
@@ -232,7 +234,7 @@ const Home = () => {
                                                 setProjectImage,
                                                 setImgKey,
                                                 setIsChangedTheme,
-                                            });
+                                            })
                                         }}
                                         projectTitle={projectTitle[2]}
                                         sectionId={2}
@@ -245,38 +247,20 @@ const Home = () => {
                             </TitleContainer>
                             {imgKey && !isPcBreakPoint ? (
                                 <div>
-                                    <BgComponent01
-                                        isShow={projectImage[0][0].isShow}
-                                    />
-                                    <BgComponent02
-                                        isShow={projectImage[0][1].isShow}
-                                    />
-                                    <BgComponent03
-                                        isShow={projectImage[0][2].isShow}
-                                    />{" "}
+                                    <BgComponent01 isShow={projectImage[0][0].isShow} />
+                                    <BgComponent02 isShow={projectImage[0][1].isShow} />
+                                    <BgComponent03 isShow={projectImage[0][2].isShow} />
                                     {/* Github 포폴 */}
-                                    <BgComponent04
-                                        isShow={projectImage[1][0].isShow}
-                                    />
-                                    <BgComponent05
-                                        isShow={projectImage[2][0].isShow}
-                                    />{" "}
+                                    <BgComponent11 isShow={projectImage[1][0].isShow} />
+                                    <BgComponent12 isShow={projectImage[1][1].isShow} />
+                                    <BgComponent04 isShow={projectImage[1][2].isShow} />
                                     {/* AVN 포폴 */}
-                                    <BgComponent06
-                                        isShow={projectImage[2][1].isShow}
-                                    />
-                                    <BgComponent07
-                                        isShow={projectImage[2][2].isShow}
-                                    />
-                                    <BgComponent08
-                                        isShow={projectImage[2][3].isShow}
-                                    />
-                                    <BgComponent09
-                                        isShow={projectImage[2][4].isShow}
-                                    />
-                                    <BgComponent10
-                                        isShow={projectImage[2][5].isShow}
-                                    />
+                                    <BgComponent05 isShow={projectImage[2][0].isShow} />
+                                    <BgComponent06 isShow={projectImage[2][1].isShow} />
+                                    <BgComponent07 isShow={projectImage[2][2].isShow} />
+                                    <BgComponent08 isShow={projectImage[2][3].isShow} />
+                                    <BgComponent09 isShow={projectImage[2][4].isShow} />
+                                    <BgComponent10 isShow={projectImage[2][5].isShow} />
                                 </div>
                             ) : null}
                         </TitleAlignWrap>
@@ -290,6 +274,12 @@ const Home = () => {
                     <DetailAbility scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/1/0">
+                    <DetailOla scrollX={scrollX} scrollY={scrollY} />
+                </Route>
+                <Route path="/1/1">
+                    <DetailVisualOms scrollX={scrollX} scrollY={scrollY} />
+                </Route>
+                <Route path="/1/2">
                     <DetailGulpApp scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/0">
@@ -314,12 +304,12 @@ const Home = () => {
             <TopButton
                 scrollY={scrollY}
                 onClick={() => {
-                    handleTop({ setScrollY });
+                    handleTop({ setScrollY })
                 }}
                 isChangedTheme={isChangedTheme}
             />
         </Body>
-    );
-};
+    )
+}
 
-export default Home;
+export default Home
