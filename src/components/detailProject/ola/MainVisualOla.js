@@ -93,16 +93,18 @@ const StyledImage = styled.img`
     position: absolute;
 `
 const LogoWrap = styled.div`
-    width: 55px;
-    height: 55px;
+    margin-left: -10px;
+    width: 95px;
+    height: 95px;
     position: relative;
     @media ${({ theme }) => theme.size960} {
-        width: 55px;
-        height: 55px;
+        width: 95px;
+        height: 95px;
     }
     @media ${({ theme }) => theme.size568} {
-        width: 45px;
-        height: 45px;
+        margin-left: -10px;
+        width: 65px;
+        height: 65px;
     }
 `
 
@@ -115,10 +117,10 @@ const MainVisualOla = () => {
                         {/* <CharacterImageWrap>
                             <StyledImage src={glupAppSources.character01} />
                         </CharacterImageWrap> */}
-                        해시태그로
+                        해시태그로 관심사를
                     </Text>
-                    <Text>관심사를 공유하는</Text>
-                    <Text>등산 커뮤니티</Text>
+                    <Text>공유하는 등산 커뮤니티</Text>
+                    {/* <Text></Text> */}
                 </TextWrap>
                 <LogoWrap>
                     <StyledImage src={olaSources.logo} />

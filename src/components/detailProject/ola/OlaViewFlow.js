@@ -119,6 +119,8 @@ const FunctionContent = styled.div`
     } */
     @media ${({ theme }) => theme.size568} {
         width: 320px;
+        margin: 0 auto;
+        text-align: center;
     }
 `
 
