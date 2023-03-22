@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
-import styled from "styled-components";
-import { handleTop } from "helper/helper";
-import MainTitle from "components/detailProject/ability/MainTitle";
-import Ability from "components/detailProject/ability/Ability";
-import DetailHeader from "components/DetailHeader";
-import { header, abilitySources } from "images";
-import { ContentsContext } from "storeContext/contents";
+import React, { useContext, useEffect, useState } from "react"
+import styled from "styled-components"
+import { handleTop } from "helper/helper"
+import MainTitle from "components/detailProject/ability/MainTitle"
+import Ability from "components/detailProject/ability/Ability"
+import DetailHeader from "components/DetailHeader"
+import { header, abilitySources } from "images"
+import { ContentsContext } from "storeContext/contents"
 
 const Wrap = styled.main`
     width: 100%;
@@ -15,7 +15,7 @@ const Wrap = styled.main`
     align-items: center;
 
     padding-bottom: 100px;
-`;
+`
 
 const AbilityWrap = styled.div`
     max-width: 1200px;
@@ -35,7 +35,7 @@ const AbilityWrap = styled.div`
     @media ${({ theme }) => theme.size568} {
         padding-top: 104px;
     }
-`;
+`
 
 const Section = styled.section`
     width: 100%;
@@ -52,10 +52,10 @@ const Section = styled.section`
     @media ${({ theme }) => theme.size568} {
         margin-bottom: ${({ isTitle }) => (isTitle ? "50px" : "0")};
     }
-`;
+`
 const AbilityAlign = styled.div`
     display: flex;
-`;
+`
 
 const AbilitySizeFull = styled.div`
     display: flex;
@@ -63,7 +63,7 @@ const AbilitySizeFull = styled.div`
     @media ${({ theme }) => theme.size1200} {
         display: none;
     }
-`;
+`
 const AbilitySize1200 = styled.div`
     display: none;
     flex-direction: column;
@@ -73,20 +73,20 @@ const AbilitySize1200 = styled.div`
     @media ${({ theme }) => theme.size768} {
         display: none;
     }
-`;
+`
 const AbilitySize768 = styled.div`
     display: none;
     flex-direction: column;
     @media ${({ theme }) => theme.size768} {
         display: flex;
     }
-`;
+`
 const DetailAbility = ({ scrollX, scrollY }) => {
-    const contents = useContext(ContentsContext);
-    const [translateX, setTranslateX] = useState(0);
+    const contents = useContext(ContentsContext)
+    const [translateX, setTranslateX] = useState(0)
     useEffect(() => {
-        handleTop();
-    }, []);
+        handleTop()
+    }, [])
 
     return (
         <Wrap>
@@ -108,158 +108,138 @@ const DetailAbility = ({ scrollX, scrollY }) => {
                     {/* 1200 이상일 때 3컬럼 */}
                     <AbilitySizeFull>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(0, 3)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(0, 3).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(3, 6)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index + 3]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(3, 6).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index + 3]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(6, 9)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index + 6]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(6, 9).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index + 6]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(9, 11)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index + 9]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(9, 12).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index + 9]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                     </AbilitySizeFull>
 
                     {/* 1200 이하일 때 2컬럼 */}
                     <AbilitySize1200>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(0, 2)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(0, 2).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(2, 4)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index + 2]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(2, 4).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index + 2]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(4, 6)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index + 4]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(4, 6).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index + 4]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(6, 8)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index + 6]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(6, 8).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index + 6]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(8, 10)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index + 8]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(8, 10).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index + 8]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                         <AbilityAlign>
-                            {contents.abilityData
-                                .slice(10, 11)
-                                .map((ability, index) => {
-                                    return (
-                                        <Ability
-                                            translateX={translateX}
-                                            ability={ability}
-                                            scrollX={scrollX}
-                                            scrollY={scrollY}
-                                            logo={abilitySources[index + 10]}
-                                        />
-                                    );
-                                })}
+                            {contents.abilityData.slice(10, 12).map((ability, index) => {
+                                return (
+                                    <Ability
+                                        translateX={translateX}
+                                        ability={ability}
+                                        scrollX={scrollX}
+                                        scrollY={scrollY}
+                                        logo={abilitySources[index + 10]}
+                                    />
+                                )
+                            })}
                         </AbilityAlign>
                     </AbilitySize1200>
 
@@ -274,13 +254,13 @@ const DetailAbility = ({ scrollX, scrollY }) => {
                                     scrollY={scrollY}
                                     logo={abilitySources[index]}
                                 />
-                            );
+                            )
                         })}
                     </AbilitySize768>
                 </Section>
             </AbilityWrap>
         </Wrap>
-    );
-};
+    )
+}
 
-export default DetailAbility;
+export default DetailAbility

@@ -51,7 +51,13 @@ import FooterThumbConcertKit from "images/footerThumb/concertKit.png"
 import InfoMainVisual from "images/08_info/main_visual.jpeg"
 import InfoIconCheck from "images/08_info/icon_check.png"
 import InfoIconIllust from "images/08_info/icon_illust.png"
+import AbilityLogoSpring from "images/09_ability/logo_spring.png"
+import AbilityLogoQuerydsl from "images/09_ability/logo_querydsl.png"
+import AbilityLogoAws from "images/09_ability/logo_aws.png"
+import AbilityLogoOauth2 from "images/09_ability/logo_oauth2.png"
 import AbilityLogoReact from "images/09_ability/logo_react.png"
+import AbilityLogoNextjs from "images/09_ability/logo_nextjs.png"
+import AbilityLogoTypescript from "images/09_ability/logo_typescript.png"
 import AbilityLogoMySQL from "images/09_ability/logo_mySQL.png"
 import AbilityLogoAxios from "images/09_ability/logo_axios.png"
 import AbilityLogoRedux from "images/09_ability/logo_redux.png"
@@ -222,17 +228,23 @@ const infoSources = {
 
 // ✨ Ability 소스
 const abilitySources = [
+    AbilityLogoSpring,
+    AbilityLogoQuerydsl,
+    AbilityLogoAws,
+    AbilityLogoOauth2,
     AbilityLogoReact,
+    AbilityLogoNextjs,
+    AbilityLogoTypescript,
     AbilityLogoReact,
-    AbilityLogoMySQL,
     AbilityLogoAxios,
     AbilityLogoRedux,
-    AbilityLogoFirebase,
     AbilityLogoGit,
-    AbilityLogoHtml,
     AbilityLogoFigma,
-    AbilityLogoPhotoshop,
-    AbilityLogoIllustrator,
+    // AbilityLogoMySQL,
+    // AbilityLogoFirebase,
+    // AbilityLogoHtml,
+    // AbilityLogoPhotoshop,
+    // AbilityLogoIllustrator,
 ]
 
 // ✨ 어플리케이션 꿀꺽 소스

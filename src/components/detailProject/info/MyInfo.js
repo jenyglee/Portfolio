@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { infoSources } from "images";
+import React from "react"
+import styled from "styled-components"
+import { infoSources } from "images"
 
 const PaddingWrap = styled.div`
     width: 100%;
     padding: 0 20px;
-`;
+`
 
 const ProfileWrap = styled.section`
     width: 100%;
@@ -29,7 +29,7 @@ const ProfileWrap = styled.section`
         background-position: 52% 64%;
         margin-bottom: 84px;
     }
-`;
+`
 
 const InfoWrap = styled.div`
     width: 100%;
@@ -47,11 +47,11 @@ const InfoWrap = styled.div`
         padding: 30px 0 0 30px;
         height: 560px;
     }
-`;
+`
 const Info = styled.div`
     color: ${({ theme }) => theme.detailWhiteText};
     margin-bottom: 10px;
-`;
+`
 const InfoTitle = styled.h3`
     font-family: "BLUDHAVEN";
     font-size: 16px;
@@ -59,7 +59,7 @@ const InfoTitle = styled.h3`
     @media ${({ theme }) => theme.size568} {
         font-size: 13px;
     }
-`;
+`
 const InfoDescription = styled.p`
     font-family: "AppleSDGothicNeoM";
     font-size: 24px;
@@ -67,7 +67,7 @@ const InfoDescription = styled.p`
     @media ${({ theme }) => theme.size568} {
         font-size: 18px;
     }
-`;
+`
 
 const MyInfo = () => {
     return (
@@ -89,13 +89,13 @@ const MyInfo = () => {
                     <Info>
                         <InfoTitle>Carrer</InfoTitle>
                         <InfoDescription>
-                            Frontend Developer, UX/UI Designer
+                            Backend/Frontend Developer, UX/UI Designer
                         </InfoDescription>
                     </Info>
                 </InfoWrap>
             </ProfileWrap>
         </PaddingWrap>
-    );
-};
+    )
+}
 
-export default MyInfo;
+export default MyInfo

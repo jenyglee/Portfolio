@@ -1,18 +1,17 @@
-import React, { useEffect, useState, useContext } from "react";
-import { ContentsContext } from "storeContext/contents";
-import styled from "styled-components";
+import React, { useEffect, useState, useContext } from "react"
+import { ContentsContext } from "storeContext/contents"
+import styled from "styled-components"
 
 const TitleWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`;
+`
 const Title = styled.h1`
     font-size: 100px;
     font-family: "BLUDHAVEN";
-    transform: ${({ animationTransform }) =>
-        `translateY(${animationTransform}px)`};
+    transform: ${({ animationTransform }) => `translateY(${animationTransform}px)`};
     opacity: ${({ animationOpacity }) => animationOpacity};
     transition: 1s;
     margin-bottom: 24px;
@@ -32,84 +31,82 @@ const Title = styled.h1`
         font-size: 26px;
         margin-bottom: 6px;
     }
-`;
+`
 
 const MainTitle = () => {
-    const contents = useContext(ContentsContext);
+    const contents = useContext(ContentsContext)
     const [animationTransform, setAnimationTransform] = useState([
-        50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
-    ]);
+        50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+    ])
     const [animationOpacity, setAnimationOpacity] = useState([
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    ]);
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    ])
     useEffect(() => {
         setTimeout(() => {
-            setAnimationTransform([
-                0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
-            ]);
-            setAnimationOpacity([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-        }, 200);
+            setAnimationTransform([0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        }, 200)
         setTimeout(() => {
-            setAnimationTransform([
-                0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
-            ]);
-            setAnimationOpacity([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-        }, 400);
+            setAnimationTransform([0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        }, 400)
         setTimeout(() => {
-            setAnimationTransform([
-                0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
-            ]);
-            setAnimationOpacity([1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-        }, 600);
+            setAnimationTransform([0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        }, 600)
         setTimeout(() => {
-            setAnimationTransform([
-                0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50,
-            ]);
-            setAnimationOpacity([1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-        }, 800);
+            setAnimationTransform([0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        }, 800)
         setTimeout(() => {
-            setAnimationTransform([
-                0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50,
-            ]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]);
-        }, 1000);
+            setAnimationTransform([0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        }, 1000)
         setTimeout(() => {
-            setAnimationTransform([
-                0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50,
-            ]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]);
-        }, 1200);
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        }, 1200)
         setTimeout(() => {
-            setAnimationTransform([
-                0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50,
-            ]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]);
-        }, 1400);
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        }, 1400)
         setTimeout(() => {
-            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]);
-        }, 1600);
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0])
+        }, 1600)
         setTimeout(() => {
-            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0]);
-        }, 1800);
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0])
+        }, 1800)
         setTimeout(() => {
-            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]);
-        }, 2000);
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0])
+        }, 2000)
         setTimeout(() => {
-            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0]);
-        }, 2200);
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0])
+        }, 2200)
         setTimeout(() => {
-            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]);
-        }, 2400);
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0])
+        }, 2400)
         setTimeout(() => {
-            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
-        }, 2600);
-    }, []);
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0])
+        }, 2600)
+        setTimeout(() => {
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0])
+        }, 2800)
+        setTimeout(() => {
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0])
+        }, 3000)
+        setTimeout(() => {
+            setAnimationTransform([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+            setAnimationOpacity([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+        }, 3200)
+    }, [])
     return (
         <TitleWrap>
             {contents.titleData.map((ability, index) => {
@@ -120,10 +117,10 @@ const MainTitle = () => {
                     >
                         {ability}
                     </Title>
-                );
+                )
             })}
         </TitleWrap>
-    );
-};
+    )
+}
 
-export default MainTitle;
+export default MainTitle
