@@ -18,8 +18,6 @@ import bg06Component02 from "./images/bgComponent06/06_02.png"
 import bg07Component01 from "./images/bgComponent07/07_01.png"
 import bg07Component02 from "./images/bgComponent07/07_02.png"
 import bg08Component01 from "./images/bgComponent08/08_01.png"
-import bg09Component01 from "./images/bgComponent09/09_01.png"
-import bg10Component01 from "./images/bgComponent10/10_01.png"
 import bg11Component01 from "./images/bgComponent11/11_01.png"
 import bg12Component01 from "./images/bgComponent12/12_01.png"
 import Sticker from "./images/sticker.png"
@@ -36,13 +34,12 @@ import HeaderThumbHome from "./images/headerThumb/home.png"
 import HeaderThumbInfo from "./images/headerThumb/info.png"
 import HeaderThumbAbility from "./images/headerThumb/ability.png"
 import HeaderThumbGithub from "./images/headerThumb/github.png"
+import HeaderThumbOla from "./images/headerThumb/ola.png"
+import HeaderThumbVisualOms from "./images/headerThumb/visualOms.png"
 import HeaderThumbGulpApp from "./images/headerThumb/gulpApp.png"
 import HeaderThumbAvn from "./images/headerThumb/avn.png"
 import HeaderThumbMusinsa from "./images/headerThumb/musinsa.png"
-import HeaderThumbKtng from "./images/headerThumb/ktng.png"
 import HeaderThumbConcertKit from "./images/headerThumb/concertKit.png"
-import HeaderThumbKyobo from "./images/headerThumb/kyobo.png"
-import HeaderThumbBeotherm from "./images/headerThumb/beotherm.png"
 import FooterThumbHome from "images/footerThumb/home.png"
 import FooterThumbInfo from "images/footerThumb/info.png"
 import FooterThumbAbility from "images/footerThumb/ability.png"
@@ -50,10 +47,7 @@ import FooterThumbGithub from "images/footerThumb/github.png"
 import FooterThumbGulpApp from "images/footerThumb/gulpApp.png"
 import FooterThumbAvn from "images/footerThumb/avn.png"
 import FooterThumbMusinsa from "images/footerThumb/musinsa.png"
-import FooterThumbKtng from "images/footerThumb/ktng.png"
 import FooterThumbConcertKit from "images/footerThumb/concertKit.png"
-import FooterThumbKyobo from "images/footerThumb/kyobo.png"
-import FooterThumbBeotherm from "images/footerThumb/beotherm.png"
 import InfoMainVisual from "images/08_info/main_visual.jpeg"
 import InfoIconCheck from "images/08_info/icon_check.png"
 import InfoIconIllust from "images/08_info/icon_illust.png"
@@ -179,8 +173,6 @@ const bgImages05 = [bg05Component01]
 const bgImages06 = [bg06Component01, bg06Component02]
 const bgImages07 = [bg07Component01, bg07Component02]
 const bgImages08 = [bg08Component01]
-const bgImages09 = [bg09Component01]
-const bgImages10 = [bg10Component01]
 const bgImages11 = [bg11Component01]
 const bgImages12 = [bg12Component01]
 
@@ -193,13 +185,12 @@ const header = {
     info: HeaderThumbInfo,
     ability: HeaderThumbAbility,
     github: HeaderThumbGithub,
+    ola: HeaderThumbOla,
+    visualOms: HeaderThumbVisualOms,
     gulpApp: HeaderThumbGulpApp,
     avn: HeaderThumbAvn,
     musinsa: HeaderThumbMusinsa,
-    ktng: HeaderThumbKtng,
     concertKit: HeaderThumbConcertKit,
-    kyobo: HeaderThumbKyobo,
-    beotherm: HeaderThumbBeotherm,
 }
 
 //✨ 푸터 썸네일 이미지
@@ -212,10 +203,7 @@ const footer = {
     gulpApp: FooterThumbGulpApp,
     avn: FooterThumbAvn,
     musinsa: FooterThumbMusinsa,
-    ktng: FooterThumbKtng,
     concertKit: FooterThumbConcertKit,
-    kyobo: FooterThumbKyobo,
-    beotherm: FooterThumbBeotherm,
 }
 
 // ✨ 상세페이지 이미지
@@ -397,8 +385,6 @@ export {
     bgImages06,
     bgImages07,
     bgImages08,
-    bgImages09,
-    bgImages10,
     bgImages11,
     bgImages12,
     sticker,

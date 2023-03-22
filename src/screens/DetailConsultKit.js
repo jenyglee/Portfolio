@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import { handleTop } from "helper/helper";
-import Title from "components/detailProject/Title";
-import MainVisualConsultKit from "components/detailProject/consultKit/MainVisualConsultKit";
-import Accordion from "components/detailProject/Accodion";
-import { header } from "images";
-import DetailHeader from "components/DetailHeader";
+import React, { useEffect } from "react"
+import styled from "styled-components"
+import { handleTop } from "helper/helper"
+import Title from "components/detailProject/Title"
+import MainVisualConsultKit from "components/detailProject/consultKit/MainVisualConsultKit"
+import Accordion from "components/detailProject/Accodion"
+import { header } from "images"
+import DetailHeader from "components/DetailHeader"
 
 const Wrap = styled.main`
     width: 100%;
-`;
+`
 
 const ConcertKitWrap = styled.div`
     max-width: 1200px;
@@ -19,7 +19,7 @@ const ConcertKitWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`;
+`
 
 const MainWrap = styled.main`
     width: 100%;
@@ -34,28 +34,28 @@ const MainWrap = styled.main`
     @media ${({ theme }) => theme.size568} {
         padding-top: 105px;
     }
-`;
+`
 
 const DetailConsultKit = ({ scrollX, scrollY }) => {
     useEffect(() => {
-        handleTop();
-    }, []);
+        handleTop()
+    }, [])
 
     return (
         <Wrap>
             <DetailHeader
                 scrollY={scrollY}
-                prevLink={`/2/2`}
-                prevTitle="KT&G"
-                prevImg={header.ktng}
-                nextLink={`/2/4`}
-                nextTitle="Kyobo"
-                nextImg={header.kyobo}
+                prevLink={`/2/1`}
+                prevTitle="Musinsa"
+                prevImg={header.musinsa}
+                nextLink={`/`}
+                nextTitle="Home"
+                nextImg={header.home}
             />
             <ConcertKitWrap>
                 <MainWrap>
                     <Title
-                        number="05"
+                        number="03"
                         title="브랜드 구축"
                         titlePoint="컨설킷"
                         pointColor="#07AC9B"
@@ -73,7 +73,7 @@ const DetailConsultKit = ({ scrollX, scrollY }) => {
                 </MainWrap>
             </ConcertKitWrap>
         </Wrap>
-    );
-};
+    )
+}
 
-export default DetailConsultKit;
+export default DetailConsultKit

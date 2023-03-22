@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import { handleTop } from "helper/helper";
-import Title from "components/detailProject/Title";
-import MainVisualMusinsa from "components/detailProject/musinsa/MainVisualMusinsa";
-import Accordion from "components/detailProject/Accodion";
-import { header } from "images";
-import DetailHeader from "components/DetailHeader";
+import React, { useEffect } from "react"
+import styled from "styled-components"
+import { handleTop } from "helper/helper"
+import Title from "components/detailProject/Title"
+import MainVisualMusinsa from "components/detailProject/musinsa/MainVisualMusinsa"
+import Accordion from "components/detailProject/Accodion"
+import { header } from "images"
+import DetailHeader from "components/DetailHeader"
 
 const Wrap = styled.main`
     width: 100%;
-`;
+`
 
 const MusinsaWrap = styled.div`
     max-width: 1200px;
@@ -19,7 +19,7 @@ const MusinsaWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`;
+`
 
 const MainWrap = styled.main`
     width: 100%;
@@ -34,12 +34,12 @@ const MainWrap = styled.main`
     @media ${({ theme }) => theme.size568} {
         padding-top: 105px;
     }
-`;
+`
 
 const DetailMusinsa = ({ scrollX, scrollY }) => {
     useEffect(() => {
-        handleTop();
-    }, []);
+        handleTop()
+    }, [])
 
     return (
         <Wrap>
@@ -49,8 +49,8 @@ const DetailMusinsa = ({ scrollX, scrollY }) => {
                 prevTitle="AVN"
                 prevImg={header.avn}
                 nextLink={`/2/2`}
-                nextTitle="KT&G"
-                nextImg={header.ktng}
+                nextTitle="ConcertKit"
+                nextImg={header.concertKit}
             />
             <MusinsaWrap>
                 <MainWrap>
@@ -80,7 +80,7 @@ const DetailMusinsa = ({ scrollX, scrollY }) => {
                 </MainWrap>
             </MusinsaWrap>
         </Wrap>
-    );
-};
+    )
+}
 
-export default DetailMusinsa;
+export default DetailMusinsa

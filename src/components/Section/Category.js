@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import Sticker from "components/Sticker";
+import { useEffect, useState } from "react"
+import styled from "styled-components"
+import Sticker from "components/Sticker"
 
 const CategoryContainer = styled.div`
     display: flex;
@@ -11,7 +11,7 @@ const CategoryContainer = styled.div`
     @media ${({ theme }) => theme.size568} {
         padding-top: 30px;
     }
-`;
+`
 
 const CategoryText = styled.p`
     font-family: "AppleSDGothicNeoM";
@@ -19,9 +19,7 @@ const CategoryText = styled.p`
     letter-spacing: 5px;
     margin-right: 10px;
     color: ${({ theme, isChangedTheme, isPcBreakPoint }) =>
-        isChangedTheme && !isPcBreakPoint
-            ? theme.darkThemeText
-            : theme.whiteThemeText};
+        isChangedTheme && !isPcBreakPoint ? theme.darkThemeText : theme.whiteThemeText};
     transition: 0.5s;
 
     @media ${({ theme }) => theme.size1200} {
@@ -31,7 +29,7 @@ const CategoryText = styled.p`
         display: none;
         font-size: 12px;
     }
-`;
+`
 
 const CategoryImageWrap = styled.div`
     height: 43px;
@@ -43,7 +41,7 @@ const CategoryImageWrap = styled.div`
     @media ${({ theme }) => theme.size768} {
         height: 20px;
     }
-`;
+`
 
 const CategoryImage = styled.img`
     height: 100%;
@@ -52,54 +50,43 @@ const CategoryImage = styled.img`
     position: absolute;
     top: 0;
     left: 0;
-`;
+`
 
 const Category = ({ img, isChangedTheme, isPcBreakPoint, sectionId }) => {
-    const [opacity, setOpacity] = useState(0);
-    const [tranformY, setTransformY] = useState(-50);
-    const [isVisibleBlackImage, setIsVisibleBlackImage] = useState(true); // 블랙 이미지 노출여부
-    const [isVisibleWhiteImage, setIsVisibleWhiteImage] = useState(true); // 화이트 이미지 노출여부
+    const [opacity, setOpacity] = useState(0)
+    const [tranformY, setTransformY] = useState(-50)
+    const [isVisibleBlackImage, setIsVisibleBlackImage] = useState(true) // 블랙 이미지 노출여부
+    const [isVisibleWhiteImage, setIsVisibleWhiteImage] = useState(true) // 화이트 이미지 노출여부
 
     useEffect(() => {
         setTimeout(() => {
-            setOpacity(1);
-            setTransformY(0);
-        }, 1000);
-    }, []);
+            setOpacity(1)
+            setTransformY(0)
+        }, 1000)
+    }, [])
 
     useEffect(() => {
         if (isChangedTheme && !isPcBreakPoint) {
-            setIsVisibleWhiteImage(true);
-            setIsVisibleBlackImage(false);
+            setIsVisibleWhiteImage(true)
+            setIsVisibleBlackImage(false)
         } else {
-            setIsVisibleWhiteImage(false);
-            setIsVisibleBlackImage(true);
+            setIsVisibleWhiteImage(false)
+            setIsVisibleBlackImage(true)
         }
-    }, [isChangedTheme]);
+    }, [isChangedTheme])
 
     return (
         <CategoryContainer style={{ opacity: opacity, bottom: tranformY }}>
-            <CategoryText
-                isChangedTheme={isChangedTheme}
-                isPcBreakPoint={isPcBreakPoint}
-            >
+            <CategoryText isChangedTheme={isChangedTheme} isPcBreakPoint={isPcBreakPoint}>
                 COLLECTION
             </CategoryText>
             <CategoryImageWrap>
-                <CategoryImage
-                    isVisible={isVisibleBlackImage}
-                    src={img.image}
-                    art="logo"
-                />
-                <CategoryImage
-                    isVisible={isVisibleWhiteImage}
-                    src={img.whiteImage}
-                    art="logo"
-                />
+                <CategoryImage isVisible={isVisibleBlackImage} src={img.image} art="logo" />
+                <CategoryImage isVisible={isVisibleWhiteImage} src={img.whiteImage} art="logo" />
             </CategoryImageWrap>
-            {sectionId === 1 ? <Sticker /> : null}
+            {/* {sectionId === 1 ? <Sticker /> : null} */}
         </CategoryContainer>
-    );
-};
+    )
+}
 
-export default Category;
+export default Category

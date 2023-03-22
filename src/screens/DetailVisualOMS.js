@@ -46,17 +46,17 @@ const DetailVisualOms = ({ scrollX, scrollY }) => {
         <Wrap>
             <DetailHeader
                 scrollY={scrollY}
-                prevLink={`/`}
-                prevTitle="Home"
-                prevImg={header.home}
-                nextLink={`/2/0`}
-                nextTitle="AVN"
-                nextImg={header.avn}
+                prevLink={`/1/0`}
+                prevTitle="Ola"
+                prevImg={header.ola}
+                nextLink={`/1/2`}
+                nextTitle="Gulp App"
+                nextImg={header.gulpApp}
             />
             <VisualOmsWrap>
                 <MainWrap>
                     <Title
-                        number="01"
+                        number="02"
                         title="데이터 기반 물류관리"
                         titlePoint="VisualOMS"
                         pointColor="#253FEB"
@@ -94,9 +94,9 @@ const DetailVisualOms = ({ scrollX, scrollY }) => {
                     /> */}
                     <Accordion
                         projectNumber="07"
-                        number="05"
+                        number="03"
                         title="Review"
-                        detailNumber="5"
+                        detailNumber="3"
                         scrollX={scrollX}
                     />
                 </MainWrap>

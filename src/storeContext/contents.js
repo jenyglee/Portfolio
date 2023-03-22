@@ -21,10 +21,7 @@ const ContentsStore = (props) => {
             [
                 { id: 0, title: "Avn", isHover: false },
                 { id: 1, title: "Musinsa", isHover: false },
-                { id: 2, title: "Kt&g", isHover: false },
-                { id: 3, title: "ConsultKit", isHover: false },
-                { id: 4, title: "Kyobo", isHover: false },
-                { id: 5, title: "Beotherm", isHover: false },
+                { id: 2, title: "ConsultKit", isHover: false },
             ],
         ],
         projectBgImages: [
@@ -43,9 +40,6 @@ const ContentsStore = (props) => {
                 { id: 1, isShow: false },
                 { id: 2, isShow: false },
                 { id: 3, isShow: false },
-                { id: 4, isShow: false },
-                { id: 5, isShow: false },
-                { id: 6, isShow: false },
             ],
         ],
 

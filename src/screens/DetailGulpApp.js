@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import { handleTop } from "helper/helper";
-import Title from "components/detailProject/Title";
-import MainVisualGulpApp from "components/detailProject/glupApp/MainVisualGulpApp";
-import Accordion from "components/detailProject/Accodion";
-import { header } from "images";
-import DetailHeader from "components/DetailHeader";
+import React, { useEffect } from "react"
+import styled from "styled-components"
+import { handleTop } from "helper/helper"
+import Title from "components/detailProject/Title"
+import MainVisualGulpApp from "components/detailProject/glupApp/MainVisualGulpApp"
+import Accordion from "components/detailProject/Accodion"
+import { header } from "images"
+import DetailHeader from "components/DetailHeader"
 
 const Wrap = styled.main`
     width: 100%;
-`;
+`
 
 const GulpAppWrap = styled.div`
     max-width: 1200px;
@@ -19,7 +19,7 @@ const GulpAppWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`;
+`
 
 const MainWrap = styled.main`
     width: 100%;
@@ -34,20 +34,20 @@ const MainWrap = styled.main`
     @media ${({ theme }) => theme.size568} {
         padding-top: 105px;
     }
-`;
+`
 
 const DetailGulpApp = ({ scrollX, scrollY }) => {
     useEffect(() => {
-        handleTop();
-    }, []);
+        handleTop()
+    }, [])
 
     return (
         <Wrap>
             <DetailHeader
                 scrollY={scrollY}
-                prevLink={`/`}
-                prevTitle="Home"
-                prevImg={header.home}
+                prevLink={`/1/1`}
+                prevTitle="Visual OMS"
+                prevImg={header.visualOms}
                 nextLink={`/2/0`}
                 nextTitle="AVN"
                 nextImg={header.avn}
@@ -55,8 +55,8 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
             <GulpAppWrap>
                 <MainWrap>
                     <Title
-                        number="01"
-                        title="어플리케이션"
+                        number="03"
+                        title="영양제 복용 앱"
                         titlePoint="꿀꺽"
                         pointColor="#27C47D"
                         startDate="202108"
@@ -101,7 +101,7 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
                 </MainWrap>
             </GulpAppWrap>
         </Wrap>
-    );
-};
+    )
+}
 
-export default DetailGulpApp;
+export default DetailGulpApp

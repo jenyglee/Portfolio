@@ -6,10 +6,7 @@ import DetailAbility from "screens/DetailAbility"
 import DetailGulpApp from "screens/DetailGulpApp"
 import DetailAvn from "screens/DetailAvn"
 import DetailMusinsa from "screens/DetailMusinsa"
-import DetailKTnG from "screens/DetailKTnG"
 import DetailConsultKit from "screens/DetailConsultKit"
-import DetailKyobo from "screens/DetailKyobo"
-import DetailBeotherm from "screens/DetailBeotherm"
 import { itemEnter, itemLeave, handleTop } from "helper/helper"
 import { useState } from "react"
 import {
@@ -20,9 +17,6 @@ import {
     BgComponent05,
     BgComponent06,
     BgComponent07,
-    BgComponent08,
-    BgComponent09,
-    BgComponent10,
     BgComponent11,
     BgComponent12,
     MainHeader,
@@ -258,9 +252,6 @@ const Home = () => {
                                     <BgComponent05 isShow={projectImage[2][0].isShow} />
                                     <BgComponent06 isShow={projectImage[2][1].isShow} />
                                     <BgComponent07 isShow={projectImage[2][2].isShow} />
-                                    <BgComponent08 isShow={projectImage[2][3].isShow} />
-                                    <BgComponent09 isShow={projectImage[2][4].isShow} />
-                                    <BgComponent10 isShow={projectImage[2][5].isShow} />
                                 </div>
                             ) : null}
                         </TitleAlignWrap>
@@ -289,16 +280,7 @@ const Home = () => {
                     <DetailMusinsa scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/2">
-                    <DetailKTnG scrollX={scrollX} scrollY={scrollY} />
-                </Route>
-                <Route path="/2/3">
                     <DetailConsultKit scrollX={scrollX} scrollY={scrollY} />
-                </Route>
-                <Route path="/2/4">
-                    <DetailKyobo scrollX={scrollX} scrollY={scrollY} />
-                </Route>
-                <Route path="/2/5">
-                    <DetailBeotherm scrollX={scrollX} scrollY={scrollY} />
                 </Route>
             </Switch>
             <TopButton
