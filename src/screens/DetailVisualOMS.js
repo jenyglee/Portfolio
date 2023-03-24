@@ -37,6 +37,33 @@ const MainWrap = styled.main`
     }
 `
 
+const stickerData = [
+    {
+        bgColor: "#2B3EE2",
+        color: "#ffffff",
+        content: [
+            {
+                text: "NEXT",
+                strong: true,
+            },
+            {
+                text: "JS",
+                strong: false,
+            },
+        ],
+    },
+    {
+        bgColor: "#FF3284",
+        color: "#ffffff",
+        content: [
+            {
+                text: "REDUX",
+                strong: true,
+            },
+        ],
+    },
+]
+
 const DetailVisualOms = ({ scrollX, scrollY }) => {
     useEffect(() => {
         handleTop()
@@ -59,6 +86,7 @@ const DetailVisualOms = ({ scrollX, scrollY }) => {
                         number="02"
                         title="데이터 기반 물류관리"
                         titlePoint="VisualOMS"
+                        sticker={stickerData}
                         pointColor="#253FEB"
                         startDate="202203"
                         endDate="202207"
@@ -67,14 +95,14 @@ const DetailVisualOms = ({ scrollX, scrollY }) => {
                     <Accordion
                         projectNumber="07"
                         number="01"
-                        title="Functions"
+                        title="Work Plan"
                         detailNumber="1"
                         scrollX={scrollX}
                     />
                     <Accordion
                         projectNumber="07"
                         number="02"
-                        title="WorkPlan"
+                        title="Functions"
                         detailNumber="2"
                         scrollX={scrollX}
                     />

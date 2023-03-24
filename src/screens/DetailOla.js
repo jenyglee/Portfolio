@@ -37,6 +37,41 @@ const MainWrap = styled.main`
     }
 `
 
+const stickerData = [
+    {
+        bgColor: "#F46B3F",
+        color: "#ffffff",
+        content: [
+            {
+                text: "SPRING",
+                strong: false,
+            },
+            {
+                text: "BOOT",
+                strong: true,
+            },
+        ],
+    },
+    {
+        bgColor: "#FFE920",
+        color: "#000000",
+        content: [
+            {
+                text: "SPRING",
+                strong: false,
+            },
+            {
+                text: "DATA",
+                strong: false,
+            },
+            {
+                text: "JPA",
+                strong: true,
+            },
+        ],
+    },
+]
+
 const DetailOlaApp = ({ scrollX, scrollY }) => {
     useEffect(() => {
         handleTop()
@@ -57,8 +92,9 @@ const DetailOlaApp = ({ scrollX, scrollY }) => {
                 <MainWrap>
                     <Title
                         number="01"
-                        title="등산 커뮤니티"
+                        title="등산크루 모집 커뮤니티"
                         titlePoint="올라"
+                        sticker={stickerData}
                         pointColor="#F46B3F"
                         startDate="202302"
                         endDate="202303"
@@ -67,21 +103,21 @@ const DetailOlaApp = ({ scrollX, scrollY }) => {
                     <Accordion
                         projectNumber="06"
                         number="01"
-                        title="Functions"
+                        title="Work Plan"
                         detailNumber="1"
                         scrollX={scrollX}
                     />
                     <Accordion
                         projectNumber="06"
                         number="02"
-                        title="WorkPlan"
+                        title="Service Architecture"
                         detailNumber="2"
                         scrollX={scrollX}
                     />
                     <Accordion
                         projectNumber="06"
                         number="03"
-                        title="Service Architecture"
+                        title="Functions"
                         detailNumber="3"
                         scrollX={scrollX}
                     />

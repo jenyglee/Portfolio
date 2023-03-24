@@ -30,8 +30,8 @@ const DetailContainer = styled.section`
 const VisualOmsDetail = ({ detailNumber, isSize768 }) => {
     return (
         <DetailContainer>
-            {detailNumber === "1" ? <OmsFunctions isSize768={isSize768} /> : null}
-            {detailNumber === "2" ? <WorkPlan data={workPlanData} /> : null}
+            {detailNumber === "1" ? <WorkPlan data={workPlanData} /> : null}
+            {detailNumber === "2" ? <OmsFunctions isSize768={isSize768} /> : null}
             {detailNumber === "3" ? <Review content={reviewData} /> : null}
         </DetailContainer>
     )

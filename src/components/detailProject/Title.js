@@ -1,3 +1,4 @@
+import Sticker from "components/Sticker"
 import React from "react"
 import styled from "styled-components"
 
@@ -43,13 +44,15 @@ const Name = styled.p`
     }
 `
 
+const RowWrap = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+`
+
 const NamePoint = styled.p`
     color: ${({ pointColor }) => pointColor};
-    margin-top: 16px;
-    /* margin-left: 20px; */
-`
-const Space = styled.span`
-    width: 10px;
+    padding-bottom: 10px;
 `
 
 const ProjectDateWrap = styled.article`
@@ -94,15 +97,19 @@ const Line = styled.div`
     margin-bottom: 20px;
 `
 
-const Title = ({ number, title, titlePoint, pointColor, startDate, endDate }) => {
+const Title = ({ number, title, titlePoint, sticker, pointColor, startDate, endDate }) => {
     return (
         <TitleWrap>
             <ProjectTitle>
                 <Number>{number}</Number>
                 <Name>
                     {title}
-                    {/* <Space /> */}
-                    <NamePoint pointColor={pointColor}>{titlePoint}</NamePoint>
+                    <RowWrap>
+                        {/* {sticker && <Sticker data={sticker} />} */}
+                        {sticker &&
+                            sticker.map((item, index) => <Sticker data={item} key={index} />)}
+                        <NamePoint pointColor={pointColor}>{titlePoint}</NamePoint>
+                    </RowWrap>
                 </Name>
             </ProjectTitle>
             <ProjectDateWrap>

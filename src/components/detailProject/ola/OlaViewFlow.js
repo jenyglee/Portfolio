@@ -23,6 +23,7 @@ const BlackBgWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
     padding-top: 50px;
     margin-bottom: 50px;
     background-color: ${({ theme }) => theme.detailBlackBackground};
@@ -59,7 +60,7 @@ const VideoSection = styled.div`
 `
 
 const VideoWrap = styled.div`
-    width: 500px;
+    width: 100%;
 
     @media ${({ theme }) => theme.size1200} {
         display: block;
@@ -174,36 +175,31 @@ const FunctionList = [
 ]
 
 const videoTitleList = [
-    { id: 1, title: "코스추천", video: Simulation01 },
-    { id: 2, title: "코스추천 상세", video: Simulation02 },
-    { id: 3, title: "커뮤니티", video: Simulation03 },
-    { id: 4, title: "커뮤니티 상세", video: Simulation04 },
-    { id: 5, title: "쇼핑몰-공지사항", video: Simulation05 },
-    { id: 6, title: "친구-알람", video: Simulation06 },
-    { id: 7, title: "마이페이지", video: Simulation07 },
-    { id: 8, title: "어드민", video: Simulation08 },
+    { id: 1, title: "코스추천 (조건 필터링 조회)", video: Simulation01 },
+    { id: 2, title: "코스추천 상세(글작성 > 이미지업로드> 글 수정/삭제 )", video: Simulation02 },
+    {
+        id: 3,
+        title: "커뮤니티 (해시태그 필터링 조회 > 채팅 활성화 작성글 필터링 조회)",
+        video: Simulation03,
+    },
+    {
+        id: 4,
+        title: "커뮤니티 상세 (글 작성 > 해시태그 직접 추가 > 채팅방 참여 > 좋아요 > 댓글 > 글 삭제) ",
+        video: Simulation04,
+    },
+    {
+        id: 5,
+        title: "쇼핑몰-공지사항 (쇼핑몰 조건별 필터링 조회 > 공지사항 조회)",
+        video: Simulation05,
+    },
+    { id: 6, title: "친구-알람 (친구 추가/삭제 > 알람 조회)", video: Simulation06 },
+    { id: 7, title: "마이페이지 ( 내 정보 조회 > 내가 쓴 게시글 조회)", video: Simulation07 },
+    { id: 8, title: "어드민 (회원 복구/탈퇴처리 > 게시글 조회)", video: Simulation08 },
 ]
 
 const OlaViewFlow = ({ isSize768 }) => {
     return (
         <ContentWrap>
-            <BlackBgWrap>
-                <ButtonWrap href="https://github.com/jenyglee/Gulp-Application" target="_blank">
-                    <ButtonImage src={icons.GithubButton} />
-                </ButtonWrap>
-                <VideoAlign>
-                    {videoTitleList.map((item) => {
-                        return (
-                            <VideoSection>
-                                <VideoTitle>{item.title}</VideoTitle>
-                                <VideoWrap>
-                                    <Video src={item.video} muted autoPlay loop />
-                                </VideoWrap>
-                            </VideoSection>
-                        )
-                    })}
-                </VideoAlign>
-            </BlackBgWrap>
             <FunctionsWrap>
                 <FunctionImageWrap isSize768={isSize768}>
                     {FunctionList.map((item, index) => {
@@ -232,6 +228,23 @@ const OlaViewFlow = ({ isSize768 }) => {
                     </FunctionContent>
                 </FunctionImageWrap>
             </FunctionsWrap>
+            <BlackBgWrap>
+                <ButtonWrap href="https://github.com/jenyglee/final-project" target="_blank">
+                    <ButtonImage src={icons.GithubButton} />
+                </ButtonWrap>
+                <VideoAlign>
+                    {videoTitleList.map((item) => {
+                        return (
+                            <VideoSection>
+                                <VideoTitle>{item.title}</VideoTitle>
+                                <VideoWrap>
+                                    <Video src={item.video} muted autoPlay loop />
+                                </VideoWrap>
+                            </VideoSection>
+                        )
+                    })}
+                </VideoAlign>
+            </BlackBgWrap>
         </ContentWrap>
     )
 }

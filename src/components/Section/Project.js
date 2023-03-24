@@ -165,7 +165,7 @@ const Project = ({
 
     return (
         <ProjectNameContainer>
-            {sectionId === 0 && projectTitle.id === 2 ? (
+            {sectionId === 0 && (projectTitle.id === 2 || projectTitle.id === 3) ? (
                 // 깃허브의 경우 -> 외부링크 열기
                 <ProjectName
                     isHover={projectTitle.isHover}
@@ -175,7 +175,11 @@ const Project = ({
                     onMouseLeave={() => {
                         onLeave(projectTitle.id, sectionId)
                     }}
-                    href="https://github.com/jenyglee"
+                    href={
+                        projectTitle.id === 2
+                            ? "https://github.com/jenyglee"
+                            : "https://jenyglee.tistory.com"
+                    }
                     target="_blank"
                 >
                     <ProjectOneText

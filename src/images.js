@@ -20,6 +20,7 @@ import bg07Component02 from "./images/bgComponent07/07_02.png"
 import bg08Component01 from "./images/bgComponent08/08_01.png"
 import bg11Component01 from "./images/bgComponent11/11_01.png"
 import bg12Component01 from "./images/bgComponent12/12_01.png"
+import bg13Component01 from "./images/bgComponent13/13_01.png"
 import Sticker from "./images/sticker.png"
 import categoryIntroduction from "./images/category_introduction.png"
 import categoryDevelop from "./images/category_develop.png"
@@ -114,23 +115,12 @@ import MoMusinsaUXUIDesign03 from "images/03_musinsaSource/mo_UXUIDesign03.png"
 import MoMusinsaUXUIDesign04 from "images/03_musinsaSource/mo_UXUIDesign04.png"
 import MoMusinsaUXUIDesign05 from "images/03_musinsaSource/mo_UXUIDesign05.png"
 import MoMusinsaComponents from "images/03_musinsaSource/mo_Components.png"
-import KtngMainVisual from "images/04_ktngSource/main_visual.png"
-import PcKtngUXUIDesign01 from "images/04_ktngSource/pc_UXUIDesign01.png"
-import PcKtngUXUIDesign02 from "images/04_ktngSource/pc_UXUIDesign02.png"
-import PcKtngUXUIDesign03 from "images/04_ktngSource/pc_UXUIDesign03.png"
-import PcKtngComponent from "images/04_ktngSource/pc_Component.png"
-import MoKtngUXUIDesign01 from "images/04_ktngSource/mo_UXUIDesign01.png"
-import MoKtngUXUIDesign02 from "images/04_ktngSource/mo_UXUIDesign02.png"
-import MoKtngUXUIDesign03 from "images/04_ktngSource/mo_UXUIDesign03.png"
-import MoKtngComponent from "images/04_ktngSource/mo_Component.png"
 import ConsultKitMainVisual from "images/05_consultKitSource/main_visual.png"
 import PcConsultKit01 from "images/05_consultKitSource/pc_consultKit_01.png"
 import PcConsultKit02 from "images/05_consultKitSource/pc_consultKit_02.png"
 import PcConsultKit03 from "images/05_consultKitSource/pc_consultKit_03.png"
 import PcConsultKit04 from "images/05_consultKitSource/pc_consultKit_04.png"
 import PcConsultKit05 from "images/05_consultKitSource/pc_consultKit_05.png"
-import KyoboMainVisual from "images/06_kyobo/main_visual.png"
-import BeothermMainVisual from "images/07_beotherm/main_visual.png"
 import OlaMainVisual from "images/10_olaSource/main_visual.png"
 import OlaLogo from "images/10_olaSource/logo.png"
 import OlaPcFunction01 from "images/10_olaSource/pc_function01.png"
@@ -181,6 +171,7 @@ const bgImages07 = [bg07Component01, bg07Component02]
 const bgImages08 = [bg08Component01]
 const bgImages11 = [bg11Component01]
 const bgImages12 = [bg12Component01]
+const bgImages13 = [bg13Component01]
 
 //✨ 메인 스티커 이미지
 const sticker = Sticker
@@ -362,13 +353,6 @@ const moMusinsaSources = [
     MoMusinsaComponents,
 ]
 
-// ✨ KT&G 소스
-const ktNgSources = {
-    mainVisual: KtngMainVisual,
-}
-const pcKtNgSources = [PcKtngUXUIDesign01, PcKtngUXUIDesign02, PcKtngUXUIDesign03, PcKtngComponent]
-const moKtNgSources = [MoKtngUXUIDesign01, MoKtngUXUIDesign02, MoKtngUXUIDesign03, MoKtngComponent]
-
 // ✨ 컨설킷 소스
 const consultKitSources = {
     mainVisual: ConsultKitMainVisual,
@@ -380,12 +364,6 @@ const pcConsultKitSources = [
     PcConsultKit04,
     PcConsultKit05,
 ]
-
-// ✨ 교보문고 소스
-const KyoboSources = [KyoboMainVisual]
-
-// ✨ 비오템옴므 소스
-const BeothermSources = [BeothermMainVisual]
 
 export {
     logo,
@@ -399,6 +377,7 @@ export {
     bgImages08,
     bgImages11,
     bgImages12,
+    bgImages13,
     sticker,
     categoryImages,
     header,
@@ -421,11 +400,6 @@ export {
     musinsaSources,
     pcMusinsaSources,
     moMusinsaSources,
-    ktNgSources,
-    pcKtNgSources,
-    moKtNgSources,
     consultKitSources,
     pcConsultKitSources,
-    KyoboSources,
-    BeothermSources,
 }

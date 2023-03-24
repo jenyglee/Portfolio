@@ -59,9 +59,9 @@ const DetailContainer = styled.section`
 const OlaDetail = ({ detailNumber, isSize768 }) => {
     return (
         <DetailContainer>
-            {detailNumber === "1" ? <OlaViewFlow isSize768={isSize768} /> : null}
-            {detailNumber === "2" ? <WorkPlan data={workPlanData} /> : null}
-            {detailNumber === "3" ? <ServiceArchitecture data={serviceArchitectureData} /> : null}
+            {detailNumber === "1" ? <WorkPlan data={workPlanData} /> : null}
+            {detailNumber === "2" ? <ServiceArchitecture data={serviceArchitectureData} /> : null}
+            {detailNumber === "3" ? <OlaViewFlow isSize768={isSize768} /> : null}
             {detailNumber === "4" ? <Erd src={olaSources.erd} /> : null}
             {detailNumber === "5" ? <Review content={reviewData} /> : null}
         </DetailContainer>

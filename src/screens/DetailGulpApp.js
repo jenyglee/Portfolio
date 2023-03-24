@@ -36,6 +36,23 @@ const MainWrap = styled.main`
     }
 `
 
+const stickerData = [
+    {
+        bgColor: "#27C47D",
+        color: "#ffffff",
+        content: [
+            {
+                text: "REACT",
+                strong: false,
+            },
+            {
+                text: "NATIVE",
+                strong: true,
+            },
+        ],
+    },
+]
+
 const DetailGulpApp = ({ scrollX, scrollY }) => {
     useEffect(() => {
         handleTop()
@@ -58,6 +75,7 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
                         number="03"
                         title="영양제 복용 앱"
                         titlePoint="꿀꺽"
+                        sticker={stickerData}
                         pointColor="#27C47D"
                         startDate="202108"
                         endDate="202112"
@@ -66,14 +84,14 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
                     <Accordion
                         projectNumber="01"
                         number="01"
-                        title="Functions"
+                        title="Work Plan"
                         detailNumber="1"
                         scrollX={scrollX}
                     />
                     <Accordion
                         projectNumber="01"
                         number="02"
-                        title="WorkPlan"
+                        title="Functions"
                         detailNumber="2"
                         scrollX={scrollX}
                     />

@@ -27,6 +27,7 @@ import { categoryImages } from "images"
 import { ContentsContext } from "storeContext/contents"
 import DetailOla from "./DetailOla"
 import DetailVisualOms from "./DetailVisualOMS"
+import BgComponent13 from "components/BgComponent13"
 
 const Body = styled.main`
     height: 100%;
@@ -244,6 +245,7 @@ const Home = () => {
                                     <BgComponent01 isShow={projectImage[0][0].isShow} />
                                     <BgComponent02 isShow={projectImage[0][1].isShow} />
                                     <BgComponent03 isShow={projectImage[0][2].isShow} />
+                                    <BgComponent13 isShow={projectImage[0][3].isShow} />
                                     {/* Github 포폴 */}
                                     <BgComponent11 isShow={projectImage[1][0].isShow} />
                                     <BgComponent12 isShow={projectImage[1][1].isShow} />

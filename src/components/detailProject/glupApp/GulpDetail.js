@@ -42,8 +42,8 @@ const DetailContainer = styled.section`
 const GulpDetail = ({ detailNumber, isSize768 }) => {
     return (
         <DetailContainer>
-            {detailNumber === "1" ? <GlupViewFlow isSize768={isSize768} /> : null}
-            {detailNumber === "2" ? <WorkPlan data={workPlanData} /> : null}
+            {detailNumber === "1" ? <WorkPlan data={workPlanData} /> : null}
+            {detailNumber === "2" ? <GlupViewFlow isSize768={isSize768} /> : null}
             {detailNumber === "3" ? <UserFlow /> : null}
             {detailNumber === "4" ? <WorkIssue /> : null}
             {detailNumber === "5" ? <Review content={reviewData} /> : null}

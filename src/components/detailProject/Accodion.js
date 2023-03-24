@@ -4,7 +4,6 @@ import { icons } from "images"
 import GulpDetail from "components/detailProject/glupApp/GulpDetail"
 import AvnDetail from "components/detailProject/anv/AvnDetail"
 import MusinsaDetail from "components/detailProject/musinsa/MusinsaDetail"
-import KtngDetail from "components/detailProject/ktNg/KtngDetail"
 import ConsultKitDetail from "components/detailProject/consultKit/ConsultKitDetail"
 import OlaDetail from "./ola/OlaDetail"
 import VisualOmsDetail from "./visualOms/VisualOmsDetail"
@@ -107,9 +106,6 @@ const Accordion = ({ projectNumber, number, title, detailNumber, scrollX }) => {
                 ) : null}
                 {isVisibleDetail && projectNumber === "03" ? (
                     <MusinsaDetail detailNumber={detailNumber} isSize768={isSize768} />
-                ) : null}
-                {isVisibleDetail && projectNumber === "04" ? (
-                    <KtngDetail detailNumber={detailNumber} isSize768={isSize768} />
                 ) : null}
                 {isVisibleDetail && projectNumber === "05" ? (
                     <ConsultKitDetail detailNumber={detailNumber} isSize768={isSize768} />

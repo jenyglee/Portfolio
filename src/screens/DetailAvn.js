@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import { handleTop } from "helper/helper";
-import Title from "components/detailProject/Title";
-import MainVisualAvn from "components/detailProject/anv/MainVisualAvn";
-import Accordion from "components/detailProject/Accodion";
-import { header } from "images";
-import DetailHeader from "components/DetailHeader";
+import React, { useEffect } from "react"
+import styled from "styled-components"
+import { handleTop } from "helper/helper"
+import Title from "components/detailProject/Title"
+import MainVisualAvn from "components/detailProject/anv/MainVisualAvn"
+import Accordion from "components/detailProject/Accodion"
+import { header } from "images"
+import DetailHeader from "components/DetailHeader"
 
 const Wrap = styled.main`
     width: 100%;
-`;
+`
 
 const AvnWrap = styled.div`
     max-width: 1200px;
@@ -19,7 +19,7 @@ const AvnWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`;
+`
 
 const MainWrap = styled.main`
     width: 100%;
@@ -34,18 +34,18 @@ const MainWrap = styled.main`
     @media ${({ theme }) => theme.size568} {
         padding-top: 105px;
     }
-`;
+`
 
 const DetailAvn = ({ scrollY }) => {
     useEffect(() => {
-        handleTop();
-    }, []);
+        handleTop()
+    }, [])
 
     return (
         <Wrap>
             <DetailHeader
                 scrollY={scrollY}
-                prevLink={`/1/0`}
+                prevLink={`/1/2`}
                 prevTitle="Gulp"
                 prevImg={header.gulpApp}
                 nextLink={`/2/1`}
@@ -62,28 +62,13 @@ const DetailAvn = ({ scrollY }) => {
                         endDate="202002"
                     />
                     <MainVisualAvn />
-                    <Accordion
-                        projectNumber="02"
-                        number="01"
-                        title="Concept"
-                        detailNumber="1"
-                    />
-                    <Accordion
-                        projectNumber="02"
-                        number="02"
-                        title="GUI Design"
-                        detailNumber="2"
-                    />
-                    <Accordion
-                        projectNumber="02"
-                        number="03"
-                        title="Component"
-                        detailNumber="3"
-                    />
+                    <Accordion projectNumber="02" number="01" title="Concept" detailNumber="1" />
+                    <Accordion projectNumber="02" number="02" title="GUI Design" detailNumber="2" />
+                    <Accordion projectNumber="02" number="03" title="Component" detailNumber="3" />
                 </MainWrap>
             </AvnWrap>
         </Wrap>
-    );
-};
+    )
+}
 
-export default DetailAvn;
+export default DetailAvn
