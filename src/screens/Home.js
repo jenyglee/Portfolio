@@ -245,11 +245,11 @@ const Home = () => {
                                     <BgComponent01 isShow={projectImage[0][0].isShow} />
                                     <BgComponent02 isShow={projectImage[0][1].isShow} />
                                     <BgComponent03 isShow={projectImage[0][2].isShow} />
-                                    <BgComponent13 isShow={projectImage[0][3].isShow} />
+                                    {/* <BgComponent13 isShow={projectImage[0][3].isShow} /> */}
                                     {/* Github 포폴 */}
-                                    <BgComponent11 isShow={projectImage[1][0].isShow} />
+                                    <BgComponent04 isShow={projectImage[1][0].isShow} />
                                     <BgComponent12 isShow={projectImage[1][1].isShow} />
-                                    <BgComponent04 isShow={projectImage[1][2].isShow} />
+                                    <BgComponent11 isShow={projectImage[1][2].isShow} />
                                     {/* AVN 포폴 */}
                                     <BgComponent05 isShow={projectImage[2][0].isShow} />
                                     <BgComponent06 isShow={projectImage[2][1].isShow} />
@@ -267,13 +267,13 @@ const Home = () => {
                     <DetailAbility scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/1/0">
-                    <DetailOla scrollX={scrollX} scrollY={scrollY} />
+                    <DetailGulpApp scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/1/1">
                     <DetailVisualOms scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/1/2">
-                    <DetailGulpApp scrollX={scrollX} scrollY={scrollY} />
+                    <DetailOla scrollX={scrollX} scrollY={scrollY} />
                 </Route>
                 <Route path="/2/0">
                     <DetailAvn scrollX={scrollX} scrollY={scrollY} />

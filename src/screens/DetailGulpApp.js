@@ -62,12 +62,12 @@ const DetailGulpApp = ({ scrollX, scrollY }) => {
         <Wrap>
             <DetailHeader
                 scrollY={scrollY}
-                prevLink={`/1/1`}
-                prevTitle="Visual OMS"
-                prevImg={header.visualOms}
-                nextLink={`/2/0`}
-                nextTitle="AVN"
-                nextImg={header.avn}
+                prevLink={`/`}
+                prevTitle="Home"
+                prevImg={header.home}
+                nextLink={`/1/1`}
+                nextTitle="Visual OMS"
+                nextImg={header.visualOms}
             />
             <GulpAppWrap>
                 <MainWrap>

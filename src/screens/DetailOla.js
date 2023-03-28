@@ -81,12 +81,12 @@ const DetailOlaApp = ({ scrollX, scrollY }) => {
         <Wrap>
             <DetailHeader
                 scrollY={scrollY}
-                prevLink={`/`}
-                prevTitle="Home"
+                prevLink={`/1/1`}
+                prevTitle="Visual OMS"
                 prevImg={header.home}
-                nextLink={`/1/1`}
-                nextTitle="Visual OMS"
-                nextImg={header.visualOms}
+                nextLink={`/2/0`}
+                nextTitle="AVN"
+                nextImg={header.avn}
             />
             <OlaWrap>
                 <MainWrap>

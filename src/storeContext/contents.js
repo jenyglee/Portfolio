@@ -10,13 +10,13 @@ const ContentsStore = (props) => {
                 { id: 0, title: "Info", isHover: false },
                 { id: 1, title: "Ability", isHover: false },
                 { id: 2, title: "Github", isHover: false },
-                { id: 3, title: "Blog", isHover: false },
+                // { id: 3, title: "Blog", isHover: false },
             ],
 
             [
-                { id: 0, title: "Ola", isHover: false },
+                { id: 0, title: "Gulp App", isHover: false },
                 { id: 1, title: "Visual OMS", isHover: false },
-                { id: 2, title: "Gulp App", isHover: false },
+                { id: 2, title: "Ola", isHover: false },
             ],
 
             [

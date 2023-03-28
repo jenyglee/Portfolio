@@ -74,11 +74,11 @@ const DetailVisualOms = ({ scrollX, scrollY }) => {
             <DetailHeader
                 scrollY={scrollY}
                 prevLink={`/1/0`}
-                prevTitle="Ola"
-                prevImg={header.ola}
+                prevTitle="Gulp App"
+                prevImg={header.gulpApp}
                 nextLink={`/1/2`}
-                nextTitle="Gulp App"
-                nextImg={header.gulpApp}
+                nextTitle="Ola"
+                nextImg={header.ola}
             />
             <VisualOmsWrap>
                 <MainWrap>
