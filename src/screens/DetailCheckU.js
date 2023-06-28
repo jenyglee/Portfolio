@@ -6,13 +6,13 @@ import MainVisualGulpApp from "components/detailProject/glupApp/MainVisualGulpAp
 import Accordion from "components/detailProject/Accodion";
 import { header } from "images";
 import DetailHeader from "components/DetailHeader";
-import MainVisualOms from "components/detailProject/visualOms/MainVisualOms";
+import MainVisualCheckU from "components/detailProject/checkU/MainVisualCheckU";
 
 const Wrap = styled.main`
   width: 100%;
 `;
 
-const VisualOmsWrap = styled.div`
+const GulpAppWrap = styled.div`
   max-width: 1200px;
   padding-bottom: 100px;
   margin: 0 auto;
@@ -39,7 +39,7 @@ const MainWrap = styled.main`
 
 const stickerData = [
   {
-    bgColor: "#2B3EE2",
+    bgColor: "#1E438F",
     color: "#ffffff",
     content: [
       {
@@ -53,18 +53,22 @@ const stickerData = [
     ],
   },
   {
-    bgColor: "#FF3284",
-    color: "#ffffff",
+    bgColor: "#F8DD86",
+    color: "#000000",
     content: [
       {
-        text: "REDUX",
+        text: "REACT",
         strong: true,
+      },
+      {
+        text: "QUERY",
+        strong: false,
       },
     ],
   },
 ];
 
-const DetailVisualOms = ({ scrollX, scrollY }) => {
+const DetailCheckU = ({ scrollX, scrollY }) => {
   useEffect(() => {
     handleTop();
   }, []);
@@ -73,64 +77,57 @@ const DetailVisualOms = ({ scrollX, scrollY }) => {
     <Wrap>
       <DetailHeader
         scrollY={scrollY}
-        prevLink={`/1/0`}
-        prevTitle="Gulp App"
-        prevImg={header.gulpApp}
-        nextLink={`/1/2`}
-        nextTitle="Ola"
-        nextImg={header.ola}
+        prevLink={`/`}
+        prevTitle="Home"
+        prevImg={header.home}
+        nextLink={`/1/1`}
+        nextTitle="Visual OMS"
+        nextImg={header.visualOms}
       />
-      <VisualOmsWrap>
+      <GulpAppWrap>
         <MainWrap>
           <Title
-            number="02"
-            title="데이터 기반 물류관리"
-            titlePoint="VisualOMS"
+            number="03"
+            title="나만의 복지 찾기 앱"
+            titlePoint="챙겨요"
             sticker={stickerData}
-            pointColor="#253FEB"
-            startDate="202203"
-            endDate="202207"
+            pointColor="#1E438F"
+            startDate="20230401"
+            endDate="20230623"
           />
-          <MainVisualOms />
+          <MainVisualCheckU />
           <Accordion
-            projectNumber="08"
+            projectNumber="07"
             number="01"
             title="Work Plan"
             detailNumber="1"
             scrollX={scrollX}
           />
           <Accordion
-            projectNumber="08"
+            projectNumber="07"
             number="02"
-            title="Functions"
+            title="View Flow"
             detailNumber="2"
             scrollX={scrollX}
           />
-          {/* <Accordion
-                        projectNumber="07"
-                        number="03"
-                        title="UserFlow"
-                        detailNumber="3"
-                        scrollX={scrollX}
-                    />
-                    <Accordion
-                        projectNumber="07"
-                        number="04"
-                        title="WorkIssue"
-                        detailNumber="4"
-                        scrollX={scrollX}
-                    /> */}
           <Accordion
-            projectNumber="08"
+            projectNumber="07"
             number="03"
             title="Review"
             detailNumber="3"
             scrollX={scrollX}
           />
+          {/* <Accordion
+            projectNumber="07"
+            number="04"
+            title="Review"
+            detailNumber="4"
+            scrollX={scrollX}
+          /> */}
         </MainWrap>
-      </VisualOmsWrap>
+      </GulpAppWrap>
     </Wrap>
   );
 };
 
-export default DetailVisualOms;
+export default DetailCheckU;

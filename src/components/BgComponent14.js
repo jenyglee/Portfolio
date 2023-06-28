@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { bgImages13 } from "images";
+import { bgImages14 } from "images";
 
 const ComponentWrap = styled.div`
   position: fixed;
@@ -15,9 +15,9 @@ const Image = styled.img`
   height: ${({ height }) => height}px;
 `;
 
-const BgComponent13 = ({ isShow }) => {
+const BgComponent14 = ({ isShow }) => {
   const [objs, setObjs] = useState([
-    { translateY: 50, width: 574, height: 632, right: 200, opacity: 0 },
+    { translateY: 50, width: 618, height: 578, right: 250, opacity: 0 },
   ]);
 
   useEffect(() => {
@@ -26,9 +26,9 @@ const BgComponent13 = ({ isShow }) => {
         setObjs([
           {
             translateY: 0,
-            width: 574,
-            height: 632,
-            right: 200,
+            width: 618,
+            height: 578,
+            right: 250,
             opacity: 1,
           },
         ]);
@@ -38,9 +38,9 @@ const BgComponent13 = ({ isShow }) => {
         setObjs([
           {
             translateY: 50,
-            width: 574,
-            height: 632,
-            right: 200,
+            width: 618,
+            height: 578,
+            right: 250,
             opacity: 0,
           },
         ]);
@@ -60,7 +60,7 @@ const BgComponent13 = ({ isShow }) => {
             isShow={isShow}
           >
             <Image
-              src={bgImages13[index]}
+              src={bgImages14[index]}
               width={obj.width}
               height={obj.height}
             />
@@ -71,4 +71,4 @@ const BgComponent13 = ({ isShow }) => {
   );
 };
 
-export default BgComponent13;
+export default BgComponent14;
