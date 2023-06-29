@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { icons, moCheckUFunction, pcCheckUFunction } from "images";
-import Simulation01 from "images/01_gulpAppSource/simulation01.mp4";
-import Simulation02 from "images/01_gulpAppSource/simulation02.mp4";
-import Simulation03 from "images/01_gulpAppSource/simulation03.mp4";
-import Simulation04 from "images/01_gulpAppSource/simulation04.mp4";
-import Simulation05 from "images/01_gulpAppSource/simulation05.mp4";
-import Simulation06 from "images/01_gulpAppSource/simulation06.mp4";
-import Simulation07 from "images/01_gulpAppSource/simulation07.mp4";
+import Simulation01 from "images/14_checkUSource/simulation01.mp4";
+import Simulation02 from "images/14_checkUSource/simulation02.mp4";
+import Simulation03 from "images/14_checkUSource/simulation03.mp4";
+import Simulation04 from "images/14_checkUSource/simulation04.mp4";
+import Simulation05 from "images/14_checkUSource/simulation05.mp4";
+import Simulation06 from "images/14_checkUSource/simulation06.mp4";
+import Simulation07 from "images/14_checkUSource/simulation07.mp4";
+import Simulation08 from "images/14_checkUSource/simulation08.mp4";
+import Temp from "images/14_checkUSource/template.png";
 
 const ContentWrap = styled.div`
   width: 100%;
@@ -59,6 +61,7 @@ const VideoSection = styled.div`
 
 const VideoWrap = styled.div`
   width: 240px;
+  position: relative;
 
   @media ${({ theme }) => theme.size1200} {
     display: block;
@@ -201,13 +204,14 @@ const FunctionList = [
 ];
 
 const videoTitleList = [
-  { id: 1, title: "알람 생성하기", video: Simulation01 },
-  { id: 2, title: "알람 변경&삭제", video: Simulation02 },
-  { id: 3, title: "알람 필터&토글", video: Simulation03 },
-  { id: 4, title: "레벨링 디자인", video: Simulation04 },
-  { id: 5, title: "캘린더&랭크", video: Simulation05 },
-  { id: 6, title: "마이페이지", video: Simulation06 },
-  { id: 7, title: "회원가입&로그인", video: Simulation07 },
+  { id: 1, title: "복지 서비스", video: Simulation01 },
+  { id: 2, title: "복지 테마", video: Simulation02 },
+  { id: 3, title: "복지 뉴스", video: Simulation03 },
+  { id: 4, title: "추가 사용자 관리", video: Simulation04 },
+  { id: 5, title: "내 상태 필터", video: Simulation05 },
+  { id: 6, title: "카카오 로그인", video: Simulation06 },
+  { id: 7, title: "부가 기능", video: Simulation07 },
+  { id: 8, title: "프로필변경&탈퇴", video: Simulation08 },
 ];
 
 const CheckUViewFlow = ({ isSize768 }) => {
@@ -226,6 +230,32 @@ const CheckUViewFlow = ({ isSize768 }) => {
               <VideoSection>
                 <VideoTitle>{item.title}</VideoTitle>
                 <VideoWrap>
+                  <img
+                    src={Temp}
+                    style={{
+                      width: "100%",
+                      height: 524,
+                      position: "absolute",
+                      // backgroundColor: "red",
+                    }}
+                  ></img>
+                  {/* <div
+                    style={{
+                      backgroundColor: "red",
+                      width: "100%",
+                      height: "100%",
+                      position: "absolute",
+                    }}
+                  >
+                    <img
+                      src={Temp}
+                      style={{
+                        width: 500,
+                        height: 524,
+                        position: "absolute",
+                      }}
+                    ></img>
+                  </div> */}
                   <Video src={item.video} muted autoPlay loop />
                 </VideoWrap>
               </VideoSection>
